@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Egyptos.Domain\Egyptos.Domain.csproj" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Contracts\Authentication\" />
+      <Folder Include="Contracts\Users\" />
+      <Folder Include="Mapping\" />
+      <Folder Include="Services\Implementations\" />
+      <Folder Include="Services\Interfaces\" />
+      <Folder Include="Templates\" />
+    </ItemGroup>
+
+</Project>
