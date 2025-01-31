@@ -14,7 +14,7 @@ builder.Services
     .AddInfrastructureExtensions(builder.Configuration);
 
 var app = builder.Build();
-//ahmed hesham
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -29,6 +29,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-
-// Raafat
