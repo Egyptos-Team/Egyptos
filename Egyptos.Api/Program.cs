@@ -9,7 +9,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services
-    .AddApiExtensions()
+    .AddApiExtensions(builder.Configuration)
     .AddApplicationExtensions()
     .AddInfrastructureExtensions(builder.Configuration);
 
@@ -23,6 +23,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("MyPolicy");
 
 app.UseAuthorization();
 
