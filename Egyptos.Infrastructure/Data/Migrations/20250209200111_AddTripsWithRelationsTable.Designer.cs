@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250201200027_AddTransportsTables")]
-    partial class AddTransportsTables
+    [Migration("20250209200111_AddTripsWithRelationsTable")]
+    partial class AddTripsWithRelationsTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,97 @@ namespace Egyptos.Infrastructure.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.Area", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AreaTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AreaTypeId");
+
+                    b.ToTable("Areas");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AreaId");
+
+                    b.ToTable("AreaImages");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AreaTypes");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("TripId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "TripId");
+
+                    b.HasIndex("TripId");
+
+                    b.ToTable("BookingTrips");
+                });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.ApplicationUser", b =>
                 {
@@ -135,49 +226,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.ToTable("Nationalities");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.BookingPrivateTransport", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("PrivateTransportId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("End")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Start")
-                        .HasColumnType("datetime2");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("UserId", "PrivateTransportId");
-
-                    b.HasIndex("PrivateTransportId");
-
-                    b.ToTable("BookingPrivateTransports");
-                });
-
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.BookingPublicTransport", b =>
-                {
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("PublicTransportId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId", "PublicTransportId");
-
-                    b.HasIndex("PublicTransportId");
-
-                    b.ToTable("BookingPublicTransports");
-                });
-
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PrivateTransport", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.PublicTransport", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -188,91 +237,29 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsAvailable")
-                        .HasColumnType("bit");
+                    b.Property<int>("IsAvailable")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("PricePerMinutes")
-                        .HasColumnType("float");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TransportTypeId")
+                    b.Property<int>("SerialNumber")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TransportTypeId");
-
-                    b.ToTable("PrivateTransports");
-                });
-
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PublicTransport", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("ArrivalTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DepartureTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("From")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("NumberOfSeatsAvailable")
-                        .HasColumnType("int");
-
-                    b.Property<string>("To")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TransportTypeId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TripPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TransportTypeId");
+                    b.HasIndex("SerialNumber")
+                        .IsUnique();
 
                     b.ToTable("PublicTransports");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.TransportType", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -280,13 +267,80 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Type")
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("Salary")
+                        .HasColumnType("float");
+
+                    b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportTypes");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TourGuides");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
+                {
+                    b.Property<int>("TripId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TourGuideId")
+                        .HasColumnType("int");
+
+                    b.HasKey("TripId", "TourGuideId");
+
+                    b.HasIndex("TourGuideId");
+
+                    b.ToTable("TourGuideTrips");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AreaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ArrivalTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("AvailableSeats")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("BackTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DepartureTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<int>("PublicTransportId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AreaId");
+
+                    b.HasIndex("PublicTransportId");
+
+                    b.ToTable("Trips");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -422,6 +476,47 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Egyptos.Domain.Entities.Area", b =>
+                {
+                    b.HasOne("Egyptos.Domain.Entities.AreaType", "AreaType")
+                        .WithMany("Areas")
+                        .HasForeignKey("AreaTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AreaType");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
+                {
+                    b.HasOne("Egyptos.Domain.Entities.Area", "Area")
+                        .WithMany("AreaImages")
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Area");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
+                {
+                    b.HasOne("Egyptos.Domain.Entities.Trip", "Trip")
+                        .WithMany("BookingTrips")
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "User")
+                        .WithMany("BookingTrips")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Trip");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.ApplicationUser", b =>
                 {
                     b.HasOne("Egyptos.Domain.Entities.Nationality", "Nationality")
@@ -433,64 +528,53 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Navigation("Nationality");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.BookingPrivateTransport", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
                 {
-                    b.HasOne("Egyptos.Domain.Entities.Transports.PrivateTransport", "PublicTransportation")
-                        .WithMany("BookingTransports")
-                        .HasForeignKey("PrivateTransportId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "ApplicationUser")
-                        .WithMany("BookingPrivateTransports")
+                    b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "User")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ApplicationUser");
-
-                    b.Navigation("PublicTransportation");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.BookingPublicTransport", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
                 {
-                    b.HasOne("Egyptos.Domain.Entities.Transports.PublicTransport", "PublicTransport")
-                        .WithMany("BookingPublicTransports")
+                    b.HasOne("Egyptos.Domain.Entities.TourGuide", "TourGuide")
+                        .WithMany("TourGuideTrips")
+                        .HasForeignKey("TourGuideId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptos.Domain.Entities.Trip", "Trip")
+                        .WithMany("TourGuideTrips")
+                        .HasForeignKey("TripId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TourGuide");
+
+                    b.Navigation("Trip");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>
+                {
+                    b.HasOne("Egyptos.Domain.Entities.Area", "Area")
+                        .WithMany("Trips")
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Egyptos.Domain.Entities.PublicTransport", "PublicTransport")
+                        .WithMany()
                         .HasForeignKey("PublicTransportId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "ApplicationUser")
-                        .WithMany("BookingPublicTransports")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ApplicationUser");
+                    b.Navigation("Area");
 
                     b.Navigation("PublicTransport");
-                });
-
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PrivateTransport", b =>
-                {
-                    b.HasOne("Egyptos.Domain.Entities.Transports.TransportType", "TransportType")
-                        .WithMany("PrivateTransports")
-                        .HasForeignKey("TransportTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TransportType");
-                });
-
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PublicTransport", b =>
-                {
-                    b.HasOne("Egyptos.Domain.Entities.Transports.TransportType", "TransportType")
-                        .WithMany("PublicTransports")
-                        .HasForeignKey("TransportTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("TransportType");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -544,11 +628,21 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Egyptos.Domain.Entities.Area", b =>
+                {
+                    b.Navigation("AreaImages");
+
+                    b.Navigation("Trips");
+                });
+
+            modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
+                {
+                    b.Navigation("Areas");
+                });
+
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.ApplicationUser", b =>
                 {
-                    b.Navigation("BookingPrivateTransports");
-
-                    b.Navigation("BookingPublicTransports");
+                    b.Navigation("BookingTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Nationality", b =>
@@ -556,21 +650,16 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PrivateTransport", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
                 {
-                    b.Navigation("BookingTransports");
+                    b.Navigation("TourGuideTrips");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.PublicTransport", b =>
+            modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>
                 {
-                    b.Navigation("BookingPublicTransports");
-                });
+                    b.Navigation("BookingTrips");
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.Transports.TransportType", b =>
-                {
-                    b.Navigation("PrivateTransports");
-
-                    b.Navigation("PublicTransports");
+                    b.Navigation("TourGuideTrips");
                 });
 #pragma warning restore 612, 618
         }

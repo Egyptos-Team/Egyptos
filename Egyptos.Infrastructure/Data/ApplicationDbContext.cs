@@ -1,6 +1,6 @@
+using System.Reflection.Metadata.Ecma335;
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Entities.Identity;
-using Egyptos.Domain.Entities.Transports;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +10,21 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
 {
     public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
     public DbSet<Nationality> Nationalities { get; set; } = null!;
-    public DbSet<TransportType> TransportTypes { get; set; } = null!;
-    public DbSet<PrivateTransport> PrivateTransports { get; set; } = null!;
-    public DbSet<PublicTransport> PublicTransports { get; set; } = null!;
-    public DbSet<BookingPublicTransport> BookingPublicTransports { get; set; } = null!;
-    public DbSet<BookingPrivateTransport> BookingPrivateTransports { get; set; } = null!;
+    public DbSet<Area> Areas { get; set; }
+    public DbSet<AreaImage> AreaImages { get; set; }
+    public DbSet<AreaType> AreaTypes { get; set; }
+    public DbSet<BookingTrip> BookingTrips { get; set; }
+    public DbSet<PublicTransport> PublicTransports { get; set; }
+    public DbSet<TourGuide> TourGuides { get; set; }
+    public DbSet<TourGuideTrip> TourGuideTrips { get; set; }
+    public DbSet<Trip> Trips { get; set; }
+    public DbSet<Hotel> Hotels { get; set; }
+    public DbSet<BookingHotel> BookingHotels { get; set; }
+    public DbSet<Event> Events { get; set; }
+    public DbSet<EventType> EventTypes { get; set; }
+    public DbSet<EventDate> EventDates { get; set; }
+    public DbSet<BookingEventDate> BookingEventDates { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

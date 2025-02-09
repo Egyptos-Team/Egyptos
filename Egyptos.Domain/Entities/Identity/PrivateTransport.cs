@@ -1,11 +1,11 @@
-namespace Egyptos.Domain.Entities.Transports;
+namespace Egyptos.Domain.Entities.Identity;
 
 public class PrivateTransport
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
 
-    public double PricePerMinutes { get; set; }
+    public double PricePerHoure { get; set; }
 
     public string Description { get; set; } = null!;
     public string? ImageUrl { get; set; }
@@ -22,5 +22,5 @@ public class PrivateTransport
     public int TransportTypeId { get; set; }
     public TransportType TransportType { get; set; } = null!;
 
-    public virtual ICollection<BookingPrivateTransport> BookingTransports { get; set; } = [];
+    public ICollection<BookingPrivateTransport> BookingPrivateTransports { get; set; } = [];
 }

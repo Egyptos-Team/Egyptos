@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250201195718_AddIdentityTables")]
+    [Migration("20250209194149_AddIdentityTables")]
     partial class AddIdentityTables
     {
         /// <inheritdoc />

@@ -1,5 +1,3 @@
-
-using Egyptos.Domain.Entities.Transports;
 using Microsoft.AspNetCore.Identity;
 
 namespace Egyptos.Domain.Entities.Identity;
@@ -15,6 +13,9 @@ public class ApplicationUser : IdentityUser
     public Nationality Nationality { get; set; } = null!;
     public string Address { get; set; } = null!;
 
-    public virtual ICollection<BookingPublicTransport> BookingPublicTransports { get; set; } = [];
-    public virtual ICollection<BookingPrivateTransport> BookingPrivateTransports { get; set; } = [];
+    public ICollection<BookingTrip> BookingTrips { get; set; } = [];
+    public ICollection<BookingHotel> BookingHotels { get; set; } = [];
+    public ICollection<BookingEventDate> BookingEventDates { get; set; } = [];
+    public ICollection<BookingPrivateTransport> BookingPrivateTransports { get; set; } = [];
+    public ICollection<Report> Reports { get; set; } = [];
 }
