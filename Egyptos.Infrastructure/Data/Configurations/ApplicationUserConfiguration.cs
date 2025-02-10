@@ -1,4 +1,3 @@
-using Egyptos.Application.Abstractions.Consts;
 using Egyptos.Domain.Entities.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -12,9 +11,9 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
 
         builder.Property(x => x.FirstName).HasMaxLength(50);
         builder.Property(x => x.LastName).HasMaxLength(50);
-        builder.Property(x=>x.Sex).HasMaxLength(10);
+        builder.Property(x => x.Sex).HasMaxLength(10);
         builder.Property(x => x.NationalId);
-        builder.Property(x=>x.Address).HasMaxLength(100);
+        builder.Property(x => x.Address).HasMaxLength(100);
 
 
         /*builder.HasData(new ApplicationUser()
