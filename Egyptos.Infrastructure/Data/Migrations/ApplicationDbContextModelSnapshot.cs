@@ -275,11 +275,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -295,6 +290,10 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -358,6 +357,31 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5c8298a9-982f-4d9d-a632-55f7d148f735",
+                            Email = "admin@egyptos.com",
+                            EmailConfirmed = true,
+                            FirstName = "Admin",
+                            ImageUrl = "profiles/Default-Image.jpg",
+                            LastName = "Admin",
+                            LockoutEnabled = false,
+                            NationalId = "12345678901234",
+                            NationalityId = 1,
+                            NormalizedEmail = "ADMIN@EGYPTOS.COM",
+                            NormalizedUserName = "ADMIN@EGYPTOS.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEB8koHSS3Qc5xDDyR9/sordYllKk8d8i/8jMvWdn3I7H040LOuksxNuQycqLuOtxeA==",
+                            PhoneNumber = "1234567890",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6f3a18b3-c453-4a3a-b2e3-57f2e0429f50",
+                            Sex = "Male",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@egyptos.com"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.BookingPrivateTransport", b =>
@@ -501,6 +525,13 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Nationalities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Egyptian"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PublicTransport", b =>
@@ -645,6 +676,36 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "0191d311-2918-7f76-bd8a-0bded8535075",
+                            ConcurrencyStamp = "0191d311-2918-7f76-bd8a-0be08dd83078",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "ce2fd704-7a3c-4a03-846e-c5479a8b921d",
+                            ConcurrencyStamp = "aacecacd-28e1-43cc-92da-decb1f9b32c4",
+                            Name = "Employee",
+                            NormalizedName = "EMPLOYEE"
+                        },
+                        new
+                        {
+                            Id = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3",
+                            ConcurrencyStamp = "B1F115C4-D298-4C6D-AA7B-6C7DC785A1C5",
+                            Name = "TourGuide",
+                            NormalizedName = "TOURGUIDE"
+                        },
+                        new
+                        {
+                            Id = "0191d311-2918-7f76-bd8a-0bdf740adff8",
+                            ConcurrencyStamp = "0191d311-2918-7f76-bd8a-0be100f11384",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -732,6 +793,13 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
+                            RoleId = "0191d311-2918-7f76-bd8a-0bded8535075"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

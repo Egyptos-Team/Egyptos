@@ -1,4 +1,6 @@
+using Egyptos.Domain.Consts;
 using Egyptos.Domain.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -13,14 +15,20 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
         builder.Property(x => x.LastName).HasMaxLength(50);
         builder.Property(x => x.Sex).HasMaxLength(10);
         builder.Property(x => x.NationalId);
-        builder.Property(x => x.Address).HasMaxLength(100);
 
+        var passwordHasher = new PasswordHasher<ApplicationUser>();
+        var hashedPassword = passwordHasher.HashPassword(null!, DefaultUser.AdminPassword);
 
-        /*builder.HasData(new ApplicationUser()
+        builder.HasData(new ApplicationUser
         {
             Id = DefaultUser.AdminId,
             FirstName = "Admin",
             LastName = "Admin",
+            NationalId = "12345678901234",
+            NationalityId = 1,
+            PhoneNumber = "1234567890",
+            Sex = "Male",
+            ImageUrl = "profiles/Default-Image.jpg",
             UserName = DefaultUser.AdminEmail,
             NormalizedUserName = DefaultUser.AdminEmail.ToUpper(),
             Email = DefaultUser.AdminEmail,
@@ -28,7 +36,7 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             SecurityStamp = DefaultUser.AdminSecurityStamp,
             ConcurrencyStamp = DefaultUser.AdminConcurrencyStamp,
             EmailConfirmed = true,
-            PasswordHash = DefaultUser.AdminPasswordHash
-        });*/
+            PasswordHash = hashedPassword,
+        });
     }
 }

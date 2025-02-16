@@ -1,0 +1,15 @@
+using Egyptos.Application.Contracts.Nationality;
+
+namespace Egyptos.Application.Contracts.Users;
+
+public class UserResponse
+{
+    public string Id { get; init; } = null!;
+    public string FirstName { get; init; } = null!;
+    public string LastName { get; init; } = null!;
+    public string Email { get; init; } = null!;
+    public string PhoneNumber { get; init; } = null!;
+    public string? NationalId { get; init; }
+    public NationalityResponse Nationality { get; init; } = null!;
+    public IEnumerable<string> Roles { get; set; } = [];
+}

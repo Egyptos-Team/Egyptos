@@ -16,5 +16,5 @@ public class JwtOptions
     public string Key { get; set; } = string.Empty;
 
     [Range(1, int.MaxValue)]
-    public int ExpiryMinutes { get; set; }
+    public int ExpiryYears { get; set; }
 }

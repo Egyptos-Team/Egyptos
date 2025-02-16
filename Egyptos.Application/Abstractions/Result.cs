@@ -1,5 +1,3 @@
-using Egyptos.Domain.Errors;
-
 namespace Egyptos.Application.Abstractions;
 
 public class Result

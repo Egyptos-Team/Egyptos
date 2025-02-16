@@ -1,30 +1,22 @@
-using Egyptos.Domain.Entities.Identity;
-using Egyptos.Infrastructure.Data;
-using Microsoft.AspNetCore.Identity;
+using Egyptos.Domain.Interfaces;
+using Egyptos.Infrastructure.Services;
 
 namespace Egyptos.Api;
 
 public static class ApiExtensions
 {
-    public static IServiceCollection AddApiExtensions(this IServiceCollection services,IConfiguration configuration)
+    public static IServiceCollection AddApiExtensions(this IServiceCollection services, IConfiguration configuration)
     {
         services
-            .AddAuthConfig(configuration)
             .AddCorsConfig(configuration);
 
-
-
-        return services;
-    }
-
-    private static IServiceCollection AddAuthConfig(this IServiceCollection services, IConfiguration configuration)
-    {
-        services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders();
+        var templatePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Templates");
+        services.AddSingleton<ITemplateReader>(new FileTemplateReader(templatePath));
 
         return services;
     }
+
+
 
     private static IServiceCollection AddCorsConfig(this IServiceCollection services, IConfiguration configuration)
     {

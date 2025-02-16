@@ -11,7 +11,8 @@ public class ApplicationUser : IdentityUser
 
     public int NationalityId { get; set; }
     public Nationality Nationality { get; set; } = null!;
-    public string Address { get; set; } = null!;
+
+    public string ImageUrl { get; set; } = null!;
 
     public ICollection<BookingTrip> BookingTrips { get; set; } = [];
     public ICollection<BookingHotel> BookingHotels { get; set; } = [];

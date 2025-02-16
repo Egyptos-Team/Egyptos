@@ -9,45 +9,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Area.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/AreaImage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/AreaType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/BookingEventDate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/BookingHotel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/BookingTrip.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Event.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/EventDate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/EventType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Hotel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/BookingPrivateTransport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/PrivateTransport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/Report.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/TransportType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/PublicTransport.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuide.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuideTrip.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Trip.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/BookingEventDateConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/BookingHotelConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/BookingPrivateTransportConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/BookingTripConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/TourGuideTripConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/AuthController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/NationalitiesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/UsersController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/wwwroot/Templates/EmailConfirmation.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/wwwroot/Templates/ForgetPassword.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/ConfirmEmailRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/ForgetPasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/LoginRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/ResendConfirmationEmailRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/ResetPasswordRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/Validators/LoginRequestValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/Validators/RegisterRequestValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Authentication/Validators/ResetPasswordRequestValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Nationality/NationalityRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Nationality/NationalityResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/UserResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/GlobalUsings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Mapping/MappingProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/EmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/FileService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/NationalityService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/UserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IFileService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/INationalityService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Settings/MailSettings.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Consts/RegexPatterns.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Errors/NationalityErrors.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Helpers/EmailBodyBuilder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Interfaces/ITemplateReader.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/NationalityConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/UserRoleConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Services/FileTemplateReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Api/ApiExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/ApiExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Api/Egyptos.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/Egyptos.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Abstractions/Consts/DefaultRoles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Consts/DefaultRoles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Abstractions/Consts/DefaultUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Consts/DefaultUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Abstractions/Consts/RegexPatterns.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Abstractions/Result.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Abstractions/Result.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Authentication/IJwtProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Authentication/IJwtProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Authentication/JwtOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Authentication/JwtOptions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Authentication/JwtProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Authentication/JwtProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Egyptos.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Egyptos.Application.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/ApplicationUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Transports/BookingPrivateTransport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Transports/BookingPublicTransport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Transports/PrivateTransport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Transports/PublicTransport.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Transports/TransportType.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/PrivateTransportConfiguration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/PublicTransportConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/PublicTransportConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/20250201195718_AddIdentityTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/20250201195718_AddIdentityTables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/20250201200027_AddTransportsTables.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/20250201200027_AddTransportsTables.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Egyptos.Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Egyptos.Infrastructure.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/ApplicationUserConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/ApplicationUserConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/RoleConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/RoleConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +80,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/520c3885064740e982d8389c55c60c128b928/01/9f61a70a/IEmailSender.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9f4e6771dd8341069f61e3fb9ad8968d20ac38/da/5cd6121e/RelationalEventId.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ff6fe24f5944b35a381217736eded33290038/0d/9a7e1bbf/PropertyBuilder`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d382df578ec93391918cfaa4ce7f4b8f35c9aed1241d6556dc9be26df13c/IdentityUser.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -154,6 +169,11 @@
       <workItem from="1738440422229" duration="809000" />
       <workItem from="1738569547048" duration="21000" />
       <workItem from="1739126388555" duration="8168000" />
+      <workItem from="1739199316547" duration="27294000" />
+      <workItem from="1739274448568" duration="83000" />
+      <workItem from="1739469205007" duration="2108000" />
+      <workItem from="1739690563082" duration="16000" />
+      <workItem from="1739737887004" duration="6097000" />
     </task>
     <task id="LOCAL-00001" summary="Add rider files">
       <option name="closed" value="true" />
@@ -184,5 +204,50 @@
     <MESSAGE value="Add rider files" />
     <MESSAGE value="Add : Identity and transports tables" />
     <option name="LAST_COMMIT_MESSAGE" value="Add : Identity and transports tables" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Egyptos.Domain/Helpers/EmailBodyBuilder.cs</url>
+          <line>9</line>
+          <properties documentPath="E:\Projects\Egyptos\Egyptos.Domain\Helpers\EmailBodyBuilder.cs" containingFunctionPresentation="Method 'GenerateEmailBody'">
+            <startOffsets>
+              <option value="316" />
+            </startOffsets>
+            <endOffsets>
+              <option value="401" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Egyptos.Domain/Helpers/EmailBodyBuilder.cs</url>
+          <line>14</line>
+          <properties documentPath="E:\Projects\Egyptos\Egyptos.Domain\Helpers\EmailBodyBuilder.cs" containingFunctionPresentation="Method 'GenerateEmailBody'">
+            <startOffsets>
+              <option value="545" />
+            </startOffsets>
+            <endOffsets>
+              <option value="640" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Egyptos.Application/Services/Implementations/EmailService.cs</url>
+          <line>13</line>
+          <properties documentPath="E:\Projects\Egyptos\Egyptos.Application\Services\Implementations\EmailService.cs" containingFunctionPresentation="Method 'SendEmailAsync'">
+            <startOffsets>
+              <option value="435" />
+            </startOffsets>
+            <endOffsets>
+              <option value="436" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
