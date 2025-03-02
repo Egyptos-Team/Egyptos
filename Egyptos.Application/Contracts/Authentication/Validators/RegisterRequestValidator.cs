@@ -43,8 +43,7 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
             .Must(ValidateFile)
             .WithMessage("Invalid file. Allowed file types are .jpg, .jpeg, .png, and max size is 5MB.");*/
 
-        RuleFor(x => x.NationalityId)
-            .Must(nationalityId => applicationDbContext1.Nationalities.Any(n => n.Id == nationalityId)).WithMessage(NationalityErrors.NotFound.Description);
+
     }
     private static bool ValidateFile(IFormFile file)
     {

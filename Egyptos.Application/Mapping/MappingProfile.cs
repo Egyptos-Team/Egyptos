@@ -6,6 +6,6 @@ public class MappingProfile : IRegister
     {
         config.NewConfig<RegisterRequest, ApplicationUser>()
             .Map(des => des.UserName, src => src.Email)
-            .Map(des => des.ImageUrl, "Profiles/Default-Image.jpg");
+            .Map(des => des.ImageUrl, src => "Profiles/Default-Image.jpg");
     }
 }

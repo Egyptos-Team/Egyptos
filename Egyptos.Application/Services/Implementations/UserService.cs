@@ -11,7 +11,6 @@ public class UserService(UserManager<ApplicationUser> _userManager,ApplicationDb
     public async Task<IEnumerable<UserResponse>> GetAllAsync()
     {
         var users = await _userManager.Users
-            .Include(x => x.Nationality)
             .ToListAsync();
 
         var userResponses = new List<UserResponse>();

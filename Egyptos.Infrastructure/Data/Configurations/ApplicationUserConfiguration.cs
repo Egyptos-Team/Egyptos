@@ -25,7 +25,6 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             FirstName = "Admin",
             LastName = "Admin",
             NationalId = "12345678901234",
-            NationalityId = 1,
             PhoneNumber = "1234567890",
             Sex = "Male",
             ImageUrl = "profiles/Default-Image.jpg",

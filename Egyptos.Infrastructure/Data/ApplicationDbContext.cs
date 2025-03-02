@@ -10,7 +10,7 @@ namespace Egyptos.Infrastructure.Data;
 public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
     public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
-    public DbSet<Nationality> Nationalities { get; set; } = null!;
+
     public DbSet<Area> Areas { get; set; }
     public DbSet<AreaImage> AreaImages { get; set; }
     public DbSet<AreaType> AreaTypes { get; set; }

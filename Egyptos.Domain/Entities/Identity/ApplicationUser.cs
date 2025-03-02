@@ -9,8 +9,6 @@ public class ApplicationUser : IdentityUser
     public string Sex { get; set; } = null!;
     public string? NationalId { get; set; }
 
-    public int NationalityId { get; set; }
-    public Nationality Nationality { get; set; } = null!;
 
     public string ImageUrl { get; set; } = null!;
 
