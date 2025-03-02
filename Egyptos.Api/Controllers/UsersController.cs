@@ -1,4 +1,5 @@
 using Egyptos.Api.Extensions;
+using Egyptos.Application.Contracts.Users;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -17,6 +18,14 @@ public class UsersController(IUserService _userService) : ControllerBase
     {
         var result = await _userService.GetAllAsync();
         return Ok(result);
+    }
+
+    [HttpPost]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<IActionResult> Add(CreateUserRequest request)
+    {
+        var result = await _userService.AddAsync(request);
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
     [HttpDelete("{email}")]

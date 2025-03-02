@@ -39,7 +39,7 @@ public static class ApplicationExtensions
         // add scoped services
         services.AddScoped<IFileService, FileService>();
         services.AddScoped<IUserService, UserService>();
-
+        services.AddScoped<IRoleService, RoleService>();
 
         return services;
     }

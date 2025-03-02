@@ -5,10 +5,9 @@ namespace Egyptos.Application.Services.Implementations;
 
 public class FileService(IHostEnvironment hostEnvironment) : IFileService
 {
-
-    public async Task<string> UploadAsync(IFormFile file,string folderName)
+    public async Task<string> UploadAsync(IFormFile file, string folderName)
     {
-        var  webRootPath = Path.Combine(hostEnvironment.ContentRootPath, "wwwroot", folderName);
+        var webRootPath = Path.Combine(hostEnvironment.ContentRootPath, "wwwroot", folderName);
         var extension = Path.GetExtension(file.FileName).ToLower();
         var fileName = $"{Guid.NewGuid()}{extension}";
 
@@ -27,6 +26,19 @@ public class FileService(IHostEnvironment hostEnvironment) : IFileService
             throw new Exception($"File upload failed: {ex.Message}");
         }
 
-        return fileName;
+        return $"{folderName}/{fileName}";
+    }
+
+    public async Task<bool> DeleteAsync(string filePath)
+    {
+        if(filePath.Contains("Default-Image.jpg"))
+            return true;
+
+        var path = Path.Combine(hostEnvironment.ContentRootPath, "wwwroot", filePath);
+
+        if (!File.Exists(path)) return false;
+
+        await Task.Run(() => File.Delete(path));
+        return true;
     }
 }
