@@ -20,7 +20,6 @@ public class RegisterRequestValidator : AbstractValidator<RegisterRequest>
 
         RuleFor(s => s.NationalId).NotEmpty();
 
-        RuleFor(x => x.NationalityId).NotEmpty();
 
         RuleFor(s => s.PhoneNumber)
             .Matches(@"^(010|011|012|015)")
