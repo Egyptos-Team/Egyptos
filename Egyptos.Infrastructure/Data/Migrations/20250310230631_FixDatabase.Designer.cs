@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250310230631_FixDatabase")]
+    partial class FixDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaTypeId");
 
-                    b.ToTable("Areas", (string)null);
+                    b.ToTable("Areas");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
@@ -78,7 +81,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("AreaImages", (string)null);
+                    b.ToTable("AreaImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
@@ -95,7 +98,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AreaTypes", (string)null);
+                    b.ToTable("AreaTypes");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaWorking", b =>
@@ -110,7 +113,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("WorkingId");
 
-                    b.ToTable("AreaWorkings", (string)null);
+                    b.ToTable("AreaWorkings");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingEventDate", b =>
@@ -125,7 +128,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventDateId");
 
-                    b.ToTable("BookingEventDates", (string)null);
+                    b.ToTable("BookingEventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingHotel", b =>
@@ -149,7 +152,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("BookingHotels", (string)null);
+                    b.ToTable("BookingHotels");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
@@ -164,7 +167,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("BookingTrips", (string)null);
+                    b.ToTable("BookingTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
@@ -190,7 +193,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventDate", b =>
@@ -234,7 +237,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventDates", (string)null);
+                    b.ToTable("EventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventImage", b =>
@@ -256,7 +259,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventImages", (string)null);
+                    b.ToTable("EventImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventType", b =>
@@ -273,7 +276,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventTypes", (string)null);
+                    b.ToTable("EventTypes");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Hotel", b =>
@@ -317,7 +320,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hotels", (string)null);
+                    b.ToTable("Hotels");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.ApplicationUser", b =>
@@ -461,7 +464,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("PrivateTransportId");
 
-                    b.ToTable("BookingPrivateTransport", (string)null);
+                    b.ToTable("BookingPrivateTransport");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.PrivateTransport", b =>
@@ -502,7 +505,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TransportTypeId");
 
-                    b.ToTable("PrivateTransport", (string)null);
+                    b.ToTable("PrivateTransport");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.Report", b =>
@@ -542,7 +545,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Report", (string)null);
+                    b.ToTable("Report");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.TransportType", b =>
@@ -559,7 +562,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportType", (string)null);
+                    b.ToTable("TransportType");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PublicTransport", b =>
@@ -592,7 +595,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
-                    b.ToTable("PublicTransports", (string)null);
+                    b.ToTable("PublicTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
@@ -630,7 +633,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuides", (string)null);
+                    b.ToTable("TourGuides");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
@@ -645,7 +648,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TourGuideId");
 
-                    b.ToTable("TourGuideTrips", (string)null);
+                    b.ToTable("TourGuideTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>
@@ -686,7 +689,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("PublicTransportId");
 
-                    b.ToTable("Trips", (string)null);
+                    b.ToTable("Trips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Working", b =>
@@ -709,7 +712,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workings", (string)null);
+                    b.ToTable("Workings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

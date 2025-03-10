@@ -25,6 +25,9 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<EventType> EventTypes { get; set; }
     public DbSet<EventDate> EventDates { get; set; }
     public DbSet<BookingEventDate> BookingEventDates { get; set; }
+    public DbSet<Working> Workings { get; set; }
+    public DbSet<AreaWorking> AreaWorkings { get; set; }
+    public DbSet<EventImage> EventImages { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

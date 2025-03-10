@@ -6,9 +6,11 @@ public class Hotel
     public string Name { get; set; } = null!;
     public string Location { get; set; } = null!;
     public string Address { get; set; } = null!;
+    public string ImageUrl { get; set; } = null!;
     public string WebSite { get; set; } = null!;
     public string Facebook { get; set; } = null!;
     public string PhoneNumber { get; set; } = null!;
+    public double PricePerHour { get; set; }
 
     public ICollection<BookingHotel> BookingHotels { get; set; } = [];
 }

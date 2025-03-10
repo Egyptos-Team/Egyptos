@@ -9,31 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/AccountController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Extensions/UserExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Roles/RoleResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/ChangePasswordRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/ChangePasswordRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/ChangeProfileImageRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/ChangeProfileImageRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/CreateUserRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/CreateUserRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/UpdateProfileRequest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/UpdateProfileRequestValidator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Users/UserProfileResponse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/RoleService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IRoleService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Api/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Mapping/MappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/FileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/FileService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/UserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IFileService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IFileService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/IUserService.cs" afterDir="false" />
-    </list>
+    <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Egyptos.Api: http.executor": "Run",
-    "RunOnceActivity.AccountsToCodyMigration": "true",
-    "RunOnceActivity.ChatTagsLlmMigration": "true",
-    "RunOnceActivity.CodyAccountHistoryMigration": "true",
-    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
-    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
-    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
-    "RunOnceActivity.CodyHistoryLlmMigration": "true",
-    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
-    "RunOnceActivity.CodyProjectSettingsMigration": "true",
-    "RunOnceActivity.DeprecatedChatLlmMigration": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Egyptos.Api: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.AccountsToCodyMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ChatTagsLlmMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyAccountHistoryMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyAccountsIdsRefresh&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyConvertUrlToCodebaseName&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyHistoryLlmMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyMigrateChatHistory-v2&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.DeprecatedChatLlmMigration&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Egyptos.Api: http">
     <configuration name="Egyptos.Api: site18214-WebDeploy" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish configuration="Release" platform="Any CPU" publish_profile="site18214-WebDeploy.pubxml" pubxml_path="$PROJECT_DIR$/Egyptos.Api/Properties/PublishProfiles/site18214-WebDeploy.pubxml" user_name="site18214" uuid_high="3743710182180799030" uuid_low="-6200605371208027145" />
@@ -154,6 +130,7 @@
       <workItem from="1740940677691" duration="1741000" />
       <workItem from="1740943173822" duration="1371000" />
       <workItem from="1740945287156" duration="4971000" />
+      <workItem from="1740989649103" duration="105000" />
     </task>
     <task id="LOCAL-00001" summary="Add rider files">
       <option name="closed" value="true" />

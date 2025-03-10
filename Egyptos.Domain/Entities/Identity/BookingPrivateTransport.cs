@@ -13,6 +13,9 @@ public class BookingPrivateTransport
     public double TotalPrice { get; set; }
     public int Quantity { get; set; }
 
+    public DateTime? PaymentDate { get; set; }
+    public DateTime? PaymentCancel { get; set; }
+
     public int PrivateTransportId { get; set; }
     public PrivateTransport PublicTransportation { get; set; } = null!;
 

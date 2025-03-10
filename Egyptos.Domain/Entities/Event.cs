@@ -8,4 +8,6 @@ public class Event
 
     public int EventTypeId { get; set; }
     public EventType EventType { get; set; } = null!;
+
+    public ICollection<EventDate> EventDates { get; set; } = [];
 }
