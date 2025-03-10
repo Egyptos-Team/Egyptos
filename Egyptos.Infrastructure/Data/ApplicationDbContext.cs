@@ -12,6 +12,7 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
 
     public DbSet<Area> Areas { get; set; }
+    public DbSet<Item> Items { get; set; }
     public DbSet<AreaImage> AreaImages { get; set; }
     public DbSet<AreaType> AreaTypes { get; set; }
     public DbSet<BookingTrip> BookingTrips { get; set; }
@@ -28,6 +29,10 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<Working> Workings { get; set; }
     public DbSet<AreaWorking> AreaWorkings { get; set; }
     public DbSet<EventImage> EventImages { get; set; }
+    public DbSet<Historical> Historicals { get; set; }
+    public DbSet<HistoricalImage> HistoricalImages { get; set; }
+
+
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

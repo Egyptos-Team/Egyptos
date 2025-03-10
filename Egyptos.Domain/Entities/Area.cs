@@ -14,4 +14,5 @@ public class Area
     public ICollection<Trip> Trips { get; set; } = [];
     public ICollection<AreaImage> AreaImages { get; set; } = [];
     public ICollection<AreaWorking> AreaWorkings { get; set; } = [];
+    public ICollection<Item> Items { get; set; } = [];
 }
