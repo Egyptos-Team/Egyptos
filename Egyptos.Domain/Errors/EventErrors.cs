@@ -1,0 +1,15 @@
+using Microsoft.AspNetCore.Http;
+
+namespace Egyptos.Domain.Errors;
+
+public class EventErrors
+{
+    public static readonly Error DuplicatedTypeName = new("Event.DuplicatedTypeName", 
+        "the same type name is already exists", StatusCodes.Status409Conflict);
+
+    public static readonly Error EventTypeNotFount = new("Event.EventTypeNotFount",
+        "No event type was found with the given ID", StatusCodes.Status404NotFound);
+
+    public static readonly Error DuplicatedEventName = new("Event.DuplicatedEventName",
+        "the same event name is already exists", StatusCodes.Status409Conflict);
+}
