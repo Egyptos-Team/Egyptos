@@ -42,6 +42,8 @@ public static class ApplicationExtensions
         services.AddScoped<IRoleService, RoleService>();
         services.AddScoped<IPrivateTransportService, PrivateTransportService>();
         services.AddScoped<ITransportTypeService, TransportTypeService>();
+        services.AddScoped<IEventTypeService, EventTypeService>();
+        services.AddScoped<IEventService, EventService>();
 
         return services;
     }
