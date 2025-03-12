@@ -37,10 +37,10 @@ public class EventTypeController(IEventTypeService eventTypeService) : Controlle
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [HttpPut("")]
-    public async Task<IActionResult> Update([FromBody] UpdateEventTypeRequest request)
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateEventTypeRequest request)
     {
-        var result = await _eventTypeService.UpdateAsync(request);
+        var result = await _eventTypeService.UpdateAsync(id, request);
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();                       
     }

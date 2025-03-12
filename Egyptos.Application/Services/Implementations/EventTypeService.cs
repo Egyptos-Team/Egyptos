@@ -3,6 +3,8 @@ using Egyptos.Application.Contracts.Roles;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using Egyptos.Domain.Entities;
+using Egyptos.Application.Contracts.Event;
+using Microsoft.Extensions.Logging;
 
 namespace Egyptos.Application.Services.Implementations;
 public class EventTypeService(ApplicationDbContext context) : IEventTypeService
@@ -26,18 +28,25 @@ public class EventTypeService(ApplicationDbContext context) : IEventTypeService
         => await _context.EventTypes.AsNoTracking().ProjectToType<EventTypeResponse>().ToListAsync();
     public async Task<Result<EventTypeResponse>> GetAsync(int eventTypeId)
     {
-        if(await _context.EventTypes.FindAsync(eventTypeId) is not { } eventType)
+        var eventType = await _context.EventTypes
+            .Where(x => x.Id == eventTypeId)
+            .Include(x => x.Events)
+            .ProjectToType<EventTypeResponse>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync();
+
+        if (eventType is null)
             return Result.Failure<EventTypeResponse>(EventErrors.EventTypeNotFount);
 
-        return Result.Success(eventType.Adapt<EventTypeResponse>());
+        return Result.Success(eventType);
     }
-    public async Task<Result<EventTypeResponse>> UpdateAsync(UpdateEventTypeRequest request)
+    public async Task<Result<EventTypeResponse>> UpdateAsync(int id, UpdateEventTypeRequest request)
     {
-        if (await _context.EventTypes.FindAsync(request.Id) is not { } eventType)
+        if (await _context.EventTypes.FindAsync(id) is not { } eventType)
             return Result.Failure<EventTypeResponse>(EventErrors.EventTypeNotFount);
 
         var isExistingType = 
-            await _context.EventTypes.Where(x => x.Name == request.Name && x.Id != request.Id).AnyAsync();
+            await _context.EventTypes.Where(x => x.Name == request.Name && x.Id != id).AnyAsync();
         if (isExistingType)
             return Result.Failure<EventTypeResponse>(EventErrors.DuplicatedTypeName);
 
@@ -58,4 +67,3 @@ public class EventTypeService(ApplicationDbContext context) : IEventTypeService
         return Result.Success();
     }
 }
-

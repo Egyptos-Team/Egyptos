@@ -12,4 +12,7 @@ public class EventErrors
 
     public static readonly Error DuplicatedEventName = new("Event.DuplicatedEventName",
         "the same event name is already exists", StatusCodes.Status409Conflict);
+
+    public static readonly Error EventNotFount = new("Event.EventNotFount",
+        "No event was found with the given ID", StatusCodes.Status404NotFound);
 }

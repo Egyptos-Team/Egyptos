@@ -6,9 +6,6 @@ public class UpdateEventTypeRequestValidator : AbstractValidator<UpdateEventType
 {
     public UpdateEventTypeRequestValidator()
     {
-        RuleFor(x => x.Id)
-            .NotEmpty();
-
         RuleFor(x => x.Name)
             .NotEmpty();
     }
