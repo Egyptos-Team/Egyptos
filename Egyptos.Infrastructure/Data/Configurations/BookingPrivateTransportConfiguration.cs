@@ -1,4 +1,4 @@
-using Egyptos.Domain.Entities.Identity;
+using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

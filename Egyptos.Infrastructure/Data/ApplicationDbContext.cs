@@ -10,7 +10,6 @@ namespace Egyptos.Infrastructure.Data;
 public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
     public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
-
     public DbSet<Area> Areas { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<AreaImage> AreaImages { get; set; }
@@ -31,6 +30,12 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<EventImage> EventImages { get; set; }
     public DbSet<Historical> Historicals { get; set; }
     public DbSet<HistoricalImage> HistoricalImages { get; set; }
+    public DbSet<TransportType> TransportTypes { get; set; }
+    public DbSet<BookingPrivateTransport> BookingPrivateTransports { get; set; }
+    public DbSet<PrivateTransport> PrivateTransports { get; set; }
+    public DbSet<BookingTourGuide> BookingTourGuides { get; set; }
+    public DbSet<Report> Reports { get; set; }
+
 
 
 

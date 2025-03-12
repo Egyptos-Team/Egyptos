@@ -40,6 +40,8 @@ public static class ApplicationExtensions
         services.AddScoped<IFileService, FileService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IRoleService, RoleService>();
+        services.AddScoped<IPrivateTransportService, PrivateTransportService>();
+        services.AddScoped<ITransportTypeService, TransportTypeService>();
 
         return services;
     }

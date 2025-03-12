@@ -1,4 +1,4 @@
-namespace Egyptos.Domain.Entities.Identity;
+namespace Egyptos.Domain.Entities;
 
 public class PrivateTransport
 {

@@ -16,8 +16,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
         builder.Property(x => x.Sex).HasMaxLength(10);
         builder.Property(x => x.NationalId);
 
-        var passwordHasher = new PasswordHasher<ApplicationUser>();
-        var hashedPassword = passwordHasher.HashPassword(null!, DefaultUser.AdminPassword);
+        //var passwordHasher = new PasswordHasher<ApplicationUser>();
+        //var hashedPassword = passwordHasher.HashPassword(null!, DefaultUser.AdminPassword);
 
         builder.HasData(new ApplicationUser
         {
@@ -35,7 +35,7 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             SecurityStamp = DefaultUser.AdminSecurityStamp,
             ConcurrencyStamp = DefaultUser.AdminConcurrencyStamp,
             EmailConfirmed = true,
-            PasswordHash = hashedPassword,
+            PasswordHash = DefaultUser.AdminPasswordHash,
         });
     }
 }
