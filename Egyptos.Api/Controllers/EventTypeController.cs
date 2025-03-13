@@ -11,13 +11,13 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize(Roles = DefaultRoles.Admin.Name)]
 
-public class EventTypeController(IEventTypeService eventTypeService, IEventDateService eventDateService) : ControllerBase
+public class EventTypeController(IEventTypeService eventTypeService) : ControllerBase
 {
     private readonly IEventTypeService _eventTypeService = eventTypeService;
 
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Add([FromBody] CreateEventTypeRequest request)
     {
         var result = await _eventTypeService.AddAsync(request);
@@ -32,6 +32,7 @@ public class EventTypeController(IEventTypeService eventTypeService, IEventDateS
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
         var result = await _eventTypeService.GetAsync(id);
@@ -40,6 +41,7 @@ public class EventTypeController(IEventTypeService eventTypeService, IEventDateS
     }
 
     [HttpPut("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateEventTypeRequest request)
     {
         var result = await _eventTypeService.UpdateAsync(id, request);
@@ -48,6 +50,7 @@ public class EventTypeController(IEventTypeService eventTypeService, IEventDateS
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _eventTypeService.DeleteAsync(id);
