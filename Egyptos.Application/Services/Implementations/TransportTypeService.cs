@@ -1,5 +1,6 @@
 ﻿using Egyptos.Application.Contracts.Transport.TransportTypes;
 using Egyptos.Domain.Entities;
+using Egyptos.Domain.Errors.PrivateTransport;
 using Microsoft.EntityFrameworkCore;
 using System.Threading;
 

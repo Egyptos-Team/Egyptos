@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace Egyptos.Domain.Errors;
+namespace Egyptos.Domain.Errors.PrivateTransport;
 
 public record TransportTypeErrors
 {
