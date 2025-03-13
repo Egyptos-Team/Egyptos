@@ -11,21 +11,22 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class EventDatesController(IEventDateService eventDateService) : ControllerBase
 {
     private readonly IEventDateService _eventDateService = eventDateService;
 
     [HttpPost("")]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> AddAsync([FromForm] CreateEventDateRequest request)
+    public async Task<IActionResult> Add([FromForm] CreateEventDateRequest request)
     {
         var result = await _eventDateService.AddAsync(request);
 
-        return Ok();
+        return CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value);
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetAllAsync()
+    public async Task<IActionResult> GetAll()
     {
         var result = await _eventDateService.GetAllAsync();
 
@@ -33,7 +34,7 @@ public class EventDatesController(IEventDateService eventDateService) : Controll
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetAsync([FromRoute]int id)
+    public async Task<IActionResult> Get([FromRoute]int id)
     {
         var result = await _eventDateService.GetAsync(id);
 

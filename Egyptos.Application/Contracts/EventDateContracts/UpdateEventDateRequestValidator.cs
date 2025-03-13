@@ -1,13 +1,11 @@
-﻿using Egyptos.Application.Contracts.Event;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.AspNetCore.Http;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Contracts.EventDateContracts;
 
-public class CreateEventDateRequestValidator : AbstractValidator<CreateEventDateRequest>
+public class UpdateEventDateRequestValidator : AbstractValidator<UpdateEventDateRequest>
 {
-    public CreateEventDateRequestValidator()
+    public UpdateEventDateRequestValidator()
     {
         RuleFor(x => x.StartDate)
            .NotEmpty();
@@ -28,9 +26,6 @@ public class CreateEventDateRequestValidator : AbstractValidator<CreateEventDate
             .NotEmpty();
 
         RuleFor(x => x.Price)
-            .NotEmpty();
-
-        RuleFor(x => x.EventId)
             .NotEmpty();
 
         RuleFor(s => s.Images)
@@ -63,16 +58,16 @@ public class CreateEventDateRequestValidator : AbstractValidator<CreateEventDate
 
 
             const long maxFileSize = 5 * 1024 * 1024; // 5MB
-            if(file.Length > maxFileSize)
+            if (file.Length > maxFileSize)
                 return false;
         }
         return true;
     }
 
-    private bool HasValidDates(CreateEventDateRequest request) =>
+    private bool HasValidDates(UpdateEventDateRequest request) =>
         request.StartDate <= request.EndDate;
 
-    private bool HasValidSubscription(CreateEventDateRequest request) =>
+    private bool HasValidSubscription(UpdateEventDateRequest request) =>
         request.StartSubscription <= request.EndSubscription;
 
 }

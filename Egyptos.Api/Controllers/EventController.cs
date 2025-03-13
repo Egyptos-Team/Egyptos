@@ -3,28 +3,29 @@ using Egyptos.Application.Contracts.Event;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
 public class EventController(IEventService eventService) : ControllerBase
 {
     private readonly IEventService _eventService = eventService;
 
     [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpPost("")]
-    public async Task<IActionResult> AddAsync([FromBody] CreateEventRequest request)
+    public async Task<IActionResult> Add([FromBody] CreateEventRequest request)
     {
         var result = await _eventService.AddAsync(request);
 
-        return result.IsSuccess ? Ok() : result.ToProblem();
+        return result.IsSuccess ?CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
+                                : result.ToProblem();
     }
 
     [HttpGet("")]
-    public async Task<IActionResult> GetAllAsync()
+    public async Task<IActionResult> GetAll()
     {
         var result = await _eventService.GetAllAsync();
 
@@ -32,7 +33,7 @@ public class EventController(IEventService eventService) : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetAsync([FromRoute] int id)
+    public async Task<IActionResult> Get([FromRoute] int id)
     {
         var result = await _eventService.GetAsync(id);
 
@@ -41,7 +42,7 @@ public class EventController(IEventService eventService) : ControllerBase
 
     [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateAsync([FromRoute] int id, UpdateEventRequest request)
+    public async Task<IActionResult> Update([FromRoute] int id, UpdateEventRequest request)
     {
         var result = await _eventService.UpdateAsync(id, request);
 
@@ -50,7 +51,7 @@ public class EventController(IEventService eventService) : ControllerBase
 
     [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteAsync([FromRoute] int id)
+    public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _eventService.DeleteAsync(id);
 

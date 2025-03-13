@@ -20,7 +20,8 @@ public class EventImageController(IEventImageService eventImageService) : Contro
     {
         var result = await _eventImageService.AddAsync(request);
 
-        return result.IsSuccess ? Ok() : result.ToProblem();
+        return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
+                                : result.ToProblem();
     }
 
     [HttpGet("")]

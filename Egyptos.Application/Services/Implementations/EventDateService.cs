@@ -1,10 +1,6 @@
-﻿using Egyptos.Application.Contracts.Event;
-using Egyptos.Application.Contracts.EventDateContracts;
+﻿using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -13,19 +9,10 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
     private readonly ApplicationDbContext _context = context;
     private readonly IFileService _fileService = fileService;
 
-    public async Task<Result> AddAsync(CreateEventDateRequest request)
+    public async Task<Result<EventDateResponse>> AddAsync(CreateEventDateRequest request)
     {
-        var eventDate = new EventDate
-        {
-            StartDate = request.StartDate,
-            EndDate = request.EndDate,
-            StartSubscription = request.StartSubscription,
-            EndSubscription = request.EndSubscription,
-            Description = request.Description,
-            Location = request.Location,
-            Price = request.Price,
-            EventId = request.EventId
-        };
+        var eventDate = request.Adapt<EventDate>();
+
         foreach (var image in request.Images)
         {
             var imageUrl = await _fileService.UploadAsync(image, "EventDates");
@@ -35,7 +22,7 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
         await _context.AddAsync(eventDate);
         await _context.SaveChangesAsync();
 
-        return Result.Success();
+        return Result.Success(eventDate.Adapt<EventDateResponse>());
     }
     public async Task<IEnumerable<EventDateResponse>> GetAllAsync()
     {
@@ -65,23 +52,16 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
     {
         if (await _context.EventDates.FindAsync(eventDateId) is not { } eventDate)
             return Result.Failure<EventDateResponse>(EventErrors.EventDateNotFount);
-
-        eventDate.StartDate = request.StartDate;
-        eventDate.EndDate = request.EndDate;
-        eventDate.StartSubscription = request.StartSubscription;
-        eventDate.EndSubscription = request.EndSubscription;
-        eventDate.Description = request.Description;
-        eventDate.Location = request.Location;
-        eventDate.Price = request.Price;
+        
+        eventDate = request.Adapt(eventDate);
 
         var currentImages = await _context.EventImages
-            .Where(x => x.EventId == eventDateId)
+            .Where(x => x.EventId == eventDateId)            
             .ToListAsync();
 
         foreach (var image in currentImages)
         {
             eventDate.EventImages.Remove(image);
-            _context.EventImages.Remove(image);
             await _fileService.DeleteAsync(image.ImageUrl);
         }
 
@@ -91,11 +71,10 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
             eventDate.EventImages.Add(new EventImage { ImageUrl = imageUrl });
         }
 
+
         await _context.SaveChangesAsync();
 
-        var ss = eventDate.Adapt<EventDateResponse>();
-
-        return Result.Success(ss);
+        return Result.Success(eventDate.Adapt<EventDateResponse>());
     }
     public async Task<Result> DeleteAsync(int eventDateId)
     {

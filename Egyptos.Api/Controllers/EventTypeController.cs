@@ -1,6 +1,4 @@
 ﻿using Egyptos.Api.Extensions;
-using Egyptos.Application.Contracts.Event;
-using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventType;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
@@ -11,7 +9,7 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-
+[Authorize]
 public class EventTypeController(IEventTypeService eventTypeService) : ControllerBase
 {
     private readonly IEventTypeService _eventTypeService = eventTypeService;
@@ -21,7 +19,8 @@ public class EventTypeController(IEventTypeService eventTypeService) : Controlle
     public async Task<IActionResult> Add([FromBody] CreateEventTypeRequest request)
     {
         var result = await _eventTypeService.AddAsync(request);
-        return result.IsSuccess ? Ok() : result.ToProblem();
+        return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
+                                : result.ToProblem();
     }
 
     [HttpGet("")]
