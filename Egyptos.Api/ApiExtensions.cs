@@ -1,3 +1,4 @@
+using Egyptos.Api.OpenApiTransformers;
 using Egyptos.Domain.Interfaces;
 using Egyptos.Infrastructure.Services;
 
@@ -8,7 +9,8 @@ public static class ApiExtensions
     public static IServiceCollection AddApiExtensions(this IServiceCollection services, IConfiguration configuration)
     {
         services
-            .AddCorsConfig(configuration);
+            .AddCorsConfig(configuration)
+            .AddOpenApiServices();
 
         var templatePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Templates");
         services.AddSingleton<ITemplateReader>(new FileTemplateReader(templatePath));
@@ -17,6 +19,17 @@ public static class ApiExtensions
     }
 
 
+    private static IServiceCollection AddOpenApiServices(this IServiceCollection services)
+    {
+        var serviceProvider = services.BuildServiceProvider();
+
+        services.AddOpenApi(options =>
+        {
+            options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+        });
+
+        return services;
+    }
 
     private static IServiceCollection AddCorsConfig(this IServiceCollection services, IConfiguration configuration)
     {

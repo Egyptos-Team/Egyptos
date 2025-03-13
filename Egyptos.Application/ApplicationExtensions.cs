@@ -46,6 +46,7 @@ public static class ApplicationExtensions
         services.AddScoped<IEventService, EventService>();
         services.AddScoped<IEventDateService, EventDateService>();
         services.AddScoped<IEventImageService, EventImageService>();
+        services.AddScoped<IBookingPrivateTransportService, BookingPrivateTransportService>();
 
 
         return services;
@@ -125,7 +126,6 @@ public static class ApplicationExtensions
 
         return services;
     }
-
     private static IServiceCollection AddEmailSenderConfiguration(this IServiceCollection services)
     {
         services.AddSingleton<IEmailSender, EmailService>();
