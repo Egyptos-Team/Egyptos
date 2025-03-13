@@ -1,10 +1,7 @@
 ﻿using Egyptos.Application.Contracts.Transport.PrivateTransports;
-using Egyptos.Application.Contracts.Transport.TransportTypes;
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -39,15 +36,11 @@ public class PrivateTransportService(ApplicationDbContext context, IFileService 
         if (isExsit)
             return Result.Failure<PrivateTransportResponse>(PrivateTransportError.DoublicatedTitle);
 
-        var privateTransport = new PrivateTransport
-        {
-             Name = request.Name,
-             PricePerHour = request.PricePerHour,
-             Description = request.Description,
-             Capacity = request.Capacity,
-             Quantity = request.Quantity,
-             TransportTypeId = request.TransportTypeId
-        };
+        if (!_context.TransportTypes.Any(x => x.Id == request.TransportTypeId))
+            return Result.Failure<PrivateTransportResponse>(TransportTypeErrors.NotFound);
+
+        
+        var privateTransport = request.Adapt<PrivateTransport>();
 
         var imageUrl = await _fileService.UploadAsync(request.ImageUrl, "PrivateTransportImages");
         privateTransport.ImageUrl = imageUrl ;
