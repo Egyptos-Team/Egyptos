@@ -1,3 +1,4 @@
+
 namespace Egyptos.Domain.Entities;
 
 public class EventImage
@@ -7,4 +8,9 @@ public class EventImage
 
     public int EventId { get; set; }
     public EventDate Event { get; set; } = null!;
+
+    public static implicit operator string(EventImage v)
+    {
+        throw new NotImplementedException();
+    }
 }

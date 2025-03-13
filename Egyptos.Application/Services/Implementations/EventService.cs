@@ -1,11 +1,6 @@
-﻿using Azure.Core;
-using Egyptos.Application.Contracts.Event;
-using Egyptos.Application.Contracts.EventType;
-using Egyptos.Application.Contracts.Users;
-using Egyptos.Domain.Consts;
+﻿using Egyptos.Application.Contracts.Event;
 using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using System.Data;
 
 

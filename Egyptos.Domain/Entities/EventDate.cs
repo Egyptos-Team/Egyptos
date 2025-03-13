@@ -24,5 +24,5 @@ public class EventDate
     public int EventId { get; set; }
     public Event Event { get; set; } = null!;
 
-    public ICollection<EventImage> EventImage { get; set; } = [];
+    public ICollection<EventImage> EventImages { get; set; } = [];
 }

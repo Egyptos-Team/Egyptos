@@ -30,7 +30,6 @@ public class EventTypeService(ApplicationDbContext context) : IEventTypeService
     {
         var eventType = await _context.EventTypes
             .Where(x => x.Id == eventTypeId)
-            .Include(x => x.Events)
             .ProjectToType<EventTypeResponse>()
             .AsNoTracking()
             .FirstOrDefaultAsync();

@@ -44,6 +44,8 @@ public static class ApplicationExtensions
         services.AddScoped<ITransportTypeService, TransportTypeService>();
         services.AddScoped<IEventTypeService, EventTypeService>();
         services.AddScoped<IEventService, EventService>();
+        services.AddScoped<IEventDateService, EventDateService>();
+
 
         return services;
     }

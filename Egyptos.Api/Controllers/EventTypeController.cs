@@ -1,4 +1,6 @@
 ﻿using Egyptos.Api.Extensions;
+using Egyptos.Application.Contracts.Event;
+using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventType;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
@@ -11,7 +13,7 @@ namespace Egyptos.Api.Controllers;
 [ApiController]
 [Authorize(Roles = DefaultRoles.Admin.Name)]
 
-public class EventTypeController(IEventTypeService eventTypeService) : ControllerBase
+public class EventTypeController(IEventTypeService eventTypeService, IEventDateService eventDateService) : ControllerBase
 {
     private readonly IEventTypeService _eventTypeService = eventTypeService;
 
@@ -52,5 +54,4 @@ public class EventTypeController(IEventTypeService eventTypeService) : Controlle
 
         return result.IsSuccess ? Ok() : result.ToProblem();
     }
-
 }
