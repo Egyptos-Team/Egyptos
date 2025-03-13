@@ -18,4 +18,7 @@ public class EventErrors
 
     public static readonly Error EventDateNotFount = new("Event.EventDateNotFount",
         "No event date was found with the given ID", StatusCodes.Status404NotFound);
+
+    public static readonly Error EventImageNotFount = new("Event.EventImageNotFount",
+        "No event image was found with the given ID", StatusCodes.Status404NotFound);
 }

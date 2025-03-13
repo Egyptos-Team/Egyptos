@@ -45,6 +45,7 @@ public static class ApplicationExtensions
         services.AddScoped<IEventTypeService, EventTypeService>();
         services.AddScoped<IEventService, EventService>();
         services.AddScoped<IEventDateService, EventDateService>();
+        services.AddScoped<IEventImageService, EventImageService>();
 
 
         return services;
