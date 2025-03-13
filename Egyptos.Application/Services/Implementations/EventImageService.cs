@@ -13,21 +13,19 @@ public class EventImageService(ApplicationDbContext context, IFileService fileSe
     private readonly ApplicationDbContext _context = context;
     private readonly IFileService _fileService = fileService;
 
-    public async Task<Result> AddAsync(CreateEventImageRequest request)
+    public async Task<Result<EventImageResponse>> AddAsync(CreateEventImageRequest request)
     {
         if (await _context.Events.FindAsync(request.EventId) is {})
-            return Result.Failure(EventErrors.EventNotFount);
+            return Result.Failure<EventImageResponse>(EventErrors.EventNotFount);
 
-        var eventImage = new EventImage
-        {
-            EventId = request.EventId,
-            ImageUrl = await _fileService.UploadAsync(request.Image, "EventDates")
-        };
+        var eventImage = request.Adapt<EventImage>();
+
+        eventImage.ImageUrl = await _fileService.UploadAsync(request.Image, "EventDates");
 
         await _context.AddAsync(eventImage);
         await _context.SaveChangesAsync();
 
-        return Result.Success();
+        return Result.Success(eventImage.Adapt<EventImageResponse>());
     }
     public async Task<IEnumerable<EventImageResponse>> GetAllAsync() =>
         await _context.EventImages

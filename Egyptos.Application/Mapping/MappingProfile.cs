@@ -1,4 +1,6 @@
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+using Egyptos.Application.Contracts.EventDateContracts;
+using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.Users;
 using Egyptos.Domain.Entities;
 
@@ -15,6 +17,15 @@ public class MappingProfile : IRegister
         config.NewConfig<CreateUserRequest, ApplicationUser>()
             .Map(des => des.UserName, src => src.Email)
             .Map(des => des.ImageUrl, src => "Profiles/Default-Image.jpg");
+
+        config.NewConfig<UpdateEventDateRequest, EventDate>()
+           .Ignore(dest => dest.EventImages);
+
+        config.NewConfig<CreateEventImageRequest, EventImage>()
+           .Ignore(dest => dest.ImageUrl);
+
+        config.NewConfig<CreateEventDateRequest, EventDate>()
+           .Ignore(dest => dest.EventImages);
 
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);

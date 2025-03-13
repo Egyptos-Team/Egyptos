@@ -11,18 +11,18 @@ public class EventTypeService(ApplicationDbContext context) : IEventTypeService
 {
     private readonly ApplicationDbContext _context = context;
 
-    public async Task<Result> AddAsync(CreateEventTypeRequest request)
+    public async Task<Result<EventTypeResponse>> AddAsync(CreateEventTypeRequest request)
     {
         var isExstingType =await _context.EventTypes.AnyAsync(x => x.Name == request.Name);
         if(isExstingType)
-            return Result.Failure(EventErrors.DuplicatedTypeName);
+            return Result.Failure<EventTypeResponse>(EventErrors.DuplicatedTypeName);
 
         var type = request.Adapt<EventType>();
 
         await _context.AddAsync(type);
         await _context.SaveChangesAsync();
 
-        return Result.Success();
+        return Result.Success(type.Adapt<EventTypeResponse>());
     }
     public async Task<IEnumerable<EventTypeResponse>> GetAllAsync()
         => await _context.EventTypes.AsNoTracking().ProjectToType<EventTypeResponse>().ToListAsync();

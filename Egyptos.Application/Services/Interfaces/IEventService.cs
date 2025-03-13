@@ -4,7 +4,7 @@ namespace Egyptos.Application.Services.Interfaces;
 
 public interface IEventService
 {
-    Task<Result> AddAsync(CreateEventRequest request);
+    Task<Result<CreateEventResponse>> AddAsync(CreateEventRequest request);
     Task<IEnumerable<EventResponse>> GetAllAsync();
     Task<Result<EventResponse>> GetAsync(int eventId);
     Task<Result<UpdateEventResponse>> UpdateAsync(int eventId, UpdateEventRequest request);
