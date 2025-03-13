@@ -3,9 +3,9 @@
 
 namespace Egyptos.Application.Contracts.Transport.TransportTypes;
 
-public  class TransportTypeRequestValidator : AbstractValidator<TransportTypeRequest>
+public  class PrivateTransportValidator : AbstractValidator<TransportTypeRequest>
 {
-    public TransportTypeRequestValidator()
+    public PrivateTransportValidator()
     {
         RuleFor(x => x.Name)
             .NotEmpty();
