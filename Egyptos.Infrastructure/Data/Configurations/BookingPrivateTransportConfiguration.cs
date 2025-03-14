@@ -8,6 +8,6 @@ public class BookingPrivateTransportConfiguration : IEntityTypeConfiguration<Boo
 {
     public void Configure(EntityTypeBuilder<BookingPrivateTransport> builder)
     {
-        builder.HasKey(x => new { x.UserId, x.PrivateTransportId });
+        
     }
 }

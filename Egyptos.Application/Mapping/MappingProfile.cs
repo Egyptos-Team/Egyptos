@@ -1,8 +1,8 @@
+using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.Users;
 using Egyptos.Domain.Entities;
-using Microsoft.AspNetCore.Mvc.Diagnostics;
 
 namespace Egyptos.Application.Mapping;
 
@@ -26,5 +26,8 @@ public class MappingProfile : IRegister
 
         config.NewConfig<CreateEventDateRequest, EventDate>()
            .Ignore(dest => dest.EventImages);
+
+        config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
+            .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
     }
 }

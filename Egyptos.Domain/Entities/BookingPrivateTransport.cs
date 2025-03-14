@@ -4,6 +4,7 @@ namespace Egyptos.Domain.Entities;
 
 public class BookingPrivateTransport
 {
+    public int Id { get; set; }
     public string UserId { get; set; } = null!;
     public ApplicationUser User { get; set; } = null!;
 
@@ -17,14 +18,6 @@ public class BookingPrivateTransport
     public DateTime? PaymentCancel { get; set; }
 
     public int PrivateTransportId { get; set; }
-    public PrivateTransport PublicTransportation { get; set; } = null!;
-
-}
-
-public class BookingPrivateTransportRecuest
-{
-    public int PrivateTransportId { get; set; }
-    public DateTime Start { get; set; }
-    public DateTime? End { get; set; }
+    public PrivateTransport PrivateTransport { get; set; } = null!;
 
 }
