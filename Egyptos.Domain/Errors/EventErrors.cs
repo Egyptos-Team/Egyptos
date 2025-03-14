@@ -21,4 +21,13 @@ public class EventErrors
 
     public static readonly Error EventImageNotFount = new("Event.EventImageNotFount",
         "No event image was found with the given ID", StatusCodes.Status404NotFound);
+
+    public static readonly Error UserNotBooked = new("BookingEvent.UserNotBooked",
+        "No event has been booked by this user", StatusCodes.Status404NotFound);
+
+    public static readonly Error EventNotBooked = new("BookingEvent.EventNotBooked",
+        "There are no reservations for this event", StatusCodes.Status404NotFound);
+
+    public static readonly Error BookingNotFount = new("BookingEvent.BookingNotFount",
+        "No Booking date was found with the given UserId & EventId", StatusCodes.Status404NotFound);
 }
