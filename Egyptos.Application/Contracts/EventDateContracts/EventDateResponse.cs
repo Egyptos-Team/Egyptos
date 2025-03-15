@@ -1,4 +1,5 @@
-﻿using Egyptos.Application.Contracts.EventImages;
+﻿using Egyptos.Application.Contracts.Event;
+using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 
@@ -17,4 +18,18 @@ public record EventDateResponse
     DateTime EndSubscription,
     bool IsActiveToSubscribe,
     IEnumerable<EventImageResponse> EventImages
+);
+
+public record EventDateResponseBooking
+(
+    int Id,
+    CreateEventResponse Event,
+    string Description,
+    string Location,
+    double Price,
+    DateTime StartDate,
+    DateTime EndDate,
+    DateTime StartSubscription,
+    DateTime EndSubscription,
+    bool IsActiveToSubscribe
 );
