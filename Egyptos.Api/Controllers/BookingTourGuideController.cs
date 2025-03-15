@@ -1,53 +1,56 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Egyptos.Api.Extensions;
+using Egyptos.Application.Contracts.BookingTourGuide;
+using Egyptos.Application.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
 //[Authorize(Roles = DefaultRoles.Admin.Name)]
-public class BookingTourGuideController : ControllerBase
+public class BookingTourGuideController(IBookingTourGuideService bookingTourGuideService) : ControllerBase
 {
-    //[HttpPost("")]
-    //p ublic async Task<IActionResult> Add([FromBody] CreateEventRequest request)
-    //{
-    //    var result = await _eventService.AddAsync(request);
+    private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
 
-    //    return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
-    //                            : result.ToProblem();
-    //}
+    [HttpPost("")]
+    public async Task<IActionResult> BookATicket([FromBody] BookingTourGuideRequest request)
+    {
+        var result = await _bookingTourGuideService.BookATicketAsync(User.GetUserId(), request);
 
-    //[HttpGet("")]
-    //public async Task<IActionResult> GetAll()
-    //{
-    //    var result = await _eventService.GetAllAsync();
+        return result.IsSuccess ? Ok() : result.ToProblem();
+    }
 
-    //    return Ok(result);
-    //}
+    [HttpGet("")]
+    public async Task<IActionResult> GetAll()
+    {
+        var result = await _bookingTourGuideService.GetAllAsync();
 
-    //[HttpGet("{id}")]
-    //public async Task<IActionResult> Get([FromRoute] int id)
-    //{
-    //    var result = await _eventService.GetAsync(id);
+        return Ok(result);
+    }
 
-    //    return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
-    //}
+    [HttpGet("BookedByUser")]
+    public async Task<IActionResult> BookedByUser()
+    {
+        var result = await _bookingTourGuideService.BookedByUserAsync(User.GetUserId());
+
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> TourGuideBooked([FromRoute] int id)
+    {
+        var result = await _bookingTourGuideService.TourGuideBookedAsync(id);
+
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
 
     //[Authorize(Roles = DefaultRoles.Admin.Name)]
-    //[HttpPut("{id}")]
-    //public async Task<IActionResult> Update([FromRoute] int id, UpdateEventRequest request)
-    //{
-    //    var result = await _eventService.UpdateAsync(id, request);
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] int id)
+    {
+        var result = await _bookingTourGuideService.DeleteAsync(User.GetUserId(), id);
 
-    //    return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
-    //}
-
-    //[Authorize(Roles = DefaultRoles.Admin.Name)]
-    //[HttpDelete("{id}")]
-    //public async Task<IActionResult> Delete([FromRoute] int id)
-    //{
-    //    var result = await _eventService.DeleteAsync(id);
-
-    //    return result.IsSuccess ? Ok() : result.ToProblem();
-    //}
+        return result.IsSuccess ? Ok() : result.ToProblem();
+    }
 
 }

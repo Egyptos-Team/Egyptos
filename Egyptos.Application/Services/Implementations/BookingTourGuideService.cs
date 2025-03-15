@@ -1,6 +1,11 @@
 ﻿using Egyptos.Application.Contracts.BookingEventDate;
+using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.EventDateContracts;
+using Egyptos.Application.Contracts.TourGuide;
+using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Domain.Entities;
+using Egyptos.Domain.Errors.PrivateTransport;
+using Hangfire;
 using Microsoft.EntityFrameworkCore;
 
 namespace Egyptos.Application.Services.Implementations;
@@ -9,83 +14,90 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 {
     private readonly ApplicationDbContext _context = context;
 
-    public async Task<Result> BookATicket(string userId, int tourGuideId)
+    public async Task<Result> BookATicketAsync(string userId, BookingTourGuideRequest request)
     {
-        if (await _context.EventDates.FindAsync(tourGuideId) is not { } tourGuide)
+        if (await _context.TourGuides.FindAsync(request.TourGuideId) is not { } tourGuide)
             return Result.Failure(TourGuideErrors.TourGuideNotFount);
 
-        var bookingventDate = new BookingEventDate
-        {
-            EventDateId = eventDateId,
-            UserId = userId
-        };
+        var isAvilable = await _context.TourGuides.AnyAsync(x => (x.Id == request.TourGuideId) && x.IsAvailable);
 
-        await _context.BookingEventDates.AddAsync(bookingventDate);
+        if (!isAvilable)
+            return Result.Failure(TourGuideErrors.TourGuideNotAvilable);
+
+        var booking = request.Adapt<BookingTourGuide>();
+
+        var priceHour = await _context.TourGuides.Where(x => x.Id == request.TourGuideId).Select(x => x.SalaryPerHour).FirstOrDefaultAsync();
+
+        TimeSpan timeSpan = request.EndBooking - request.StartBooking;
+        double totalHours = Math.Abs(timeSpan.TotalHours);
+
+        booking.TotalPrice = totalHours * (double)priceHour;
+        booking.UserId = userId;
+
+        await _context.BookingTourGuides.AddAsync(booking);
         await _context.SaveChangesAsync();
 
         return Result.Success();
     }
-    //public async Task<IEnumerable<BookingEventDateRasponse>> GetAllAsync() =>
-    //       await _context.BookingEventDates
-    //            .Include(x => x.EventDate)
-    //            .ThenInclude(x => x.Event)
-    //            .ProjectToType<BookingEventDateRasponse>()
-    //            .AsNoTracking()
-    //            .ToListAsync();
-    //public async Task<Result<BookingEventDateByUserRasponse>> BookedByUserAsync(string userId)
-    //{
-    //    var IsExistingUser = await _context.BookingEventDates.AnyAsync(x => x.UserId == userId);
-    //    if (!IsExistingUser)
-    //        return Result.Failure<BookingEventDateByUserRasponse>(EventErrors.UserNotBooked);
+    public async Task<IEnumerable<BookingTourGuideResponse>> GetAllAsync() =>
+           await _context.BookingTourGuides
+                .ProjectToType<BookingTourGuideResponse>()
+                .AsNoTracking()
+                .ToListAsync();
+    public async Task<Result<BookingTourGuideByUserRasponse>> BookedByUserAsync(string userId)
+    {
+        var IsExistingUser = await _context.BookingTourGuides.AnyAsync(x => x.UserId == userId);
+        if (!IsExistingUser)
+            return Result.Failure<BookingTourGuideByUserRasponse>(TourGuideErrors.UserNotBooked);
 
 
-    //    var bookingEventDate = new BookingEventDateByUserRasponse
-    //    (
-    //        UserId: userId,
-    //        EventDates: await _context.BookingEventDates
-    //            .Where(x => x.UserId == userId)
-    //            .Include(x => x.EventDate)
-    //            .ThenInclude(x => x.Event)
-    //            .Select(x => x.EventDate)
-    //            .ProjectToType<EventDateResponseBooking>()
-    //            .AsNoTracking()
-    //            .ToListAsync()
-    //    );
+        var bookingTourGuide = new BookingTourGuideByUserRasponse
+        (
+            UserId: userId,
+            TourGuides : await _context.BookingTourGuides
+                .Where(x => x.UserId == userId)
+                .Include(x => x.TourGuide)
+                .ThenInclude(x => x.User)
+                .Select(x => x.TourGuide)
+                .ProjectToType<TourGuideResponse>()
+                .AsNoTracking()
+                .ToListAsync()
+        );
 
-    //    return Result.Success(bookingEventDate);
-    //}
-    //public async Task<Result<BookingEventDateEventBooked>> EventBookedAsync(int eventDateId)
-    //{
-    //    var IsExistingEventDate = await _context.BookingEventDates.AnyAsync(x => x.EventDateId == eventDateId);
-    //    if (!IsExistingEventDate)
-    //        return Result.Failure<BookingEventDateEventBooked>(EventErrors.EventNotBooked);
+        return Result.Success(bookingTourGuide);
+    }
+    public async Task<Result<BookingTourGuideBooked>> TourGuideBookedAsync(int tourGuideId)
+    {
+        var IsExistingEventDate = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuideId);
+        if (!IsExistingEventDate)
+            return Result.Failure<BookingTourGuideBooked>(TourGuideErrors.TourGuideNotBooked);
 
 
-    //    var bookingEventDate = new BookingEventDateEventBooked
-    //    (
-    //        EventDateId: eventDateId,
-    //        Users: await _context.BookingEventDates
-    //            .Where(x => x.EventDateId == eventDateId)
-    //            .Include(x => x.User)
-    //            .Select(x => x.User)
-    //            .ProjectToType<AuthResponse>()
-    //            .AsNoTracking()
-    //            .ToListAsync()
-    //    );
+        var bookingTourGuide = new BookingTourGuideBooked
+        (
+            ToureGuidId: tourGuideId,
+            Users: await _context.BookingTourGuides
+                .Where(x => x.TourGuideId == tourGuideId)
+                .Include(x => x.User)
+                .Select(x => x.User)
+                .ProjectToType<AuthResponse>()
+                .AsNoTracking()
+                .ToListAsync()
+        );
 
-    //    return Result.Success(bookingEventDate);
-    //}
-    //public async Task<Result> DeleteAsync(string userId, int eventDateId)
-    //{
-    //    var isExstingBookinEventDate = await _context.BookingEventDates
-    //        .AnyAsync(x => x.EventDateId == eventDateId && x.UserId == userId);
-    //    if (!isExstingBookinEventDate)
-    //        return Result.Failure(EventErrors.BookingNotFount);
+        return Result.Success(bookingTourGuide);
+    }
+    public async Task<Result> DeleteAsync(string userId, int tourGuideId)
+    {
+        var isExstingBookinTourGuide = await _context.BookingTourGuides
+            .AnyAsync(x => x.TourGuideId == tourGuideId && x.UserId == userId);
 
-    //    _context.BookingEventDates.Remove(new BookingEventDate { UserId = userId, EventDateId = eventDateId });
-    //    await _context.SaveChangesAsync();
+        if (!isExstingBookinTourGuide)
+            return Result.Failure(TourGuideErrors.BookingNotFount);
 
-    //    return Result.Success();
-    //}
+        _context.BookingTourGuides.Remove(new BookingTourGuide { UserId = userId, TourGuideId = tourGuideId });
+        await _context.SaveChangesAsync();
 
+        return Result.Success();
+    }
 }

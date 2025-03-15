@@ -5,9 +5,9 @@ namespace Egyptos.Application.Services.Interfaces;
 
 public interface IBookingTourGuideService
 {
-    Task<Result> BookATicket(BookingTourGuideRequest request);
-    //Task<IEnumerable<BookingEventDateRasponse>> GetAllAsync();
-    //Task<Result<BookingEventDateByUserRasponse>> BookedByUserAsync(string userId);
-    //Task<Result<BookingEventDateEventBooked>> EventBookedAsync(int eventDateId);
-    //Task<Result> DeleteAsync(string userId, int eventDateId);
+    Task<Result> BookATicketAsync(string userId, BookingTourGuideRequest request);
+    Task<IEnumerable<BookingTourGuideResponse>> GetAllAsync();
+    Task<Result<BookingTourGuideByUserRasponse>> BookedByUserAsync(string userId);
+    Task<Result<BookingTourGuideBooked>> TourGuideBookedAsync(int tourGuideId);
+    Task<Result> DeleteAsync(string userId, int tourGuideId);
 }

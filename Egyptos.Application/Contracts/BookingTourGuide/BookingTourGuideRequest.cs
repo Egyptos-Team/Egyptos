@@ -2,5 +2,7 @@
 
 public record BookingTourGuideRequest
 (
-
+     DateTime StartBooking,
+     DateTime EndBooking,
+     int TourGuideId
 );
