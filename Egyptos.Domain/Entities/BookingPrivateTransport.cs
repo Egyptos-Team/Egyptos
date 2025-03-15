@@ -16,6 +16,7 @@ public class BookingPrivateTransport
 
     public DateTime? PaymentDate { get; set; }
     public DateTime? PaymentCancel { get; set; }
+    public DateTime? CancelBooking { get; set; }
 
     public int PrivateTransportId { get; set; }
     public PrivateTransport PrivateTransport { get; set; } = null!;
