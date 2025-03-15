@@ -13,3 +13,12 @@ public class UserResponse
     public NationalityResponse Nationality { get; init; } = null!;
     public IEnumerable<string> Roles { get; set; } = [];
 }
+
+public record TouGuideUserResponse
+(
+     string FirstName,
+     string LastName,
+     string Email ,
+     string ImageUrl ,
+     string Sex 
+);
