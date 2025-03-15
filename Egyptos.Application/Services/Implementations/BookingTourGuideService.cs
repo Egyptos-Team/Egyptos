@@ -7,6 +7,7 @@ using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;
+using static Egyptos.Domain.Consts.DefaultRoles;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -14,15 +15,15 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 {
     private readonly ApplicationDbContext _context = context;
 
-    public async Task<Result> BookATicketAsync(string userId, BookingTourGuideRequest request)
+    public async Task<Result<BookingTourGuideResponse>> BookATicketAsync(string userId, BookingTourGuideRequest request)
     {
         if (await _context.TourGuides.FindAsync(request.TourGuideId) is not { } tourGuide)
-            return Result.Failure(TourGuideErrors.TourGuideNotFount);
+            return Result.Failure<BookingTourGuideResponse>(TourGuideErrors.TourGuideNotFount);
 
         var isAvilable = await _context.TourGuides.AnyAsync(x => (x.Id == request.TourGuideId) && x.IsAvailable);
 
         if (!isAvilable)
-            return Result.Failure(TourGuideErrors.TourGuideNotAvilable);
+            return Result.Failure<BookingTourGuideResponse>(TourGuideErrors.TourGuideNotAvilable);
 
         var booking = request.Adapt<BookingTourGuide>();
 
@@ -34,10 +35,12 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         booking.TotalPrice = totalHours * (double)priceHour;
         booking.UserId = userId;
 
+        tourGuide.Rate += 0.1;
+
         await _context.BookingTourGuides.AddAsync(booking);
         await _context.SaveChangesAsync();
 
-        return Result.Success();
+        return Result.Success(booking.Adapt<BookingTourGuideResponse>());
     }
     public async Task<IEnumerable<BookingTourGuideResponse>> GetAllAsync() =>
            await _context.BookingTourGuides
@@ -68,8 +71,8 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
     }
     public async Task<Result<BookingTourGuideBooked>> TourGuideBookedAsync(int tourGuideId)
     {
-        var IsExistingEventDate = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuideId);
-        if (!IsExistingEventDate)
+        var IsExistingToureGuide = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuideId);
+        if (!IsExistingToureGuide)
             return Result.Failure<BookingTourGuideBooked>(TourGuideErrors.TourGuideNotBooked);
 
 
@@ -99,5 +102,32 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         await _context.SaveChangesAsync();
 
         return Result.Success();
+    }
+
+    public async Task<Result<BookingTourGuideBooked>> TourGuideBookedAsync(string userId)
+    {
+        if (await _context.TourGuides.FirstOrDefaultAsync(x => x.UserId == userId) is not { } tourGuid)
+            return Result.Failure<BookingTourGuideBooked>(TourGuideErrors.TourGuideNotFount);
+
+        var IsExistingToureGuide = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuid.Id);
+        if (!IsExistingToureGuide)
+            return Result.Failure<BookingTourGuideBooked>(TourGuideErrors.TourGuideNotBooked);
+
+
+        var bookingTourGuide = new BookingTourGuideBooked
+        (
+            TourGuideId : tourGuid.Id,
+            StartBooking : tourGuid.s,
+            EndBooking : ,
+            TotalPrice : ,
+            Users: await _context.BookingTourGuides
+                .Where(x => x.TourGuideId == tourGuidId.Id)
+                .Include(x => x.User)
+                .ProjectToType<BookingTourGuideBooked>()
+                .AsNoTracking()
+                .ToListAsync()
+        );
+
+        return Result.Success(bookingTourGuide);
     }
 }

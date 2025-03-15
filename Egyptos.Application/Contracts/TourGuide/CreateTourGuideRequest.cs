@@ -5,8 +5,6 @@ public record CreateTourGuideRequest
     double SalaryPerHour,
     string Description,
     int YearsOfExperience,
-    bool IsAvailable,
-    bool IsActive,
     string UserId
 );
 

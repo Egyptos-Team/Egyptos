@@ -16,12 +16,6 @@ public class CreateTourGuideRequestValidator : AbstractValidator<CreateTourGuide
         RuleFor(s => s.YearsOfExperience)
             .NotEmpty();
 
-        RuleFor(s => s.IsAvailable)
-            .NotEmpty();
-
-        RuleFor(s => s.IsActive)
-            .NotEmpty();
-
         RuleFor(s => s.UserId)
             .NotEmpty();
     }

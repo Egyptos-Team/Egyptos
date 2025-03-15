@@ -19,7 +19,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     {
         var result = await _bookingTourGuideService.BookATicketAsync(User.GetUserId(), request);
 
-        return result.IsSuccess ? Ok() : result.ToProblem();
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
     [HttpGet("")]
@@ -40,10 +40,19 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = $"{DefaultRoles.Admin.Name}, {DefaultRoles.TourGuide.Name}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> TourGuideBooked([FromRoute] int id)
     {
         var result = await _bookingTourGuideService.TourGuideBookedAsync(id);
+
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
+
+    [HttpGet("TourGuideBooked")]
+    [Authorize(Roles = DefaultRoles.TourGuide.Name)]
+    public async Task<IActionResult> TourGuideBooked()
+    {
+        var result = await _bookingTourGuideService.TourGuideBookedAsync(User.GetUserId());
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
