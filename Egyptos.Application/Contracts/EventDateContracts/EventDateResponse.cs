@@ -30,6 +30,5 @@ public record EventDateResponseBooking
     DateTime StartDate,
     DateTime EndDate,
     DateTime StartSubscription,
-    DateTime EndSubscription,
-    bool IsActiveToSubscribe
+    DateTime EndSubscription
 );

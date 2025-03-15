@@ -35,7 +35,7 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             SecurityStamp = DefaultUser.AdminSecurityStamp,
             ConcurrencyStamp = DefaultUser.AdminConcurrencyStamp,
             EmailConfirmed = true,
-            PasswordHash = DefaultUser.AdminPasswordHash,
+            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
         });
     }
 }
