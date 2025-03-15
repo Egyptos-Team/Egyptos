@@ -1,13 +1,15 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Services.Interfaces;
+using Egyptos.Domain.Consts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[Authorize(Roles = DefaultRoles.Admin.Name)]
+[Authorize]
 public class BookingTourGuideController(IBookingTourGuideService bookingTourGuideService) : ControllerBase
 {
     private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
@@ -21,6 +23,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingTourGuideService.GetAllAsync();
@@ -37,6 +40,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = $"{DefaultRoles.Admin.Name}, {DefaultRoles.TourGuide.Name}")]
     public async Task<IActionResult> TourGuideBooked([FromRoute] int id)
     {
         var result = await _bookingTourGuideService.TourGuideBookedAsync(id);
@@ -44,7 +48,6 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    //[Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {

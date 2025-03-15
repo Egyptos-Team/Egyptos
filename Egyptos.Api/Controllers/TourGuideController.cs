@@ -10,12 +10,13 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-//[Authorize(Roles = DefaultRoles.Admin.Name)]
+[Authorize]
 public class TourGuideController(ITourGuideServices tourGuideServices) : ControllerBase
 {
     private readonly ITourGuideServices _tourGuideServices = tourGuideServices;
 
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Add([FromBody] CreateTourGuideRequest request)
     {
         var result = await _tourGuideServices.AddAsync(request);
@@ -40,15 +41,8 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete([FromRoute] int id)
-    {
-        var result = await _tourGuideServices.DeleteAsync(id);
-
-        return result.IsSuccess ? Ok() : result.ToProblem();
-    }
-
     [HttpPut("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateTourGuideRequest request)
     {
         var result = await _tourGuideServices.UpdateAsync(id, request);
@@ -56,4 +50,12 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
+    [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
+    public async Task<IActionResult> Delete([FromRoute] int id)
+    {
+        var result = await _tourGuideServices.DeleteAsync(id);
+
+        return result.IsSuccess ? Ok() : result.ToProblem();
+    }
 }
