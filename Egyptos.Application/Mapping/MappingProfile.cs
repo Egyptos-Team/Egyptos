@@ -29,5 +29,9 @@ public class MappingProfile : IRegister
 
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
+        
+
+        config.NewConfig<BookingPrivateTransport, PrivateTransport>()
+           .Ignore(dest => dest.Id);
     }
 }
