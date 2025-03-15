@@ -15,6 +15,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
 
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookATicket([FromBody] BookingTourGuideRequest request)
     {
         var result = await _bookingTourGuideService.BookATicketAsync(User.GetUserId(), request);

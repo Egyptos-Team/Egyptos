@@ -21,9 +21,6 @@ public record BookingTourGuideByUserRasponse
 public record BookingTourGuideBooked
 (
      int TourGuideId,
-     DateTime StartBooking,
-     DateTime EndBooking,
-     double TotalPrice,
-     IEnumerable<AuthResponse> Users
+     IEnumerable<BookingTourGuideResponse> BookingUsers
 );
 

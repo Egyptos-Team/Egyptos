@@ -78,12 +78,11 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 
         var bookingTourGuide = new BookingTourGuideBooked
         (
-            ToureGuidId: tourGuideId,
-            Users: await _context.BookingTourGuides
+            TourGuideId: tourGuideId,
+            BookingUsers: await _context.BookingTourGuides
                 .Where(x => x.TourGuideId == tourGuideId)
                 .Include(x => x.User)
-                .Select(x => x.User)
-                .ProjectToType<AuthResponse>()
+                .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
                 .ToListAsync()
         );
@@ -117,13 +116,10 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         var bookingTourGuide = new BookingTourGuideBooked
         (
             TourGuideId : tourGuid.Id,
-            StartBooking : tourGuid.s,
-            EndBooking : ,
-            TotalPrice : ,
-            Users: await _context.BookingTourGuides
-                .Where(x => x.TourGuideId == tourGuidId.Id)
+            BookingUsers: await _context.BookingTourGuides
+                .Where(x => x.TourGuideId == tourGuid.Id)
                 .Include(x => x.User)
-                .ProjectToType<BookingTourGuideBooked>()
+                .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
                 .ToListAsync()
         );
