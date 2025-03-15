@@ -26,4 +26,8 @@
       <ProjectReference Include="..\Egyptos.Infrastructure\Egyptos.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="wwwroot\Hotels\" />
+    </ItemGroup>
+
 </Project>

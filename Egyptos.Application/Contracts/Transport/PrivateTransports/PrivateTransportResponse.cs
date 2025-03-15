@@ -1,4 +1,6 @@
-﻿namespace Egyptos.Application.Contracts.Transport.PrivateTransports;
+﻿using Egyptos.Application.Contracts.Transport.TransportTypes;
+
+namespace Egyptos.Application.Contracts.Transport.PrivateTransports;
 
 public record PrivateTransportResponse(
     int Id,
@@ -8,5 +10,7 @@ public record PrivateTransportResponse(
     string? ImageUrl,
     int Capacity,
     int Quantity,
-    bool IsAvailable
+    bool IsAvailable,
+    TransportTypeResponse TransportType
+
 );
