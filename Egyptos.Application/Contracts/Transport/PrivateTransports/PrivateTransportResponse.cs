@@ -14,3 +14,14 @@ public record PrivateTransportResponse(
     TransportTypeResponse TransportType
 
 );
+
+public record PrivateTransportWithoutTypeResponse(
+    int Id,
+    string Name,
+    double PricePerHour,
+    string Description,
+    string? ImageUrl,
+    int Capacity,
+    int Quantity,
+    bool IsAvailable
+);

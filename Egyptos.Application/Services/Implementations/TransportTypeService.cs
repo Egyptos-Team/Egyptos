@@ -2,7 +2,6 @@
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Microsoft.EntityFrameworkCore;
-using System.Threading;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -35,27 +34,31 @@ public class TransportTypeService(ApplicationDbContext context) : ITransportType
         await _context.SaveChangesAsync();
 
         return Result.Success(type.Adapt<TransportTypeResponse>());
-    }    
-   
-    public async Task<Result<TransportTypeResponse>> GetAsync(int id)
+    }
+
+    public async Task<Result<TransportTypeResponseWithTransports>> GetAsync(int id)
     {
-        var type = await _context.TransportTypes.FindAsync(id);
+        var type = await _context.TransportTypes
+            .Include(x => x.PrivateTransports)
+            .Where(x => x.Id == id)
+            .ProjectToType<TransportTypeResponseWithTransports>()
+            .FirstOrDefaultAsync();
 
         return type is not null
-             ? Result.Success(type.Adapt<TransportTypeResponse>())
-             : Result.Failure<TransportTypeResponse>(TransportTypeErrors.NotFound);
+             ? Result.Success(type)
+             : Result.Failure<TransportTypeResponseWithTransports>(TransportTypeErrors.NotFound);
     }
 
     public async Task<Result> UpdateAsync(int id, TransportTypeRequest request)
     {
-        var isExsit = await _context.TransportTypes.AnyAsync(x=>x.Name.ToLower() == request.Name.ToLower() && x.Id != id);
+        var isExsit = await _context.TransportTypes.AnyAsync(x => x.Name.ToLower() == request.Name.ToLower() && x.Id != id);
 
         if (isExsit)
             return Result.Failure<TransportTypeResponse>(TransportTypeErrors.DoublicatedTitle);
 
         var current = await _context.TransportTypes.FindAsync(id);
 
-        if(current is null)
+        if (current is null)
             return Result.Failure<TransportTypeResponse>(TransportTypeErrors.NotFound);
 
         current = request.Adapt(current);
@@ -66,14 +69,14 @@ public class TransportTypeService(ApplicationDbContext context) : ITransportType
 
     }
 
-    public async Task<Result>DeleteAsync(int id)
+    public async Task<Result> DeleteAsync(int id)
     {
         var current = await _context.TransportTypes.FindAsync(id);
 
         if (current is null)
             return Result.Failure(TransportTypeErrors.NotFound);
 
-         _context.TransportTypes.Remove(current);
+        _context.TransportTypes.Remove(current);
 
         await _context.SaveChangesAsync();
 

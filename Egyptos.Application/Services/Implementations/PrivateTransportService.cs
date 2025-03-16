@@ -39,11 +39,11 @@ public class PrivateTransportService(ApplicationDbContext context, IFileService 
         if (!_context.TransportTypes.Any(x => x.Id == request.TransportTypeId))
             return Result.Failure<PrivateTransportResponse>(TransportTypeErrors.NotFound);
 
-        
+
         var privateTransport = request.Adapt<PrivateTransport>();
 
         var imageUrl = await _fileService.UploadAsync(request.ImageUrl, "PrivateTransportImages");
-        privateTransport.ImageUrl = imageUrl ;
+        privateTransport.ImageUrl = imageUrl;
 
 
         await _context.AddAsync(privateTransport);
@@ -53,7 +53,7 @@ public class PrivateTransportService(ApplicationDbContext context, IFileService 
 
     }
 
-  
+
     public async Task<Result> UpdateAsync(int id, PrivateTransportRequest request)
     {
         var isExsit = await _context.PrivateTransports.AnyAsync(x => x.Name.ToLower() == request.Name.ToLower() && x.Id != id);

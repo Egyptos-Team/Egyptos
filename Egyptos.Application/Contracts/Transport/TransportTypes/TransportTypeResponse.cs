@@ -4,5 +4,11 @@ namespace Egyptos.Application.Contracts.Transport.TransportTypes;
 
 public record TransportTypeResponse(
     int Id,
-    string Name    
+    string Name
+);
+
+public record TransportTypeResponseWithTransports(
+    int Id,
+    string Name,
+    List<PrivateTransportWithoutTypeResponse> PrivateTransports
 );
