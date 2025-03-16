@@ -25,8 +25,8 @@ public class TransportTypeConfiguration : IEntityTypeConfiguration<TransportType
                 Id = 3,
                 Name = "Scoter",
             }
-        };          
+        };
 
-       // builder.HasData(transportTypes);
+        builder.HasData(transportTypes);
     }
 }

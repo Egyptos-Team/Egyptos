@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250316194645_test")]
-    partial class test
+    [Migration("20250316203506_UpdateSeedinHotelsTable")]
+    partial class UpdateSeedinHotelsTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1667,6 +1667,476 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("TransportTypeId");
 
                     b.ToTable("PrivateTransports");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Capacity = 4,
+                            Description = "Luxury sports sedan with high performance.",
+                            ImageUrl = "PrivateTransports/Car/bmw-5.jpg",
+                            IsAvailable = true,
+                            Name = "Bmw M5",
+                            PricePerHour = 50.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Capacity = 4,
+                            Description = "Premium luxury sedan with advanced features.",
+                            ImageUrl = "PrivateTransports/Car/Mercedes-Benz S-Class.jpeg",
+                            IsAvailable = true,
+                            Name = "Mercedes-Benz S-Class",
+                            PricePerHour = 60.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Capacity = 4,
+                            Description = "High-end executive car with superior comfort.",
+                            ImageUrl = "PrivateTransports/Car/Audi A8.jpg",
+                            IsAvailable = true,
+                            Name = "Audi A8",
+                            PricePerHour = 55.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Capacity = 4,
+                            Description = "Reliable and comfortable sedan for everyday use.",
+                            ImageUrl = "PrivateTransports/Car/Toyota Camry.webp",
+                            IsAvailable = true,
+                            Name = "Toyota Camry",
+                            PricePerHour = 30.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Capacity = 4,
+                            Description = "Affordable compact sedan with great fuel efficiency.",
+                            ImageUrl = "PrivateTransports/Car/Nissan Sunny.jpg",
+                            IsAvailable = true,
+                            Name = "Nissan Sunny",
+                            PricePerHour = 20.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Capacity = 4,
+                            Description = "Luxury SUV with off-road capability and elegance.",
+                            ImageUrl = "PrivateTransports/Car/Range Rover Evoque.jpg",
+                            IsAvailable = true,
+                            Name = "Range Rover Evoque",
+                            PricePerHour = 70.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Capacity = 7,
+                            Description = "Spacious full-size SUV perfect for families and groups.",
+                            ImageUrl = "PrivateTransports/Car/Chevrolet Tahoe.jpg",
+                            IsAvailable = true,
+                            Name = "Chevrolet Tahoe",
+                            PricePerHour = 65.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Capacity = 4,
+                            Description = "Economical and stylish sedan with modern features.",
+                            ImageUrl = "PrivateTransports/Car/Hyundai Elantra.jpeg",
+                            IsAvailable = true,
+                            Name = "Hyundai Elantra",
+                            PricePerHour = 25.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Capacity = 4,
+                            Description = "Classic American muscle car with powerful performance.",
+                            ImageUrl = "PrivateTransports/Car/Ford Mustang.jpeg",
+                            IsAvailable = true,
+                            Name = "Ford Mustang",
+                            PricePerHour = 80.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Capacity = 4,
+                            Description = "Electric luxury sedan with cutting-edge technology.",
+                            ImageUrl = "PrivateTransports/Car/Tesla Model S.jpg",
+                            IsAvailable = true,
+                            Name = "Tesla Model S",
+                            PricePerHour = 90.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Capacity = 5,
+                            Description = "Compact SUV with modern features and fuel efficiency.",
+                            ImageUrl = "PrivateTransports/Car/Kia Sportage.jpg",
+                            IsAvailable = true,
+                            Name = "Kia Sportage",
+                            PricePerHour = 35.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Capacity = 4,
+                            Description = "Spacious and comfortable sedan with great reliability.",
+                            ImageUrl = "PrivateTransports/Car/Honda Accord.jpeg",
+                            IsAvailable = true,
+                            Name = "Honda Accord",
+                            PricePerHour = 40.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Capacity = 4,
+                            Description = "Iconic off-road vehicle for adventure seekers.",
+                            ImageUrl = "PrivateTransports/Car/Jeep Wrangler.jpeg",
+                            IsAvailable = true,
+                            Name = "Jeep Wrangler",
+                            PricePerHour = 75.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Capacity = 4,
+                            Description = "Reliable and stylish German sedan.",
+                            ImageUrl = "PrivateTransports/Car/Volkswagen Passat.jpeg",
+                            IsAvailable = true,
+                            Name = "Volkswagen Passat",
+                            PricePerHour = 38.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Capacity = 5,
+                            Description = "Luxury sports SUV with high-end features.",
+                            ImageUrl = "PrivateTransports/Car/Porsche Cayenne.jpg",
+                            IsAvailable = true,
+                            Name = "Porsche Cayenne",
+                            PricePerHour = 100.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Capacity = 15,
+                            Description = "Luxury minibus with premium comfort.",
+                            ImageUrl = "PrivateTransports/Bus/Mercedes-Benz Sprinter.jpg",
+                            IsAvailable = true,
+                            Name = "Mercedes-Benz Sprinter",
+                            PricePerHour = 100.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Capacity = 22,
+                            Description = "Comfortable mid-sized bus for group travel.",
+                            ImageUrl = "PrivateTransports/Bus/Toyota Coaster.jpeg",
+                            IsAvailable = true,
+                            Name = "Toyota Coaster",
+                            PricePerHour = 80.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Capacity = 20,
+                            Description = "Efficient minibus for short trips.",
+                            ImageUrl = "PrivateTransports/Bus/Hyundai County.jpeg",
+                            IsAvailable = true,
+                            Name = "Hyundai County",
+                            PricePerHour = 75.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Capacity = 26,
+                            Description = "Reliable minibus for tourism and business trips.",
+                            ImageUrl = "PrivateTransports/Bus/Mitsubishi Rosa.jpg",
+                            IsAvailable = true,
+                            Name = "Mitsubishi Rosa",
+                            PricePerHour = 85.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Capacity = 50,
+                            Description = "Luxury long-distance coach with high-end features.",
+                            ImageUrl = "PrivateTransports/Bus/Volvo 9700.jpg",
+                            IsAvailable = true,
+                            Name = "Volvo 9700",
+                            PricePerHour = 200.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Capacity = 50,
+                            Description = "Premium luxury coach for VIP travel.",
+                            ImageUrl = "PrivateTransports/Bus/Setra TopClass.jpeg",
+                            IsAvailable = true,
+                            Name = "Setra TopClass",
+                            PricePerHour = 220.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Capacity = 18,
+                            Description = "Economical minibus for group transport.",
+                            ImageUrl = "PrivateTransports/Bus/Iveco Daily Minibus.jpeg",
+                            IsAvailable = true,
+                            Name = "Iveco Daily Minibus",
+                            PricePerHour = 90.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Capacity = 35,
+                            Description = "Spacious tourist bus for comfortable travel.",
+                            ImageUrl = "PrivateTransports/Bus/King Long XMQ6900.jpg",
+                            IsAvailable = true,
+                            Name = "King Long XMQ6900",
+                            PricePerHour = 110.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Capacity = 55,
+                            Description = "Luxury coach with modern amenities.",
+                            ImageUrl = "PrivateTransports/Bus/Scania Touring HD.jpg",
+                            IsAvailable = true,
+                            Name = "Scania Touring HD",
+                            PricePerHour = 180.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Capacity = 50,
+                            Description = "High-end tourist coach for long-distance trips.",
+                            ImageUrl = "PrivateTransports/Bus/MAN Lion’s Coach.jpeg",
+                            IsAvailable = true,
+                            Name = "MAN Lion’s Coach",
+                            PricePerHour = 195.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Capacity = 55,
+                            Description = "Luxury coach designed for tourism and comfort.",
+                            ImageUrl = "PrivateTransports/Bus/Mercedes Tourismo.jpeg",
+                            IsAvailable = true,
+                            Name = "Mercedes Tourismo",
+                            PricePerHour = 210.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Capacity = 80,
+                            Description = "Double-decker coach for large group tours.",
+                            ImageUrl = "PrivateTransports/Bus/Neoplan Skyliner.jpg",
+                            IsAvailable = true,
+                            Name = "Neoplan Skyliner",
+                            PricePerHour = 250.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Capacity = 45,
+                            Description = "Reliable and affordable coach for daily transport.",
+                            ImageUrl = "PrivateTransports/Bus/Yutong ZK6122.jpeg",
+                            IsAvailable = true,
+                            Name = "Yutong ZK6122",
+                            PricePerHour = 140.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Capacity = 50,
+                            Description = "High-performance luxury coach for premium travel.",
+                            ImageUrl = "PrivateTransports/Bus/Volvo B11R.jpeg",
+                            IsAvailable = true,
+                            Name = "Volvo B11R",
+                            PricePerHour = 230.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Capacity = 48,
+                            Description = "Spacious coach with modern amenities.",
+                            ImageUrl = "PrivateTransports/Bus/Golden Dragon XML6127.jpeg",
+                            IsAvailable = true,
+                            Name = "Golden Dragon XML6127",
+                            PricePerHour = 160.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Capacity = 2,
+                            Description = "The scoter is a type of sea duck that lives in cold and temperate regions.",
+                            ImageUrl = "PrivateTransports/Damon Hypersport.webp",
+                            IsAvailable = true,
+                            Name = "Damon Hypersport",
+                            PricePerHour = 160.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Capacity = 2,
+                            Description = "Scooters are easy to handle and convenient for daily transportation.",
+                            ImageUrl = "PrivateTransports/Honda CB650R.jpg",
+                            IsAvailable = true,
+                            Name = "Honda CB650R",
+                            PricePerHour = 250.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Capacity = 2,
+                            Description = "There are three main species of scoter: the black scoter, the surf scoter, and the velvet scoter",
+                            ImageUrl = "PrivateTransports/Honda CBR1000RR Fireblade.png",
+                            IsAvailable = true,
+                            Name = "Honda CBR1000RR Fireblade",
+                            PricePerHour = 200.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Capacity = 2,
+                            Description = "Scoters primarily feed on mollusks, crustaceans, and small fish",
+                            ImageUrl = "PrivateTransports/Kawasaki Ninja.jpeg",
+                            IsAvailable = true,
+                            Name = "Kawasaki Ninja",
+                            PricePerHour = 170.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Capacity = 2,
+                            Description = "They have dark-colored feathers, with males usually appearing blacker than females.",
+                            ImageUrl = "PrivateTransports/KTM Duke 1290 R.jpg",
+                            IsAvailable = true,
+                            Name = "KTM Duke 1290 R",
+                            PricePerHour = 130.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Capacity = 2,
+                            Description = "Scoters prefer coastal waters and large water bodies like lakes and rivers.",
+                            ImageUrl = "PrivateTransports/Lightning LS-218.jpg",
+                            IsAvailable = true,
+                            Name = "Lightning LS-218",
+                            PricePerHour = 110.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Capacity = 2,
+                            Description = "Electric scooters are commonly used for short-distance travel in cities.",
+                            ImageUrl = "PrivateTransports/my22-tiger-1200-gt-explorer-lucerne-blue-rhs-1080.png",
+                            IsAvailable = true,
+                            Name = "my22-tiger-1200-gt-explorer",
+                            PricePerHour = 120.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Capacity = 2,
+                            Description = "Kick scooters are popular among children and some commuters.",
+                            ImageUrl = "PrivateTransports/Suzuki GSX R1000.jpeg",
+                            IsAvailable = true,
+                            Name = "Suzuki GSX R1000",
+                            PricePerHour = 150.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Capacity = 2,
+                            Description = "Scooters are easy to handle and convenient for daily transportation.",
+                            ImageUrl = "PrivateTransports/Yamaha YZF.jpg",
+                            IsAvailable = true,
+                            Name = "Yamaha YZF",
+                            PricePerHour = 100.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PublicTransport", b =>
@@ -2021,6 +2491,23 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TransportTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Car"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Bus"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Scoter"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>

@@ -445,7 +445,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             }
         };
 
-       // builder.HasData(privateTransports);
+        builder.HasData(privateTransports);
 
     }
 }
