@@ -9,7 +9,7 @@ public class TourGuide
     public double SalaryPerHour { get; set; }
     public string Description { get; set; } = null!;
     public int YearsOfExperience { get; set; }
-    public double Rate { get; set; }
+    public double Rate { get; set; } = 3;
     public bool IsAvailable { get; set; } = true;
     public bool IsActive { get; set; } = true;
 

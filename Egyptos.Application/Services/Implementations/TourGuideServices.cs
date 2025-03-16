@@ -28,21 +28,26 @@ public class TourGuideServices(ApplicationDbContext context) : ITourGuideService
 
         return Result.Success(tourGuide.Adapt<CreateTourGuideResponse>());
     }
-    public async Task<IEnumerable<TourGuideResponse>> GetAllAsync() =>
-        await _context.TourGuides
+    public async Task<IEnumerable<TourGuideResponse>> GetAllAsync()
+    {
+        return await _context.TourGuides
         .Include(x => x.User)
         .Include(x => x.TourGuideTrips)
         .ProjectToType<TourGuideResponse>()
         .AsNoTracking()
         .ToListAsync();
+    }
     public async Task<Result<TourGuideResponse>> GetAsync(int tourGuidId)
     {
         var tourGuide = await _context.TourGuides
-                    .Include(x => x.User)
-                    .Include(x => x.TourGuideTrips)
-                    .ProjectToType<TourGuideResponse>()
-                    .AsNoTracking()
-                    .FirstOrDefaultAsync();
+            .Where(x => x.Id == tourGuidId)
+            .Include(x => x.User)
+            .Include(x => x.TourGuideTrips)
+            .ProjectToType<TourGuideResponse>()
+            .AsNoTracking()
+            .FirstOrDefaultAsync();            
+
+
 
         if (tourGuide is null)
             return Result.Failure<TourGuideResponse>(TourGuideErrors.TourGuideNotFount);

@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250316003712_AddTourGuideData")]
+    partial class AddTourGuideData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1600,108 +1603,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
-                            RoleId = "0191d311-2918-7f76-bd8a-0bded8535075"
-                        },
-                        new
-                        {
-                            UserId = "683211b1-1125-42a1-b148-a606a4ca4df3",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "df2ea217-2e82-48b9-9442-47556c1a9403",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "6b9b3e85-ce32-4944-9a46-601bb2b40000",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "fc4df06f-05c2-4751-96c1-8040f2761b7f",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "7c30ae16-67eb-4ff2-858f-70aa79aaa3c4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "ce47a5ab-df14-416a-b500-9b544fa666a4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "249aa6c5-d578-4517-8a42-48f24a7d959e",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "49a438ba-672d-41d5-97ba-5536ffbec2a6",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "bf2ee728-59af-45ec-9b70-e5f5e27eef8e",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df2",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df3",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "5d577849-97d1-4984-bf96-6fee7d08c8be",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "f89bca4a-8fc9-4259-a46d-22562907c27f",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "8766c317-1eaa-468a-b34d-59790c8eb915",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "52511e3a-0690-45b0-9e52-02667a473b18",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "a0e2f1e7-53e5-416f-b0b0-ca4668563233",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "357c8ce0-ed6e-4979-b1f9-5e0f6e90c9a1",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "10eb7637-95f4-45d2-b200-84dbb188ec41",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

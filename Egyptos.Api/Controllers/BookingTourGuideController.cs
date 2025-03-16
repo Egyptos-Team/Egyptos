@@ -59,6 +59,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _bookingTourGuideService.DeleteAsync(User.GetUserId(), id);

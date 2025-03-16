@@ -11,6 +11,6 @@ public record TourGuideResponse
     int YearsOfExperience,
     double Rate,
     bool IsAvailable,
-    bool IsActive ,
+    bool IsActive,
     TouGuideUserResponse User
 );

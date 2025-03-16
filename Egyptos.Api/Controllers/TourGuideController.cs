@@ -1,5 +1,4 @@
 ﻿using Egyptos.Api.Extensions;
-using Egyptos.Application.Contracts.Event;
 using Egyptos.Application.Contracts.TourGuide;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;

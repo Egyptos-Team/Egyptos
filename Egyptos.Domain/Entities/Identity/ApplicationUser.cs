@@ -16,5 +16,6 @@ public class ApplicationUser : IdentityUser
     public ICollection<BookingHotel> BookingHotels { get; set; } = [];
     public ICollection<BookingEventDate> BookingEventDates { get; set; } = [];
     public ICollection<BookingPrivateTransport> BookingPrivateTransports { get; set; } = [];
-    public ICollection<Report> Reports { get; set; } = [];
+    public ICollection<Report> Reports { get; set; } = [];    
+    public ICollection<BookingTourGuide> BookingTourGuides { get; set; } = [];    
 }
