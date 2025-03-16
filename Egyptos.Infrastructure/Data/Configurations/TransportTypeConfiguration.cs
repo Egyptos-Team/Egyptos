@@ -27,6 +27,6 @@ public class TransportTypeConfiguration : IEntityTypeConfiguration<TransportType
             }
         };          
 
-        builder.HasData(transportTypes);
+       // builder.HasData(transportTypes);
     }
 }
