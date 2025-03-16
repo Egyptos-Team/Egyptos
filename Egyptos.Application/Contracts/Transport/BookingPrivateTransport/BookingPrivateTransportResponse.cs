@@ -1,4 +1,6 @@
-﻿namespace Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+﻿using Egyptos.Domain.Entities;
+
+namespace Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 
 public class BookingPrivateTransportResponse
 {
@@ -9,6 +11,7 @@ public class BookingPrivateTransportResponse
     public DateTime? PaymentCancel { get; set; }
     public double? TotalPrice { get; set; }
     public double PricePerHour { get; set; }
+    public PrivateTransports.PrivateTransportResponse PrivateTransport { get; set; } = null!;
     public string UserId { get; set; } = null!;
     public int PrivateTransportId { get; set; }
 };

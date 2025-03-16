@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250316003529_AddSeadingDataForPrivateTransportsScoter")]
+    partial class AddSeadingDataForPrivateTransportsScoter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -548,421 +551,113 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         },
                         new
                         {
-                            Id = "683211b1-1125-42a1-b148-a606a4ca4df3",
+                            Id = "74f74d5a-25a8-456f-a703-7eb67721679e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b3c8f4ef-c9ab-49b5-9b16-06f17aa7668a",
-                            Email = "Ahmed12@gmail.com",
+                            ConcurrencyStamp = "90a57528-207c-4df0-9b83-bfac6cfe2d06",
+                            Email = "dfsfv@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Ahmed",
-                            ImageUrl = "profiles/df4fb389-64ed-486e-be7d-722771b6e3bc.jpeg",
+                            ImageUrl = "profiles/Default-Image.jpg",
                             LastName = "Hesham",
                             LockoutEnabled = false,
-                            NationalId = "30305521354688",
-                            NormalizedEmail = "AHMED12@GMAIL.COM",
-                            NormalizedUserName = "AHMED12@GMAIL.COM",
+                            NationalId = "30303030303030",
+                            NormalizedEmail = "DFSFV@GMAIL.COM",
+                            NormalizedUserName = "DFSFV@GMAIL.COM",
                             PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01024866094",
+                            PhoneNumber = "01010101010",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "46e17415-53e4-4e26-8ce4-3b9f91a4ebcd",
+                            SecurityStamp = "6c37c036-2659-4148-a23f-5d094da37121",
                             Sex = "Male",
                             TwoFactorEnabled = false,
-                            UserName = "Ahmed12@gmail.com"
+                            UserName = "dfsfv@gmail.com"
                         },
                         new
                         {
-                            Id = "df2ea217-2e82-48b9-9442-47556c1a9403",
+                            Id = "df4f87ce-beee-493f-a115-c2eb96babc7a",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7e09e586-695e-44ad-86a9-f7b49ba3552b",
-                            Email = "Ali@gmail.com",
+                            ConcurrencyStamp = "6921eade-b140-4d72-acec-4048194cc4a9",
+                            Email = "dfsfvv@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Ali",
-                            ImageUrl = "profiles/Outdoor Portraits — San Francisco Bay Area's Premier Personal Brand and Headshot Photographer _ Alpa.jpeg",
-                            LastName = "Salama",
+                            FirstName = "Yousef",
+                            ImageUrl = "profiles/Default-Image.jpg",
+                            LastName = "Mohamed",
                             LockoutEnabled = false,
-                            NationalId = "30308795612367",
-                            NormalizedEmail = "ALI@GMAIL.COM",
-                            NormalizedUserName = "ALI@GMAIL.COM",
+                            NationalId = "30303030303030",
+                            NormalizedEmail = "DFSFVV@GMAIL.COM",
+                            NormalizedUserName = "DFSFVV@GMAIL.COM",
                             PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01134409876",
+                            PhoneNumber = "01010101010",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "287317a5-2b4e-4193-ade4-9b03c843b021",
+                            SecurityStamp = "cf3e134f-bd5a-41d1-a4e5-92cbe8da262e",
                             Sex = "Male",
                             TwoFactorEnabled = false,
-                            UserName = "Ali@gmail.com"
+                            UserName = "dfsfvv@gmail.com"
                         },
                         new
                         {
-                            Id = "6b9b3e85-ce32-4944-9a46-601bb2b40000",
+                            Id = "5694452c-4bfe-4bd0-a97e-57f5948684e6",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a61c81ae-cdb2-4c92-ae17-75247a4cb5cb",
-                            Email = "Hassan44@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Hassan",
-                            ImageUrl = "profiles/Friendly Professional Business Headshot.jpeg",
-                            LastName = "Alaa",
-                            LockoutEnabled = false,
-                            NationalId = "30306729061246",
-                            NormalizedEmail = "HASSAN4412@GMAIL.COM",
-                            NormalizedUserName = "HASSAN4412@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01079945073",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "33fe0c4e-09d7-4b8b-a625-7cf0651fb90e",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Hassan44@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "fc4df06f-05c2-4751-96c1-8040f2761b7f",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "30d973bd-092f-4869-ac70-0b1004519b48",
-                            Email = "Mohamed@gmail.com",
+                            ConcurrencyStamp = "56304034-7947-436a-9f45-5aae19827221",
+                            Email = "dfsfvvv@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Mohamed",
-                            ImageUrl = "profiles/82ebaf90-31fe-40ef-8358-99823ce3881d.jpeg",
-                            LastName = "Mady",
+                            ImageUrl = "profiles/Default-Image.jpg",
+                            LastName = "Nassar",
                             LockoutEnabled = false,
-                            NationalId = "30309871265308",
-                            NormalizedEmail = "MOHAMED@GMAIL.COM",
-                            NormalizedUserName = "MOHAMED@GMAIL.COM",
+                            NationalId = "30303030303030",
+                            NormalizedEmail = "DFSFVVV@GMAIL.COM",
+                            NormalizedUserName = "DFSFVVV@GMAIL.COM",
                             PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01084670325",
+                            PhoneNumber = "01010101010",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "4a5413d0-0b02-48f8-a24f-16b929d0af74",
+                            SecurityStamp = "47ab1ce3-1655-4215-bd95-af4642348d7c",
                             Sex = "Male",
                             TwoFactorEnabled = false,
-                            UserName = "Mohamed@gmail.com"
+                            UserName = "dfsfvvv@gmail.com"
                         },
                         new
                         {
-                            Id = "7c30ae16-67eb-4ff2-858f-70aa79aaa3c4",
+                            Id = "3808b9cb-48b0-4a56-9492-67f362dfa9b4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0a0bc059-4d5d-45dc-98dc-5e557d7aa1c1",
-                            Email = "Maher@gmail.com",
+                            ConcurrencyStamp = "56298673-8700-4929-8c4d-2a2983da53c2",
+                            Email = "dfsfvvvv@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Maher",
-                            ImageUrl = "profiles/Rajan Velu.jpeg",
-                            LastName = "Mohamed",
+                            FirstName = "Amir",
+                            ImageUrl = "profiles/Default-Image.jpg",
+                            LastName = "Mahmoud",
                             LockoutEnabled = false,
-                            NationalId = "30301937508274",
-                            NormalizedEmail = "MAHER@GMAIL.COM",
-                            NormalizedUserName = "MAHER@GMAIL.COM",
+                            NationalId = "30303030303030",
+                            NormalizedEmail = "DFSFVVVV@GMAIL.COM",
+                            NormalizedUserName = "DFSFVVVV@GMAIL.COM",
                             PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01208173649",
+                            PhoneNumber = "01010101010",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "04a9f78c-43b0-4a6f-bb40-c161adb30b23",
+                            SecurityStamp = "fb24b4fd-7658-4b81-82df-c853512f4627",
                             Sex = "Male",
                             TwoFactorEnabled = false,
-                            UserName = "Maher@gmail.com"
+                            UserName = "dfsfvvvv@gmail.com"
                         },
                         new
                         {
-                            Id = "ce47a5ab-df14-416a-b500-9b544fa666a4",
+                            Id = "803d9ac6-8b8b-4e41-932f-8b0ef2bee591",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5d48db4f-16d7-418b-b97f-dbfe8616af56",
-                            Email = "Nader@gmail.com",
+                            ConcurrencyStamp = "ab5f9b96-4d25-4991-976c-dfd89da00178",
+                            Email = "dfsfvvvvv@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Nader",
-                            ImageUrl = "profiles/Mari Juliano.jpeg",
-                            LastName = "Ahmed",
+                            FirstName = "Rafat",
+                            ImageUrl = "profiles/Default-Image.jpg",
+                            LastName = "Ashrf",
                             LockoutEnabled = false,
-                            NationalId = "303020837616543",
-                            NormalizedEmail = "NADER@GMAIL.COM",
-                            NormalizedUserName = "NADER@GMAIL.COM",
+                            NationalId = "30303030303030",
+                            NormalizedEmail = "DFSFVVVVV@GMAIL.COM",
+                            NormalizedUserName = "DFSFVVVVV@GMAIL.COM",
                             PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01147893547",
+                            PhoneNumber = "01010101010",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e68c1657-3cb1-4097-a45f-27c1a655c81f",
+                            SecurityStamp = "15539178-b7a5-4270-a046-5cfaa7fbc3e8",
                             Sex = "Male",
                             TwoFactorEnabled = false,
-                            UserName = "Nader@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "249aa6c5-d578-4517-8a42-48f24a7d959e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "e7ed49bc-72fb-42be-afc5-fbd0351bd759",
-                            Email = "Khaled@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Khaled",
-                            ImageUrl = "profiles/MEN - Location - Headshot Photography by Brandon Tabiolo.jpeg",
-                            LastName = "Mostafa",
-                            LockoutEnabled = false,
-                            NationalId = "30301920482846",
-                            NormalizedEmail = "KHALED@GMAIL.COM",
-                            NormalizedUserName = "KHALED@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01293749183",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f85433e6-bf5b-4ffc-9d02-3a7cc9938547",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Khaled@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "49a438ba-672d-41d5-97ba-5536ffbec2a6",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "f9773109-8364-4c61-a5d4-9fe85a58c0f4",
-                            Email = "Kareem@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Kareem",
-                            ImageUrl = "profiles/Why I Mainly Photograph in Portrait Orientation for Actors' Headshots.jpeg",
-                            LastName = "Maged",
-                            LockoutEnabled = false,
-                            NationalId = "303092689146845",
-                            NormalizedEmail = "KAREEM@GMAIL.COM",
-                            NormalizedUserName = "KAREEM@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01024860821",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "aed0822d-8180-49b3-85cc-a4f5a33a3b56",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Kareem@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "bf2ee728-59af-45ec-9b70-e5f5e27eef8e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "43d7bf34-bc3a-4d7f-841e-f1dfd028303d",
-                            Email = "Halem@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Halem",
-                            ImageUrl = "profiles/Gorgeous smile of Alexis Petit.jpeg",
-                            LastName = "Ebrahim",
-                            LockoutEnabled = false,
-                            NationalId = "30308391092836",
-                            NormalizedEmail = "HALEM@GMAIL.COM",
-                            NormalizedUserName = "HALEM@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01049182640",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "999faa1d-9041-4c56-888c-42b8286d68b7",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Halem@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "cb3cb7ca-1921-49fd-a11e-600b351b3df2",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c76ae4f3-37a2-4707-b71b-f5d99f6f50da",
-                            Email = "Salma@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Salma",
-                            ImageUrl = "profiles/Women in Business.jpeg",
-                            LastName = "Mostafa",
-                            LockoutEnabled = false,
-                            NationalId = "30302901738376",
-                            NormalizedEmail = "SALMA@GMAIL.COM",
-                            NormalizedUserName = "SALMA@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01029836539",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "2121aa48-49d8-4b1e-841e-48a7e61b0863",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Salma@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "cb3cb7ca-1921-49fd-a11e-600b351b3df3",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "f58fbbd5-a0d4-460c-bc0d-5afb9a0adb63",
-                            Email = "Jesseyd@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Jessy",
-                            ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
-                            LastName = "Danial",
-                            LockoutEnabled = false,
-                            NationalId = "40415678901625",
-                            NormalizedEmail = "JESSEYD@GMAIL.COM",
-                            NormalizedUserName = "JESSEYD@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "07022670816",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f4dd9dcd-8ef8-40fa-b1ac-6a6caa133079",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Jesseyd@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "5d577849-97d1-4984-bf96-6fee7d08c8be",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "edb44c87-00c3-488a-9b74-2fc632b48bfc",
-                            Email = "Marry@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Mary",
-                            ImageUrl = "profiles/468f9794-778b-429f-bea8-b7440810819d.jpeg",
-                            LastName = "John",
-                            LockoutEnabled = false,
-                            NationalId = "40423109753269",
-                            NormalizedEmail = "MARRY@GMAIL.COM",
-                            NormalizedUserName = "MARRY@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "02029837399",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "e27dc6f7-4bf0-44a1-a3fb-8b3e5239e87f",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Marry@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "f89bca4a-8fc9-4259-a46d-22562907c27f",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c615d822-a4fc-4a3a-8b23-b4b6c155b96a",
-                            Email = "Mark@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Mark",
-                            ImageUrl = "profiles/44050f40-662d-408b-9dda-9e3271d7c36e.jpeg",
-                            LastName = "ALbrto",
-                            LockoutEnabled = false,
-                            NationalId = "4042098715635491",
-                            NormalizedEmail = "MARK@GMAIL.COM",
-                            NormalizedUserName = "MARK@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "070901468297",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6909260d-6430-4133-868e-9091e01fe56f",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Mark@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "cb3cb7ca-1921-49fd-a11e-600b351b3df4",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "f58fbbd5-a0d4-460c-bc0d-5afb9a0adb63",
-                            Email = "Jessey@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Jessy",
-                            ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
-                            LastName = "MArk",
-                            LockoutEnabled = false,
-                            NationalId = "40415678901625",
-                            NormalizedEmail = "JESSEY@GMAIL.COM",
-                            NormalizedUserName = "JESSEY@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "07022670816",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f4dd9dcd-8ef8-40fa-b1ac-6a6caa133079",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Jessey@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "8766c317-1eaa-468a-b34d-59790c8eb915",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4986d9a-0ff6-4ecb-9f51-b8bb5dc826e4",
-                            Email = "Rana@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Rana",
-                            ImageUrl = "profiles/2edc3141-b4cd-411d-9136-33440bbb1c03.jpeg",
-                            LastName = "Osama",
-                            LockoutEnabled = false,
-                            NationalId = "30304597102873",
-                            NormalizedEmail = "RANA@GMAIL.COM",
-                            NormalizedUserName = "RANA@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01028649032",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f5e74c9d-fe75-442e-a90e-6400f6a2f0c7",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Rana@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "10eb7637-95f4-45d2-b200-84dbb188ec41",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "1ca42846-c687-48a2-9eb4-77fc5f21ae44",
-                            Email = "Ramy@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Ramy",
-                            ImageUrl = "profiles/16 Black Chefs Changing Food in America (Published 2019).jpeg",
-                            LastName = "Aziz",
-                            LockoutEnabled = false,
-                            NationalId = "30303409168364",
-                            NormalizedEmail = "RAMY@GMAIL.COM",
-                            NormalizedUserName = "RAMY@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "011298640281",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "f439954d-63d4-4e36-8a5f-827f533cc6a1",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Ramy@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "357c8ce0-ed6e-4979-b1f9-5e0f6e90c9a1",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "d607b523-2920-4ea8-83c4-2103dbb45b0a",
-                            Email = "Rola@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Rola",
-                            ImageUrl = "profiles/Before and After_ Transforming Your LinkedIn Profile with AI Headshots.jpeg",
-                            LastName = "Samy",
-                            LockoutEnabled = false,
-                            NationalId = "30306183028747",
-                            NormalizedEmail = "ROLA@GMAIL.COM",
-                            NormalizedUserName = "ROLA@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "012938475601",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "eac93f1e-749b-4c66-9783-c46c16b4ffbf",
-                            Sex = "Female",
-                            TwoFactorEnabled = false,
-                            UserName = "Rola@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "a0e2f1e7-53e5-416f-b0b0-ca4668563233",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "a46ec364-f74a-455e-93f2-471913135d05",
-                            Email = "Malek@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Malek",
-                            ImageUrl = "profiles/9c12d50d-5cbe-4c75-8bca-cbc57d504a7b.jpeg",
-                            LastName = "Mohamed",
-                            LockoutEnabled = false,
-                            NationalId = "30308103829384",
-                            NormalizedEmail = "MALEK@GMAIL.COM",
-                            NormalizedUserName = "MALEK@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01283604718",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "16dd3214-5abc-48b6-83cd-df00d21f16dc",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Malek@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "52511e3a-0690-45b0-9e52-02667a473b18",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "e184b3aa-6771-4830-83f9-b1a59c9676c4",
-                            Email = "Magdy@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Magdy",
-                            ImageUrl = "profiles/Dallas Headshots Photographer - Willie & Kim Photography.jpeg",
-                            LastName = "Abdallah",
-                            LockoutEnabled = false,
-                            NationalId = "30301789256730",
-                            NormalizedEmail = "MAGDY@GMAIL.COM",
-                            NormalizedUserName = "MAGDY@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01183670178",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fda38b97-da47-40ba-bbe3-702a78f4e009",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "Magdy@gmail.com"
+                            UserName = "dfsfvvvvv@gmail.com"
                         });
                 });
 
@@ -1619,217 +1314,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("TourGuides");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "A passionate tour guide with in-depth knowledge of historical landmarks and cultural heritage, dedicated to providing engaging and educational experiences.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 150.0,
-                            UserId = "683211b1-1125-42a1-b148-a606a4ca4df3",
-                            YearsOfExperience = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Experienced tour guide specializing in archaeological sites, offering insightful narratives that bring history to life.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 150.0,
-                            UserId = "df2ea217-2e82-48b9-9442-47556c1a9403",
-                            YearsOfExperience = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Friendly and knowledgeable guide, ensuring every visitor enjoys a personalized and immersive travel experience.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 150.0,
-                            UserId = "6b9b3e85-ce32-4944-9a46-601bb2b40000",
-                            YearsOfExperience = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Expert in local history and traditions, delivering memorable tours that blend education and entertainment.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 150.0,
-                            UserId = "fc4df06f-05c2-4751-96c1-8040f2761b7f",
-                            YearsOfExperience = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "A dynamic storyteller who transforms every tour into a fascinating journey through time and culture.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 150.0,
-                            UserId = "7c30ae16-67eb-4ff2-858f-70aa79aaa3c4",
-                            YearsOfExperience = 1
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Fluent in multiple languages, offering exceptional guided experiences for travelers from around the world.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 300.0,
-                            UserId = "ce47a5ab-df14-416a-b500-9b544fa666a4",
-                            YearsOfExperience = 2
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Skilled in adventure tourism, leading exciting and informative tours through natural wonders and historical landmarks.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 300.0,
-                            UserId = "249aa6c5-d578-4517-8a42-48f24a7d959e",
-                            YearsOfExperience = 2
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Passionate about sharing hidden gems and off-the-beaten-path locations with travelers seeking authentic experiences.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 300.0,
-                            UserId = "49a438ba-672d-41d5-97ba-5536ffbec2a6",
-                            YearsOfExperience = 2
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "A certified tour guide with years of experience, ensuring visitors gain deep insights into historical and modern attractions.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 300.0,
-                            UserId = "bf2ee728-59af-45ec-9b70-e5f5e27eef8e",
-                            YearsOfExperience = 2
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "Dedicated to providing an unforgettable journey through historical sites, blending education with entertainment.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 300.0,
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df2",
-                            YearsOfExperience = 2
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "An enthusiastic guide who loves connecting people with the rich history and traditions of the region.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 500.0,
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df3",
-                            YearsOfExperience = 3
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Expert in eco-tourism, offering sustainable and immersive travel experiences for nature lovers.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 500.0,
-                            UserId = "5d577849-97d1-4984-bf96-6fee7d08c8be",
-                            YearsOfExperience = 3
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "Combining storytelling with historical facts to create engaging and interactive guided tours.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 500.0,
-                            UserId = "f89bca4a-8fc9-4259-a46d-22562907c27f",
-                            YearsOfExperience = 3
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "A charismatic and knowledgeable guide, ensuring tourists leave with a deeper appreciation for the destination.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 500.0,
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df4",
-                            YearsOfExperience = 3
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Description = "Certified heritage interpreter, offering in-depth explorations of ancient and modern cultural landmarks.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 500.0,
-                            UserId = "8766c317-1eaa-468a-b34d-59790c8eb915",
-                            YearsOfExperience = 3
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Description = "Well-versed in local customs, history, and cuisine, providing a holistic travel experience for every visitor.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 4000.0,
-                            UserId = "52511e3a-0690-45b0-9e52-02667a473b18",
-                            YearsOfExperience = 4
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Description = "Professional and friendly guide who creates customized tours to meet the interests of each group.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 750.0,
-                            UserId = "a0e2f1e7-53e5-416f-b0b0-ca4668563233",
-                            YearsOfExperience = 5
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Description = "A history enthusiast dedicated to making every tour an unforgettable and enriching experience.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 700.0,
-                            UserId = "357c8ce0-ed6e-4979-b1f9-5e0f6e90c9a1",
-                            YearsOfExperience = 4
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Description = "Providing top-tier guided tours that blend adventure, history, and culture for an unforgettable experience.",
-                            IsActive = true,
-                            IsAvailable = true,
-                            Rate = 3.0,
-                            SalaryPerHour = 750.0,
-                            UserId = "10eb7637-95f4-45d2-b200-84dbb188ec41",
-                            YearsOfExperience = 5
-                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
@@ -2093,101 +1577,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             UserId = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
                             RoleId = "0191d311-2918-7f76-bd8a-0bded8535075"
-                        },
-                        new
-                        {
-                            UserId = "683211b1-1125-42a1-b148-a606a4ca4df3",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "df2ea217-2e82-48b9-9442-47556c1a9403",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "6b9b3e85-ce32-4944-9a46-601bb2b40000",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "fc4df06f-05c2-4751-96c1-8040f2761b7f",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "7c30ae16-67eb-4ff2-858f-70aa79aaa3c4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "ce47a5ab-df14-416a-b500-9b544fa666a4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "249aa6c5-d578-4517-8a42-48f24a7d959e",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "49a438ba-672d-41d5-97ba-5536ffbec2a6",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "bf2ee728-59af-45ec-9b70-e5f5e27eef8e",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df2",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df3",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "5d577849-97d1-4984-bf96-6fee7d08c8be",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "f89bca4a-8fc9-4259-a46d-22562907c27f",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "cb3cb7ca-1921-49fd-a11e-600b351b3df4",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "8766c317-1eaa-468a-b34d-59790c8eb915",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "52511e3a-0690-45b0-9e52-02667a473b18",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "a0e2f1e7-53e5-416f-b0b0-ca4668563233",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "357c8ce0-ed6e-4979-b1f9-5e0f6e90c9a1",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
-                        },
-                        new
-                        {
-                            UserId = "10eb7637-95f4-45d2-b200-84dbb188ec41",
-                            RoleId = "6CCF2454-C7FE-4F58-89FB-F565AE5643E3"
                         });
                 });
 
@@ -2317,7 +1706,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "User")
-                        .WithMany("BookingTourGuides")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -2567,8 +1956,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Navigation("BookingHotels");
 
                     b.Navigation("BookingPrivateTransports");
-
-                    b.Navigation("BookingTourGuides");
 
                     b.Navigation("BookingTrips");
 

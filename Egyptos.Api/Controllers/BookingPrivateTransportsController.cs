@@ -62,6 +62,16 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
              : result.ToProblem();
     }
 
+    [HttpPost("{bookingId}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> OnlinePayment(int bookingId)
+    {
+        var result = await _booking.OnlinePaymentAsync(bookingId, User.GetUserId());
+        return result.IsSuccess ? Ok() : result.ToProblem();
+    }
 
     [HttpPut("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -76,7 +86,18 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     }
 
 
-    [HttpDelete("{bookingId}")]
+    [HttpPut("{bookingId}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<IActionResult> EndBookingManual(int bookingId)
+    {
+        var result = await _booking.EndBookingManualAsync(bookingId);
+
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
+
+    [HttpPut("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -87,28 +108,8 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     }
 
 
-    [HttpPost("{bookingId}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status409Conflict)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> OnlinePayment( int bookingId)
-    {
-        var result = await _booking.OnlinePaymentAsync(bookingId, User.GetUserId());
-        return result.IsSuccess ? Ok() : result.ToProblem();
-    }
+   
 
-
-    [HttpPut("{bookingId}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<IActionResult> EndBookingManual( int bookingId)
-    {
-        var result = await _booking.EndBookingManualAsync(bookingId);
-
-        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
-    }
 
 
 

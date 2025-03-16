@@ -25,6 +25,7 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
     }
 
     [HttpGet("")]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAll()
     {
         var result = await _tourGuideServices.GetAllAsync();
@@ -33,6 +34,7 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
     }
 
     [HttpGet("{id}")]
+    [AllowAnonymous]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
         var result = await _tourGuideServices.GetAsync(id);

@@ -24,7 +24,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("")]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
+    [AllowAnonymous]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingTourGuideService.GetAllAsync();
