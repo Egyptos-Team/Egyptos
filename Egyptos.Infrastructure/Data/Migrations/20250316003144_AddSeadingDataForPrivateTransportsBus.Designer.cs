@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250316003144_AddSeadingDataForPrivateTransportsBus")]
+    partial class AddSeadingDataForPrivateTransportsBus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1091,114 +1094,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             PricePerHour = 160.0,
                             Quantity = 2,
                             TransportTypeId = 2
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Capacity = 2,
-                            Description = "The scoter is a type of sea duck that lives in cold and temperate regions.",
-                            ImageUrl = "PrivateTransports/Scoter/1.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter1",
-                            PricePerHour = 160.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Capacity = 2,
-                            Description = "Scooters are easy to handle and convenient for daily transportation.",
-                            ImageUrl = "PrivateTransports/Scoter/2.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter2",
-                            PricePerHour = 250.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Capacity = 2,
-                            Description = "There are three main species of scoter: the black scoter, the surf scoter, and the velvet scoter",
-                            ImageUrl = "PrivateTransports/Scoter/3.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter3",
-                            PricePerHour = 200.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Capacity = 2,
-                            Description = "Scoters primarily feed on mollusks, crustaceans, and small fish",
-                            ImageUrl = "PrivateTransports/Scoter/4.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter4",
-                            PricePerHour = 170.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Capacity = 2,
-                            Description = "They have dark-colored feathers, with males usually appearing blacker than females.",
-                            ImageUrl = "PrivateTransports/Scoter/4.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter5",
-                            PricePerHour = 130.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Capacity = 2,
-                            Description = "Scoters prefer coastal waters and large water bodies like lakes and rivers.",
-                            ImageUrl = "PrivateTransports/Scoter/5.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter6",
-                            PricePerHour = 110.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 37,
-                            Capacity = 2,
-                            Description = "Electric scooters are commonly used for short-distance travel in cities.",
-                            ImageUrl = "PrivateTransports/Scoter/2.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter7",
-                            PricePerHour = 120.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 38,
-                            Capacity = 2,
-                            Description = "Kick scooters are popular among children and some commuters.",
-                            ImageUrl = "PrivateTransports/Scoter/1.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter8",
-                            PricePerHour = 150.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 39,
-                            Capacity = 2,
-                            Description = "Scooters are easy to handle and convenient for daily transportation.",
-                            ImageUrl = "PrivateTransports/Scoter/1.jpg",
-                            IsAvailable = true,
-                            Name = "Scoter9",
-                            PricePerHour = 100.0,
-                            Quantity = 4,
-                            TransportTypeId = 3
                         });
                 });
 

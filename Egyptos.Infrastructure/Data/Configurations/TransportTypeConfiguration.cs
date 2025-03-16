@@ -13,15 +13,20 @@ public class TransportTypeConfiguration : IEntityTypeConfiguration<TransportType
             new TransportType
             {
                 Id = 1,
-                Name = "Car",                                
+                Name = "Car",
             },
             new TransportType
             {
                 Id = 2,
-                Name = ""
+                Name = "Bus",
             },
+            new TransportType
+            {
+                Id = 3,
+                Name = "Scoter",
+            }
         };          
 
-        //builder.HasData(transportTypes);
+        builder.HasData(transportTypes);
     }
 }
