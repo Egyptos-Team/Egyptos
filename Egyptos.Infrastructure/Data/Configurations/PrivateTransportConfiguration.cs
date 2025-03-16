@@ -346,10 +346,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             ,new PrivateTransport
             {
                 Id = 31,
-                Name = "Scoter1",
+                Name = "Damon Hypersport",
                 PricePerHour = 160.0,
                 Description = "The scoter is a type of sea duck that lives in cold and temperate regions.",
-                ImageUrl = "PrivateTransports/Scoter/1.jpg",
+                ImageUrl = "PrivateTransports/Damon Hypersport.webp",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -357,10 +357,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 32,
-                Name = "Scoter2",
+                Name = "Honda CB650R",
                 PricePerHour = 250.0,
                 Description = "Scooters are easy to handle and convenient for daily transportation.",
-                ImageUrl = "PrivateTransports/Scoter/2.jpg",
+                ImageUrl = "PrivateTransports/Honda CB650R.jpg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -368,10 +368,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 33,
-                Name = "Scoter3",
+                Name = "Honda CBR1000RR Fireblade",
                 PricePerHour = 200.0,
                 Description = "There are three main species of scoter: the black scoter, the surf scoter, and the velvet scoter",
-                ImageUrl = "PrivateTransports/Scoter/3.jpg",
+                ImageUrl = "PrivateTransports/Honda CBR1000RR Fireblade.png",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -379,10 +379,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 34,
-                Name = "Scoter4",
+                Name = "Kawasaki Ninja",
                 PricePerHour = 170.0,
                 Description = "Scoters primarily feed on mollusks, crustaceans, and small fish",
-                ImageUrl = "PrivateTransports/Scoter/4.jpg",
+                ImageUrl = "PrivateTransports/Kawasaki Ninja.jpeg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -391,10 +391,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 35,
-                Name = "Scoter5",
+                Name = "KTM Duke 1290 R",
                 PricePerHour = 130.0,
                 Description = "They have dark-colored feathers, with males usually appearing blacker than females.",
-                ImageUrl = "PrivateTransports/Scoter/4.jpg",
+                ImageUrl = "PrivateTransports/KTM Duke 1290 R.jpg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -402,10 +402,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 36,
-                Name = "Scoter6",
+                Name = "Lightning LS-218",
                 PricePerHour = 110.0,
                 Description = "Scoters prefer coastal waters and large water bodies like lakes and rivers.",
-                ImageUrl = "PrivateTransports/Scoter/5.jpg",
+                ImageUrl = "PrivateTransports/Lightning LS-218.jpg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -413,10 +413,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 37,
-                Name = "Scoter7",
+                Name = "my22-tiger-1200-gt-explorer",
                 PricePerHour = 120.0,
                 Description = "Electric scooters are commonly used for short-distance travel in cities.",
-                ImageUrl = "PrivateTransports/Scoter/2.jpg",
+                ImageUrl = "PrivateTransports/my22-tiger-1200-gt-explorer-lucerne-blue-rhs-1080.png",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -424,10 +424,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 38,
-                Name = "Scoter8",
+                Name = "Suzuki GSX R1000",
                 PricePerHour = 150.0,
                 Description = "Kick scooters are popular among children and some commuters.",
-                ImageUrl = "PrivateTransports/Scoter/1.jpg",
+                ImageUrl = "PrivateTransports/Suzuki GSX R1000.jpeg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
@@ -435,10 +435,10 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
             new PrivateTransport
             {
                 Id = 39,
-                Name = "Scoter9",
+                Name = "Yamaha YZF",
                 PricePerHour = 100.0,
                 Description = "Scooters are easy to handle and convenient for daily transportation.",
-                ImageUrl = "PrivateTransports/Scoter/1.jpg",
+                ImageUrl = "PrivateTransports/Yamaha YZF.jpg",
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
