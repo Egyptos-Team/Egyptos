@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
@@ -24,6 +24,11 @@
     <ItemGroup>
       <ProjectReference Include="..\Egyptos.Application\Egyptos.Application.csproj" />
       <ProjectReference Include="..\Egyptos.Infrastructure\Egyptos.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\Hotels\" />
+      <Folder Include="wwwroot\PrivateTransports\Scoter\" />
     </ItemGroup>
 
 </Project>
