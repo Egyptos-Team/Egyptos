@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
 public class TourGuideController(ITourGuideServices tourGuideServices) : ControllerBase
 {
     private readonly ITourGuideServices _tourGuideServices = tourGuideServices;
@@ -25,7 +24,6 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
     }
 
     [HttpGet("")]
-    [AllowAnonymous]
     public async Task<IActionResult> GetAll()
     {
         var result = await _tourGuideServices.GetAllAsync();
@@ -34,7 +32,6 @@ public class TourGuideController(ITourGuideServices tourGuideServices) : Control
     }
 
     [HttpGet("{id}")]
-    [AllowAnonymous]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
         var result = await _tourGuideServices.GetAsync(id);
