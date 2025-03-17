@@ -4,6 +4,7 @@ namespace Egyptos.Domain.Entities;
 
 public class BookingTourGuide
 {
+    public int Id { get; set; }
     public int TourGuideId { get; set; }
     public TourGuide TourGuide { get; set; } = null!;
 
@@ -11,6 +12,11 @@ public class BookingTourGuide
     public ApplicationUser User { get; set; } = null!;
 
     public double TotalPrice { get; set; }
+
+    public DateTime? PaymentDate { get; set; }
+    public DateTime? PaymentCancel { get; set; }
+    public DateTime? CancelBooking { get; set; }
+
 
     public DateTime StartBooking { get; set; } = DateTime.UtcNow;
     public DateTime EndBooking { get; set; }

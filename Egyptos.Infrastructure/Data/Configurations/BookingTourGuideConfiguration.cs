@@ -8,6 +8,5 @@ public class BookingTourGuideConfiguration : IEntityTypeConfiguration<BookingTou
 {
     public void Configure(EntityTypeBuilder<BookingTourGuide> builder)
     {
-        builder.HasKey(x => new { x.TourGuideId, x.UserId });
     }
 }

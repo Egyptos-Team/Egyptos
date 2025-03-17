@@ -196,13 +196,22 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTourGuide", b =>
                 {
-                    b.Property<int>("TourGuideId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("CancelBooking")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("EndBooking")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("PaymentCancel")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("StartBooking")
@@ -211,7 +220,16 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Property<double>("TotalPrice")
                         .HasColumnType("float");
 
-                    b.HasKey("TourGuideId", "UserId");
+                    b.Property<int>("TourGuideId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TourGuideId");
 
                     b.HasIndex("UserId");
 
@@ -1181,7 +1199,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EmailConfirmed = true,
                             FirstName = "Ahmed",
                             ImageUrl = "profiles/df4fb389-64ed-486e-be7d-722771b6e3bc.jpeg",
-                            LastName = "Hesham",
+                            LastName = "Momamed",
                             LockoutEnabled = false,
                             NationalId = "30305521354688",
                             NormalizedEmail = "AHMED12@GMAIL.COM",
@@ -1399,9 +1417,9 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             ConcurrencyStamp = "f58fbbd5-a0d4-460c-bc0d-5afb9a0adb63",
                             Email = "Jesseyd@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Jessy",
+                            FirstName = "Kosta",
                             ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
-                            LastName = "Danial",
+                            LastName = "Mohamed",
                             LockoutEnabled = false,
                             NationalId = "40415678901625",
                             NormalizedEmail = "JESSEYD@GMAIL.COM",

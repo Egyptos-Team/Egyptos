@@ -3,22 +3,44 @@ using Egyptos.Application.Contracts.TourGuide;
 
 namespace Egyptos.Application.Contracts.BookingTourGuide;
 
-public record BookingTourGuideResponse
+public record BookingTourGuideWithOutUserResponse
 (
+     int Id,
      string UserId,
      int TourGuideId,
+     string Email,
      DateTime StartBooking,
      DateTime EndBooking,
      double TotalPrice 
 );
 
-public record BookingTourGuideByUserRasponse
+public record BookingTourGuideResponse
 (
-    string UserId,
-    IEnumerable<TourGuideResponse> TourGuides
+     int Id,
+     DateTime StartBooking,
+     DateTime EndBooking,
+     double TotalPrice,
+     AuthWhithOutTokenAndExpiresInResponse User
 );
 
-public record BookingTourGuideBooked
+public record BookingTourGuideWithoutUserIdResponse
+(
+     int BookingId,
+     int TourGuideId,
+     string FirstName,
+     string LastName,
+     DateTime StartBooking,
+     DateTime EndBooking,
+     double TotalPrice
+);
+
+public record BookingTourGuideByUserRasponse
+(
+     string UserId,
+     IEnumerable<BookingTourGuideWithoutUserIdResponse> AllBookeingForThisUser
+);
+
+public record BookingTourGuideBookedRasponse
 (
      int TourGuideId,
      IEnumerable<BookingTourGuideResponse> BookingUsers

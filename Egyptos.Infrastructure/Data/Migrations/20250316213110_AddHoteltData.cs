@@ -7,7 +7,7 @@
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateSeedinHotelsTable : Migration
+    public partial class AddHoteltData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

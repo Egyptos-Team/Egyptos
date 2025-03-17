@@ -7,7 +7,7 @@
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddTourGuideData : Migration
+    public partial class AddTourGuidesData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

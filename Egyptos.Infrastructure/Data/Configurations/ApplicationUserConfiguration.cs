@@ -19,8 +19,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
         //var passwordHasher = new PasswordHasher<ApplicationUser>();
         //var hashedPassword = passwordHasher.HashPassword(null!, DefaultUser.AdminPassword);
 
-        builder.HasData
-        (
+        var Users = new List<ApplicationUser>()
+        {
             new ApplicationUser
             {
                 Id = DefaultUser.AdminId,
@@ -43,7 +43,7 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             {
                 Id = "683211b1-1125-42a1-b148-a606a4ca4df3",
                 FirstName = "Ahmed",
-                LastName = "Hesham",
+                LastName = "Momamed",
                 NationalId = "30305521354688",
                 PhoneNumber = "01024866094",
                 Sex = "Male",
@@ -222,8 +222,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             new ApplicationUser
             {
                 Id = "cb3cb7ca-1921-49fd-a11e-600b351b3df3",
-                FirstName = "Jessy",
-                LastName = "Danial",
+                FirstName = "Kosta",
+                LastName = "Mohamed",
                 NationalId = "40415678901625",
                 PhoneNumber = "07022670816",
                 Sex = "Female",
@@ -382,6 +382,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
                 EmailConfirmed = true,
                 PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA=="
             }
-        );
+        };
+
+        builder.HasData(Users);
     }
 }

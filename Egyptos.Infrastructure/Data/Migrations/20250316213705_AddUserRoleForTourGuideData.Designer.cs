@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250316004549_AddUserRoleData")]
-    partial class AddUserRoleData
+    [Migration("20250316213705_AddUserRoleForTourGuideData")]
+    partial class AddUserRoleForTourGuideData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -438,6 +438,632 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Hotels");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "Cairo international Airport  terminal 3, Heliopolis, 11341 Cairo, Egypt",
+                            Facebook = "https://www.facebook.com/share/19xBNPS8M2/",
+                            ImageUrl = "Hotels/Cairo/1.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.3169529673273!2d31.395847200000006!3d30.1137427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14581655c2fefa93%3A0x855d24c50d9a251!2z2YTZiCDZhdmK2LHZitiv2YrYp9mGINmF2LfYp9ixINin2YTZgtin2YfYsdip!5e0!3m2!1sar!2seg!4v1742149560840!5m2!1sar!2seg",
+                            Name = "Le Meridien Cairo Airport",
+                            PhoneNumber = "+202-22659600",
+                            PricePerHour = 5812.0,
+                            WebSite = "https://www.marriott.com/en-us/hotels/caiam-le-meridien-cairo-airport/overview/"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Corniche El Nile, Garden City,Cairo",
+                            Facebook = "https://www.facebook.com/share/1EjVfEV71A/",
+                            ImageUrl = "Hotels/Cairo/2.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.076091286725!2d31.2294302!3d30.0346748!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145847eb19741479%3A0x6f4f4b9d21f639e1!2z2YfZitmE2KrZiNmGINin2YTZgtin2YfYsdipINis2LHYp9mG2K8g2YbYp9mK2YQ!5e0!3m2!1sar!2seg!4v1742149673321!5m2!1sar!2seg",
+                            Name = "Hilton Cairo Grand Nile",
+                            PhoneNumber = "0-223651234",
+                            PricePerHour = 6400.0,
+                            WebSite = "https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwj6lfPF_4uMAxXsa0ECHbnaFVMYABAEGgJ3cw&co=1&ase=2&gclid=EAIaIQobChMI-pXzxf-LjAMV7GtBAh252hVTEAAYASAAEgK3afD_BwE&ohost=www.google.com&cid=CAASJeRoTO3di9EUVIgV7C3WwqJMXHsOhdz4AF8DeGrvCpcDDz6EZx0&sig=AOD64_0sDqYVCCLNjHXPtzKU7Z81PrausA&q&nis=4&adurl&ved=2ahUKEwi2ie3F_4uMAxU9aqQEHbD2MR4Q0Qx6BAgmEAE"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "1089 Corniche El Nil - Garden City, Garden City, 11519 Cairo, Egypt",
+                            Facebook = "https://www.facebook.com/share/1D9key9seU/",
+                            ImageUrl = "Hotels/Cairo/3.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3454.0216686198137!2d31.2320317!3d30.0362362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840cd3ef57809%3A0xd7f50b4221f71eb0!2z2YHZhtiv2YIg2YHZiNixINiz2YrYstmI2YYg2YbYp9mK2YQg2KjZhNin2LLYpyDYp9mE2YLYp9mH2LHZhw!5e0!3m2!1sar!2seg!4v1742149822971!5m2!1sar!2seg",
+                            Name = "Four Seasons Hotel Cairo at Nile Plaza",
+                            PhoneNumber = "20227917000",
+                            PricePerHour = 14500.0,
+                            WebSite = "https://www.fourseasons.com/caironp/"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Address = "1115 Corniche El Nile, Cairo, Egypt",
+                            Facebook = "https://www.facebook.com/share/1BiBZudYV5/",
+                            ImageUrl = "Hotels/Cairo/4.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3453.5290920453067!2d31.234616!3d30.050365!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840c381a29537%3A0xf1d5b3a64a0e4de1!2z2YfZitmE2KrZiNmGINix2YXYs9mK2LM!5e0!3m2!1sar!2seg!4v1742149918000!5m2!1sar!2seg",
+                            Name = "Ramses Hilton Hotel & Casino",
+                            PhoneNumber = "+20225777444",
+                            PricePerHour = 6500.0,
+                            WebSite = "https://www.hilton.com/en/hotels/cairhtw-ramses-hilton/"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Address = "Kasr El Nile, Cairo, Egypt",
+                            Facebook = "https://www.facebook.com/share/1ZTLj6XCvb/",
+                            ImageUrl = "Hotels/Cairo/5.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3453.655892501945!2d31.2378339!3d30.0467285!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840c6e7b40217%3A0xa56e70b7cb4fa53d!2z2LTYqtmK2KzZhtio2LHYrNix!5e0!3m2!1sar!2seg!4v1742149990173!5m2!1sar!2seg",
+                            Name = "Steigenberger Hotel El Tahrir Cairo",
+                            PhoneNumber = "0-225750777",
+                            PricePerHour = 5500.0,
+                            WebSite = "https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjSl4S_iIyMAxUrCqIDHUHaF3AYABAEGgJsZQ&co=1&gclid=EAIaIQobChMI0peEv4iMjAMVKwqiAx1B2hdwEAAYAiAAEgLKRvD_BwE&ohost=www.google.com&cid=CAASJeRoqb3A8_W_cCI2Psh5SfgGlWkPy5sBG63KSSJLTrvfQUMPBi4&sig=AOD64_1-nv5EhB35HIIna2-AlbmHpbeh7A&q&adurl&ved=2ahUKEwjpk_2-iIyMAxWhR_EDHZMFLEUQ0Qx6BAgUEAQ"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Address = "Al-Sahaby Lan,In Front Of Luxor Temple, East Bank, 99999 Luxor, Egypt",
+                            Facebook = "https://www.facebook.com/share/1ADhARSWdh/",
+                            ImageUrl = "Hotels/Luxor/6.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.0867571344843!2d32.644454!3d25.7015514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x144915793ddb0125%3A0xe6577d403df25035!2sNefertiti%20Hotel%20Luxor!5e0!3m2!1sar!2seg!4v1742150165519!5m2!1sar!2seg",
+                            Name = "Nefertiti Hotel Luxor",
+                            PhoneNumber = "010 00329991",
+                            PricePerHour = 2200.0,
+                            WebSite = "https://www.nefertitihotel.com/"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Address = "Corniche El Nile Street, East Bank, Luxor, Egypt",
+                            Facebook = "https://www.facebook.com/share/19x25D4GZe/",
+                            ImageUrl = "Hotels/Luxor/7.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.479246270187!2d32.6339694!3d25.6885519!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x144914291e2ae293%3A0xa1bb33e69e24c44f!2z2YHZhtiv2YIg2LPZiNmG2LPYqtinINiz2KfZhiDYrNmI2LHYrCDYp9mE2KfZgti12LE!5e0!3m2!1sar!2seg!4v1742150217456!5m2!1sar!2seg",
+                            Name = "Sonesta St. George Hotel - Convention Center",
+                            PhoneNumber = "0-952382575",
+                            PricePerHour = 7000.0,
+                            WebSite = "https://www.sonesta.com/sonesta-hotels-resorts/egy/luxor/sonesta-st-george-hotel-luxor"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Address = "Awameya Road, Kings Island, East Bank, Luxor, Egypt",
+                            Facebook = "https://www.facebook.com/share/1AQsRLfAoM/",
+                            ImageUrl = "Hotels/Luxor/8.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3596.1693568342284!2d32.6242926!3d25.6656801!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x144916af72fd4d79%3A0x57e2897fa81e3b0a!2z2YXZhtiq2KzYuSDZiNiz2KjYpyDYrNmI2YTZiiDZgdmK2YQg2YPZitmG2KzYsiDZgdin2YTZig!5e0!3m2!1sar!2seg!4v1742150332237!5m2!1sar!2seg",
+                            Name = "Jolie Ville Hotel & Spa Kings Island Luxor",
+                            PhoneNumber = "0-952274855",
+                            PricePerHour = 6000.0,
+                            WebSite = "https://jolievilleluxor.com/"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Address = "17,Cornish El Nile Street,Beside Luxor Temple, East Bank, 99999 Luxor, Egypt",
+                            Facebook = "https://www.facebook.com/share/15nAkdSbP8/",
+                            ImageUrl = "Hotels/Luxor/9.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3595.2265430706807!2d32.6386596!3d25.6969223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840cfc0b0c23f%3A0xc5c45a5bffb2eec1!2sPavillon%20Winter%20Luxor!5e0!3m2!1sar!2seg!4v1742150453090!5m2!1sar!2seg",
+                            Name = "Pavillon Winter Luxor",
+                            PhoneNumber = "0-952380425",
+                            PricePerHour = 7000.0,
+                            WebSite = "https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjDgYfKmoyMAxV5BQYAHRrGM7wYABAEGgJ3cw&ae=2&aspm=1&co=1&ase=5&gclid=EAIaIQobChMIw4GHypqMjAMVeQUGAB0axjO8EAAYASAAEgLgRvD_BwE&ei=rYLVZ7vmL6SLxc8P9cOYkAw&ohost=www.google.com&cid=CAASJeRoS2XDjppD17JTFEutBMaPIvZPSH-pw60RI3ka_-LGXrL7l10&sig=AOD64_3re-b14AO6-AkKUHYmMwsAlmfK-w&q&sqi=2&adurl&ved=2ahUKEwj78IDKmoyMAxWkRfEDHfUhBsIQ0Qx6BAgSEAE"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Address = "Al Qarna Road, West Bank, 85951 Luxor, Egypt",
+                            Facebook = "https://www.facebook.com/share/16QVjxXGGN/",
+                            ImageUrl = "Hotels/Luxor/10.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3594.9708363816444!2d32.6351208!3d25.7053896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14491592df0f6151%3A0x6be287cee355d461!2sKEMET%20GUEST%20HOUSE!5e0!3m2!1sar!2seg!4v1742150577610!5m2!1sar!2seg",
+                            Name = "Kemet House",
+                            PhoneNumber = "0-1016649967",
+                            PricePerHour = 9000.0,
+                            WebSite = "https://kemet-house.com/"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Address = "Aswan,Corniche El Nile Baharive, Abu El Rish Qebli, 81111 Aswan, Egypt",
+                            Facebook = "https://www.facebook.com/share/15jBHzKKJn/",
+                            ImageUrl = "Hotels/Aswan/11.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.3629139021627!2d32.88114108501082!3d24.159001984389537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1436651db3b6c23d%3A0xde30386aed0ad246!2z2LPZiNmG2LPYqtinINmG2YjYqNipINij2LPZiNin2YY!5e0!3m2!1sar!2seg!4v1742150701997!5m2!1sar!2seg",
+                            Name = "Sonesta Nouba Hotel Aswan",
+                            PhoneNumber = "011 18837500",
+                            PricePerHour = 9000.0,
+                            WebSite = "https://www.sonesta.com/sonesta-hotels-resorts/egy/qism-aswan/sonesta-nouba-hotel-aswan"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Address = "Corniche El Nil, 99999 Aswan, Egypt",
+                            Facebook = "https://www.facebook.com/share/12JNbMmPysK/",
+                            ImageUrl = "Hotels/Aswan/12.jpg",
+                            Location = "8https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d29139.651365378886!2d32.9054227!3d24.0854396!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14367b4e73fa6fcf%3A0x11847bbcad585364!2z2YHZhtiv2YIg2KjZitix2KfZhdmK2LLYpyDYpdmK2YTYp9mG2K8g2KPYs9mI2KfZhg!5e0!3m2!1sar!2seg!4v1742150765720!5m2!1sar!2seg",
+                            Name = "Pyramisa Island Hotel Aswan",
+                            PhoneNumber = "20 97-231-7400",
+                            PricePerHour = 8500.0,
+                            WebSite = "https://pyramisaislandaswan.com-egypt.com/"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Address = "Nile Corniche, Aswan, Egypt",
+                            Facebook = "https://www.facebook.com/share/1DsSQWkGjK/",
+                            ImageUrl = "Hotels/Aswan/13.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3641.77197299069!2d32.903635685011736!3d24.10951318441347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14367bce05036ea5%3A0x32b15d88103d4d62!2z2YHZhtiv2YIg2KrZiNmE2YrYqCDYo9iz2YjYp9mG!5e0!3m2!1sar!2seg!4v1742150830310!5m2!1sar!2seg",
+                            Name = "Tolip Aswan Hotel",
+                            PhoneNumber = "097 2328828",
+                            PricePerHour = 13000.0,
+                            WebSite = "https://tolipgroup.com/tolip-hotel-aswan/"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Address = "Elephantine Island, 31911571 Aswan, Egypt",
+                            Facebook = "https://www.facebook.com/share/19E12Rf3cU/",
+                            ImageUrl = "Hotels/Aswan/14.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3642.3922497122853!2d32.887177!3d24.0876976!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1436656da11f668b%3A0xa6dc874bd9b0e6d1!2sLabib%20Guest%20House!5e0!3m2!1sar!2seg!4v1742150891936!5m2!1sar!2seg",
+                            Name = "Labib Guest House",
+                            PhoneNumber = "011 12175285",
+                            PricePerHour = 7000.0,
+                            WebSite = "https://hotel-menara.com/accommodation/aswan/labib-guest-house/360902"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Address = "In Front Of The Nubian Museum,, 99999 Aswan, Egypt",
+                            Facebook = "https://www.facebook.com/share/14anpY3Nho/",
+                            ImageUrl = "Hotels/Aswan/15.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.6698326887117!2d32.88940698501253!3d24.077928784428988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x143664a7e2ac1ee9%3A0x2e0d4f4fbe61ac6b!2z2YHZhtiv2YIg2KjYs9mF2Kk!5e0!3m2!1sar!2seg!4v1742150950289!5m2!1sar!2seg",
+                            Name = "Basma Hotel Aswan",
+                            PhoneNumber = "097 2484001",
+                            PricePerHour = 7000.0,
+                            WebSite = "https://basmahotel.com/contacts/"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Address = "Lake Karoun, 99999 Fayoum Center, Egypt",
+                            Facebook = "https://www.facebook.com/share/19bAuXS1ex/",
+                            ImageUrl = "Hotels/Fayoum/16.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.627808130699!2d30.77279458489834!3d29.46887678209527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145971cb8aa9c4bf%3A0x776fe8b3a4a83286!2z2YHZhtiv2YIg2YfZhNmG2KfZhiDYp9mI2KjYsdis!5e0!3m2!1sar!2seg!4v1742151019663!5m2!1sar!2seg",
+                            Name = "Helnan Auberge Fayoum",
+                            PhoneNumber = "084 2981200",
+                            PricePerHour = 10000.0,
+                            WebSite = "https://www.helnan.com/en/Hotel/helnan-auberge-fayoum/?hid=a15a6247-ca00-4bba-86d6-854019538c8c&id="
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Address = "Tunes village, 29000 Fayoum Center, Egypt",
+                            Facebook = "https://www.facebook.com/share/1H3xPZVxez/",
+                            ImageUrl = "Hotels/Fayoum/17.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3476.1559037614206!2d30.497292!3d29.394995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14595d834998b67f%3A0x8d0cf56618018ef7!2sTzila%20Lodge!5e0!3m2!1sar!2seg!4v1742151080175!5m2!1sar!2seg",
+                            Name = "Tzila Lodge",
+                            PhoneNumber = "010 05383653",
+                            PricePerHour = 7000.0,
+                            WebSite = "https://tzila.com/"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Address = "Wadi El Rayyan Road, 63511 Fayoum Center, Egypt",
+                            Facebook = "https://www.facebook.com/tache.fayoumm/",
+                            ImageUrl = "Hotels/Fayoum/18.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3482.2513170867737!2d30.4119641!3d29.2161614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145be5f7ca19df45%3A0x80179c95b9ea3575!2sTache%20By%20The%20Lake!5e0!3m2!1sar!2seg!4v1742151145847!5m2!1sar!2seg",
+                            Name = "Tache By The Lake",
+                            PhoneNumber = "010 03535100",
+                            PricePerHour = 6000.0,
+                            WebSite = "https://www.instagram.com/tache.fayoum/?hl=ar"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Address = "Tunis Village, 63626 Fayoum Center, Egypt",
+                            Facebook = "https://www.facebook.com/tunisvillageOfficiel/?locale=hi_IN",
+                            ImageUrl = "Hotels/Fayoum/19.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d445094.4781190967!2d30.935844!3d29.3614861!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14595f21b4334797%3A0x42b38d8f31f80b1a!2zVHVuaXMgdmlsbGFnZSBFbC1GYXlvdW0gLyDZgtix2YrYqSDYqtmI2YbYsyDYp9mE2YHZitmI2YU!5e0!3m2!1sar!2seg!4v1742151200247!5m2!1sar!2seg",
+                            Name = "Tunis Village Chalet",
+                            PhoneNumber = "01080537444",
+                            PricePerHour = 4000.0,
+                            WebSite = "https://en.tunisvillage-eg.com/contact"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Address = "23 KM Port Said – Damyetta Road, El diba, Egypt, 10000 Port Said, Egypt",
+                            Facebook = "https://www.facebook.com/PortoSaidResortOfficial/",
+                            ImageUrl = "Hotels/Port Said/20.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d218059.8917912947!2d32.2154536!3d31.3538514!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f993a5744cdaef%3A0x384f1815df6d7eeb!2sPorto%20Said%20Resort%20%26%20Spa!5e0!3m2!1sar!2seg!4v1742151276874!5m2!1sar!2seg",
+                            Name = "Porto Said Resort & Spa",
+                            PhoneNumber = "01278641045",
+                            PricePerHour = 2000.0,
+                            WebSite = "https://www.portohotelseg.com/said-resort/contact"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Address = "Sultan Hussein St, Port Said, Egypt",
+                            Facebook = "https://www.facebook.com/restaportsaid/?locale=ar_AR",
+                            ImageUrl = "Hotels/Port Said/21.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.2431514337036!2d32.317764784855505!3d31.269368781453288!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f99dd29f66fd7f%3A0x3a573da6a39b5c09!2z2YHZhtiv2YIg2LHYs9iq2Kcg2KjZiNix2LPYudmK2K8gUmVzdGEgUG9ydCBTYWlkIEhvdGVs!5e0!3m2!1sar!2seg!4v1742151328591!5m2!1sar!2seg",
+                            Name = "Resta Port Said Hotel",
+                            PhoneNumber = "066 3200511",
+                            PricePerHour = 6000.0,
+                            WebSite = "https://www.booking.com/hotel/eg/resta-port-said.ar.html"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Address = "Port Said, Atef El-Sadat Street Madînet, Portsaid, Port Said Governorate 42511, 42511 Port Said, Egypt",
+                            Facebook = "https://www.facebook.com/GrandHotel.eg/",
+                            ImageUrl = "Hotels/Port Said/22.jpg",
+                            Location = "https://maps.app.goo.gl/7hRWvSLypY1vF6gQ7",
+                            Name = "Grand Hotel Port Said",
+                            PhoneNumber = "066 3267550",
+                            PricePerHour = 3500.0,
+                            WebSite = "https://www.instagram.com/grandhotelportsaid/"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Address = "Al Zaim Ghandi St Atef El Sadat St",
+                            Facebook = "https://www.facebook.com/maromportsaid/",
+                            ImageUrl = "Hotels/Port Said/23.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.1397178613893!2d32.30846088485543!3d31.272230281452348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f99df8e01a8d4d%3A0x7157294320b9c03!2sMarom%20Port%20Said%20Resort%20%26%20Beach!5e0!3m2!1sar!2seg!4v1742151398360!5m2!1sar!2seg",
+                            Name = "Marom Port Said Resort & Beach",
+                            PhoneNumber = "012 22111321",
+                            PricePerHour = 3100.0,
+                            WebSite = "https://maromhotels.com/ar/"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Address = "Atef El Sadat Street , Port Fouad",
+                            Facebook = "https://m.facebook.com/profile.php?id=117377931674556",
+                            ImageUrl = "Hotels/Port Said/24.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.1844026944764!2d32.3148307!3d31.2709941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f99d03c6fd5229%3A0x8fbb517578e263eb!2sHelnan%20portsaid%20beach!5e0!3m2!1sar!2seg!4v1742151582485!5m2!1sar!2seg",
+                            Name = "Helnan Port Said",
+                            PhoneNumber = "0663456669",
+                            PricePerHour = 2500.0,
+                            WebSite = "https://www.helnan.com/fr/RoomDetails/helnan-port-said-hotel/?id=d64d57b3-0524-41ca-8411-2a8cb5333d80&hid=711bd3e2-7d02-49e4-8606-1e85d0aca2c9"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Address = "16, Mohamed aly street De Lesseps,ismailia,Egypt, 8361240 Ismailia, Egypt",
+                            Facebook = "https://www.facebook.com/maisonmaximdelesseps/",
+                            ImageUrl = "Hotels/Ismailia/25.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.578365545696!2d32.27466188487197!3d30.589445881687254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f859166dbcf2e1%3A0x1211a0cd16b1cc3c!2sMaison%20Maxim%20De%20Lesseps!5e0!3m2!1sar!2seg!4v1742151661482!5m2!1sar!2seg",
+                            Name = "Maison Maxim De Lesseps",
+                            PhoneNumber = "010 94888121",
+                            PricePerHour = 5500.0,
+                            WebSite = "https://maisonmaximdelesseps.com/?lang=ar"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Address = "El-Shaheed Abd El-Moneim Riad Road, 41515 Ismailia, Egypt",
+                            Facebook = "https://www.facebook.com/TOLIPELFORSAN/",
+                            ImageUrl = "/Hotels/Ismailia/26.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.680587815631!2d32.294907684872044!3d30.586561081688355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f85939ef30b857%3A0xcc821483be9fa145!2z2YHZhtiv2YIg2KrZiNmE2YrYqCDYp9mE2YHYsdiz2KfZhg!5e0!3m2!1sar!2seg!4v1742152106565!5m2!1sar!2seg",
+                            Name = "Tolip El Forsan Hotel",
+                            PhoneNumber = "01060779118",
+                            PricePerHour = 5600.0,
+                            WebSite = "https://tolipgroup.com/tolip-resort-el-forsan-ismailia/"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Address = "Nemra 6, 41622 Ismailia, Egypt",
+                            Facebook = "https://www.facebook.com/GOLJEWISM/?locale=ar_AR",
+                            ImageUrl = "Hotels/Ismailia/27.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3434.6260618508227!2d32.30557968487199!3d30.588099881687803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f859c1eb07d465%3A0x8a120d14d66b22fb!2z2KzZiNmE2K_ZhiDYrNmI2YrZhCDYp9mE2KPYs9mF2KfYudmK2YTZitip!5e0!3m2!1sar!2seg!4v1742152181691!5m2!1sar!2seg",
+                            Name = "Golden Jewel Ismailia Resort",
+                            PhoneNumber = "011 52287777",
+                            PricePerHour = 3900.0,
+                            WebSite = "https://jewelhotels.net/hotel/golden-jewel-ismailia"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Address = "Forsan Island, 41511 Ismailia, Egypt",
+                            Facebook = "https://www.facebook.com/MercureIsmailia/",
+                            ImageUrl = "Hotels/Ismailia/28.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3434.7143616907956!2d32.2898186!3d30.5856079!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f8594808a17409%3A0xa0b58f85a1cbfb6f!2z2YHZhtiv2YIg2YXZitix2YPZitmI2LEg2KzYstmK2LHYqSDYp9mE2YHYsdiz2KfZhiDYp9mE2KXYs9mF2KfYudmK2YTZitip!5e0!3m2!1sar!2seg!4v1742152275470!5m2!1sar!2seg",
+                            Name = "Mercure Ismailia Forsan Island",
+                            PhoneNumber = "01227011086",
+                            PricePerHour = 4700.0,
+                            WebSite = "https://www.instagram.com/mercure_ismailia_forsan_island/?hl=ar"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Address = "Ismailia Cooperation Area, 11111 Ismailia, Egypt",
+                            Facebook = "https://www.facebook.com/100057534216384/videos/villa-ali-ali-villas-tobago-plantations-estate/1142269550326102/",
+                            ImageUrl = "Hotels/Ismailia/29.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.157939690344!2d33.82256158494995!3d27.151320483025412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1452814d419b4bbb%3A0x2c3f366343fc38b6!2zQWxp4oCZcyBWaWxsYQ!5e0!3m2!1sar!2seg!4v1742152338797!5m2!1sar!2seg",
+                            Name = "VIP villa Ali",
+                            PhoneNumber = " 0792807762",
+                            PricePerHour = 2600.0,
+                            WebSite = "https://www.instagram.com/explore/locations/1762370497115752/vip-villa/"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Address = "El Galaa Street, behind Omar Effendi, Marsa Matruh, Egypt",
+                            Facebook = "https://www.facebook.com/Adriaticahotel.marsamatruh/",
+                            ImageUrl = "Hotels/Marsa Matrouh/30.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3407.192693464274!2d27.234511!3d31.3536614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1461fed2b13ff665%3A0x9ad16be5291440b2!2z2YHZhtiv2YIg2KfYr9ix2YrYqtmK2YPYpw!5e0!3m2!1sar!2seg!4v1742152471152!5m2!1sar!2seg",
+                            Name = "Adriatica Hotel Marsa Matrouh",
+                            PhoneNumber = "046 4938696",
+                            PricePerHour = 1570.0,
+                            WebSite = "https://www.instagram.com/explore/locations/948309694/adriatica-hotel-marsa-matruh/"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Address = "Ras El hekma North Coast, Marsa Matruh, 51512 Marsa Matruh, Egypt",
+                            Facebook = "https://www.facebook.com/MarmaricaBoutiqueCabanas/",
+                            ImageUrl = "Hotels/Marsa Matrouh/31.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3416.6300059684254!2d27.9300305!3d31.0922173!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14603302ded12bc9%3A0xa167edb8d434215c!2sMarmarica%20Boutique%20Cabanas!5e0!3m2!1sar!2seg!4v1742152936163!5m2!1sar!2seg",
+                            Name = "Marmarica Boutique Cabanas - Ras El Hekma - North Coast",
+                            PhoneNumber = "011 00101919",
+                            PricePerHour = 30500.0,
+                            WebSite = "https://marmarica.com/"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Address = "P.O Box 51511 - Marsa Matrouh, 51511 Marsa Matruh, Egypt",
+                            Facebook = "https://www.facebook.com/SafirMarsaMatrouhResort/",
+                            ImageUrl = "Hotels/Marsa Matrouh/32.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.531937882072!2d27.2005518!3d31.371893099999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1461ffb92025d769%3A0x676bfa79fb218aab!2sSafir%20Marsa%20Matrouh%20Resort!5e0!3m2!1sar!2seg!4v1742152993016!5m2!1sar!2seg",
+                            Name = "Safir Marsa Matrouh Resort",
+                            PhoneNumber = "012 72409648",
+                            PricePerHour = 2300.0,
+                            WebSite = "https://www.safirhotels.com/en/press/New-Opening-Safir-Marsa-Matrouh"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Address = "120 Alexandria - Marsa Matrouh Road Beside Elhamraa Port, 51718 Marsa Matruh, Egypt",
+                            Facebook = "https://www.facebook.com/p/Tolip-Resort-Paradise-New-Alamien-100092546733324/",
+                            ImageUrl = "Hotels/Marsa Matrouh/33.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3422.778585805699!2d28.8349375!3d30.9208125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145ffbea0200d795%3A0x22f69e1fe2d16a70!2sTOLIP%20Resort%20Paradise%20New%20Alamein!5e0!3m2!1sar!2seg!4v1742153064059!5m2!1sar!2seg",
+                            Name = "Tolip Resort Paradise",
+                            PhoneNumber = "+20 100 981 5908",
+                            PricePerHour = 7500.0,
+                            WebSite = "https://tolipgroup.com/tolip-resort-paradise-new-alamein/contact-us/"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Address = "Almaza Bay, 37 km East Mersa Matruh,, Marsa Matruh, Egypt",
+                            Facebook = "https://www.facebook.com/jazalmazabayresorts/",
+                            ImageUrl = "Hotels/Marsa Matrouh/34.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3412.8144910534843!2d27.5546091!3d31.1981566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1461dd53f1555555%3A0x50a0b1cb77aa4b0d!2sJAZ%20Almaza%20Beach%20Resort%2C%20Almaza%20Bay!5e0!3m2!1sar!2seg!4v1742153124653!5m2!1sar!2seg",
+                            Name = "JAZ Almaza Beach Resort, Almaza Bay",
+                            PhoneNumber = "010 66699942",
+                            PricePerHour = 3400.0,
+                            WebSite = "https://www.jazhotels.com/hoteldetail/30-egypt-almaza-bay-jaz-almaza-beach-resort"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Address = "0 km Safaga El Queseir Road Hurghada, 84711, Égypte, 84711 Hurghada, Egypt",
+                            Facebook = "https://www.facebook.com/tuimagiclifekalawy/",
+                            ImageUrl = "Hotels/Hurghada/35.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3570.273973829099!2d34.0675947!3d26.5113117!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x144d198b1395a3a5%3A0x8fafdb50b5c09625!2sTUI%20MAGIC%20LIFE%20Kalawy!5e0!3m2!1sar!2seg!4v1742153171217!5m2!1sar!2seg",
+                            Name = "TUI MAGIC LIFE Kalawy",
+                            PhoneNumber = "065 3200021",
+                            PricePerHour = 10000.0,
+                            WebSite = "https://tuimagiclifekalawy.com-hurghada.com/"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Address = "Sahl Hashish Road, 84521 Hurghada, Egypt",
+                            Facebook = "https://www.facebook.com/SahlHasheesh.de/videos/flow-spectrum-resort-sahl-hasheesh/9498118343552521/",
+                            ImageUrl = "Hotels/Hurghada/36.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3553.7322551538464!2d33.8794394!3d27.0386252!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x144d7f004762bf8b%3A0x1fc9280a55997817!2sFlow%20Spectrum%20Resort!5e0!3m2!1sar!2seg!4v1742153208474!5m2!1sar!2seg",
+                            Name = "Flow Spectrum Resort Sahl Hasheesh",
+                            PhoneNumber = "012 78575677",
+                            PricePerHour = 4400.0,
+                            WebSite = "https://resortflowspectrumhasheesh.hotelshurghada.com/en/"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Address = "El Helal District, 84511 Hurghada, Egypt",
+                            Facebook = "https://www.facebook.com/p/Al-Dora-Residence-100067650841951/",
+                            ImageUrl = "Hotels/Hurghada/37.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3546.5372517674928!2d33.802178!3d27.2650389!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145287fdda77e4cb%3A0x2b619ec9710e07f4!2sAl%20Dora%20Residence!5e0!3m2!1sar!2seg!4v1742153239509!5m2!1sar!2seg",
+                            Name = "Al Dora Resort All Inclusive Hotel",
+                            PhoneNumber = "011 11167642",
+                            PricePerHour = 3900.0,
+                            WebSite = "https://resortaldorainclusive.hotelshurghada.com/en/"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Address = "El Helal District, Hurghada 2, Red Sea Governorate, 84511 Hurghada, Egypt",
+                            Facebook = "https://www.facebook.com/p/Davinciresort-100067030293671/",
+                            ImageUrl = "Hotels/Hurghada/38.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14187.060345489059!2d33.8203617!3d27.257896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145287e44b1a58cf%3A0x566333cc5ba3f395!2sNew%20DaVinci%20Beach%20%26%20Diving%20Resort!5e0!3m2!1sar!2seg!4v1742153281585!5m2!1sar!2seg",
+                            Name = "Davinci Beach Resort",
+                            PhoneNumber = " 653557868 ",
+                            PricePerHour = 1800.0,
+                            WebSite = "https://da-vinci-beach.hotel-hurghada.com/en/"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Address = "El-Bahr, 1973706 Hurghada, Egypt",
+                            Facebook = "https://www.facebook.com/p/Geisum-Village-Hurghada-100069093702673/",
+                            ImageUrl = "Hotels/Hurghada/39.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3546.688336422805!2d33.8214024!3d27.2603024!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145287d92d6287f7%3A0x4abce40efc57c7a!2zTmV3IEdlaXN1bSDZhtmK2Ygg2KzZitiy2YjZhQ!5e0!3m2!1sar!2seg!4v1742153316715!5m2!1sar!2seg",
+                            Name = "New Gaisum Resort",
+                            PhoneNumber = "065 3546692",
+                            PricePerHour = 2300.0,
+                            WebSite = "https://el-geisum-village.hotel-hurghada.com/en/"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            Address = "Moustafa Kamel, Corniche Road Roshdy, Alexandria, Egypt",
+                            Facebook = "https://www.facebook.com/share/14q1Rp793o/",
+                            ImageUrl = "Hotels/Alexandria/40.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d852.9016871781419!2d29.9440803!3d31.2316227!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4e610b4e28d%3A0x55e0e76c064a00be!2sTOLIP%20Hotel%20Alexandria!5e0!3m2!1sar!2seg!4v1742153353585!5m2!1sar!2seg",
+                            Name = "Tolip",
+                            PhoneNumber = "035419330",
+                            PricePerHour = 5000.0,
+                            WebSite = "https://tolipgroup.com/tolip-hotel-royal-alexandria/"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            Address = "Corniche Road Sidi Gaber Alexandria Corniche Road Sidi Gaber Alexandria, 21523 Alexandria, Egypt",
+                            Facebook = "https://www.facebook.com/share/1YgyBKhYXQ/",
+                            ImageUrl = "Hotels/Alexandria/41.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3411.694075064414!2d29.941944999999993!3d31.229204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c594317c499d%3A0xd8de85f6cd600a22!2sGolden%20Jewel%20Beach%20%26%20Hotel!5e0!3m2!1sar!2seg!4v1742153399218!5m2!1sar!2seg",
+                            Name = "Golden Jewel Beach&Hotel",
+                            PhoneNumber = "035442380",
+                            PricePerHour = 3400.0,
+                            WebSite = "https://www.jewelhotels.net/hotel/golden-jewel-hotel-alexandria"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            Address = "14th May Avenue, Smouha, 21648 Alexandria, Egypt",
+                            Facebook = "https://www.facebook.com/share/1ARavY4jGT/",
+                            ImageUrl = "Hotels/Alexandria/42.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3412.428921417258!2d29.9603911!3d31.2088441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c4976eb3c991%3A0x82c3d973fe60b252!2z2YHZhtiv2YIg2KzYsdin2YbYryDYqNmE2KfYstinINiz2YXZiNit2Kk!5e0!3m2!1sar!2seg!4v1742153437367!5m2!1sar!2seg",
+                            Name = "The Grand Plaza Hotel Smouha",
+                            PhoneNumber = "033786100",
+                            PricePerHour = 2900.0,
+                            WebSite = "https://www.tgphotels.com/"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            Address = "1 Digla Street, Al Ramel Station, Corniche Road, 00203 Alexandria, EgyptAfter booking, all of the property’s details, including telephone and address, are provided in your booking confirmation and your account.",
+                            Facebook = "https://www.facebook.com/share/15EyLh2pvi/",
+                            ImageUrl = "Hotels/Alexandria/43.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3412.662304893747!2d29.9014263!3d31.2023754!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5db2eca0d7955%3A0x30a0eecda7d20f56!2z2YHZhtiv2YIg2YHYpNin2K8!5e0!3m2!1sar!2seg!4v1742153471487!5m2!1sar!2seg",
+                            Name = "Fouad Hotel",
+                            PhoneNumber = "034808308",
+                            PricePerHour = 1100.0,
+                            WebSite = "https://x.com/FouadResv?fbclid=IwZXh0bgNhZW0CMTEAAR1Kn6p5zx9-H-Ej1e6ggmCT87Yqq5iLaDlZQkii6EnYby1drETYgM33xeg_aem_Jv3QsJFIdeOw0K3uZ1Zrqw"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            Address = "Al Montazah Palace, 99999 Alexandria, Egypt",
+                            Facebook = "https://www.facebook.com/share/15Q5PCjSzD/",
+                            ImageUrl = "Hotels/Alexandria/44.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3409.5521515111423!2d30.0183078!3d31.2884809!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5d061fc11582d%3A0x12657103d509ea6c!2z2YHZhtiv2YIg2YfZhNmG2KfZhiDYsdmI2YrYp9mE!5e0!3m2!1sar!2seg!4v1742153525150!5m2!1sar!2seg",
+                            Name = "Helnan",
+                            PhoneNumber = "01001710737",
+                            PricePerHour = 4000.0,
+                            WebSite = "https://www.helnan.com/en/Hotel/helnan-royal-alexandria/?hid=4e692ca5-519f-492f-9a2a-4079789b5877&id="
+                        },
+                        new
+                        {
+                            Id = 45,
+                            Address = "LUSINDA HOTEL MANAGEMENT BY ZAD, Suez, Egypt",
+                            Facebook = "https://www.facebook.com/lusinda.resort/",
+                            ImageUrl = "Hotels/Suez/45.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3456.842921639098!2d32.5404515!3d29.9551965!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145625d589fe6b35%3A0x65f93388bc88c3fc!2sLUSINDA%20HOTEL!5e0!3m2!1sar!2seg!4v1742153558885!5m2!1sar!2seg",
+                            Name = "LUSINDA",
+                            PhoneNumber = "01201680000",
+                            PricePerHour = 3700.0,
+                            WebSite = "https://www.instagram.com/lusinda.resort/"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            Address = "25 KM After Ahmed Hamdy Tunnel, Ras Sedr, Egypt",
+                            Facebook = "https://www.facebook.com/mousacoast.egy/",
+                            ImageUrl = "Hotels/Suez/46.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3460.141684109636!2d32.6574876!3d29.8601875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14563cf73f05475b%3A0xb3ea0e7664279635!2sMousa%20coast!5e0!3m2!1sar!2seg!4v1742153590564!5m2!1sar!2seg",
+                            Name = "Mousa Coast Hotel",
+                            PhoneNumber = "+20226775732",
+                            PricePerHour = 1800.0,
+                            WebSite = "https://mousacoasthotel.com-egypt.com/"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            Address = "2 Sharie Bursaeid, Suez 43522 Egypt",
+                            Facebook = "https://www.facebook.com/hotel.greenhouse/",
+                            ImageUrl = "Hotels/Suez/47.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13826.602232954514!2d32.5425553!3d29.9607284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1456250ca617e177%3A0x6daa7f828299e94f!2z2YHZhtiv2YIg2KzYsdmK2YYg2YfYp9mI2LM!5e0!3m2!1sar!2seg!4v1742153628730!5m2!1sar!2seg",
+                            Name = "Green House",
+                            PhoneNumber = "0623191554",
+                            PricePerHour = 1000.0,
+                            WebSite = "https://greenhouse.com-egypt.com/"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            Address = "Sharks Bay , 99999 Sharm El Sheikh, Egypt",
+                            Facebook = "https://www.instagram.com/vhotelsharmelsheikh/",
+                            ImageUrl = "Hotels/Sharm El Sheikh/48.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3524.4965767296762!2d34.3792281!3d27.9480745!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145349c9cc60221b%3A0xb4b82bc015ac6a56!2sV%20Hotel%20Sharm%20El%20Sheikh!5e0!3m2!1sar!2seg!4v1742153665106!5m2!1sar!2seg",
+                            Name = "V Hotel",
+                            PhoneNumber = "0693601091",
+                            PricePerHour = 7300.0,
+                            WebSite = "https://thevhotelsegypt.com/v-sharm-el-sheikh/"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            Address = "Naama Bay, Sharm El Sheikh, Egypt",
+                            Facebook = "https://www.facebook.com/NovotelSharmElSheikh/,",
+                            ImageUrl = "Hotels/Sharm El Sheikh/49.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3525.5565569460086!2d34.3286542!3d27.9155784!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14533787f83288e7%3A0x12499f16f664fbae!2z2YHZhtiv2YIg2YbZiNmB2YjYqtmK2YQg2LTYsdmFINin2YTYtNmK2K4!5e0!3m2!1sar!2seg!4v1742153698720!5m2!1sar!2seg",
+                            Name = "Novotel",
+                            PhoneNumber = "0693600172",
+                            PricePerHour = 4400.0,
+                            WebSite = "https://all.accor.com/hotel/1715/index.en.shtml"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            Address = "Nabq bay, 11038 Sharm El Sheikh, Egyp",
+                            Facebook = "https://www.facebook.com/albatroslagunavistaresort/",
+                            ImageUrl = "Hotels/Sharm El Sheikh/50.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3521.4126062109817!2d34.4287806!3d28.0424237!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14533bca1528a70f%3A0xc0a3d3a55c1b5fe9!2sPickalbatros%20Laguna%20Vista%20Hotel%20-%20Sharm%20El%20Sheikh!5e0!3m2!1sar!2seg!4v1742153730808!5m2!1sar!2seg",
+                            Name = "Pickalbatros Laguna Vista ",
+                            PhoneNumber = "+20693710121",
+                            PricePerHour = 8600.0,
+                            WebSite = "https://www.pickalbatros.com/laguna-vista-hotel-sharm-el-sheikh"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            Address = "Om El Seid Cliff, Sharm El Sheikh, Egypt",
+                            Facebook = "https://www.facebook.com/AmphorasHotels/",
+                            ImageUrl = "Hotels/Sharm El Sheikh/51.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3527.0801943707547!2d34.3172883!3d27.8688068!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145339f7ec25e6d1%3A0x77f8cfef69e38cc9!2z2YXZhtiq2KzYuSDYtNmI2LHYsiDYo9mF2YHZiNix2KfYsyDYqNmK2KrYtA!5e0!3m2!1sar!2seg!4v1742153763552!5m2!1sar!2seg",
+                            Name = "Amphoras",
+                            PhoneNumber = "01223932782",
+                            PricePerHour = 6400.0,
+                            WebSite = "https://www.amphorashotels.com/amphoras?gad_source=1&gclid=Cj0KCQjwytS-BhCKARIsAMGJyzoXN18tpgCfWuylL776fMQhxIDgxj67v9CRnxk-ZhgA79I5d1RLOmcaAiZREALw_wcB"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            Address = "Naama Bay, 6019 Sharm El Sheikh, Egypt",
+                            Facebook = "https://www.facebook.com/movenpicksharmelsheikh/",
+                            ImageUrl = "Hotels/Sharm El Sheikh/52.jpg",
+                            Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3525.6106056334993!2d34.34263598493347!3d27.9139204827069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14533bb92492a9af%3A0x9b7fa058a25aeac8!2sM%C3%B6venpick%20Sharm%20El%20Sheikh!5e0!3m2!1sar!2seg!4v1742153794348!5m2!1sar!2seg",
+                            Name = "Movenpick",
+                            PhoneNumber = "+20693600081",
+                            PricePerHour = 5700.0,
+                            WebSite = "https://movenpick.accor.com/en/africa/egypt/sharm-el-sheikh/resort-sharm-el-sheikh.html"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Identity.ApplicationUser", b =>
@@ -558,7 +1184,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EmailConfirmed = true,
                             FirstName = "Ahmed",
                             ImageUrl = "profiles/df4fb389-64ed-486e-be7d-722771b6e3bc.jpeg",
-                            LastName = "Hesham",
+                            LastName = "Momamed",
                             LockoutEnabled = false,
                             NationalId = "30305521354688",
                             NormalizedEmail = "AHMED12@GMAIL.COM",
@@ -776,9 +1402,9 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             ConcurrencyStamp = "f58fbbd5-a0d4-460c-bc0d-5afb9a0adb63",
                             Email = "Jesseyd@gmail.com",
                             EmailConfirmed = true,
-                            FirstName = "Jessy",
+                            FirstName = "Kosta",
                             ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
-                            LastName = "Danial",
+                            LastName = "Mohamed",
                             LockoutEnabled = false,
                             NationalId = "40415678901625",
                             NormalizedEmail = "JESSEYD@GMAIL.COM",
@@ -1041,6 +1667,476 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("TransportTypeId");
 
                     b.ToTable("PrivateTransports");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Capacity = 4,
+                            Description = "Luxury sports sedan with high performance.",
+                            ImageUrl = "PrivateTransports/Car/bmw-5.jpg",
+                            IsAvailable = true,
+                            Name = "Bmw M5",
+                            PricePerHour = 50.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Capacity = 4,
+                            Description = "Premium luxury sedan with advanced features.",
+                            ImageUrl = "PrivateTransports/Car/Mercedes-Benz S-Class.jpeg",
+                            IsAvailable = true,
+                            Name = "Mercedes-Benz S-Class",
+                            PricePerHour = 60.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Capacity = 4,
+                            Description = "High-end executive car with superior comfort.",
+                            ImageUrl = "PrivateTransports/Car/Audi A8.jpg",
+                            IsAvailable = true,
+                            Name = "Audi A8",
+                            PricePerHour = 55.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Capacity = 4,
+                            Description = "Reliable and comfortable sedan for everyday use.",
+                            ImageUrl = "PrivateTransports/Car/Toyota Camry.webp",
+                            IsAvailable = true,
+                            Name = "Toyota Camry",
+                            PricePerHour = 30.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Capacity = 4,
+                            Description = "Affordable compact sedan with great fuel efficiency.",
+                            ImageUrl = "PrivateTransports/Car/Nissan Sunny.jpg",
+                            IsAvailable = true,
+                            Name = "Nissan Sunny",
+                            PricePerHour = 20.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Capacity = 4,
+                            Description = "Luxury SUV with off-road capability and elegance.",
+                            ImageUrl = "PrivateTransports/Car/Range Rover Evoque.jpg",
+                            IsAvailable = true,
+                            Name = "Range Rover Evoque",
+                            PricePerHour = 70.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Capacity = 7,
+                            Description = "Spacious full-size SUV perfect for families and groups.",
+                            ImageUrl = "PrivateTransports/Car/Chevrolet Tahoe.jpg",
+                            IsAvailable = true,
+                            Name = "Chevrolet Tahoe",
+                            PricePerHour = 65.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Capacity = 4,
+                            Description = "Economical and stylish sedan with modern features.",
+                            ImageUrl = "PrivateTransports/Car/Hyundai Elantra.jpeg",
+                            IsAvailable = true,
+                            Name = "Hyundai Elantra",
+                            PricePerHour = 25.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Capacity = 4,
+                            Description = "Classic American muscle car with powerful performance.",
+                            ImageUrl = "PrivateTransports/Car/Ford Mustang.jpeg",
+                            IsAvailable = true,
+                            Name = "Ford Mustang",
+                            PricePerHour = 80.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Capacity = 4,
+                            Description = "Electric luxury sedan with cutting-edge technology.",
+                            ImageUrl = "PrivateTransports/Car/Tesla Model S.jpg",
+                            IsAvailable = true,
+                            Name = "Tesla Model S",
+                            PricePerHour = 90.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Capacity = 5,
+                            Description = "Compact SUV with modern features and fuel efficiency.",
+                            ImageUrl = "PrivateTransports/Car/Kia Sportage.jpg",
+                            IsAvailable = true,
+                            Name = "Kia Sportage",
+                            PricePerHour = 35.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Capacity = 4,
+                            Description = "Spacious and comfortable sedan with great reliability.",
+                            ImageUrl = "PrivateTransports/Car/Honda Accord.jpeg",
+                            IsAvailable = true,
+                            Name = "Honda Accord",
+                            PricePerHour = 40.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Capacity = 4,
+                            Description = "Iconic off-road vehicle for adventure seekers.",
+                            ImageUrl = "PrivateTransports/Car/Jeep Wrangler.jpeg",
+                            IsAvailable = true,
+                            Name = "Jeep Wrangler",
+                            PricePerHour = 75.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Capacity = 4,
+                            Description = "Reliable and stylish German sedan.",
+                            ImageUrl = "PrivateTransports/Car/Volkswagen Passat.jpeg",
+                            IsAvailable = true,
+                            Name = "Volkswagen Passat",
+                            PricePerHour = 38.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Capacity = 5,
+                            Description = "Luxury sports SUV with high-end features.",
+                            ImageUrl = "PrivateTransports/Car/Porsche Cayenne.jpg",
+                            IsAvailable = true,
+                            Name = "Porsche Cayenne",
+                            PricePerHour = 100.0,
+                            Quantity = 2,
+                            TransportTypeId = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Capacity = 15,
+                            Description = "Luxury minibus with premium comfort.",
+                            ImageUrl = "PrivateTransports/Bus/Mercedes-Benz Sprinter.jpg",
+                            IsAvailable = true,
+                            Name = "Mercedes-Benz Sprinter",
+                            PricePerHour = 100.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Capacity = 22,
+                            Description = "Comfortable mid-sized bus for group travel.",
+                            ImageUrl = "PrivateTransports/Bus/Toyota Coaster.jpeg",
+                            IsAvailable = true,
+                            Name = "Toyota Coaster",
+                            PricePerHour = 80.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Capacity = 20,
+                            Description = "Efficient minibus for short trips.",
+                            ImageUrl = "PrivateTransports/Bus/Hyundai County.jpeg",
+                            IsAvailable = true,
+                            Name = "Hyundai County",
+                            PricePerHour = 75.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Capacity = 26,
+                            Description = "Reliable minibus for tourism and business trips.",
+                            ImageUrl = "PrivateTransports/Bus/Mitsubishi Rosa.jpg",
+                            IsAvailable = true,
+                            Name = "Mitsubishi Rosa",
+                            PricePerHour = 85.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Capacity = 50,
+                            Description = "Luxury long-distance coach with high-end features.",
+                            ImageUrl = "PrivateTransports/Bus/Volvo 9700.jpg",
+                            IsAvailable = true,
+                            Name = "Volvo 9700",
+                            PricePerHour = 200.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Capacity = 50,
+                            Description = "Premium luxury coach for VIP travel.",
+                            ImageUrl = "PrivateTransports/Bus/Setra TopClass.jpeg",
+                            IsAvailable = true,
+                            Name = "Setra TopClass",
+                            PricePerHour = 220.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Capacity = 18,
+                            Description = "Economical minibus for group transport.",
+                            ImageUrl = "PrivateTransports/Bus/Iveco Daily Minibus.jpeg",
+                            IsAvailable = true,
+                            Name = "Iveco Daily Minibus",
+                            PricePerHour = 90.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Capacity = 35,
+                            Description = "Spacious tourist bus for comfortable travel.",
+                            ImageUrl = "PrivateTransports/Bus/King Long XMQ6900.jpg",
+                            IsAvailable = true,
+                            Name = "King Long XMQ6900",
+                            PricePerHour = 110.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Capacity = 55,
+                            Description = "Luxury coach with modern amenities.",
+                            ImageUrl = "PrivateTransports/Bus/Scania Touring HD.jpg",
+                            IsAvailable = true,
+                            Name = "Scania Touring HD",
+                            PricePerHour = 180.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Capacity = 50,
+                            Description = "High-end tourist coach for long-distance trips.",
+                            ImageUrl = "PrivateTransports/Bus/MAN Lion’s Coach.jpeg",
+                            IsAvailable = true,
+                            Name = "MAN Lion’s Coach",
+                            PricePerHour = 195.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 26,
+                            Capacity = 55,
+                            Description = "Luxury coach designed for tourism and comfort.",
+                            ImageUrl = "PrivateTransports/Bus/Mercedes Tourismo.jpeg",
+                            IsAvailable = true,
+                            Name = "Mercedes Tourismo",
+                            PricePerHour = 210.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 27,
+                            Capacity = 80,
+                            Description = "Double-decker coach for large group tours.",
+                            ImageUrl = "PrivateTransports/Bus/Neoplan Skyliner.jpg",
+                            IsAvailable = true,
+                            Name = "Neoplan Skyliner",
+                            PricePerHour = 250.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 28,
+                            Capacity = 45,
+                            Description = "Reliable and affordable coach for daily transport.",
+                            ImageUrl = "PrivateTransports/Bus/Yutong ZK6122.jpeg",
+                            IsAvailable = true,
+                            Name = "Yutong ZK6122",
+                            PricePerHour = 140.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 29,
+                            Capacity = 50,
+                            Description = "High-performance luxury coach for premium travel.",
+                            ImageUrl = "PrivateTransports/Bus/Volvo B11R.jpeg",
+                            IsAvailable = true,
+                            Name = "Volvo B11R",
+                            PricePerHour = 230.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 30,
+                            Capacity = 48,
+                            Description = "Spacious coach with modern amenities.",
+                            ImageUrl = "PrivateTransports/Bus/Golden Dragon XML6127.jpeg",
+                            IsAvailable = true,
+                            Name = "Golden Dragon XML6127",
+                            PricePerHour = 160.0,
+                            Quantity = 2,
+                            TransportTypeId = 2
+                        },
+                        new
+                        {
+                            Id = 31,
+                            Capacity = 2,
+                            Description = "The scoter is a type of sea duck that lives in cold and temperate regions.",
+                            ImageUrl = "PrivateTransports/Damon Hypersport.webp",
+                            IsAvailable = true,
+                            Name = "Damon Hypersport",
+                            PricePerHour = 160.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 32,
+                            Capacity = 2,
+                            Description = "Scooters are easy to handle and convenient for daily transportation.",
+                            ImageUrl = "PrivateTransports/Honda CB650R.jpg",
+                            IsAvailable = true,
+                            Name = "Honda CB650R",
+                            PricePerHour = 250.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 33,
+                            Capacity = 2,
+                            Description = "There are three main species of scoter: the black scoter, the surf scoter, and the velvet scoter",
+                            ImageUrl = "PrivateTransports/Honda CBR1000RR Fireblade.png",
+                            IsAvailable = true,
+                            Name = "Honda CBR1000RR Fireblade",
+                            PricePerHour = 200.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 34,
+                            Capacity = 2,
+                            Description = "Scoters primarily feed on mollusks, crustaceans, and small fish",
+                            ImageUrl = "PrivateTransports/Kawasaki Ninja.jpeg",
+                            IsAvailable = true,
+                            Name = "Kawasaki Ninja",
+                            PricePerHour = 170.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 35,
+                            Capacity = 2,
+                            Description = "They have dark-colored feathers, with males usually appearing blacker than females.",
+                            ImageUrl = "PrivateTransports/KTM Duke 1290 R.jpg",
+                            IsAvailable = true,
+                            Name = "KTM Duke 1290 R",
+                            PricePerHour = 130.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 36,
+                            Capacity = 2,
+                            Description = "Scoters prefer coastal waters and large water bodies like lakes and rivers.",
+                            ImageUrl = "PrivateTransports/Lightning LS-218.jpg",
+                            IsAvailable = true,
+                            Name = "Lightning LS-218",
+                            PricePerHour = 110.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 37,
+                            Capacity = 2,
+                            Description = "Electric scooters are commonly used for short-distance travel in cities.",
+                            ImageUrl = "PrivateTransports/my22-tiger-1200-gt-explorer-lucerne-blue-rhs-1080.png",
+                            IsAvailable = true,
+                            Name = "my22-tiger-1200-gt-explorer",
+                            PricePerHour = 120.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 38,
+                            Capacity = 2,
+                            Description = "Kick scooters are popular among children and some commuters.",
+                            ImageUrl = "PrivateTransports/Suzuki GSX R1000.jpeg",
+                            IsAvailable = true,
+                            Name = "Suzuki GSX R1000",
+                            PricePerHour = 150.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        },
+                        new
+                        {
+                            Id = 39,
+                            Capacity = 2,
+                            Description = "Scooters are easy to handle and convenient for daily transportation.",
+                            ImageUrl = "PrivateTransports/Yamaha YZF.jpg",
+                            IsAvailable = true,
+                            Name = "Yamaha YZF",
+                            PricePerHour = 100.0,
+                            Quantity = 4,
+                            TransportTypeId = 3
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PublicTransport", b =>
@@ -1395,6 +2491,23 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TransportTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Car"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Bus"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Scoter"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Trip", b =>
