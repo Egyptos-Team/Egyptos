@@ -7,11 +7,16 @@
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class AddSomeDataInPrivateTransportForTypeBike : Migration
+    public partial class AddBicyclesDataToTransportTypesTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.InsertData(
+                table: "TransportTypes",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 4, "bicycle" });
+
             migrationBuilder.InsertData(
                 table: "PrivateTransports",
                 columns: new[] { "Id", "Capacity", "Description", "ImageUrl", "IsAvailable", "Name", "PricePerHour", "Quantity", "TransportTypeId" },
@@ -82,6 +87,11 @@ namespace Egyptos.Infrastructure.Data.Migrations
                 table: "PrivateTransports",
                 keyColumn: "Id",
                 keyValue: 49);
+
+            migrationBuilder.DeleteData(
+                table: "TransportTypes",
+                keyColumn: "Id",
+                keyValue: 4);
         }
     }
 }

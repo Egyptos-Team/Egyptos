@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250317130510_AddSomeDataInPrivateTransportForTypeBike")]
-    partial class AddSomeDataInPrivateTransportForTypeBike
+    [Migration("20250317202713_AddBicyclesDataToTransportTypesTable")]
+    partial class AddBicyclesDataToTransportTypesTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -2645,6 +2645,11 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 3,
                             Name = "Scoter"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "bicycle"
                         });
                 });
 

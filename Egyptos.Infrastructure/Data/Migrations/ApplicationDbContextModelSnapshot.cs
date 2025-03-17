@@ -2642,6 +2642,11 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 3,
                             Name = "Scoter"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "bicycle"
                         });
                 });
 
