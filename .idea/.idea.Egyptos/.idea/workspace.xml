@@ -9,7 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="" />
+    <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/PrivateTransportService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/PrivateTransportService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,6 +135,7 @@
       <workItem from="1740943173822" duration="1371000" />
       <workItem from="1740945287156" duration="4971000" />
       <workItem from="1740989649103" duration="105000" />
+      <workItem from="1742216221001" duration="229000" />
     </task>
     <task id="LOCAL-00001" summary="Add rider files">
       <option name="closed" value="true" />
