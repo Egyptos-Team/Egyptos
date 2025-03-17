@@ -27,6 +27,6 @@ public class EventTypeConfiguration : IEntityTypeConfiguration<EventType>
             }
         };
 
-        builder.HasData();
+        //builder.HasData();
     }
 }

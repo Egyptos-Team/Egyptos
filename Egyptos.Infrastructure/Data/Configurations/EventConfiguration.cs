@@ -33,6 +33,6 @@ public class EventConfiguration : IEntityTypeConfiguration<Event>
             }
         };
 
-        builder.HasData();
+        //builder.HasData();
     }
 }

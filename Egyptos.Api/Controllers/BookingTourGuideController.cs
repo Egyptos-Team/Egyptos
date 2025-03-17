@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
 public class BookingTourGuideController(IBookingTourGuideService bookingTourGuideService) : ControllerBase
 {
     private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
@@ -24,7 +23,6 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("")]
-    [AllowAnonymous]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingTourGuideService.GetAllAsync();
@@ -32,7 +30,8 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
         return Ok(result);
     }
 
-    [HttpGet("BookedByUser")]
+    [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookedByUser()
     {
         var result = await _bookingTourGuideService.BookedByUserAsync(User.GetUserId());
@@ -42,27 +41,27 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
 
     [HttpGet("{id}")]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> TourGuideBooked([FromRoute] int id)
+    public async Task<IActionResult> TourGuideBookedForAdmin([FromRoute] int id)
     {
         var result = await _bookingTourGuideService.TourGuideBookedAsync(id);
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [HttpGet("TourGuideBooked")]
+    [HttpGet("")]
     [Authorize(Roles = DefaultRoles.TourGuide.Name)]
-    public async Task<IActionResult> TourGuideBooked()
+    public async Task<IActionResult> TourGuideBookedForTourGuide()
     {
         var result = await _bookingTourGuideService.TourGuideBookedAsync(User.GetUserId());
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{bookingId}")]
     [Authorize(Roles = DefaultRoles.User.Name)]
-    public async Task<IActionResult> Delete([FromRoute] int id)
+    public async Task<IActionResult> Delete(int bookingId)
     {
-        var result = await _bookingTourGuideService.DeleteAsync(User.GetUserId(), id);
+        var result = await _bookingTourGuideService.DeleteAsync(bookingId);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
     }

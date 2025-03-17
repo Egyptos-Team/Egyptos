@@ -24,7 +24,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             }
         };
 
-        builder.HasData();
+        //builder.HasData();
     }
 }
 

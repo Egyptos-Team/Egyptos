@@ -7,3 +7,10 @@ public record AuthResponse(
     string Token,
     int ExpiresIn
 );
+
+public record AuthWhithOutTokenAndExpiresInResponse(
+    string Id,
+    string Email,
+    string FirstName,
+    string LastName
+);

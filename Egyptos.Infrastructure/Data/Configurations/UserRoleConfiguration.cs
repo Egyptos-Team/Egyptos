@@ -113,7 +113,7 @@ public class UserRoleConfiguration : IEntityTypeConfiguration<IdentityUserRole<s
             }
 
         };
-           
+
         builder.HasData(userRole);
     }
 }

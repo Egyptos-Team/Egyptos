@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250316002324_AddSeadingDataForTransportType")]
-    partial class AddSeadingDataForTransportType
+    [Migration("20250316212815_AddTransportTypeData")]
+    partial class AddTransportTypeData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -525,140 +525,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "5c8298a9-982f-4d9d-a632-55f7d148f735",
-                            Email = "admin@egyptos.com",
-                            EmailConfirmed = true,
-                            FirstName = "Admin",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Admin",
-                            LockoutEnabled = false,
-                            NationalId = "12345678901234",
-                            NormalizedEmail = "ADMIN@EGYPTOS.COM",
-                            NormalizedUserName = "ADMIN@EGYPTOS.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "1234567890",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6f3a18b3-c453-4a3a-b2e3-57f2e0429f50",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@egyptos.com"
-                        },
-                        new
-                        {
-                            Id = "74f74d5a-25a8-456f-a703-7eb67721679e",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "90a57528-207c-4df0-9b83-bfac6cfe2d06",
-                            Email = "dfsfv@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Ahmed",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Hesham",
-                            LockoutEnabled = false,
-                            NationalId = "30303030303030",
-                            NormalizedEmail = "DFSFV@GMAIL.COM",
-                            NormalizedUserName = "DFSFV@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01010101010",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6c37c036-2659-4148-a23f-5d094da37121",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "dfsfv@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "df4f87ce-beee-493f-a115-c2eb96babc7a",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "6921eade-b140-4d72-acec-4048194cc4a9",
-                            Email = "dfsfvv@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Yousef",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Mohamed",
-                            LockoutEnabled = false,
-                            NationalId = "30303030303030",
-                            NormalizedEmail = "DFSFVV@GMAIL.COM",
-                            NormalizedUserName = "DFSFVV@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01010101010",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cf3e134f-bd5a-41d1-a4e5-92cbe8da262e",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "dfsfvv@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "5694452c-4bfe-4bd0-a97e-57f5948684e6",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "56304034-7947-436a-9f45-5aae19827221",
-                            Email = "dfsfvvv@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Mohamed",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Nassar",
-                            LockoutEnabled = false,
-                            NationalId = "30303030303030",
-                            NormalizedEmail = "DFSFVVV@GMAIL.COM",
-                            NormalizedUserName = "DFSFVVV@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01010101010",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "47ab1ce3-1655-4215-bd95-af4642348d7c",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "dfsfvvv@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "3808b9cb-48b0-4a56-9492-67f362dfa9b4",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "56298673-8700-4929-8c4d-2a2983da53c2",
-                            Email = "dfsfvvvv@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Amir",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Mahmoud",
-                            LockoutEnabled = false,
-                            NationalId = "30303030303030",
-                            NormalizedEmail = "DFSFVVVV@GMAIL.COM",
-                            NormalizedUserName = "DFSFVVVV@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01010101010",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fb24b4fd-7658-4b81-82df-c853512f4627",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "dfsfvvvv@gmail.com"
-                        },
-                        new
-                        {
-                            Id = "803d9ac6-8b8b-4e41-932f-8b0ef2bee591",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "ab5f9b96-4d25-4991-976c-dfd89da00178",
-                            Email = "dfsfvvvvv@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Rafat",
-                            ImageUrl = "profiles/Default-Image.jpg",
-                            LastName = "Ashrf",
-                            LockoutEnabled = false,
-                            NationalId = "30303030303030",
-                            NormalizedEmail = "DFSFVVVVV@GMAIL.COM",
-                            NormalizedUserName = "DFSFVVVVV@GMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEN6vZ01506YX1ctq2EthavTlwjZTRO5AjuoQ5LDjMQ+cpfTdIRy0cPAFQfqq4zbWYA==",
-                            PhoneNumber = "01010101010",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "15539178-b7a5-4270-a046-5cfaa7fbc3e8",
-                            Sex = "Male",
-                            TwoFactorEnabled = false,
-                            UserName = "dfsfvvvvv@gmail.com"
-                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Item", b =>
@@ -1101,13 +967,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "e4b2f91d-9e12-4f4a-b3db-1b58fca15e66",
-                            RoleId = "0191d311-2918-7f76-bd8a-0bded8535075"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -1236,7 +1095,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Egyptos.Domain.Entities.Identity.ApplicationUser", "User")
-                        .WithMany()
+                        .WithMany("BookingTourGuides")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1486,6 +1345,8 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Navigation("BookingHotels");
 
                     b.Navigation("BookingPrivateTransports");
+
+                    b.Navigation("BookingTourGuides");
 
                     b.Navigation("BookingTrips");
 
