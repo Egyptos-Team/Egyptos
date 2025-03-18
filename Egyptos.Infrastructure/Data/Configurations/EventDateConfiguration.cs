@@ -13,10 +13,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
            /* new EventDate
             {
                 Id = 1,
-                StartDate = new DateTime(2025, 7, 10, 10, 0, 0),
-                EndDate = new DateTime(2025, 7, 10, 30, 0, 0),
-                StartSubscription = new DateTime(2025, 6, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 7, 5, 23, 59, 0),
+                StartDate = new DateTime(2025, 7, 10, 10, 00, 00),
+                EndDate = new DateTime(2025, 7, 10, 23, 59, 00),
+                StartSubscription = new DateTime(2025, 10, 1, 00, 00, 00),
+                EndSubscription = new DateTime(2025, 10, 9, 23, 59, 00),
                 Description = "A festival celebrating Ismailia's famous mangoes with exhibitions and entertainment.",
                 Location = "Ismailia, Egypt",
                 Price = 100,
@@ -170,7 +170,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             }*/
         };
 
-        //builder.HasData();
+        //builder.HasData(eventDate5);
     }
 }
 

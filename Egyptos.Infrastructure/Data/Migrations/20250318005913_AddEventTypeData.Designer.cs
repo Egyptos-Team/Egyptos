@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250317202713_AddBicyclesDataToTransportTypesTable")]
-    partial class AddBicyclesDataToTransportTypesTable
+    [Migration("20250318005913_AddEventTypeData")]
+    partial class AddEventTypeData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -361,6 +361,33 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EventTypes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Entertainment"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Historical and Cultural"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Religious"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Festival"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Art"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Historical", b =>
@@ -2154,126 +2181,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             PricePerHour = 100.0,
                             Quantity = 4,
                             TransportTypeId = 3
-                        },
-                        new
-                        {
-                            Id = 40,
-                            Capacity = 1,
-                            Description = "A sleek and lightweight bicycle built for speed and long-distance rides on paved roads",
-                            ImageUrl = "PrivateTransports/Bike/Road_Bike.jpg",
-                            IsAvailable = true,
-                            Name = "Road Bike",
-                            PricePerHour = 70.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 41,
-                            Capacity = 1,
-                            Description = "A rugged bike built for off-road trails",
-                            ImageUrl = "PrivateTransports/Bike/Mountain_Bike.jpg",
-                            IsAvailable = true,
-                            Name = "Mountain Bike",
-                            PricePerHour = 50.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 42,
-                            Capacity = 1,
-                            Description = "Designed for daily urban commuting",
-                            ImageUrl = "PrivateTransports/Bike/City_Commuter_Bike.jpg",
-                            IsAvailable = true,
-                            Name = "City Commuter Bike",
-                            PricePerHour = 40.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 43,
-                            Capacity = 1,
-                            Description = "A stylish and relaxed bicycle for leisurely rides",
-                            ImageUrl = "PrivateTransports/Bike/Cruiser_Bike.jpg",
-                            IsAvailable = true,
-                            Name = "Cruiser Bike",
-                            PricePerHour = 60.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 44,
-                            Capacity = 1,
-                            Description = "A modern bicycle with an electric motor and battery for pedal-assist riding, ideal for long distances and commuting with ease and less effort.",
-                            ImageUrl = "PrivateTransports/Bike/Electric_Bike.jpg",
-                            IsAvailable = true,
-                            Name = "Electric Bike",
-                            PricePerHour = 140.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 45,
-                            Capacity = 1,
-                            Description = "Endurance-focused road bike with IsoSpeed technology for smoother rides over long distances.",
-                            ImageUrl = "PrivateTransports/Bike/Trek_Domane_SL_6.jpg",
-                            IsAvailable = true,
-                            Name = "Trek Domane SL 6",
-                            PricePerHour = 150.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 46,
-                            Capacity = 1,
-                            Description = "A performance alloy race bike with aggressive geometry, ideal for speed and competitive cycling.",
-                            ImageUrl = "PrivateTransports/Bike/Specialized.jpg",
-                            IsAvailable = true,
-                            Name = "Specialized Allez Sprint Comp",
-                            PricePerHour = 170.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 47,
-                            Capacity = 1,
-                            Description = "A versatile hardtail mountain bike with front suspension, perfect for beginner to intermediate trail",
-                            ImageUrl = "PrivateTransports/Bike/Cannondale.jpg",
-                            IsAvailable = true,
-                            Name = "Cannondale Trail 5",
-                            PricePerHour = 120.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 48,
-                            Capacity = 1,
-                            Description = "A lightweight hybrid city bike designed for efficient daily commuting and fitness rides.",
-                            ImageUrl = "PrivateTransports/Bike/Giant.jpg",
-                            IsAvailable = true,
-                            Name = "Giant Escape 3",
-                            PricePerHour = 130.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
-                        },
-                        new
-                        {
-                            Id = 49,
-                            Capacity = 1,
-                            Description = "A commuter-focused e-bike with a powerful motor, integrated lights, and a rear rack.",
-                            ImageUrl = "PrivateTransports/Bike/Rad_Power.jpg",
-                            IsAvailable = true,
-                            Name = "Rad Power Bikes RadCity 5 Plus",
-                            PricePerHour = 150.0,
-                            Quantity = 10,
-                            TransportTypeId = 4
                         });
                 });
 
@@ -2645,11 +2552,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 3,
                             Name = "Scoter"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "bicycle"
                         });
                 });
 
