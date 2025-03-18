@@ -1,5 +1,6 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.EventImages;
+using Egyptos.Application.Contracts.HistoricalImage;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -7,18 +8,17 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-
-public class EventImageController(IEventImageService eventImageService) : ControllerBase
+public class HistoricalImageController(IHistoricalImageService historicalImageService) : ControllerBase
 {
-    private readonly IEventImageService _eventImageService = eventImageService;
+    private readonly IHistoricalImageService _historicalImageService = historicalImageService;
 
     [HttpPost("")]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> Add([FromForm] CreateEventImageRequest request)
+    public async Task<IActionResult> Add([FromForm] CreateHistoricalImageRequest request)
     {
-        var result = await _eventImageService.AddAsync(request);
+        var result = await _historicalImageService.AddAsync(request);
 
         return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
                                 : result.ToProblem();
@@ -27,7 +27,7 @@ public class EventImageController(IEventImageService eventImageService) : Contro
     [HttpGet("")]
     public async Task<IActionResult> GetAll()
     {
-        var result = await _eventImageService.GetAllAsync();
+        var result = await _historicalImageService.GetAllAsync();
 
         return Ok(result);
     }
@@ -35,7 +35,7 @@ public class EventImageController(IEventImageService eventImageService) : Contro
     [HttpGet("{id}")]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
-        var result = await _eventImageService.GetAsync(id);
+        var result = await _historicalImageService.GetAsync(id);
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
@@ -44,7 +44,7 @@ public class EventImageController(IEventImageService eventImageService) : Contro
     [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
-        var result = await _eventImageService.DeleteAsync(id);
+        var result = await _historicalImageService.DeleteAsync(id);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
     }

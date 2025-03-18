@@ -11,7 +11,6 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
 public class EventDatesController(IEventDateService eventDateService) : ControllerBase
 {
     private readonly IEventDateService _eventDateService = eventDateService;

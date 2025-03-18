@@ -1,14 +1,14 @@
-﻿using Egyptos.Application.Contracts.EventDateContracts;
+﻿using Egyptos.Application.Contracts.EventImages;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 
-namespace Egyptos.Application.Contracts.EventImages;
+namespace Egyptos.Application.Contracts.HistoricalImage;
 
-public class CreateEventImageRequestValidator : AbstractValidator<CreateEventImageRequest>
+class CreateHistoricalImageRequestValidator : AbstractValidator<CreateHistoricalImageRequest>
 {
-    public CreateEventImageRequestValidator()
+    public CreateHistoricalImageRequestValidator()
     {
-        RuleFor(s => s.EventId)
+        RuleFor(s => s.HistoricalId)
             .NotNull();
 
         RuleFor(s => s.Image)
