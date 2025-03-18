@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
 
 public class EventImageController(IEventImageService eventImageService) : ControllerBase

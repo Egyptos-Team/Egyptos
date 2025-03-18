@@ -9,7 +9,7 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-public class HistoricaController(IHistoricalService historicalService) : ControllerBase
+public class HistoricalController(IHistoricalService historicalService) : ControllerBase
 {
     private readonly IHistoricalService _historicalService = historicalService;
 

@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
 public class EventTypeController(IEventTypeService eventTypeService) : ControllerBase
 {
     private readonly IEventTypeService _eventTypeService = eventTypeService;
@@ -31,7 +30,6 @@ public class EventTypeController(IEventTypeService eventTypeService) : Controlle
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
         var result = await _eventTypeService.GetAsync(id);
