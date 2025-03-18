@@ -35,6 +35,7 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<PrivateTransport> PrivateTransports { get; set; }
     public DbSet<BookingTourGuide> BookingTourGuides { get; set; }
     public DbSet<Report> Reports { get; set; }
+    public DbSet<TourGuideReview> TourGuideReviews { get; set; }
 
 
 

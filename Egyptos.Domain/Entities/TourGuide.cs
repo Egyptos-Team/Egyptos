@@ -16,7 +16,8 @@ public class TourGuide
     public string UserId { get; set; } = null!;
     public ApplicationUser User { get; set; } = null!;
 
-
     public ICollection<TourGuideTrip> TourGuideTrips { get; set; } = [];
     public ICollection<BookingTourGuide> BookingTourGuides { get; set; } = [];
+    public ICollection<TourGuideReview> Reviews { get; set; } = [];
+
 }
