@@ -8,9 +8,9 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
 {
     public void Configure(EntityTypeBuilder<EventDate> builder)
     {
-        var eventDate5 = new List<EventDate>
+        var eventDate = new List<EventDate>
         {
-           /* new EventDate
+            new EventDate
             {
                 Id = 1,
                 StartDate = new DateTime(2025, 7, 10, 10, 00, 00),
@@ -167,10 +167,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Location = "El Gouna, Red Sea",
                 Price = 500,
                 EventId = 13,
-            }*/
+            }
         };
 
-        //builder.HasData(eventDate5);
+        builder.HasData();
     }
 }
 
@@ -181,7 +181,7 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
     {
         var eventImages = new List<EventImage>
         {
-            /*new EventImage
+            new EventImage
             {
                 Id = 1,
                 ImageUrl="EventImages/Ismailia/1.webp",
@@ -426,10 +426,10 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
                 Id = 39,
                 ImageUrl="EventImages/El Gouna, Red Sea/3.webp",
                 EventId = 13
-            }*/
+            }
 
         };
 
-        //builder.HasData();
+        builder.HasData();
     }
 }

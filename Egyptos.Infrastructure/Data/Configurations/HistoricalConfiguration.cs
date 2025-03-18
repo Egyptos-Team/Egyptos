@@ -21,7 +21,7 @@ public class HistoricalConfiguration : IEntityTypeConfiguration<Historical>
             }
         };
 
-        //builder.HasData();
+        builder.HasData();
     }
 }
 
@@ -51,7 +51,7 @@ public class HistoricalImagesConfiguration : IEntityTypeConfiguration<Historical
 
             }
         };
-        //builder.HasData();
+        builder.HasData();
 
     }
 }
