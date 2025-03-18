@@ -9,7 +9,7 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-[Authorize]
+//[Authorize]
 public class BookingEventDateController(IBookingEventDateService bookingEventDateService) : ControllerBase
 {
     private readonly IBookingEventDateService _bookingEventDateService = bookingEventDateService;
@@ -23,7 +23,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     }
 
     [HttpGet("")]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
+    //[Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingEventDateService.GetAllAsync();
@@ -40,7 +40,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     }
 
     [HttpGet("{id}")]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
+    //[Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> EventBookd([FromRoute] int id)
     {
         var result = await _bookingEventDateService.EventBookedAsync(id);

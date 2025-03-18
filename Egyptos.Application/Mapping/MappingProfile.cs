@@ -3,6 +3,7 @@ using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.Users;
 using Egyptos.Domain.Entities;
+using Egyptos.Application.Contracts.BookingTourGuide;
 
 namespace Egyptos.Application.Mapping;
 
@@ -30,8 +31,13 @@ public class MappingProfile : IRegister
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
         
-
         config.NewConfig<BookingPrivateTransport, PrivateTransport>()
            .Ignore(dest => dest.Id);
+
+        config.NewConfig<BookingTourGuide, BookingTourGuideResponse>()
+           .Map(des => des.TourGuideFirstName, src => src.TourGuide.User.FirstName)
+           .Map(des => des.TourGuideLastName, src => src.TourGuide.User.LastName);
+
+           
     }
 }

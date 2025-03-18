@@ -2,47 +2,21 @@
 using Egyptos.Application.Contracts.TourGuide;
 
 namespace Egyptos.Application.Contracts.BookingTourGuide;
+public class BookingTourGuideResponse
+{
+    public int Id { get; set; }    
+    public int TourGuideId { get; set; }
+    public string TourGuideFirstName { get; set; }
+    public string TourGuideLastName { get; set; }
+    public string UserId { get; set; } 
 
-public record BookingTourGuideWithOutUserResponse
-(
-     int Id,
-     string UserId,
-     int TourGuideId,
-     string Email,
-     DateTime StartBooking,
-     DateTime EndBooking,
-     double TotalPrice 
-);
+    public double TotalPrice { get; set; }
 
-public record BookingTourGuideResponse
-(
-     int Id,
-     DateTime StartBooking,
-     DateTime EndBooking,
-     double TotalPrice,
-     AuthWhithOutTokenAndExpiresInResponse User
-);
+    public DateTime? PaymentDate { get; set; }
+    public DateTime? PaymentCancel { get; set; }
+    public DateTime? CancelBooking { get; set; }
 
-public record BookingTourGuideWithoutUserIdResponse
-(
-     int BookingId,
-     int TourGuideId,
-     string FirstName,
-     string LastName,
-     DateTime StartBooking,
-     DateTime EndBooking,
-     double TotalPrice
-);
 
-public record BookingTourGuideByUserRasponse
-(
-     string UserId,
-     IEnumerable<BookingTourGuideWithoutUserIdResponse> AllBookeingForThisUser
-);
-
-public record BookingTourGuideBookedRasponse
-(
-     int TourGuideId,
-     IEnumerable<BookingTourGuideResponse> BookingUsers
-);
-
+    public DateTime StartBooking { get; set; } = DateTime.UtcNow;
+    public DateTime EndBooking { get; set; }
+}
