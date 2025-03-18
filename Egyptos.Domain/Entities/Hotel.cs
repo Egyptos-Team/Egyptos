@@ -4,6 +4,8 @@ public class Hotel
 {
     public int Id { get; set; }
     public string Name { get; set; } = null!;
+    public double Rate { get; set; }
+    public string LocationName { get; set; } = null!;
     public string Location { get; set; } = null!;
     public string Address { get; set; } = null!;
     public string ImageUrl { get; set; } = null!;
