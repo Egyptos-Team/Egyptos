@@ -27,7 +27,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="wwwroot\Hotels\" />
       <Folder Include="wwwroot\PrivateTransports\Scoter\" />
     </ItemGroup>
 
