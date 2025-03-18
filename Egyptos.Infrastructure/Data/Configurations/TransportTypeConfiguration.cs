@@ -24,6 +24,11 @@ public class TransportTypeConfiguration : IEntityTypeConfiguration<TransportType
             {
                 Id = 3,
                 Name = "Scoter",
+            },
+            new TransportType
+            {
+                Id = 4,
+                Name = "bicycle",
             }
         };
 

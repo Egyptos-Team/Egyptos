@@ -24,7 +24,8 @@ public class PrivateTransportService(ApplicationDbContext context, IFileService 
 
     public async Task<Result<PrivateTransportResponse>> GetAsync(int id)
     {
-        var type = await _context.PrivateTransports.FindAsync(id);
+        var type = await _context.PrivateTransports
+            .Include(x => x.TransportType).FirstOrDefaultAsync(x => x.Id == id);
 
         return type is not null
              ? Result.Success(type.Adapt<PrivateTransportResponse>())

@@ -442,7 +442,107 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Capacity = 2,
                 Quantity = 4,
                 TransportTypeId = 3
-            }
+            }, new PrivateTransport
+             {
+                 Id = 40,
+                 Name = "Road Bike",
+                 PricePerHour = 70.0,
+                 Description = "A sleek and lightweight bicycle built for speed and long-distance rides on paved roads",
+                 ImageUrl = "PrivateTransports/Bike/Road_Bike.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 41,
+                 Name = "Mountain Bike",
+                 PricePerHour = 50.0,
+                 Description = "A rugged bike built for off-road trails",
+                 ImageUrl = "PrivateTransports/Bike/Mountain_Bike.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 42,
+                 Name = "City Commuter Bike",
+                 PricePerHour = 40.0,
+                 Description = "Designed for daily urban commuting",
+                 ImageUrl = "PrivateTransports/Bike/City_Commuter_Bike.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 43,
+                 Name = "Cruiser Bike",
+                 PricePerHour = 60.0,
+                 Description = "A stylish and relaxed bicycle for leisurely rides",
+                 ImageUrl = "PrivateTransports/Bike/Cruiser_Bike.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 44,
+                 Name = "Electric Bike",
+                 PricePerHour = 140.0,
+                 Description = "A modern bicycle with an electric motor and battery for pedal-assist riding, ideal for long distances and commuting with ease and less effort.",
+                 ImageUrl = "PrivateTransports/Bike/Electric_Bike.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 45,
+                 Name = "Trek Domane SL 6",
+                 PricePerHour = 150.0,
+                 Description = "Endurance-focused road bike with IsoSpeed technology for smoother rides over long distances.",
+                 ImageUrl = "PrivateTransports/Bike/Trek_Domane_SL_6.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 46,
+                 Name = "Specialized Allez Sprint Comp",
+                 PricePerHour = 170.0,
+                 Description = "A performance alloy race bike with aggressive geometry, ideal for speed and competitive cycling.",
+                 ImageUrl = "PrivateTransports/Bike/Specialized.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 47,
+                 Name = "Cannondale Trail 5",
+                 PricePerHour = 120.0,
+                 Description = "A versatile hardtail mountain bike with front suspension, perfect for beginner to intermediate trail",
+                 ImageUrl = "PrivateTransports/Bike/Cannondale.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 48,
+                 Name = "Giant Escape 3",
+                 PricePerHour = 130.0,
+                 Description = "A lightweight hybrid city bike designed for efficient daily commuting and fitness rides.",
+                 ImageUrl = "PrivateTransports/Bike/Giant.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             },new PrivateTransport
+             {
+                 Id = 49,
+                 Name = "Rad Power Bikes RadCity 5 Plus",
+                 PricePerHour = 150.0,
+                 Description = "A commuter-focused e-bike with a powerful motor, integrated lights, and a rear rack.",
+                 ImageUrl = "PrivateTransports/Bike/Rad_Power.jpg",
+                 Capacity = 1,
+                 Quantity = 10,
+                 TransportTypeId = 4
+             }
         };
 
         builder.HasData(privateTransports);

@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250317202713_AddBicyclesDataToTransportTypesTable")]
+    partial class AddBicyclesDataToTransportTypesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,183 +278,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("EventTypeId");
 
                     b.ToTable("Events");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "A festival celebrating Ismailia's famous mangoes with exhibitions and entertainment.",
-                            EventTypeId = 4,
-                            Name = "Ismailia Mango Festival"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
-                            EventTypeId = 5,
-                            Name = "Alexandria Short Film Festival"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A festival dedicated to women in theatre, featuring performances and discussions.",
-                            EventTypeId = 5,
-                            Name = "International Women Theatre Festival"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "An astronomical event where the sun aligns with the temple’s axis, showcasing ancient Egyptian ingenuity.",
-                            EventTypeId = 2,
-                            Name = "The Solar Alignment on the Karnak Temple"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "One of the Arab world's most prestigious film festivals, drawing filmmakers and critics.",
-                            EventTypeId = 1,
-                            Name = "Cairo International Film Festival"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "A spectacular show narrating Egypt’s history using sound and light projections on the pyramids.",
-                            EventTypeId = 2,
-                            Name = "Giza Pyramids Sound and Light Show"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
-                            EventTypeId = 3,
-                            Name = "Ramadan Lantern Festival"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "A vibrant summer festival with music, dance, and water activities along the Red Sea coast.",
-                            EventTypeId = 4,
-                            Name = "Hurghada Summer Festival"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "A theatre festival featuring international performances, workshops, and panel discussions.",
-                            EventTypeId = 1,
-                            Name = "Sharm El Sheikh International Theatre Festival"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "An exhibition displaying King Tutankhamun’s treasures, offering insights into his life and reign.",
-                            EventTypeId = 2,
-                            Name = "Tutankhamun Exhibition"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "A religious festival celebrating Prophet Muhammad’s birth with prayers and parades.",
-                            EventTypeId = 3,
-                            Name = "Mawlid Al-Nabi Celebrations"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "A cultural festival celebrating Egyptian heritage with traditional music and storytelling.",
-                            EventTypeId = 4,
-                            Name = "Sphinx Festival"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "An international film festival held in El Gouna, featuring high-quality films and industry panels.",
-                            EventTypeId = 1,
-                            Name = "El Gouna Film Festival"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "A grand parade transferring royal mummies to their new museum with spectacular performances.",
-                            EventTypeId = 2,
-                            Name = "Pharaohs' Golden Parade"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Description = "Nationwide celebrations marking the end of Ramadan with special prayers and cultural events.",
-                            EventTypeId = 3,
-                            Name = "Eid Al-Fitr Festivities"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Description = "A festival celebrating Nubian traditions with music, dance, and traditional crafts.",
-                            EventTypeId = 4,
-                            Name = "Aswan Nubian Festival"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Description = "An international squash tournament held in El Gouna, featuring top-ranked players.",
-                            EventTypeId = 1,
-                            Name = "Gouna Squash Open"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Description = "A major book fair attracting authors and publishers for literary discussions and signings.",
-                            EventTypeId = 5,
-                            Name = "Alexandria Book Fair"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Description = "A festival celebrating Siwa Oasis’ famous dates, featuring local crafts and traditions.",
-                            EventTypeId = 4,
-                            Name = "Siwa Date Festival"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Description = "A special exhibition marking the anniversary of the Egyptian Museum with rare artifacts on display.",
-                            EventTypeId = 2,
-                            Name = "Egyptian Museum Anniversary Exhibition"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Description = "A religious celebration of Coptic Christmas, featuring prayers, feasts, and community gatherings.",
-                            EventTypeId = 3,
-                            Name = "Coptic Christmas Celebrations"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Description = "An international kite surfing competition held on Egypt’s Red Sea coast, attracting top athletes.",
-                            EventTypeId = 1,
-                            Name = "Red Sea Kite Surfing Championship"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Description = "An annual exhibition displaying works from Egypt's top artists in the historic city of Luxor.",
-                            EventTypeId = 5,
-                            Name = "Luxor Art Exhibition"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Description = "A festival celebrating contemporary street art with murals, performances, and workshops.",
-                            EventTypeId = 5,
-                            Name = "Cairo Street Art Festival"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Description = "A conference focusing on the historical and cultural significance of Islamic heritage in Egypt.",
-                            EventTypeId = 3,
-                            Name = "Islamic Heritage Conference"
-                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventDate", b =>
@@ -535,33 +361,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EventTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Entertainment"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Historical and Cultural"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Religious"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Festival"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Art"
-                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Historical", b =>
