@@ -7,15 +7,15 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize(Roles = DefaultRoles.Admin.Name)]
 
 public class EventImageController(IEventImageService eventImageService) : ControllerBase
 {
     private readonly IEventImageService _eventImageService = eventImageService;
 
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Add([FromForm] CreateEventImageRequest request)
     {
         var result = await _eventImageService.AddAsync(request);
@@ -41,6 +41,7 @@ public class EventImageController(IEventImageService eventImageService) : Contro
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _eventImageService.DeleteAsync(id);

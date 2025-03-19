@@ -9,9 +9,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
 public class EventDatesController(IEventDateService eventDateService) : ControllerBase
 {
     private readonly IEventDateService _eventDateService = eventDateService;

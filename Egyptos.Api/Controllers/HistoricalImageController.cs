@@ -1,5 +1,6 @@
 ﻿using Egyptos.Api.Extensions;
-using Egyptos.Application.Contracts.EventType;
+using Egyptos.Application.Contracts.EventImages;
+using Egyptos.Application.Contracts.HistoricalImage;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -9,15 +10,16 @@ namespace Egyptos.Api.Controllers;
 
 [Route("api/[controller]/[action]")]
 [ApiController]
-public class EventTypeController(IEventTypeService eventTypeService) : ControllerBase
+public class HistoricalImageController(IHistoricalImageService historicalImageService) : ControllerBase
 {
-    private readonly IEventTypeService _eventTypeService = eventTypeService;
+    private readonly IHistoricalImageService _historicalImageService = historicalImageService;
 
     [HttpPost("")]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> Add([FromBody] CreateEventTypeRequest request)
+    public async Task<IActionResult> Add([FromForm] CreateHistoricalImageRequest request)
     {
-        var result = await _eventTypeService.AddAsync(request);
+        var result = await _historicalImageService.AddAsync(request);
+
         return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value)
                                 : result.ToProblem();
     }
@@ -25,32 +27,24 @@ public class EventTypeController(IEventTypeService eventTypeService) : Controlle
     [HttpGet("")]
     public async Task<IActionResult> GetAll()
     {
-        var result = await _eventTypeService.GetAllAsync();
+        var result = await _historicalImageService.GetAllAsync();
+
         return Ok(result);
     }
 
     [HttpGet("{id}")]
     public async Task<IActionResult> Get([FromRoute] int id)
     {
-        var result = await _eventTypeService.GetAsync(id);
+        var result = await _historicalImageService.GetAsync(id);
 
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
-    }
-
-    [HttpPut("{id}")]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateEventTypeRequest request)
-    {
-        var result = await _eventTypeService.UpdateAsync(id, request);
-
-        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();                       
     }
 
     [HttpDelete("{id}")]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
-        var result = await _eventTypeService.DeleteAsync(id);
+        var result = await _historicalImageService.DeleteAsync(id);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
     }

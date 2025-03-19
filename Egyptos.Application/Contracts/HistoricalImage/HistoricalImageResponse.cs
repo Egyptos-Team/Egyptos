@@ -3,5 +3,6 @@
 public record HistoricalImageResponse
 (
     int Id,
+    int HistoricalId,
     string ImageUrl
 );

@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]/[action]")]
 [ApiController]
-[Authorize]
 public class EventController(IEventService eventService) : ControllerBase
 {
     private readonly IEventService _eventService = eventService;
@@ -40,8 +39,8 @@ public class EventController(IEventService eventService) : ControllerBase
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpPut("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update([FromRoute] int id, UpdateEventRequest request)
     {
         var result = await _eventService.UpdateAsync(id, request);
@@ -49,8 +48,8 @@ public class EventController(IEventService eventService) : ControllerBase
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _eventService.DeleteAsync(id);
