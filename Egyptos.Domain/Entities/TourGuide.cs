@@ -18,6 +18,6 @@ public class TourGuide
 
     public ICollection<TourGuideTrip> TourGuideTrips { get; set; } = [];
     public ICollection<BookingTourGuide> BookingTourGuides { get; set; } = [];
-    public ICollection<TourGuideReview> Reviews { get; set; } = [];
+    public ICollection<TourGuideReview> TourGuideReviews { get; set; } = [];
 
 }

@@ -10,14 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa8291c1-ac2e-467e-bc62-cec2e9172f0e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Egyptos.Api/Controllers/TourGuideReviewsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuideReviews/TourGuideReviewRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuideReviews/TourGuideReviewRequestValidator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/ITourGuideReviewService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Egyptos.Domain/Errors/TourGuideReviewErrors.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Egyptos/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Api/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/ApplicationExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Hotel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Hotel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/Identity/ApplicationUser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Contracts/Hotels/HotelResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/Hotels/HotelResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuide/TourGuideResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuide/TourGuideResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuideReviews/TourGuideReviewResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Contracts/TourGuideReviews/TourGuideReviewResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Mapping/MappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/TourGuideService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/TourGuideReviewService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/TourGuideServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Implementations/TourGuideServices.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/ITourGuideService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/ITourGuideServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Application/Services/Interfaces/ITourGuideServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuide.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuide.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/ApplicationDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/HotelConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Configurations/HotelConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuideReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Domain/Entities/TourGuideReview.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Egyptos.Infrastructure/Data/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,31 +66,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Egyptos.Api: http.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.AccountsToCodyMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ChatTagsLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountHistoryMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountsIdsRefresh&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyConvertUrlToCodebaseName&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyHistoryLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyMigrateChatHistory-v2&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.DeprecatedChatLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Egyptos.Api: http.executor": "Run",
+    "RunOnceActivity.AccountsToCodyMigration": "true",
+    "RunOnceActivity.ChatTagsLlmMigration": "true",
+    "RunOnceActivity.CodyAccountHistoryMigration": "true",
+    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
+    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.DeprecatedChatLlmMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "XThreadsFramesViewSplitterKey": "0.62407863",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Egyptos.Api: http">
     <configuration name="Egyptos.Api: site18214-WebDeploy" type="DotNetMsBuildPublish" factoryName="Publish to IIS">
       <riderPublish configuration="Release" platform="Any CPU" publish_profile="site18214-WebDeploy.pubxml" pubxml_path="$PROJECT_DIR$/Egyptos.Api/Properties/PublishProfiles/site18214-WebDeploy.pubxml" user_name="site18214" uuid_high="3743710182180799030" uuid_low="-6200605371208027145" />
@@ -145,7 +156,8 @@
       <workItem from="1740989649103" duration="105000" />
       <workItem from="1742216221001" duration="229000" />
       <workItem from="1742320924429" duration="1296000" />
-      <workItem from="1742322285131" duration="3380000" />
+      <workItem from="1742322285131" duration="7883000" />
+      <workItem from="1742413519602" duration="10348000" />
     </task>
     <task id="LOCAL-00001" summary="Add rider files">
       <option name="closed" value="true" />
@@ -231,6 +243,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Egyptos.Application/Services/Implementations/TourGuideReviewService.cs</url>
+          <line>20</line>
+          <properties documentPath="E:\Projects\Egyptos\Egyptos.Application\Services\Implementations\TourGuideReviewService.cs" containingFunctionPresentation="Method 'GetAllForUser'">
+            <startOffsets>
+              <option value="717" />
+            </startOffsets>
+            <endOffsets>
+              <option value="718" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

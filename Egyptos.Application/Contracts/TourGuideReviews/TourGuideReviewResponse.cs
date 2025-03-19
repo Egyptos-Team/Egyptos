@@ -7,8 +7,9 @@ public class TourGuideReviewResponse
     public double Rate { get; set; }
     public DateOnly Date { get; set; }
 
-
-
     public string UserId { get; set; } = null!;
-    public ApplicationUser User { get; set; } = null!;
+    public string UserName { get; set; } = null!;
+
+    public int TourGuideId { get; set; }
+    public string TourName { get; set; } = null!;
 }
