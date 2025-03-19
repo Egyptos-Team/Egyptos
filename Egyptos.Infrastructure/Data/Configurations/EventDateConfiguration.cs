@@ -167,10 +167,154 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Location = "El Gouna, Red Sea",
                 Price = 500,
                 EventId = 13,
-            }
+            },
+            new EventDate
+            {
+                Id = 14,
+                StartDate = new DateTime(2025, 9, 20, 20, 0, 0),
+                EndDate = new DateTime(2025, 9, 24, 23, 59, 59),
+                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 9, 19, 23, 59, 59),
+                Description = "A grand parade transferring royal mummies to their new museum with spectacular performances.",
+                Location = "Cairo, Egypt",
+                Price = 450,
+                EventId = 14,
+            },
+            new EventDate
+            {
+                Id = 15,
+                StartDate = new DateTime(2025, 3, 31, 7, 00, 00),
+                EndDate = new DateTime(2025, 4, 2, 12, 00, 00),
+                StartSubscription = new DateTime(2025, 3, 17, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 3, 30, 8, 00, 00),
+                Description = "Eid al-Fitr in Egypt is a major religious and cultural event that celebrates the end of Ramadan, the Islamic holy month of fasting.",
+                Location = "Egypt",
+                Price = 150,
+                EventId = 15,
+            },
+            new EventDate
+            {
+                Id = 16,
+                StartDate = new DateTime(2025, 2, 2, 10, 00, 00),
+                EndDate = new DateTime(2025, 2, 16, 12, 00, 00),
+                StartSubscription = new DateTime(2025, 1, 19, 7, 50, 00),
+                EndSubscription = new DateTime(2025, 1, 30, 7, 50, 00),
+                Description = "​The Aswan International Cultural Festival is an annual event celebrating the rich heritage of Nubian culture through music, dance, and art.",
+                Location = "Aswan, Egypt",
+                Price = 500,
+                EventId = 16,
+            },
+            new EventDate
+            {
+                Id = 17,
+                StartDate = new DateTime(2025, 4, 12, 7, 00, 00),
+                EndDate = new DateTime(2025, 4, 18, 12, 00, 00),
+                StartSubscription = new DateTime(2025, 4, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 4, 10, 8, 00, 00),
+                Description = "​The El Gouna International Squash Open is a premier event on the Professional Squash Association (PSA) World Tour, attracting top players from around the globe.",
+                Location = "El Gouna, Egypt",
+                Price = 1100,
+                EventId = 17,
+            },
+            new EventDate
+            {
+                Id = 18,
+                StartDate = new DateTime(2025, 7, 15, 10, 00, 00),
+                EndDate = new DateTime(2025, 7, 28, 10, 00, 00),
+                StartSubscription = new DateTime(2025, 7, 1, 9, 55, 00),
+                EndSubscription = new DateTime(2025, 7, 13, 10, 00, 00),
+                Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
+                Location = "Alexandria, Egypt",
+                Price = 100,
+                EventId = 18,
+            },
+            new EventDate
+            {
+                Id = 19,
+                StartDate = new DateTime(2025, 10, 15, 9, 00, 00),
+                EndDate = new DateTime(2025, 10, 17, 9, 00, 00),
+                StartSubscription = new DateTime(2025, 10, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 10, 13, 8, 00, 00),
+                Description = "​The Siwa Date Festival is an annual celebration held in Siwa Oasis, Egypt, honoring the region's rich tradition of date cultivation. This event showcases the oasis's cultural heritage and agricultural significance.",
+                Location = "Siwa, Egypt",
+                Price = 200,
+                EventId = 19,
+            },
+            new EventDate
+            {
+                Id = 20,
+                StartDate = new DateTime(2025, 7, 3, 9, 00, 00),
+                EndDate = new DateTime(2025, 7, 3, 10, 55, 00),
+                StartSubscription = new DateTime(2025, 6, 15, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 6, 30, 8, 00, 00),
+                Description = "​The Egyptian Museum in Cairo, established in 1902, is renowned for its extensive collection of ancient Egyptian artifacts.",
+                Location = "Cairo, Egypt",
+                Price = 250,
+                EventId = 20,
+            },
+            new EventDate
+            {
+                Id = 21,
+                StartDate = new DateTime(2025, 1, 6, 12, 00, 00),
+                EndDate = new DateTime(2025, 1, 7, 12, 00, 00),
+                StartSubscription = new DateTime(2025, 1, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 1, 5, 8, 00, 00),
+                Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
+                Location = "Egypt",
+                Price = 100,
+                EventId = 21,
+            },
+            new EventDate
+            {
+                Id = 22,
+                StartDate = new DateTime(2025, 4, 16, 11, 00, 00),
+                EndDate = new DateTime(2025, 4, 26, 10, 00, 00),
+                StartSubscription = new DateTime(2025, 4, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 4, 13, 8, 00, 00),
+                Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
+                Location = "Red Sea, Egypt",
+                Price = 500,
+                EventId = 22,
+            },
+            new EventDate
+            {
+                Id = 23,
+                StartDate = new DateTime(2025, 7, 16, 9, 45, 00),
+                EndDate = new DateTime(2025, 7, 21, 10, 55, 00),
+                StartSubscription = new DateTime(2025, 7, 3, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 7, 12, 8, 00, 00),
+                Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
+                Location = "Luxor, Egypt",
+                Price = 450,
+                EventId = 23,
+            },
+            new EventDate
+            {
+                Id = 24,
+                StartDate = new DateTime(2025, 2, 8, 11, 00, 00),
+                EndDate = new DateTime(2025, 2, 11, 12, 00, 00),
+                StartSubscription = new DateTime(2025, 2, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 2, 6, 8, 00, 00),
+                Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
+                Location = "Cairo, Egypt",
+                Price = 150,
+                EventId = 24,
+            },
+            new EventDate
+            {
+                Id = 25,
+                StartDate = new DateTime(2025, 11, 29, 1, 00, 00),
+                EndDate = new DateTime(2025, 11, 29, 10, 50, 00),
+                StartSubscription = new DateTime(2025, 11, 20, 8, 00, 00),
+                EndSubscription = new DateTime(2025, 11, 25, 12, 00, 00),
+                Description = " This conference aims to explore various aspects of Islam and its cultural manifestations.​",
+                Location = "Alexandria, Egypt",
+                Price = 200,
+                EventId = 25,
+            },
         };
 
-        builder.HasData();
+        builder.HasData(eventDate);
     }
 }
 
@@ -237,7 +381,6 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
                 ImageUrl="EventImages/Cairo/3.webp",
                 EventId = 3
             },
-
             new EventImage
             {
                 Id = 10,
@@ -426,10 +569,224 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
                 Id = 39,
                 ImageUrl="EventImages/El Gouna, Red Sea/3.webp",
                 EventId = 13
+            },new EventImage
+            {
+                Id = 40,
+                ImageUrl="EventImages/40.jpg",
+                EventId = 15
+            },
+            new EventImage
+            {
+                Id = 41,
+                ImageUrl="EventImages/41.jpg",
+                EventId = 15
+            },
+            new EventImage
+            {
+                Id = 42,
+                ImageUrl="EventImages/42.jpg",
+                EventId = 15
+            },
+            new EventImage
+            {
+                Id = 43,
+                ImageUrl="EventImages/43.jpg",
+                EventId = 16
+            },
+            new EventImage
+            {
+                Id = 44,
+                ImageUrl="EventImages/44.jpg",
+                EventId = 16
+            },
+            new EventImage
+            {
+                Id = 45,
+                ImageUrl="EventImages/45.jpg",
+                EventId = 16
+            },
+            new EventImage
+            {
+                Id = 46,
+                ImageUrl="EventImages/46.jpg",
+                EventId = 17
+            },
+            new EventImage
+            {
+                Id = 47,
+                ImageUrl="EventImages/47.jpg",
+                EventId = 17
+            },
+            new EventImage
+            {
+                Id = 48,
+                ImageUrl="EventImages/48.jpg",
+                EventId = 17
+            },
+            new EventImage
+            {
+                Id = 49,
+                ImageUrl="EventImages/49.jpg",
+                EventId = 18
+            },
+            new EventImage
+            {
+                Id = 50,
+                ImageUrl="EventImages/50.jpg",
+                EventId = 18
+            },
+            new EventImage
+            {
+                Id = 51,
+                ImageUrl="EventImages/51.jpg",
+                EventId = 18
+            },
+            new EventImage
+            {
+                Id = 52,
+                ImageUrl="EventImages/52.jpg",
+                EventId = 19
+            },
+            new EventImage
+            {
+                Id = 53,
+                ImageUrl="EventImages/53.jpg",
+                EventId = 19
+            },
+            new EventImage
+            {
+                Id = 54,
+                ImageUrl="EventImages/54.jpg",
+                EventId = 19
+            },
+            new EventImage
+            {
+                Id = 55,
+                ImageUrl="EventImages/55.jpg",
+                EventId = 20
+            },
+            new EventImage
+            {
+                Id = 56,
+                ImageUrl="EventImages/56.jpg",
+                EventId = 20
+            },
+            new EventImage
+            {
+                Id = 57,
+                ImageUrl="EventImages/57.jpg",
+                EventId = 20
+            },
+            new EventImage
+            {
+                Id = 58,
+                ImageUrl="EventImages/58.jpg",
+                EventId = 21
+            },
+            new EventImage
+            {
+                Id = 59,
+                ImageUrl="EventImages/59.jpg",
+                EventId = 21
+            },
+            new EventImage
+            {
+                Id = 60,
+                ImageUrl="EventImages/60.jpg",
+                EventId = 21
+            },
+            new EventImage
+            {
+                Id = 61,
+                ImageUrl="EventImages/61.jpg",
+                EventId = 22
+            },
+            new EventImage
+            {
+                Id = 62,
+                ImageUrl="EventImages/62.jpg",
+                EventId = 22
+            },
+            new EventImage
+            {
+                Id = 63,
+                ImageUrl="EventImages/63.jpg",
+                EventId = 22
+            },
+            new EventImage
+            {
+                Id = 64,
+                ImageUrl="EventImages/64.jpg",
+                EventId = 23
+            },
+            new EventImage
+            {
+                Id = 65,
+                ImageUrl="EventImages/65.jpg",
+                EventId = 23
+            },
+            new EventImage
+            {
+                Id = 66,
+                ImageUrl="EventImages/66.jpg",
+                EventId = 23
+            },
+            new EventImage
+            {
+                Id = 67,
+                ImageUrl="EventImages/67.jpg",
+                EventId = 24
+            },
+            new EventImage
+            {
+                Id = 68,
+                ImageUrl="EventImages/68.jpg",
+                EventId = 24
+            },
+            new EventImage
+            {
+                Id = 69,
+                ImageUrl="EventImages/69.jpg",
+                EventId = 24
+            },
+            new EventImage
+            {
+                Id = 70,
+                ImageUrl="EventImages/70.jpg",
+                EventId = 25
+            },
+            new EventImage
+            {
+                Id = 71,
+                ImageUrl="EventImages/71.jpg",
+                EventId = 25
+            },
+            new EventImage
+            {
+                Id = 72,
+                ImageUrl="EventImages/72.jpg",
+                EventId = 25
+            },
+            new EventImage
+            {
+                Id = 73,
+                ImageUrl="EventImages/73.jpg",
+                EventId = 14
+            },
+            new EventImage
+            {
+                Id = 74,
+                ImageUrl="EventImages/74.jpg",
+                EventId = 14
+            },
+            new EventImage
+            {
+                Id = 75,
+                ImageUrl="EventImages/75.jpg",
+                EventId = 14
             }
-
         };
 
-        builder.HasData();
+        builder.HasData(eventImages);
     }
 }

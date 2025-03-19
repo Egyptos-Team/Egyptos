@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250319212904_AddEventDateData")]
+    partial class AddEventDateData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaTypeId");
 
-                    b.ToTable("Areas", (string)null);
+                    b.ToTable("Areas");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
@@ -78,7 +81,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("AreaImages", (string)null);
+                    b.ToTable("AreaImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
@@ -95,7 +98,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AreaTypes", (string)null);
+                    b.ToTable("AreaTypes");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaWorking", b =>
@@ -110,7 +113,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("WorkingId");
 
-                    b.ToTable("AreaWorkings", (string)null);
+                    b.ToTable("AreaWorkings");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingEventDate", b =>
@@ -125,7 +128,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventDateId");
 
-                    b.ToTable("BookingEventDates", (string)null);
+                    b.ToTable("BookingEventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingHotel", b =>
@@ -149,7 +152,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("BookingHotels", (string)null);
+                    b.ToTable("BookingHotels");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingPrivateTransport", b =>
@@ -191,7 +194,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingPrivateTransports", (string)null);
+                    b.ToTable("BookingPrivateTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTourGuide", b =>
@@ -233,7 +236,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingTourGuides", (string)null);
+                    b.ToTable("BookingTourGuides");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
@@ -248,7 +251,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("BookingTrips", (string)null);
+                    b.ToTable("BookingTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
@@ -274,7 +277,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events");
 
                     b.HasData(
                         new
@@ -495,7 +498,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventDates", (string)null);
+                    b.ToTable("EventDates");
 
                     b.HasData(
                         new
@@ -844,459 +847,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventImages", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/1.webp"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/2.webp"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/3.webp"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/1.webp"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/2.webp"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/3.webp"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/1.webp"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/2.webp"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/3.webp"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/1.webp"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/2.webp"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/3.webp"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/1.webp"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/2.webp"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/3.webp"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/1.webp"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/2.webp"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/3.webp"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/1.webp"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/2.webp"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/3.webp"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/1.webp"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/2.webp"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/3.webp"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            EventId = 15,
-                            ImageUrl = "EventImages/40.jpg"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            EventId = 15,
-                            ImageUrl = "EventImages/41.jpg"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            EventId = 15,
-                            ImageUrl = "EventImages/42.jpg"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            EventId = 16,
-                            ImageUrl = "EventImages/43.jpg"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            EventId = 16,
-                            ImageUrl = "EventImages/44.jpg"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            EventId = 16,
-                            ImageUrl = "EventImages/45.jpg"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            EventId = 17,
-                            ImageUrl = "EventImages/46.jpg"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            EventId = 17,
-                            ImageUrl = "EventImages/47.jpg"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            EventId = 17,
-                            ImageUrl = "EventImages/48.jpg"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            EventId = 18,
-                            ImageUrl = "EventImages/49.jpg"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            EventId = 18,
-                            ImageUrl = "EventImages/50.jpg"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            EventId = 18,
-                            ImageUrl = "EventImages/51.jpg"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            EventId = 19,
-                            ImageUrl = "EventImages/52.jpg"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            EventId = 19,
-                            ImageUrl = "EventImages/53.jpg"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            EventId = 19,
-                            ImageUrl = "EventImages/54.jpg"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            EventId = 20,
-                            ImageUrl = "EventImages/55.jpg"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            EventId = 20,
-                            ImageUrl = "EventImages/56.jpg"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            EventId = 20,
-                            ImageUrl = "EventImages/57.jpg"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            EventId = 21,
-                            ImageUrl = "EventImages/58.jpg"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            EventId = 21,
-                            ImageUrl = "EventImages/59.jpg"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            EventId = 21,
-                            ImageUrl = "EventImages/60.jpg"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            EventId = 22,
-                            ImageUrl = "EventImages/61.jpg"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            EventId = 22,
-                            ImageUrl = "EventImages/62.jpg"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            EventId = 22,
-                            ImageUrl = "EventImages/63.jpg"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            EventId = 23,
-                            ImageUrl = "EventImages/64.jpg"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            EventId = 23,
-                            ImageUrl = "EventImages/65.jpg"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            EventId = 23,
-                            ImageUrl = "EventImages/66.jpg"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            EventId = 24,
-                            ImageUrl = "EventImages/67.jpg"
-                        },
-                        new
-                        {
-                            Id = 68,
-                            EventId = 24,
-                            ImageUrl = "EventImages/68.jpg"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            EventId = 24,
-                            ImageUrl = "EventImages/69.jpg"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            EventId = 25,
-                            ImageUrl = "EventImages/70.jpg"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            EventId = 25,
-                            ImageUrl = "EventImages/71.jpg"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            EventId = 25,
-                            ImageUrl = "EventImages/72.jpg"
-                        },
-                        new
-                        {
-                            Id = 73,
-                            EventId = 14,
-                            ImageUrl = "EventImages/73.jpg"
-                        },
-                        new
-                        {
-                            Id = 74,
-                            EventId = 14,
-                            ImageUrl = "EventImages/74.jpg"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            EventId = 14,
-                            ImageUrl = "EventImages/75.jpg"
-                        });
+                    b.ToTable("EventImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventType", b =>
@@ -1313,7 +864,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventTypes", (string)null);
+                    b.ToTable("EventTypes");
 
                     b.HasData(
                         new
@@ -1369,7 +920,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Historicals", (string)null);
+                    b.ToTable("Historicals");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.HistoricalImage", b =>
@@ -1391,7 +942,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HistoricalId");
 
-                    b.ToTable("HistoricalImages", (string)null);
+                    b.ToTable("HistoricalImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Hotel", b =>
@@ -1442,7 +993,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hotels", (string)null);
+                    b.ToTable("Hotels");
 
                     b.HasData(
                         new
@@ -2734,7 +2285,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PrivateTransport", b =>
@@ -2775,7 +2326,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TransportTypeId");
 
-                    b.ToTable("PrivateTransports", (string)null);
+                    b.ToTable("PrivateTransports");
 
                     b.HasData(
                         new
@@ -3398,7 +2949,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
-                    b.ToTable("PublicTransports", (string)null);
+                    b.ToTable("PublicTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Report", b =>
@@ -3438,7 +2989,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reports", (string)null);
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
@@ -3476,7 +3027,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuides", (string)null);
+                    b.ToTable("TourGuides");
 
                     b.HasData(
                         new
@@ -3724,7 +3275,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuideReviews", (string)null);
+                    b.ToTable("TourGuideReviews");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
@@ -3739,7 +3290,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TourGuideId");
 
-                    b.ToTable("TourGuideTrips", (string)null);
+                    b.ToTable("TourGuideTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TransportType", b =>
@@ -3756,7 +3307,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportTypes", (string)null);
+                    b.ToTable("TransportTypes");
 
                     b.HasData(
                         new
@@ -3819,7 +3370,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("PublicTransportId");
 
-                    b.ToTable("Trips", (string)null);
+                    b.ToTable("Trips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Working", b =>
@@ -3842,7 +3393,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workings", (string)null);
+                    b.ToTable("Workings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
