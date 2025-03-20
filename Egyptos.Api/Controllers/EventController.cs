@@ -13,8 +13,8 @@ public class EventController(IEventService eventService) : ControllerBase
 {
     private readonly IEventService _eventService = eventService;
 
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Add([FromBody] CreateEventRequest request)
     {
         var result = await _eventService.AddAsync(request);

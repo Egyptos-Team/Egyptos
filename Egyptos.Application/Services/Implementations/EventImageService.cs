@@ -15,8 +15,8 @@ public class EventImageService(ApplicationDbContext context, IFileService fileSe
 
     public async Task<Result<EventImageResponse>> AddAsync(CreateEventImageRequest request)
     {
-        if (await _context.Events.FindAsync(request.EventId) is not {})
-            return Result.Failure<EventImageResponse>(EventErrors.EventNotFount);
+        if (await _context.EventDates.FindAsync(request.EventId) is not {})
+            return Result.Failure<EventImageResponse>(EventErrors.EventDateNotFount);
 
         var eventImage = request.Adapt<EventImage>();
 

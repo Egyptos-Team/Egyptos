@@ -19,12 +19,12 @@ public class EventService(ApplicationDbContext context) : IEventService
        if(await _context.EventTypes.AnyAsync(x => x.Id == request.EventTypeId) == false)
             return Result.Failure<CreateEventResponse>(EventErrors.EventTypeNotFount);
 
-        var event1 = request.Adapt<Event>();
+        var @event = request.Adapt<Event>();
 
-        await _context.AddAsync(event1);
+        await _context.AddAsync(@event);
         await _context.SaveChangesAsync();
 
-        return Result.Success(event1.Adapt<CreateEventResponse>());
+        return Result.Success(@event.Adapt<CreateEventResponse>());
     }
     public async Task<IEnumerable<EventResponse>> GetAllAsync()
     {
