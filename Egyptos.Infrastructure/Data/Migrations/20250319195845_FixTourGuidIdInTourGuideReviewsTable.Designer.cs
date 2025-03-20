@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250319195845_FixTourGuidIdInTourGuideReviewsTable")]
+    partial class FixTourGuidIdInTourGuideReviewsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +56,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaTypeId");
 
-                    b.ToTable("Areas", (string)null);
+                    b.ToTable("Areas");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
@@ -78,7 +81,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("AreaImages", (string)null);
+                    b.ToTable("AreaImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
@@ -95,7 +98,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AreaTypes", (string)null);
+                    b.ToTable("AreaTypes");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaWorking", b =>
@@ -110,7 +113,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("WorkingId");
 
-                    b.ToTable("AreaWorkings", (string)null);
+                    b.ToTable("AreaWorkings");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingEventDate", b =>
@@ -125,7 +128,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventDateId");
 
-                    b.ToTable("BookingEventDates", (string)null);
+                    b.ToTable("BookingEventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingHotel", b =>
@@ -149,7 +152,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("BookingHotels", (string)null);
+                    b.ToTable("BookingHotels");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingPrivateTransport", b =>
@@ -191,7 +194,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingPrivateTransports", (string)null);
+                    b.ToTable("BookingPrivateTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTourGuide", b =>
@@ -233,7 +236,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingTourGuides", (string)null);
+                    b.ToTable("BookingTourGuides");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
@@ -248,7 +251,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("BookingTrips", (string)null);
+                    b.ToTable("BookingTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
@@ -274,7 +277,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events");
 
                     b.HasData(
                         new
@@ -495,334 +498,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventDates", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "A festival celebrating Ismailia's famous mangoes with exhibitions and entertainment.",
-                            EndDate = new DateTime(2025, 7, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 9, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 1,
-                            IsActiveToSubscribe = false,
-                            Location = "Ismailia, Egypt",
-                            Price = 100.0,
-                            StartDate = new DateTime(2025, 7, 10, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
-                            EndDate = new DateTime(2025, 4, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 4, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 2,
-                            IsActiveToSubscribe = true,
-                            Location = "Alexandria, Egypt",
-                            Price = 150.0,
-                            StartDate = new DateTime(2025, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "A festival dedicated to women in theatre, featuring performances and discussions.",
-                            EndDate = new DateTime(2025, 3, 15, 22, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 3, 5, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 3,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo, Egypt",
-                            Price = 120.0,
-                            StartDate = new DateTime(2025, 3, 8, 17, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "An astronomical event where the sun aligns with the temple’s axis, showcasing ancient Egyptian ingenuity.",
-                            EndDate = new DateTime(2025, 2, 21, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 2, 18, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 4,
-                            IsActiveToSubscribe = false,
-                            Location = "Karnak Temple, Luxor, Egypt",
-                            Price = 250.0,
-                            StartDate = new DateTime(2025, 2, 21, 6, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "One of the Arab world's most prestigious film festivals, drawing filmmakers and critics.",
-                            EndDate = new DateTime(2025, 11, 20, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 11, 5, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 5,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo, Egypt",
-                            Price = 200.0,
-                            StartDate = new DateTime(2025, 11, 10, 19, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "A spectacular show narrating Egypt’s history using sound and light projections on the pyramids.",
-                            EndDate = new DateTime(2025, 5, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 4, 30, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 6,
-                            IsActiveToSubscribe = false,
-                            Location = "Giza Pyramids, Egypt",
-                            Price = 180.0,
-                            StartDate = new DateTime(2025, 5, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
-                            EndDate = new DateTime(2025, 4, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 3, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 7,
-                            IsActiveToSubscribe = true,
-                            Location = "Cairo, Egypt",
-                            Price = 80.0,
-                            StartDate = new DateTime(2025, 3, 25, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "A vibrant summer festival with music, dance, and water activities along the Red Sea coast.",
-                            EndDate = new DateTime(2025, 8, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 8, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 8,
-                            IsActiveToSubscribe = false,
-                            Location = "Hurghada, Egypt",
-                            Price = 150.0,
-                            StartDate = new DateTime(2025, 8, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "A theatre festival featuring international performances, workshops, and panel discussions.",
-                            EndDate = new DateTime(2025, 12, 10, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 12, 1, 23, 59, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 9,
-                            IsActiveToSubscribe = false,
-                            Location = "Sharm El Sheikh, Egypt",
-                            Price = 170.0,
-                            StartDate = new DateTime(2025, 12, 5, 17, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 10, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "An exhibition showcasing the treasures of King Tutankhamun.",
-                            EndDate = new DateTime(2025, 3, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 3, 10, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EventId = 10,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo Museum",
-                            Price = 300.0,
-                            StartDate = new DateTime(2025, 3, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "Religious festival celebrating Prophet Muhammad’s birth.",
-                            EndDate = new DateTime(2025, 9, 26, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 9, 20, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EventId = 11,
-                            IsActiveToSubscribe = false,
-                            Location = "Al Azhar Mosque",
-                            Price = 0.0,
-                            StartDate = new DateTime(2025, 9, 26, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "A cultural festival celebrating Egyptian heritage.",
-                            EndDate = new DateTime(2025, 6, 10, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 6, 5, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EventId = 12,
-                            IsActiveToSubscribe = false,
-                            Location = "Giza Plateau",
-                            Price = 150.0,
-                            StartDate = new DateTime(2025, 6, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 5, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Description = "A prestigious international film festival held in El Gouna.",
-                            EndDate = new DateTime(2025, 10, 28, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 15, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EventId = 13,
-                            IsActiveToSubscribe = false,
-                            Location = "El Gouna, Red Sea",
-                            Price = 500.0,
-                            StartDate = new DateTime(2025, 10, 20, 19, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Description = "A grand parade transferring royal mummies to their new museum with spectacular performances.",
-                            EndDate = new DateTime(2025, 9, 24, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 9, 19, 23, 59, 59, 0, DateTimeKind.Unspecified),
-                            EventId = 14,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo, Egypt",
-                            Price = 450.0,
-                            StartDate = new DateTime(2025, 9, 20, 20, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Description = "Eid al-Fitr in Egypt is a major religious and cultural event that celebrates the end of Ramadan, the Islamic holy month of fasting.",
-                            EndDate = new DateTime(2025, 4, 2, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 3, 30, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 15,
-                            IsActiveToSubscribe = true,
-                            Location = "Egypt",
-                            Price = 150.0,
-                            StartDate = new DateTime(2025, 3, 31, 7, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 3, 17, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Description = "​The Aswan International Cultural Festival is an annual event celebrating the rich heritage of Nubian culture through music, dance, and art.",
-                            EndDate = new DateTime(2025, 2, 16, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 1, 30, 7, 50, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 16,
-                            IsActiveToSubscribe = false,
-                            Location = "Aswan, Egypt",
-                            Price = 500.0,
-                            StartDate = new DateTime(2025, 2, 2, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 1, 19, 7, 50, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Description = "​The El Gouna International Squash Open is a premier event on the Professional Squash Association (PSA) World Tour, attracting top players from around the globe.",
-                            EndDate = new DateTime(2025, 4, 18, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 4, 10, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 17,
-                            IsActiveToSubscribe = false,
-                            Location = "El Gouna, Egypt",
-                            Price = 1100.0,
-                            StartDate = new DateTime(2025, 4, 12, 7, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
-                            EndDate = new DateTime(2025, 7, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 7, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 18,
-                            IsActiveToSubscribe = false,
-                            Location = "Alexandria, Egypt",
-                            Price = 100.0,
-                            StartDate = new DateTime(2025, 7, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 7, 1, 9, 55, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Description = "​The Siwa Date Festival is an annual celebration held in Siwa Oasis, Egypt, honoring the region's rich tradition of date cultivation. This event showcases the oasis's cultural heritage and agricultural significance.",
-                            EndDate = new DateTime(2025, 10, 17, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 19,
-                            IsActiveToSubscribe = false,
-                            Location = "Siwa, Egypt",
-                            Price = 200.0,
-                            StartDate = new DateTime(2025, 10, 15, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 10, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Description = "​The Egyptian Museum in Cairo, established in 1902, is renowned for its extensive collection of ancient Egyptian artifacts.",
-                            EndDate = new DateTime(2025, 7, 3, 10, 55, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 6, 30, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 20,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo, Egypt",
-                            Price = 250.0,
-                            StartDate = new DateTime(2025, 7, 3, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 6, 15, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
-                            EndDate = new DateTime(2025, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 21,
-                            IsActiveToSubscribe = false,
-                            Location = "Egypt",
-                            Price = 100.0,
-                            StartDate = new DateTime(2025, 1, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
-                            EndDate = new DateTime(2025, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 22,
-                            IsActiveToSubscribe = false,
-                            Location = "Red Sea, Egypt",
-                            Price = 500.0,
-                            StartDate = new DateTime(2025, 4, 16, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
-                            EndDate = new DateTime(2025, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 23,
-                            IsActiveToSubscribe = false,
-                            Location = "Luxor, Egypt",
-                            Price = 450.0,
-                            StartDate = new DateTime(2025, 7, 16, 9, 45, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 7, 3, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
-                            EndDate = new DateTime(2025, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 24,
-                            IsActiveToSubscribe = false,
-                            Location = "Cairo, Egypt",
-                            Price = 150.0,
-                            StartDate = new DateTime(2025, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Description = " This conference aims to explore various aspects of Islam and its cultural manifestations.​",
-                            EndDate = new DateTime(2025, 11, 29, 10, 50, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 11, 25, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 25,
-                            IsActiveToSubscribe = false,
-                            Location = "Alexandria, Egypt",
-                            Price = 200.0,
-                            StartDate = new DateTime(2025, 11, 29, 1, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 11, 20, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
+                    b.ToTable("EventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventImage", b =>
@@ -844,459 +520,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventImages", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/1.webp"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/2.webp"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            EventId = 1,
-                            ImageUrl = "EventImages/Ismailia/3.webp"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/1.webp"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/2.webp"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            EventId = 2,
-                            ImageUrl = "EventImages/Alexandria/3.webp"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/1.webp"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/2.webp"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            EventId = 3,
-                            ImageUrl = "EventImages/Cairo/3.webp"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            EventId = 4,
-                            ImageUrl = "EventImages/Karnak Temple, Luxor, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 13,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 14,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 15,
-                            EventId = 5,
-                            ImageUrl = "EventImages/Cairo,Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 16,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 17,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 18,
-                            EventId = 6,
-                            ImageUrl = "EventImages/Giza Pyramids, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 19,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/1.webp"
-                        },
-                        new
-                        {
-                            Id = 20,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/2.webp"
-                        },
-                        new
-                        {
-                            Id = 21,
-                            EventId = 7,
-                            ImageUrl = "EventImages/Cairo, Egypt2/3.webp"
-                        },
-                        new
-                        {
-                            Id = 22,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 23,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 24,
-                            EventId = 8,
-                            ImageUrl = "EventImages/Hurghada, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 25,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/1.webp"
-                        },
-                        new
-                        {
-                            Id = 26,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/2.webp"
-                        },
-                        new
-                        {
-                            Id = 27,
-                            EventId = 9,
-                            ImageUrl = "EventImages/Sharm El Sheikh, Egypt/3.webp"
-                        },
-                        new
-                        {
-                            Id = 28,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/1.webp"
-                        },
-                        new
-                        {
-                            Id = 29,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/2.webp"
-                        },
-                        new
-                        {
-                            Id = 30,
-                            EventId = 10,
-                            ImageUrl = "EventImages/Cairo Museum/3.webp"
-                        },
-                        new
-                        {
-                            Id = 31,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/1.webp"
-                        },
-                        new
-                        {
-                            Id = 32,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/2.webp"
-                        },
-                        new
-                        {
-                            Id = 33,
-                            EventId = 11,
-                            ImageUrl = "EventImages/Al Azhar Mosque/3.webp"
-                        },
-                        new
-                        {
-                            Id = 34,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/1.webp"
-                        },
-                        new
-                        {
-                            Id = 35,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/2.webp"
-                        },
-                        new
-                        {
-                            Id = 36,
-                            EventId = 12,
-                            ImageUrl = "EventImages/Giza Plateau/3.webp"
-                        },
-                        new
-                        {
-                            Id = 37,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/1.webp"
-                        },
-                        new
-                        {
-                            Id = 38,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/2.webp"
-                        },
-                        new
-                        {
-                            Id = 39,
-                            EventId = 13,
-                            ImageUrl = "EventImages/El Gouna, Red Sea/3.webp"
-                        },
-                        new
-                        {
-                            Id = 40,
-                            EventId = 15,
-                            ImageUrl = "EventImages/40.jpg"
-                        },
-                        new
-                        {
-                            Id = 41,
-                            EventId = 15,
-                            ImageUrl = "EventImages/41.jpg"
-                        },
-                        new
-                        {
-                            Id = 42,
-                            EventId = 15,
-                            ImageUrl = "EventImages/42.jpg"
-                        },
-                        new
-                        {
-                            Id = 43,
-                            EventId = 16,
-                            ImageUrl = "EventImages/43.jpg"
-                        },
-                        new
-                        {
-                            Id = 44,
-                            EventId = 16,
-                            ImageUrl = "EventImages/44.jpg"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            EventId = 16,
-                            ImageUrl = "EventImages/45.jpg"
-                        },
-                        new
-                        {
-                            Id = 46,
-                            EventId = 17,
-                            ImageUrl = "EventImages/46.jpg"
-                        },
-                        new
-                        {
-                            Id = 47,
-                            EventId = 17,
-                            ImageUrl = "EventImages/47.jpg"
-                        },
-                        new
-                        {
-                            Id = 48,
-                            EventId = 17,
-                            ImageUrl = "EventImages/48.jpg"
-                        },
-                        new
-                        {
-                            Id = 49,
-                            EventId = 18,
-                            ImageUrl = "EventImages/49.jpg"
-                        },
-                        new
-                        {
-                            Id = 50,
-                            EventId = 18,
-                            ImageUrl = "EventImages/50.jpg"
-                        },
-                        new
-                        {
-                            Id = 51,
-                            EventId = 18,
-                            ImageUrl = "EventImages/51.jpg"
-                        },
-                        new
-                        {
-                            Id = 52,
-                            EventId = 19,
-                            ImageUrl = "EventImages/52.jpg"
-                        },
-                        new
-                        {
-                            Id = 53,
-                            EventId = 19,
-                            ImageUrl = "EventImages/53.jpg"
-                        },
-                        new
-                        {
-                            Id = 54,
-                            EventId = 19,
-                            ImageUrl = "EventImages/54.jpg"
-                        },
-                        new
-                        {
-                            Id = 55,
-                            EventId = 20,
-                            ImageUrl = "EventImages/55.jpg"
-                        },
-                        new
-                        {
-                            Id = 56,
-                            EventId = 20,
-                            ImageUrl = "EventImages/56.jpg"
-                        },
-                        new
-                        {
-                            Id = 57,
-                            EventId = 20,
-                            ImageUrl = "EventImages/57.jpg"
-                        },
-                        new
-                        {
-                            Id = 58,
-                            EventId = 21,
-                            ImageUrl = "EventImages/58.jpg"
-                        },
-                        new
-                        {
-                            Id = 59,
-                            EventId = 21,
-                            ImageUrl = "EventImages/59.jpg"
-                        },
-                        new
-                        {
-                            Id = 60,
-                            EventId = 21,
-                            ImageUrl = "EventImages/60.jpg"
-                        },
-                        new
-                        {
-                            Id = 61,
-                            EventId = 22,
-                            ImageUrl = "EventImages/61.jpg"
-                        },
-                        new
-                        {
-                            Id = 62,
-                            EventId = 22,
-                            ImageUrl = "EventImages/62.jpg"
-                        },
-                        new
-                        {
-                            Id = 63,
-                            EventId = 22,
-                            ImageUrl = "EventImages/63.jpg"
-                        },
-                        new
-                        {
-                            Id = 64,
-                            EventId = 23,
-                            ImageUrl = "EventImages/64.jpg"
-                        },
-                        new
-                        {
-                            Id = 65,
-                            EventId = 23,
-                            ImageUrl = "EventImages/65.jpg"
-                        },
-                        new
-                        {
-                            Id = 66,
-                            EventId = 23,
-                            ImageUrl = "EventImages/66.jpg"
-                        },
-                        new
-                        {
-                            Id = 67,
-                            EventId = 24,
-                            ImageUrl = "EventImages/67.jpg"
-                        },
-                        new
-                        {
-                            Id = 68,
-                            EventId = 24,
-                            ImageUrl = "EventImages/68.jpg"
-                        },
-                        new
-                        {
-                            Id = 69,
-                            EventId = 24,
-                            ImageUrl = "EventImages/69.jpg"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            EventId = 25,
-                            ImageUrl = "EventImages/70.jpg"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            EventId = 25,
-                            ImageUrl = "EventImages/71.jpg"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            EventId = 25,
-                            ImageUrl = "EventImages/72.jpg"
-                        },
-                        new
-                        {
-                            Id = 73,
-                            EventId = 14,
-                            ImageUrl = "EventImages/73.jpg"
-                        },
-                        new
-                        {
-                            Id = 74,
-                            EventId = 14,
-                            ImageUrl = "EventImages/74.jpg"
-                        },
-                        new
-                        {
-                            Id = 75,
-                            EventId = 14,
-                            ImageUrl = "EventImages/75.jpg"
-                        });
+                    b.ToTable("EventImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.EventType", b =>
@@ -1313,7 +537,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventTypes", (string)null);
+                    b.ToTable("EventTypes");
 
                     b.HasData(
                         new
@@ -1369,7 +593,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Historicals", (string)null);
+                    b.ToTable("Historicals");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.HistoricalImage", b =>
@@ -1391,7 +615,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HistoricalId");
 
-                    b.ToTable("HistoricalImages", (string)null);
+                    b.ToTable("HistoricalImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Hotel", b =>
@@ -1442,7 +666,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hotels", (string)null);
+                    b.ToTable("Hotels");
 
                     b.HasData(
                         new
@@ -2734,7 +1958,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PrivateTransport", b =>
@@ -2775,7 +1999,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TransportTypeId");
 
-                    b.ToTable("PrivateTransports", (string)null);
+                    b.ToTable("PrivateTransports");
 
                     b.HasData(
                         new
@@ -3398,7 +2622,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
-                    b.ToTable("PublicTransports", (string)null);
+                    b.ToTable("PublicTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Report", b =>
@@ -3438,7 +2662,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reports", (string)null);
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
@@ -3476,7 +2700,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuides", (string)null);
+                    b.ToTable("TourGuides");
 
                     b.HasData(
                         new
@@ -3721,7 +2945,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuideReviews", (string)null);
+                    b.ToTable("TourGuideReviews");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
@@ -3736,7 +2960,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TourGuideId");
 
-                    b.ToTable("TourGuideTrips", (string)null);
+                    b.ToTable("TourGuideTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TransportType", b =>
@@ -3753,7 +2977,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportTypes", (string)null);
+                    b.ToTable("TransportTypes");
 
                     b.HasData(
                         new
@@ -3816,7 +3040,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("PublicTransportId");
 
-                    b.ToTable("Trips", (string)null);
+                    b.ToTable("Trips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Working", b =>
@@ -3839,7 +3063,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workings", (string)null);
+                    b.ToTable("Workings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

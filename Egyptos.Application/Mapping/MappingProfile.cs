@@ -4,6 +4,7 @@ using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.Users;
 using Egyptos.Domain.Entities;
 using Egyptos.Application.Contracts.BookingTourGuide;
+using Egyptos.Application.Contracts.TourGuideReviews;
 
 namespace Egyptos.Application.Mapping;
 
@@ -30,7 +31,7 @@ public class MappingProfile : IRegister
 
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
-        
+
         config.NewConfig<BookingPrivateTransport, PrivateTransport>()
            .Ignore(dest => dest.Id);
 
@@ -38,6 +39,11 @@ public class MappingProfile : IRegister
            .Map(des => des.TourGuideFirstName, src => src.TourGuide.User.FirstName)
            .Map(des => des.TourGuideLastName, src => src.TourGuide.User.LastName);
 
-           
+        config.NewConfig<TourGuideReview, TourGuideReviewResponse>()
+            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
+            .Map(des => des.TourName, src => src.TourGuide.User.FirstName + " " + src.TourGuide.User.LastName);
+
+
+
     }
 }

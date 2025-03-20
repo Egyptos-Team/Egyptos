@@ -7,9 +7,9 @@ public class TourGuideReview
     public int Id { get; set; }
     public string Comment { get; set; } = null!;
     public double Rate { get; set; }
-    public DateOnly Date { get; set; }
+    public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
 
-    public int TourId { get; set; }
+    public int TourGuideId { get; set; }
     public TourGuide TourGuide { get; set; } = null!;
 
     public string UserId { get; set; } = null!;

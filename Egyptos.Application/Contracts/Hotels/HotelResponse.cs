@@ -9,5 +9,8 @@ public record HotelResponse(
      string WebSite,
      string Facebook,
      string PhoneNumber,
+     double Rate,
+     string LocationName,
      double PricePerHour
+
 );
