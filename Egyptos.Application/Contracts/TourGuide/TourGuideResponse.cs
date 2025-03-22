@@ -13,7 +13,7 @@ public record TourGuideResponse
     bool IsAvailable,
     bool IsActive,
     TouGuideUserResponse User,
-    List<TourGuideReviewResponse> Reviews
+    List<TourGuideReviewResponse> TourGuideReviews
 );
 
 
