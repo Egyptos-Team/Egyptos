@@ -14,21 +14,25 @@ public class TransportTypeConfiguration : IEntityTypeConfiguration<TransportType
             {
                 Id = 1,
                 Name = "Car",
+                ImageUrl="TransportTypes/Cars.jpg"
             },
             new TransportType
             {
                 Id = 2,
                 Name = "Bus",
+                ImageUrl="TransportTypes/Buses.jpg"
             },
             new TransportType
             {
                 Id = 3,
                 Name = "Scoter",
+                ImageUrl="TransportTypes/Scoters.jpg"
             },
             new TransportType
             {
                 Id = 4,
                 Name = "bicycle",
+                ImageUrl="TransportTypes/Bikes.jpg"
             }
         };
 

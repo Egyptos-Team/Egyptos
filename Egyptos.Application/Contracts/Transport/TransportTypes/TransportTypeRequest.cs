@@ -1,5 +1,8 @@
-﻿namespace Egyptos.Application.Contracts.Transport.TransportTypes;
+﻿using Microsoft.AspNetCore.Http;
+
+namespace Egyptos.Application.Contracts.Transport.TransportTypes;
 
 public record TransportTypeRequest(
-    string Name
+    string Name,
+    IFormFile ImageUrl
 );

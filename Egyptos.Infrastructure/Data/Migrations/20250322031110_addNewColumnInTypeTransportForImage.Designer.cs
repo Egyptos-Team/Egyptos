@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250322031110_addNewColumnInTypeTransportForImage")]
+    partial class addNewColumnInTypeTransportForImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -3762,25 +3765,21 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            ImageUrl = "TransportTypes/Cars.jpg",
                             Name = "Car"
                         },
                         new
                         {
                             Id = 2,
-                            ImageUrl = "TransportTypes/Buses.jpg",
                             Name = "Bus"
                         },
                         new
                         {
                             Id = 3,
-                            ImageUrl = "TransportTypes/Scoters.jpg",
                             Name = "Scoter"
                         },
                         new
                         {
                             Id = 4,
-                            ImageUrl = "TransportTypes/Bikes.jpg",
                             Name = "bicycle"
                         });
                 });
