@@ -11,6 +11,9 @@ public class BookingPrivateTransportRequestValidator:AbstractValidator<BookingPr
         RuleFor(x => x.Start)
            .NotEmpty();
 
+        RuleFor(x => x.Location)
+         .NotEmpty();
+
         RuleFor(x => x.PrivateTransportId)
            .NotEmpty();
 

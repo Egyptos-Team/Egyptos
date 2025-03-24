@@ -4,5 +4,6 @@ public record BookingPrivateTransportRequest(
     
      DateTime Start,
      DateTime? End,
+     string Location,
      int PrivateTransportId
 );
