@@ -10,6 +10,13 @@ public class AreaTypesConfiguration : IEntityTypeConfiguration<AreaType>
     {
         var areaTypes = new List<AreaType>
         {
+            // asar tabta
+            // amakn asarya
+            // asar 3arqa
+            // spary
+            // ba7rya
+            // GBALYA
+            // RYFAYE AND TABYA WA ASTGMAM
             new AreaType
             {
                 Id=1,
