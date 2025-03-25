@@ -54,6 +54,7 @@ public static class ApplicationExtensions
         services.AddScoped<ITourGuideReviewService, TourGuideReviewService>();
         services.AddScoped<IHistoricalService, HistoricalService>();
         services.AddScoped<IHistoricalImageService, HistoricalImageService>();
+        services.AddScoped<IAreaTypeService, AreaTypeService>();
 
 
         return services;
