@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;
 
 namespace Egyptos.Infrastructure.Data.Configurations;
-//
+
 public class HistoricalConfiguration : IEntityTypeConfiguration<Historical>
 {
     public void Configure(EntityTypeBuilder<Historical> builder)
