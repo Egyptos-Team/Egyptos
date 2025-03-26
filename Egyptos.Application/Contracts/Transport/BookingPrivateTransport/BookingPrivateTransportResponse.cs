@@ -1,6 +1,4 @@
-﻿using Egyptos.Domain.Entities;
-
-namespace Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+﻿namespace Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 
 public class BookingPrivateTransportResponse
 {

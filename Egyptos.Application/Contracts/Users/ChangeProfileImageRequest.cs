@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Http;
-
 namespace Egyptos.Application.Contracts.Users;
 
 public class ChangeProfileImageRequest

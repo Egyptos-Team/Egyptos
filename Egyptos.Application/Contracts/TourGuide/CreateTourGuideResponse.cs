@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.Users;
-using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Contracts.TourGuide;
 

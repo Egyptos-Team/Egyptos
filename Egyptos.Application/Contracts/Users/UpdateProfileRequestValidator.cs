@@ -1,5 +1,3 @@
-using FluentValidation;
-
 namespace Egyptos.Application.Contracts.Users;
 
 public class UpdateProfileRequestValidator : AbstractValidator<UpdateProfileRequest>

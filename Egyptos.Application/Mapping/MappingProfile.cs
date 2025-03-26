@@ -2,7 +2,6 @@ using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.Users;
-using Egyptos.Domain.Entities;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.TourGuideReviews;
 

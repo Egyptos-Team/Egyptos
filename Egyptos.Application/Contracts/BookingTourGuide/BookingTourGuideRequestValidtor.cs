@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
-using FluentValidation;
 
 namespace Egyptos.Application.Contracts.BookingTourGuide;
 

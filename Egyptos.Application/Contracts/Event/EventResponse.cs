@@ -1,6 +1,5 @@
 ﻿using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.EventType;
-using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Contracts.Event;
 

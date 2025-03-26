@@ -1,8 +1,6 @@
 ﻿using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.Historical;
 using Egyptos.Application.Services.Interfaces;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Services.Implementations;

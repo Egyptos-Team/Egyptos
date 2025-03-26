@@ -1,6 +1,4 @@
 ﻿using Egyptos.Application.Contracts.Event;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 

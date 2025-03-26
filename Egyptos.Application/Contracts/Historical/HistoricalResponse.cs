@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.HistoricalImage;
-using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Contracts.Historical;
 

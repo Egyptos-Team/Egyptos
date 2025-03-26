@@ -1,6 +1,4 @@
 using Egyptos.Domain.Consts;
-using FluentValidation;
-using Microsoft.AspNetCore.Http;
 
 namespace Egyptos.Application.Contracts.Authentication.Validators;
 

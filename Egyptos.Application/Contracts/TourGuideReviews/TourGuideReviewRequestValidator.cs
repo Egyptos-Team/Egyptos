@@ -1,6 +1,3 @@
-using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-
 namespace Egyptos.Application.Contracts.TourGuideReviews;
 
 public class TourGuideReviewRequestValidator : AbstractValidator<TourGuideReviewRequest>

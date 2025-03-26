@@ -1,7 +1,5 @@
 ﻿using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.EventDateContracts;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using static Egyptos.Domain.Consts.DefaultRoles;
 

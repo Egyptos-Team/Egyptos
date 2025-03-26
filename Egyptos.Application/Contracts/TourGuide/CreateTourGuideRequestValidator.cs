@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.EventImages;
-using FluentValidation;
 
 namespace Egyptos.Application.Contracts.TourGuide;
 

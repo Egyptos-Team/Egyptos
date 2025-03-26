@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.Transport.PrivateTransports;
-using FluentValidation;
 
 
 namespace Egyptos.Application.Contracts.Transport.PrivateTransport;

@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.EventType;
-using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Services.Interfaces;
 public interface IEventTypeService

@@ -1,5 +1,4 @@
 using Egyptos.Domain.Consts;
-using FluentValidation;
 
 namespace Egyptos.Application.Contracts.Authentication.Validators;
 
