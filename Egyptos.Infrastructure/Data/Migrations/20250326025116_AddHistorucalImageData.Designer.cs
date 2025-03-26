@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250326025116_AddHistorucalImageData")]
+    partial class AddHistorucalImageData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,7 +60,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaTypeId");
 
-                    b.ToTable("Areas", (string)null);
+                    b.ToTable("Areas");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaImage", b =>
@@ -82,7 +85,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("AreaImages", (string)null);
+                    b.ToTable("AreaImages");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaType", b =>
@@ -99,7 +102,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AreaTypes", (string)null);
+                    b.ToTable("AreaTypes");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.AreaWorking", b =>
@@ -114,7 +117,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("WorkingId");
 
-                    b.ToTable("AreaWorkings", (string)null);
+                    b.ToTable("AreaWorkings");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingEventDate", b =>
@@ -129,7 +132,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventDateId");
 
-                    b.ToTable("BookingEventDates", (string)null);
+                    b.ToTable("BookingEventDates");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingHotel", b =>
@@ -153,7 +156,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("HotelId");
 
-                    b.ToTable("BookingHotels", (string)null);
+                    b.ToTable("BookingHotels");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingPrivateTransport", b =>
@@ -199,7 +202,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingPrivateTransports", (string)null);
+                    b.ToTable("BookingPrivateTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTourGuide", b =>
@@ -241,7 +244,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BookingTourGuides", (string)null);
+                    b.ToTable("BookingTourGuides");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
@@ -256,7 +259,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("BookingTrips", (string)null);
+                    b.ToTable("BookingTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
@@ -282,7 +285,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventTypeId");
 
-                    b.ToTable("Events", (string)null);
+                    b.ToTable("Events");
 
                     b.HasData(
                         new
@@ -503,7 +506,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventDates", (string)null);
+                    b.ToTable("EventDates");
 
                     b.HasData(
                         new
@@ -852,7 +855,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("EventId");
 
-                    b.ToTable("EventImages", (string)null);
+                    b.ToTable("EventImages");
 
                     b.HasData(
                         new
@@ -1321,7 +1324,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EventTypes", (string)null);
+                    b.ToTable("EventTypes");
 
                     b.HasData(
                         new
@@ -1522,6 +1525,368 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("HistoricalId");
 
                     b.ToTable("HistoricalImages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            HistoricalId = 1,
+                            ImageUrl = "HistoricalImages/2.jpg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            HistoricalId = 1,
+                            ImageUrl = "HistoricalImages/3.jpg"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            HistoricalId = 1,
+                            ImageUrl = "HistoricalImages/4.jpg"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            HistoricalId = 1,
+                            ImageUrl = "HistoricalImages/5.jpg"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            HistoricalId = 2,
+                            ImageUrl = "HistoricalImages/6.jpeg"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            HistoricalId = 2,
+                            ImageUrl = "HistoricalImages/7.jpeg"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            HistoricalId = 2,
+                            ImageUrl = "HistoricalImages/9.jpeg"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            HistoricalId = 2,
+                            ImageUrl = "HistoricalImages/10.jpeg"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            HistoricalId = 3,
+                            ImageUrl = "HistoricalImages/11.jpg"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            HistoricalId = 3,
+                            ImageUrl = "HistoricalImages/13.jpg"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            HistoricalId = 3,
+                            ImageUrl = "HistoricalImages/14.jpg"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            HistoricalId = 3,
+                            ImageUrl = "HistoricalImages/15.jpg"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            HistoricalId = 4,
+                            ImageUrl = "HistoricalImages/17.jpg"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            HistoricalId = 4,
+                            ImageUrl = "HistoricalImages/18.jpg"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            HistoricalId = 4,
+                            ImageUrl = "HistoricalImages/19.jpg"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            HistoricalId = 4,
+                            ImageUrl = "HistoricalImages/20.jpg"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            HistoricalId = 5,
+                            ImageUrl = "HistoricalImages/21.jpg"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            HistoricalId = 5,
+                            ImageUrl = "HistoricalImages/23.jpg"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            HistoricalId = 5,
+                            ImageUrl = "HistoricalImages/24.jpg"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            HistoricalId = 5,
+                            ImageUrl = "HistoricalImages/25.jpg"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            HistoricalId = 6,
+                            ImageUrl = "HistoricalImages/27.jpg"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            HistoricalId = 6,
+                            ImageUrl = "HistoricalImages/28.jpg"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            HistoricalId = 6,
+                            ImageUrl = "HistoricalImages/29.jpg"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            HistoricalId = 6,
+                            ImageUrl = "HistoricalImages/30.jpg"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            HistoricalId = 7,
+                            ImageUrl = "HistoricalImages/32.jpeg"
+                        },
+                        new
+                        {
+                            Id = 26,
+                            HistoricalId = 7,
+                            ImageUrl = "HistoricalImages/33.jpg"
+                        },
+                        new
+                        {
+                            Id = 27,
+                            HistoricalId = 7,
+                            ImageUrl = "HistoricalImages/34.jpg"
+                        },
+                        new
+                        {
+                            Id = 28,
+                            HistoricalId = 7,
+                            ImageUrl = "HistoricalImages/35.jpg"
+                        },
+                        new
+                        {
+                            Id = 29,
+                            HistoricalId = 8,
+                            ImageUrl = "HistoricalImages/37.jpg"
+                        },
+                        new
+                        {
+                            Id = 30,
+                            HistoricalId = 8,
+                            ImageUrl = "HistoricalImages/38.jpg"
+                        },
+                        new
+                        {
+                            Id = 31,
+                            HistoricalId = 8,
+                            ImageUrl = "HistoricalImages/39.jpg"
+                        },
+                        new
+                        {
+                            Id = 32,
+                            HistoricalId = 8,
+                            ImageUrl = "HistoricalImages/40.jpg"
+                        },
+                        new
+                        {
+                            Id = 33,
+                            HistoricalId = 9,
+                            ImageUrl = "HistoricalImages/42.jpg"
+                        },
+                        new
+                        {
+                            Id = 34,
+                            HistoricalId = 9,
+                            ImageUrl = "HistoricalImages/43.jpg"
+                        },
+                        new
+                        {
+                            Id = 35,
+                            HistoricalId = 9,
+                            ImageUrl = "HistoricalImages/44.jpg"
+                        },
+                        new
+                        {
+                            Id = 36,
+                            HistoricalId = 9,
+                            ImageUrl = "HistoricalImages/45.jpg"
+                        },
+                        new
+                        {
+                            Id = 37,
+                            HistoricalId = 10,
+                            ImageUrl = "HistoricalImages/47.jpg"
+                        },
+                        new
+                        {
+                            Id = 38,
+                            HistoricalId = 10,
+                            ImageUrl = "HistoricalImages/48.jpg"
+                        },
+                        new
+                        {
+                            Id = 39,
+                            HistoricalId = 10,
+                            ImageUrl = "HistoricalImages/49.jpg"
+                        },
+                        new
+                        {
+                            Id = 40,
+                            HistoricalId = 10,
+                            ImageUrl = "HistoricalImages/50.jpg"
+                        },
+                        new
+                        {
+                            Id = 41,
+                            HistoricalId = 11,
+                            ImageUrl = "HistoricalImages/52.jpg"
+                        },
+                        new
+                        {
+                            Id = 42,
+                            HistoricalId = 11,
+                            ImageUrl = "HistoricalImages/53.jpg"
+                        },
+                        new
+                        {
+                            Id = 43,
+                            HistoricalId = 11,
+                            ImageUrl = "HistoricalImages/54.jpg"
+                        },
+                        new
+                        {
+                            Id = 44,
+                            HistoricalId = 11,
+                            ImageUrl = "HistoricalImages/55.jpg"
+                        },
+                        new
+                        {
+                            Id = 45,
+                            HistoricalId = 12,
+                            ImageUrl = "HistoricalImages/57.jpg"
+                        },
+                        new
+                        {
+                            Id = 46,
+                            HistoricalId = 12,
+                            ImageUrl = "HistoricalImages/58.jpg"
+                        },
+                        new
+                        {
+                            Id = 47,
+                            HistoricalId = 12,
+                            ImageUrl = "HistoricalImages/59.jpg"
+                        },
+                        new
+                        {
+                            Id = 48,
+                            HistoricalId = 12,
+                            ImageUrl = "HistoricalImages/60.webp"
+                        },
+                        new
+                        {
+                            Id = 49,
+                            HistoricalId = 13,
+                            ImageUrl = "HistoricalImages/61.jpg"
+                        },
+                        new
+                        {
+                            Id = 50,
+                            HistoricalId = 13,
+                            ImageUrl = "HistoricalImages/62.jpg"
+                        },
+                        new
+                        {
+                            Id = 51,
+                            HistoricalId = 13,
+                            ImageUrl = "HistoricalImages/64.jpg"
+                        },
+                        new
+                        {
+                            Id = 52,
+                            HistoricalId = 13,
+                            ImageUrl = "HistoricalImages/65.jpg"
+                        },
+                        new
+                        {
+                            Id = 53,
+                            HistoricalId = 14,
+                            ImageUrl = "HistoricalImages/66.jpg"
+                        },
+                        new
+                        {
+                            Id = 54,
+                            HistoricalId = 14,
+                            ImageUrl = "HistoricalImages/67.jpg"
+                        },
+                        new
+                        {
+                            Id = 55,
+                            HistoricalId = 14,
+                            ImageUrl = "HistoricalImages/68.jpg"
+                        },
+                        new
+                        {
+                            Id = 56,
+                            HistoricalId = 14,
+                            ImageUrl = "HistoricalImages/70.jpg"
+                        },
+                        new
+                        {
+                            Id = 57,
+                            HistoricalId = 15,
+                            ImageUrl = "HistoricalImages/72.jpg"
+                        },
+                        new
+                        {
+                            Id = 58,
+                            HistoricalId = 15,
+                            ImageUrl = "HistoricalImages/73.jpeg"
+                        },
+                        new
+                        {
+                            Id = 59,
+                            HistoricalId = 15,
+                            ImageUrl = "HistoricalImages/74.jpg"
+                        },
+                        new
+                        {
+                            Id = 60,
+                            HistoricalId = 15,
+                            ImageUrl = "HistoricalImages/75.jpg"
+                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Hotel", b =>
@@ -1572,7 +1937,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Hotels", (string)null);
+                    b.ToTable("Hotels");
 
                     b.HasData(
                         new
@@ -2864,7 +3229,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("AreaId");
 
-                    b.ToTable("Items", (string)null);
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PrivateTransport", b =>
@@ -2905,7 +3270,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TransportTypeId");
 
-                    b.ToTable("PrivateTransports", (string)null);
+                    b.ToTable("PrivateTransports");
 
                     b.HasData(
                         new
@@ -3528,7 +3893,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("SerialNumber")
                         .IsUnique();
 
-                    b.ToTable("PublicTransports", (string)null);
+                    b.ToTable("PublicTransports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Report", b =>
@@ -3568,7 +3933,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reports", (string)null);
+                    b.ToTable("Reports");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuide", b =>
@@ -3606,7 +3971,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuides", (string)null);
+                    b.ToTable("TourGuides");
 
                     b.HasData(
                         new
@@ -3851,7 +4216,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("TourGuideReviews", (string)null);
+                    b.ToTable("TourGuideReviews");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TourGuideTrip", b =>
@@ -3866,7 +4231,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TourGuideId");
 
-                    b.ToTable("TourGuideTrips", (string)null);
+                    b.ToTable("TourGuideTrips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.TransportType", b =>
@@ -3886,7 +4251,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransportTypes", (string)null);
+                    b.ToTable("TransportTypes");
 
                     b.HasData(
                         new
@@ -3953,7 +4318,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("PublicTransportId");
 
-                    b.ToTable("Trips", (string)null);
+                    b.ToTable("Trips");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Working", b =>
@@ -3976,7 +4341,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Workings", (string)null);
+                    b.ToTable("Workings");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

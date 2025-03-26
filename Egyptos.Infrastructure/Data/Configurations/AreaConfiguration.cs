@@ -16,7 +16,7 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                  Description="",// biiiiiiiiiiiiiiiiiiiiig
                  Location="",
                  Address="",
-                 ImageUrl="",
+                 ImageUrl="AreaImages/xx.jpg",
                  AreaTypeId=1,
             },
            new Area{
@@ -25,7 +25,7 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                  Description="",// biiiiiiiiiiiiiiiiiiiiig
                  Location="",
                  Address="",
-                 ImageUrl="",
+                 ImageUrl="AreaImages/xx.jpg",
                  AreaTypeId=1,
            },
         };
