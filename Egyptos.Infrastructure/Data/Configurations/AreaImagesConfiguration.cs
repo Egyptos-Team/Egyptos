@@ -14,14 +14,14 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
             {
                 Id=1,
                 Description="",
-                ImageUrl="",
+                ImageUrl="AreaImages/xx.jpg",
                 AreaId=1
             },
             new AreaImage
             {
                 Id=2,
                 Description="",
-                ImageUrl="",
+                ImageUrl="AreaImages/xx.jpg",
                 AreaId=1
             }
         };
