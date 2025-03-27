@@ -23,4 +23,6 @@ public class PrivateTransport
     public TransportType TransportType { get; set; } = null!;
 
     public ICollection<BookingPrivateTransport> BookingPrivateTransports { get; set; } = [];
+    public ICollection<PrivateTransportReview> PrivateTransportReviews { get; set; } = [];
+
 }

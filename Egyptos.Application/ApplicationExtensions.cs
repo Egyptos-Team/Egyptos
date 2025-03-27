@@ -56,6 +56,7 @@ public static class ApplicationExtensions
         services.AddScoped<IAreaTypeService, AreaTypeService>();
         services.AddScoped<IPayment, Payment>();
         services.AddScoped<IAreaService, AreaService>();
+        services.AddScoped<IPrivateTransportReviewService, PrivateTransportReviewService>();
 
 
         return services;

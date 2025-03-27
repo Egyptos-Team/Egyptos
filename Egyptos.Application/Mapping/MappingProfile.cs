@@ -5,6 +5,7 @@ using Egyptos.Application.Contracts.Users;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.TourGuideReviews;
 using Egyptos.Application.Contracts.Area;
+using Egyptos.Application.Contracts.PrivateTransportReview;
 
 namespace Egyptos.Application.Mapping;
 
@@ -46,6 +47,8 @@ public class MappingProfile : IRegister
             .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
             .Map(des => des.TourName, src => src.TourGuide.User.FirstName + " " + src.TourGuide.User.LastName);
 
+        config.NewConfig<PrivateTransportReview, PrivateTransportReviewResponse>()
+            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName);
 
 
     }

@@ -11,4 +11,7 @@ public record PrivateTransportError
     public static readonly Error NotFound = new(" PrivateTransport.NotFound", " PrivateTransport is not exists", StatusCodes.Status404NotFound);
 
     public static readonly Error NotAvilable = new(" PrivateTransport.NotAvilable", " PrivateTransport is not Avilable", StatusCodes.Status404NotFound);
+
+    public static readonly Error PrivateTransportReviewNotFount = new("PrivateTransportReview.PrivateTransportReviewNotFount",
+        "No PrivateTransportReview was found with the given ID", StatusCodes.Status404NotFound);
 }
