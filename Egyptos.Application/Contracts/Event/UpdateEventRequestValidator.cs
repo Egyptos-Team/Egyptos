@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Egyptos.Application.Contracts.Event;
+﻿namespace Egyptos.Application.Contracts.Event;
 
 public class UpdateEventRequestValidator : AbstractValidator<UpdateEventRequest>
 {

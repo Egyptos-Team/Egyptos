@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Egyptos.Application.Contracts.Hotels;
+﻿namespace Egyptos.Application.Contracts.Hotels;
 
 public class HotelRequestValidator:AbstractValidator<HotelRequest>
 {

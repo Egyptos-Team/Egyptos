@@ -4,11 +4,14 @@ using Egyptos.Infrastructure;
 using Hangfire;
 using HangfireBasicAuthenticationFilter;
 using Scalar.AspNetCore;
+using Stripe;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+
+StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 
 builder.Services
     .AddApiExtensions(builder.Configuration)

@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Egyptos.Application.Contracts.HistoricalImage;
+﻿namespace Egyptos.Application.Contracts.HistoricalImage;
 
 public record CreateHistoricalImageRequest
 (

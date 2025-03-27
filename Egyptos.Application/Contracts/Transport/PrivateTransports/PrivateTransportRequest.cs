@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Egyptos.Application.Contracts.Transport.PrivateTransports;
+﻿namespace Egyptos.Application.Contracts.Transport.PrivateTransports;
 
 public record PrivateTransportRequest(
      string Name,

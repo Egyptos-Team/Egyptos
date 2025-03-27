@@ -1,7 +1,4 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Http;
-
-namespace Egyptos.Application.Contracts.EventDateContracts;
+﻿namespace Egyptos.Application.Contracts.EventDateContracts;
 
 public class UpdateEventDateRequestValidator : AbstractValidator<UpdateEventDateRequest>
 {

@@ -3,7 +3,6 @@ using Egyptos.Application.Settings;
 using Hangfire;
 using MapsterMapper;
 using Egyptos.Application.Services.Implementations;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
@@ -55,6 +54,7 @@ public static class ApplicationExtensions
         services.AddScoped<IHistoricalService, HistoricalService>();
         services.AddScoped<IHistoricalImageService, HistoricalImageService>();
         services.AddScoped<IAreaTypeService, AreaTypeService>();
+        services.AddScoped<IPayment, Payment>();
         services.AddScoped<IAreaService, AreaService>();
 
 

@@ -1,6 +1,3 @@
-using FluentValidation;
-using Microsoft.AspNetCore.Http;
-
 namespace Egyptos.Application.Contracts.Users;
 
 public class ChangeProfileImageRequestValidator : AbstractValidator<ChangeProfileImageRequest>

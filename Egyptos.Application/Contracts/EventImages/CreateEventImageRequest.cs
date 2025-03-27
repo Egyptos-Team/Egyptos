@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Egyptos.Application.Contracts.EventImages;
+﻿namespace Egyptos.Application.Contracts.EventImages;
 
 public record CreateEventImageRequest
 (

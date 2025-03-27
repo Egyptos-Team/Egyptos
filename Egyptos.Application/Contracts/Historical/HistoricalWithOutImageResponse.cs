@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-
-namespace Egyptos.Application.Contracts.Historical;
+﻿namespace Egyptos.Application.Contracts.Historical;
 
 public record HistoricalWithOutImageResponse
 (

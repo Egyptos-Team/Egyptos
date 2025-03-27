@@ -1,7 +1,5 @@
 ﻿using Egyptos.Application.Contracts.Event;
 using Egyptos.Application.Contracts.TourGuide;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using TourGuide = Egyptos.Domain.Entities.TourGuide;
 
 namespace Egyptos.Application.Services.Implementations;

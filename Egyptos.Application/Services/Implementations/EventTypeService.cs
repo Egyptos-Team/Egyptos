@@ -1,8 +1,6 @@
 ﻿using Egyptos.Application.Contracts.EventType;
 using Egyptos.Application.Contracts.Roles;
-using Microsoft.EntityFrameworkCore;
 using System.Threading;
-using Egyptos.Domain.Entities;
 using Egyptos.Application.Contracts.Event;
 using Microsoft.Extensions.Logging;
 

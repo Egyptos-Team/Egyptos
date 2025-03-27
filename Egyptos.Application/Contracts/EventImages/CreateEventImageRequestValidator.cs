@@ -1,6 +1,4 @@
 ﻿using Egyptos.Application.Contracts.EventDateContracts;
-using FluentValidation;
-using Microsoft.AspNetCore.Http;
 
 namespace Egyptos.Application.Contracts.EventImages;
 

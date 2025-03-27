@@ -1,18 +1,65 @@
-﻿using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+﻿using Egyptos.Application.Contracts.Payment;
+using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.Transport.PrivateTransports;
-using Egyptos.Application.Contracts.Transport.TransportTypes;
-using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Hangfire;
-using Hangfire.Common;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class BookingPrivateTransportService(ApplicationDbContext context) : IBookingPrivateTransportService
+public class BookingPrivateTransportService(
+    ApplicationDbContext _context,
+    IPayment _payment,
+    IConfiguration _configuration) : IBookingPrivateTransportService
 {
-    private readonly ApplicationDbContext _context = context;
+
+    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
+    {
+        var booking = await _context.BookingPrivateTransports
+            .Include(x => x.PrivateTransport)
+            .FirstOrDefaultAsync(x => x.Id == bookingId);
+
+        if (booking is null)
+            return Result.Failure<CheckOutOrderResponse>(BookingPrivateTransportError.NotFound);
+
+        if (booking.PaymentDate.HasValue)
+            return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+
+
+        if (!booking.End.HasValue)
+            return Result.Failure<CheckOutOrderResponse>(PaymentError.InvalidOnlinePayment);
+
+        #region Hangfire Jobs
+
+        //var minusJobId = BackgroundJob.Schedule(() => MinusTransportQuantity(booking.PrivateTransportId), booking.Start);
+        //JobRegistry.Register($"{nameof(MinusTransportQuantity).ToLower()}-{booking.Id}", minusJobId);
+
+        //var plusJobId = BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.End.Value);
+        //JobRegistry.Register($"{nameof(PlusTransportQuantity).ToLower()}-{booking.Id}", plusJobId);
+        #endregion
+
+        //TODO : add stipe payment
+        var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
+
+        var result = new CheckOutOrderResponse
+        {
+            SessionId = sessionId,
+            PubKey = _configuration["Stripe:PubKey"]!
+        };
+
+        return Result.Success(result);
+    }
+
+    public async Task<Result> MarkAsPaidAsync(int bookingId)
+    {
+        if (await _context.BookingPrivateTransports.FindAsync(bookingId) is not { } booking)
+            return Result.Failure(BookingPrivateTransportError.NotFound);
+
+        booking.PaymentDate = DateTime.UtcNow;
+        await _context.SaveChangesAsync();
+
+        return Result.Success(booking);
+    }
 
 
     public async Task<Result<List<BookingPrivateTransportResponse>>> GetAllAsync()
@@ -55,24 +102,26 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
         var bookingMapped = booking.Adapt<BookingPrivateTransportResponse>();
 
         return Result.Success(bookingMapped);
-
     }
 
-    public async Task<Result<BookingPrivateTransportResponse>> CreateAsync(string userId, BookingPrivateTransportRequest request)
+    public async Task<Result<BookingPrivateTransportResponse>> CreateAsync(string userId,
+        BookingPrivateTransportRequest request)
     {
         var isExsist = await _context.PrivateTransports.AnyAsync(x => x.Id == request.PrivateTransportId);
 
         if (!isExsist)
             return Result.Failure<BookingPrivateTransportResponse>(PrivateTransportError.NotFound);
 
-        var isAvilable = await _context.PrivateTransports.AnyAsync(x => (x.Id == request.PrivateTransportId) && x.IsAvailable);
+        var isAvilable =
+            await _context.PrivateTransports.AnyAsync(x => (x.Id == request.PrivateTransportId) && x.IsAvailable);
 
         if (!isAvilable)
             return Result.Failure<BookingPrivateTransportResponse>(PrivateTransportError.NotAvilable);
 
         var booking = request.Adapt<BookingPrivateTransport>();
 
-        var priceHour = await _context.PrivateTransports.Where(x => x.Id == request.PrivateTransportId).Select(x => x.PricePerHour).FirstOrDefaultAsync();
+        var priceHour = await _context.PrivateTransports.Where(x => x.Id == request.PrivateTransportId)
+            .Select(x => x.PricePerHour).FirstOrDefaultAsync();
 
 
         if (request.End.HasValue)
@@ -85,7 +134,8 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
         }
         else
         {
-            var minusJobId = BackgroundJob.Schedule(() => MinusTransportQuantity(booking.PrivateTransportId), booking.Start);
+            var minusJobId =
+                BackgroundJob.Schedule(() => MinusTransportQuantity(booking.PrivateTransportId), booking.Start);
             JobRegistry.Register($"{nameof(MinusTransportQuantity).ToLower()}-{booking.Id}", minusJobId);
         }
 
@@ -133,40 +183,6 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
         await _context.SaveChangesAsync();
 
         return Result.Success();
-
-    }
-
-    public async Task<Result> OnlinePaymentAsync(int bookingId, string userId)
-    {
-        var booking = await _context.BookingPrivateTransports
-            .FirstOrDefaultAsync(x => x.Id == bookingId && x.UserId == userId);
-
-        if (booking is null)
-            return Result.Failure(BookingPrivateTransportError.NotFound);
-
-        if (booking.PaymentDate.HasValue)
-            return Result.Failure(PaymentError.AlreadyPeyment);
-
-
-        if (!booking.End.HasValue)
-            return Result.Failure(PaymentError.InvalidOnlinePayment);
-
-
-        #region Hangfire Jobs
-        var minusJobId = BackgroundJob.Schedule(() => MinusTransportQuantity(booking.PrivateTransportId), booking.Start);
-        JobRegistry.Register($"{nameof(MinusTransportQuantity).ToLower()}-{booking.Id}", minusJobId);
-
-        var plusJobId = BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.End.Value);
-        JobRegistry.Register($"{nameof(PlusTransportQuantity).ToLower()}-{booking.Id}", plusJobId);
-        #endregion
-
-        //TODO : add stipe paymen
-
-
-        booking.PaymentDate = DateTime.UtcNow;
-        await _context.SaveChangesAsync();
-
-        return Result.Success();
     }
 
     public async Task<Result> CancelBookingAsync(int id)
@@ -207,18 +223,15 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
         // manual payment
         if (booking.End.HasValue)
             return Result.Failure<BookingPrivateTransportResponse>(PaymentError.InvalidOnlinePayment);
-                
-        
+
 
         booking.End = DateTime.UtcNow;
 
         TimeSpan timeSpan = booking.End.Value - booking.Start;
 
-        double totalHours = Math.Abs(timeSpan.TotalHours);  
+        double totalHours = Math.Abs(timeSpan.TotalHours);
 
         booking.TotalPrice = Math.Round((totalHours * (double)booking.PrivateTransport.PricePerHour));
-
-
 
 
         var result = booking.Adapt<BookingPrivateTransportResponse>();
@@ -230,11 +243,7 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
         await _context.SaveChangesAsync();
 
         return Result.Success(result);
-
     }
-
-
-
 
     public async Task MinusTransportQuantity(int privateTransportId)
     {
@@ -253,7 +262,6 @@ public class BookingPrivateTransportService(ApplicationDbContext context) : IBoo
             );
     }
 }
-
 
 public static class JobRegistry
 {

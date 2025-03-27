@@ -1,5 +1,4 @@
 using Egyptos.Application.Contracts.Roles;
-using Microsoft.EntityFrameworkCore;
 
 namespace Egyptos.Application.Services.Implementations;
 
