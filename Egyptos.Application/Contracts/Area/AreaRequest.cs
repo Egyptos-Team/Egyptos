@@ -7,7 +7,7 @@ public record AreaRequest(
      string Description,
      string Location,
      string Address,
-     string ImageUrl,
+     IFormFile ImageUrl,
      int AreaTypeId,
      List<IFormFile> AreaImages
 );
