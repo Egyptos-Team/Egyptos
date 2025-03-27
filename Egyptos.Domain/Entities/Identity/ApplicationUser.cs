@@ -17,4 +17,5 @@ public class ApplicationUser : IdentityUser
     public ICollection<Report> Reports { get; set; } = [];
     public ICollection<BookingTourGuide> BookingTourGuides { get; set; } = [];
     public ICollection<TourGuideReview> TourGuideReviews { get; set; } = [];
+    public ICollection<PrivateTransportReview> PrivateTransportReviews { get; set; } = [];
 }
