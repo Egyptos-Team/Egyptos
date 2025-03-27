@@ -16,17 +16,17 @@ public class AreaTypesConfiguration : IEntityTypeConfiguration<AreaType>
                 Id=1,
                 Name="Fixed artifacts"
             },
-            //amakn atharya .... Alaa Maghraby 20
+            //amakn atharya .... Alaa Maghraby 25
             new AreaType
             {
                 Id=2,
                 Name="Archaeological sites"
             },
-            //athar ghar8a .... Nayira 20
+            //athar ghar8a .... Nayira 8
             new AreaType
             {
                 Id=3,
-                Name="Submerged artifacts"
+                Name="Sunken artifacts"
             },
             //Safari .... Rodina 10
             new AreaType
@@ -34,7 +34,7 @@ public class AreaTypesConfiguration : IEntityTypeConfiguration<AreaType>
                 Id=4,
                 Name="Safari"
             },
-            //b7ryaw & nylya .... Rodina 10
+            //b7ryaw & nylya .... Marina 10
             new AreaType
             {
                 Id=5,

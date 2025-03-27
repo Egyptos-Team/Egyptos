@@ -15,15 +15,15 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
                 Id=1,
                 Description="",
                 ImageUrl="AreaImages/xx.jpg",
-                AreaId=1
+                AreaId=31
             },
             new AreaImage
             {
                 Id=2,
                 Description="",
                 ImageUrl="AreaImages/xx.jpg",
-                AreaId=1
-            }
+                AreaId=31
+            },
         };
         builder.HasData();
     }

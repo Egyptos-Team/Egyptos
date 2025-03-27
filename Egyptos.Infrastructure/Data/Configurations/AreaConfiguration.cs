@@ -11,22 +11,22 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
         var areas = new List<Area>
         {
            new Area{
-                 Id=1,
+                 Id=31,
                  Name="",
                  Description="",// biiiiiiiiiiiiiiiiiiiiig
                  Location="",
-                 Address="",
-                 ImageUrl="AreaImages/xx.jpg",
-                 AreaTypeId=1,
-            },
+                 Address="Cairo",
+                 ImageUrl="AreaImages/15.jpg",
+                 AreaTypeId=2, 
+           },
            new Area{
-                 Id=2,
+                 Id=32,
                  Name="",
                  Description="",// biiiiiiiiiiiiiiiiiiiiig
                  Location="",
                  Address="",
                  ImageUrl="AreaImages/xx.jpg",
-                 AreaTypeId=1,
+                 AreaTypeId=2,
            },
         };
         builder.HasData();
