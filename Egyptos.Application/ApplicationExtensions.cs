@@ -55,6 +55,7 @@ public static class ApplicationExtensions
         services.AddScoped<IHistoricalService, HistoricalService>();
         services.AddScoped<IHistoricalImageService, HistoricalImageService>();
         services.AddScoped<IAreaTypeService, AreaTypeService>();
+        services.AddScoped<IAreaService, AreaService>();
 
 
         return services;

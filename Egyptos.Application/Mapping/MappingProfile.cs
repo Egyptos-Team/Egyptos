@@ -5,6 +5,7 @@ using Egyptos.Application.Contracts.Users;
 using Egyptos.Domain.Entities;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.TourGuideReviews;
+using Egyptos.Application.Contracts.Area;
 
 namespace Egyptos.Application.Mapping;
 
@@ -28,6 +29,9 @@ public class MappingProfile : IRegister
 
         config.NewConfig<CreateEventDateRequest, EventDate>()
            .Ignore(dest => dest.EventImages);
+
+           config.NewConfig<AreaRequest, Area>()
+           .Ignore(dest => dest.AreaImages);
 
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
