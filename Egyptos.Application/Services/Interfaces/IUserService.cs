@@ -1,5 +1,4 @@
 using Egyptos.Application.Contracts.Users;
-using Microsoft.AspNetCore.Http;
 
 namespace Egyptos.Application.Services.Interfaces;
 

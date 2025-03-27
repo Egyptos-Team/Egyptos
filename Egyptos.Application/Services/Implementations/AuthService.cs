@@ -2,7 +2,6 @@
 using Egyptos.Domain.Helpers;
 using Egyptos.Domain.Interfaces;
 using Hangfire;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 
 namespace Egyptos.Application.Services.Implementations;

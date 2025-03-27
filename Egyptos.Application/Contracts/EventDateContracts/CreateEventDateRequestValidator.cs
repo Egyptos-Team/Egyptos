@@ -1,6 +1,4 @@
 ﻿using Egyptos.Application.Contracts.Event;
-using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Contracts.EventDateContracts;

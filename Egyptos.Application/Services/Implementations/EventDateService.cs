@@ -1,6 +1,4 @@
 ﻿using Egyptos.Application.Contracts.EventDateContracts;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace Egyptos.Application.Services.Implementations;
 

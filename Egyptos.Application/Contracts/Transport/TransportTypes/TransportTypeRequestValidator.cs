@@ -1,7 +1,4 @@
-﻿using FluentValidation;
-
-
-namespace Egyptos.Application.Contracts.Transport.TransportTypes;
+﻿namespace Egyptos.Application.Contracts.Transport.TransportTypes;
 
 public  class PrivateTransportValidator : AbstractValidator<TransportTypeRequest>
 {

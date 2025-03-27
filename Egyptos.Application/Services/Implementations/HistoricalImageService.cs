@@ -1,8 +1,6 @@
 ﻿using Egyptos.Application.Contracts.EventImages;
 using Egyptos.Application.Contracts.HistoricalImage;
 using Egyptos.Application.Services.Interfaces;
-using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 
 namespace Egyptos.Application.Services.Implementations;
 public class HistoricalImageService(ApplicationDbContext context, IFileService fileService) : IHistoricalImageService

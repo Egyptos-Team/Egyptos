@@ -3,10 +3,8 @@ using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.TourGuide;
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
-using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Hangfire;
-using Microsoft.EntityFrameworkCore;
 using static Egyptos.Domain.Consts.DefaultRoles;
 
 namespace Egyptos.Application.Services.Implementations;

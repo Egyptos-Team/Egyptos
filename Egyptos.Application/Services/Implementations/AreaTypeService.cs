@@ -14,6 +14,7 @@ public class AreaTypeService(ApplicationDbContext context) : IAreaTypeService
     public async Task<Result<List<AreaTypeResponse>>> GetAllAsync()
     {
         var types = await _context.AreaTypes
+            .Include(x => x.Areas)
             .ProjectToType<AreaTypeResponse>()
             .AsNoTracking()
             .ToListAsync();
@@ -24,6 +25,7 @@ public class AreaTypeService(ApplicationDbContext context) : IAreaTypeService
     {
         var type = await _context.AreaTypes
             .Where(x => x.Id == id)
+            .Include(x=>x.Areas)
             .ProjectToType<AreaTypeResponse>()
             .AsNoTracking()
             .FirstOrDefaultAsync();

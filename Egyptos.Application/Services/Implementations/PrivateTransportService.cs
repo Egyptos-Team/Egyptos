@@ -1,7 +1,5 @@
 ﻿using Egyptos.Application.Contracts.Transport.PrivateTransports;
-using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
-using Microsoft.EntityFrameworkCore;
 
 namespace Egyptos.Application.Services.Implementations;
 

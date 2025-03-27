@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.EventDateContracts;
-using FluentValidation;
 
 namespace Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 

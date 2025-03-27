@@ -1,7 +1,5 @@
 ﻿using Egyptos.Application.Contracts.Event;
 using Egyptos.Application.Contracts.EventImages;
-using Egyptos.Domain.Entities;
-using Microsoft.AspNetCore.Http;
 
 namespace Egyptos.Application.Contracts.EventDateContracts;
 

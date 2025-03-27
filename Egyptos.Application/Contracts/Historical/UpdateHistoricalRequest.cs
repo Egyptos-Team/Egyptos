@@ -1,5 +1,4 @@
 ﻿using Egyptos.Application.Contracts.HistoricalImage;
-using Microsoft.AspNetCore.Http;
 
 namespace Egyptos.Application.Contracts.Historical;
 
