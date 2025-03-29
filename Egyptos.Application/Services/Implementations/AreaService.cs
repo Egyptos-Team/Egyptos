@@ -40,6 +40,9 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
 
         if(! await _context.AreaTypes.AnyAsync(x=>x.Id==request.AreaTypeId))
             return Result.Failure<AreaResponse>(AreaTypeError.NotFound);
+
+        var mainImage = await _fileService.UploadAsync(request.ImageUrl, "AreaImages");
+
         #region MyRegion
 
         //var area = new Area   //go to mapping and ignore 
@@ -53,6 +56,8 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
         //}; 
         #endregion
         var area = request.Adapt<Area>();
+
+        area.ImageUrl = mainImage;
 
         foreach (var image in request.AreaImages)
         {

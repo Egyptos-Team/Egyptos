@@ -33,6 +33,7 @@ public class MappingProfile : IRegister
            config.NewConfig<AreaRequest, Area>()
            .Ignore(dest => dest.AreaImages);
 
+
         config.NewConfig<BookingPrivateTransport, BookingPrivateTransportResponse>()
             .Map(des => des.PricePerHour, src => src.PrivateTransport.PricePerHour);
 
