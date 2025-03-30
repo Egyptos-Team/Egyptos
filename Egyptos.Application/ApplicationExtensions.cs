@@ -58,6 +58,7 @@ public static class ApplicationExtensions
         services.AddScoped<IAreaService, AreaService>();
         services.AddScoped<IPrivateTransportReviewService, PrivateTransportReviewService>();
         services.AddScoped<IWorkingService, WorkingService>();
+        services.AddScoped<IAreaWorkingService, AreaWorkingService>();
 
 
         return services;
