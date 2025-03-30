@@ -13,7 +13,7 @@ public class PrivateTransportReviewsController(IPrivateTransportReviewService pr
     private readonly IPrivateTransportReviewService _privateTransportReviewService = privateTransportReviewService;
 
     [HttpPost("")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Add([FromBody] PrivateTransportReviewRequest request)
     {
         var result = await _privateTransportReviewService.AddAsync(User.GetUserId(),request);
@@ -30,7 +30,7 @@ public class PrivateTransportReviewsController(IPrivateTransportReviewService pr
     }
 
     [HttpGet("")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> GetAllForUser()
     {
         var result = await _privateTransportReviewService.GetAllForUserAsync(User.GetUserId());
@@ -39,7 +39,7 @@ public class PrivateTransportReviewsController(IPrivateTransportReviewService pr
     }
 
     [HttpPut("{id}")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Update([FromRoute] int id,[FromBody] PrivateTransportReviewRequest request)
     {
         var result = await _privateTransportReviewService.UpdateAsync(User.GetUserId(), id, request);
@@ -48,7 +48,7 @@ public class PrivateTransportReviewsController(IPrivateTransportReviewService pr
     }
 
     [HttpDelete("{id}")]
-    //[Authorize(Roles = $"{DefaultRoles.User.Name},{DefaultRoles.Admin.Name}")]
+    [Authorize(Roles = $"{DefaultRoles.User.Name},{DefaultRoles.Admin.Name}")]
     public async Task<IActionResult> Delete([FromRoute]int id)
     {
         var result = await _privateTransportReviewService.DeleteAsync(id);
