@@ -1,4 +1,6 @@
-﻿using Egyptos.Domain.Entities;
+﻿using Egyptos.Application.Contracts.AreaWorking;
+using Egyptos.Application.Contracts.Working;
+using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Contracts.Area;
 
@@ -12,9 +14,10 @@ public record AreaResponse
    string ImageUrl ,
    int  AreaTypeId ,
    //  List<Trip> Trips 
-   List<AreaImagesResponse>  AreaImages
-   //  List<AreaWorking> AreaWorkings 
-   // List<Item> Items 
+   List<AreaImagesResponse>  AreaImages,
+   List<AreaWorkingResponse> AreaWorkings,
+   List<WorkingResponse> Working
+// List<Item> Items 
 );
 public record AreaImagesResponse(
     int Id,

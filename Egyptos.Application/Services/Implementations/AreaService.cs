@@ -13,6 +13,8 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
     {
         var areas = await _context.Areas
             .Include(x=>x.AreaImages)
+            .Include(x=>x.AreaWorkings)
+            .ThenInclude(x=>x.Working)
             .ProjectToType<AreaResponse>()
             .AsNoTracking()
             .ToListAsync();
@@ -25,6 +27,8 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
         var area = await _context.Areas
           .Where(x => x.Id == id)
           .Include(x=>x.AreaImages)
+          .Include(x => x.AreaWorkings)
+          .ThenInclude(x => x.Working)
           .ProjectToType<AreaResponse>()
           .AsNoTracking()
           .FirstOrDefaultAsync();
