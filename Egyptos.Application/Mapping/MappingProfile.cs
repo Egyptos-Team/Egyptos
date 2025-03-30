@@ -49,7 +49,8 @@ public class MappingProfile : IRegister
             .Map(des => des.TourName, src => src.TourGuide.User.FirstName + " " + src.TourGuide.User.LastName);
 
         config.NewConfig<PrivateTransportReview, PrivateTransportReviewResponse>()
-            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName);
+            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
+            .Map(des => des.ImageUrl, src => src.User.ImageUrl);
 
 
     }

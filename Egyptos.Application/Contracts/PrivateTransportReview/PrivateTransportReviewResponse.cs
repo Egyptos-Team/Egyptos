@@ -7,6 +7,7 @@ public record PrivateTransportReviewResponse
      DateOnly Date,
      string UserId,
      string UserName,
+     string ImageUrl,
      int PrivateTransportId,
      string PrivateTransportName
 );
