@@ -13,11 +13,9 @@ public record AreaResponse
    string Address ,
    string ImageUrl ,
    int  AreaTypeId ,
-   //  List<Trip> Trips 
-   List<AreaImagesResponse>  AreaImages,
-   List<AreaWorkingResponse> AreaWorkings,
+   List<AreaImagesResponse> AreaImages,
    List<WorkingResponse> Working
-// List<Item> Items 
+
 );
 public record AreaImagesResponse(
     int Id,

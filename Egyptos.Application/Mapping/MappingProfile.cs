@@ -6,6 +6,8 @@ using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.TourGuideReviews;
 using Egyptos.Application.Contracts.Area;
 using Egyptos.Application.Contracts.PrivateTransportReview;
+using static Org.BouncyCastle.Math.EC.ECCurve;
+using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Mapping;
 
@@ -52,6 +54,10 @@ public class MappingProfile : IRegister
             .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
             .Map(des => des.ImageUrl, src => src.User.ImageUrl);
 
+        config.NewConfig<Area, AreaResponse>()
+            .Map(des => des.Working, src => src.AreaWorkings.Select(x => x.Working));
+
+        //.ForMember(dest => dest.Working, opt => opt.MapFrom(src => src.AreaWorkings.Select(aw => aw.Working).ToList()));
 
     }
 }
