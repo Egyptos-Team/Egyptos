@@ -478,7 +478,8 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
                 ImageUrl="Items/Khedivial Cairo.jpg",
                 Date=  new DateOnly(1795,4,1),
                 AreaId=121
-            },new Item
+            },
+            new Item
             {
                 Id=53,
                 Title="Votive Altar",
@@ -486,7 +487,8 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
                 ImageUrl="Items/Votive Altar.jpg",
                 Date=  new DateOnly(1795,4,1),
                 AreaId=122
-            },new Item
+            },
+            new Item
             {
                 Id=54,
                 Title="A painting of a physician or pharmacist",
@@ -494,7 +496,8 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
                 ImageUrl="Items/painting.jpg",
                 Date=  new DateOnly(1795,4,1),
                 AreaId=122
-            },new Item
+            },
+            new Item
             {
                 Id=55,
                 Title="Coptic textile depicting the Holy Family's journey",
@@ -502,7 +505,8 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
                 ImageUrl="Items/Coptic.jpg",
                 Date=  new DateOnly(1795,4,1),
                 AreaId=122
-            },new Item
+            },
+            new Item
             {
                 Id=56,
                 Title="Male Mummy",
@@ -514,6 +518,6 @@ public class ItemConfiguration : IEntityTypeConfiguration<Item>
 
 
         };
-        builder.HasData();
+        builder.HasData(items);
     }
 }
