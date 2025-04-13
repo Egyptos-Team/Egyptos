@@ -18,7 +18,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury sports sedan with high performance.",
                 ImageUrl = "PrivateTransports/Car/bmw-5.jpg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -29,7 +29,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Premium luxury sedan with advanced features.",
                 ImageUrl = "PrivateTransports/Car/Mercedes-Benz S-Class.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -40,7 +40,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "High-end executive car with superior comfort.",
                 ImageUrl = "PrivateTransports/Car/Audi A8.jpg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -51,7 +51,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Reliable and comfortable sedan for everyday use.",
                 ImageUrl = "PrivateTransports/Car/Toyota Camry.webp",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -62,7 +62,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Affordable compact sedan with great fuel efficiency.",
                 ImageUrl = "PrivateTransports/Car/Nissan Sunny.jpg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -73,7 +73,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury SUV with off-road capability and elegance.",
                 ImageUrl = "PrivateTransports/Car/Range Rover Evoque.jpg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -84,7 +84,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Spacious full-size SUV perfect for families and groups.",
                 ImageUrl = "PrivateTransports/Car/Chevrolet Tahoe.jpg",
                 Capacity = 7,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -95,7 +95,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Economical and stylish sedan with modern features.",
                 ImageUrl = "PrivateTransports/Car/Hyundai Elantra.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -106,7 +106,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Classic American muscle car with powerful performance.",
                 ImageUrl = "PrivateTransports/Car/Ford Mustang.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -117,7 +117,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Electric luxury sedan with cutting-edge technology.",
                 ImageUrl = "PrivateTransports/Car/Tesla Model S.jpg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -128,7 +128,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Compact SUV with modern features and fuel efficiency.",
                 ImageUrl = "PrivateTransports/Car/Kia Sportage.jpg",
                 Capacity = 5,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -139,7 +139,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Spacious and comfortable sedan with great reliability.",
                 ImageUrl = "PrivateTransports/Car/Honda Accord.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -150,7 +150,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Iconic off-road vehicle for adventure seekers.",
                 ImageUrl = "PrivateTransports/Car/Jeep Wrangler.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -161,7 +161,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Reliable and stylish German sedan.",
                 ImageUrl = "PrivateTransports/Car/Volkswagen Passat.jpeg",
                 Capacity = 4,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             },
             new PrivateTransport
@@ -172,7 +172,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury sports SUV with high-end features.",
                 ImageUrl = "PrivateTransports/Car/Porsche Cayenne.jpg",
                 Capacity = 5,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 1
             }
             // stop hear 
@@ -185,7 +185,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury minibus with premium comfort.",
                 ImageUrl = "PrivateTransports/Bus/Mercedes-Benz Sprinter.jpg",
                 Capacity = 15,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -196,7 +196,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Comfortable mid-sized bus for group travel.",
                 ImageUrl = "PrivateTransports/Bus/Toyota Coaster.jpeg",
                 Capacity = 22,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -207,7 +207,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Efficient minibus for short trips.",
                 ImageUrl = "PrivateTransports/Bus/Hyundai County.jpeg",
                 Capacity = 20,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -218,7 +218,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Reliable minibus for tourism and business trips.",
                 ImageUrl = "PrivateTransports/Bus/Mitsubishi Rosa.jpg",
                 Capacity = 26,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -229,7 +229,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury long-distance coach with high-end features.",
                 ImageUrl = "PrivateTransports/Bus/Volvo 9700.jpg",
                 Capacity = 50,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -240,7 +240,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Premium luxury coach for VIP travel.",
                 ImageUrl = "PrivateTransports/Bus/Setra TopClass.jpeg",
                 Capacity = 50,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -251,7 +251,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Economical minibus for group transport.",
                 ImageUrl = "PrivateTransports/Bus/Iveco Daily Minibus.jpeg",
                 Capacity = 18,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -262,7 +262,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Spacious tourist bus for comfortable travel.",
                 ImageUrl = "PrivateTransports/Bus/King Long XMQ6900.jpg",
                 Capacity = 35,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -273,7 +273,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury coach with modern amenities.",
                 ImageUrl = "PrivateTransports/Bus/Scania Touring HD.jpg",
                 Capacity = 55,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -284,7 +284,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "High-end tourist coach for long-distance trips.",
                 ImageUrl = "PrivateTransports/Bus/MAN Lion’s Coach.jpeg",
                 Capacity = 50,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -295,7 +295,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Luxury coach designed for tourism and comfort.",
                 ImageUrl = "PrivateTransports/Bus/Mercedes Tourismo.jpeg",
                 Capacity = 55,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -306,7 +306,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Double-decker coach for large group tours.",
                 ImageUrl = "PrivateTransports/Bus/Neoplan Skyliner.jpg",
                 Capacity = 80,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -317,7 +317,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Reliable and affordable coach for daily transport.",
                 ImageUrl = "PrivateTransports/Bus/Yutong ZK6122.jpeg",
                 Capacity = 45,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -328,7 +328,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "High-performance luxury coach for premium travel.",
                 ImageUrl = "PrivateTransports/Bus/Volvo B11R.jpeg",
                 Capacity = 50,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             },
             new PrivateTransport
@@ -339,7 +339,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Spacious coach with modern amenities.",
                 ImageUrl = "PrivateTransports/Bus/Golden Dragon XML6127.jpeg",
                 Capacity = 48,
-                Quantity = 2,
+                Quantity = 5,
                 TransportTypeId = 2
             }
             //stop her
@@ -351,7 +351,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "The scoter is a type of sea duck that lives in cold and temperate regions.",
                 ImageUrl = "PrivateTransports/Damon Hypersport.webp",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -362,7 +362,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Scooters are easy to handle and convenient for daily transportation.",
                 ImageUrl = "PrivateTransports/Honda CB650R.jpg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -373,7 +373,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "There are three main species of scoter: the black scoter, the surf scoter, and the velvet scoter",
                 ImageUrl = "PrivateTransports/Honda CBR1000RR Fireblade.png",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -384,7 +384,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Scoters primarily feed on mollusks, crustaceans, and small fish",
                 ImageUrl = "PrivateTransports/Kawasaki Ninja.jpeg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
 
@@ -396,7 +396,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "They have dark-colored feathers, with males usually appearing blacker than females.",
                 ImageUrl = "PrivateTransports/KTM Duke 1290 R.jpg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -407,7 +407,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Scoters prefer coastal waters and large water bodies like lakes and rivers.",
                 ImageUrl = "PrivateTransports/Lightning LS-218.jpg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -418,7 +418,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Electric scooters are commonly used for short-distance travel in cities.",
                 ImageUrl = "PrivateTransports/my22-tiger-1200-gt-explorer-lucerne-blue-rhs-1080.png",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -429,7 +429,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Kick scooters are popular among children and some commuters.",
                 ImageUrl = "PrivateTransports/Suzuki GSX R1000.jpeg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             },
             new PrivateTransport
@@ -440,7 +440,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                 Description = "Scooters are easy to handle and convenient for daily transportation.",
                 ImageUrl = "PrivateTransports/Yamaha YZF.jpg",
                 Capacity = 2,
-                Quantity = 4,
+                Quantity = 5,
                 TransportTypeId = 3
             }, new PrivateTransport
              {
@@ -450,7 +450,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A sleek and lightweight bicycle built for speed and long-distance rides on paved roads",
                  ImageUrl = "PrivateTransports/Bike/Road_Bike.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -460,7 +460,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A rugged bike built for off-road trails",
                  ImageUrl = "PrivateTransports/Bike/Mountain_Bike.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -470,7 +470,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "Designed for daily urban commuting",
                  ImageUrl = "PrivateTransports/Bike/City_Commuter_Bike.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -480,7 +480,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A stylish and relaxed bicycle for leisurely rides",
                  ImageUrl = "PrivateTransports/Bike/Cruiser_Bike.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -490,7 +490,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A modern bicycle with an electric motor and battery for pedal-assist riding, ideal for long distances and commuting with ease and less effort.",
                  ImageUrl = "PrivateTransports/Bike/Electric_Bike.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -500,7 +500,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "Endurance-focused road bike with IsoSpeed technology for smoother rides over long distances.",
                  ImageUrl = "PrivateTransports/Bike/Trek_Domane_SL_6.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -510,7 +510,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A performance alloy race bike with aggressive geometry, ideal for speed and competitive cycling.",
                  ImageUrl = "PrivateTransports/Bike/Specialized.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -520,7 +520,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A versatile hardtail mountain bike with front suspension, perfect for beginner to intermediate trail",
                  ImageUrl = "PrivateTransports/Bike/Cannondale.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -530,7 +530,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A lightweight hybrid city bike designed for efficient daily commuting and fitness rides.",
                  ImageUrl = "PrivateTransports/Bike/Giant.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              },new PrivateTransport
              {
@@ -540,7 +540,7 @@ class PrivateTransportConfiguration : IEntityTypeConfiguration<PrivateTransport>
                  Description = "A commuter-focused e-bike with a powerful motor, integrated lights, and a rear rack.",
                  ImageUrl = "PrivateTransports/Bike/Rad_Power.jpg",
                  Capacity = 1,
-                 Quantity = 10,
+                 Quantity = 11,
                  TransportTypeId = 4
              }
         };
