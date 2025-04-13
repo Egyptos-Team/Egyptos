@@ -28,6 +28,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\AreaImages\" />
+      <Folder Include="wwwroot\Items\" />
       <Folder Include="wwwroot\PrivateTransports\Scoter\" />
     </ItemGroup>
 

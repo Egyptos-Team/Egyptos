@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413182242_editInTableItemsAddAreaId")]
+    partial class editInTableItemsAddAreaId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -8032,7 +8035,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Bmw M5",
                             PricePerHour = 50.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8044,7 +8047,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Mercedes-Benz S-Class",
                             PricePerHour = 60.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8056,7 +8059,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Audi A8",
                             PricePerHour = 55.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8068,7 +8071,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Toyota Camry",
                             PricePerHour = 30.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8080,7 +8083,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Nissan Sunny",
                             PricePerHour = 20.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8092,7 +8095,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Range Rover Evoque",
                             PricePerHour = 70.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8104,7 +8107,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Chevrolet Tahoe",
                             PricePerHour = 65.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8116,7 +8119,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Hyundai Elantra",
                             PricePerHour = 25.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8128,7 +8131,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Ford Mustang",
                             PricePerHour = 80.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8140,7 +8143,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Tesla Model S",
                             PricePerHour = 90.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8152,7 +8155,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Kia Sportage",
                             PricePerHour = 35.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8164,7 +8167,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Honda Accord",
                             PricePerHour = 40.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8176,7 +8179,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Jeep Wrangler",
                             PricePerHour = 75.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8188,7 +8191,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Volkswagen Passat",
                             PricePerHour = 38.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8200,7 +8203,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Porsche Cayenne",
                             PricePerHour = 100.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 1
                         },
                         new
@@ -8212,7 +8215,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Mercedes-Benz Sprinter",
                             PricePerHour = 100.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8224,7 +8227,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Toyota Coaster",
                             PricePerHour = 80.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8236,7 +8239,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Hyundai County",
                             PricePerHour = 75.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8248,7 +8251,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Mitsubishi Rosa",
                             PricePerHour = 85.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8260,7 +8263,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Volvo 9700",
                             PricePerHour = 200.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8272,7 +8275,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Setra TopClass",
                             PricePerHour = 220.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8284,7 +8287,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Iveco Daily Minibus",
                             PricePerHour = 90.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8296,7 +8299,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "King Long XMQ6900",
                             PricePerHour = 110.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8308,7 +8311,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Scania Touring HD",
                             PricePerHour = 180.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8320,7 +8323,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "MAN Lion’s Coach",
                             PricePerHour = 195.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8332,7 +8335,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Mercedes Tourismo",
                             PricePerHour = 210.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8344,7 +8347,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Neoplan Skyliner",
                             PricePerHour = 250.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8356,7 +8359,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Yutong ZK6122",
                             PricePerHour = 140.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8368,7 +8371,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Volvo B11R",
                             PricePerHour = 230.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8380,7 +8383,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Golden Dragon XML6127",
                             PricePerHour = 160.0,
-                            Quantity = 5,
+                            Quantity = 2,
                             TransportTypeId = 2
                         },
                         new
@@ -8392,7 +8395,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Damon Hypersport",
                             PricePerHour = 160.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8404,7 +8407,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Honda CB650R",
                             PricePerHour = 250.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8416,7 +8419,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Honda CBR1000RR Fireblade",
                             PricePerHour = 200.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8428,7 +8431,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Kawasaki Ninja",
                             PricePerHour = 170.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8440,7 +8443,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "KTM Duke 1290 R",
                             PricePerHour = 130.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8452,7 +8455,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Lightning LS-218",
                             PricePerHour = 110.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8464,7 +8467,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "my22-tiger-1200-gt-explorer",
                             PricePerHour = 120.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8476,7 +8479,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Suzuki GSX R1000",
                             PricePerHour = 150.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8488,7 +8491,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Yamaha YZF",
                             PricePerHour = 100.0,
-                            Quantity = 5,
+                            Quantity = 4,
                             TransportTypeId = 3
                         },
                         new
@@ -8500,7 +8503,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Road Bike",
                             PricePerHour = 70.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8512,7 +8515,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Mountain Bike",
                             PricePerHour = 50.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8524,7 +8527,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "City Commuter Bike",
                             PricePerHour = 40.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8536,7 +8539,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Cruiser Bike",
                             PricePerHour = 60.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8548,7 +8551,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Electric Bike",
                             PricePerHour = 140.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8560,7 +8563,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Trek Domane SL 6",
                             PricePerHour = 150.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8572,7 +8575,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Specialized Allez Sprint Comp",
                             PricePerHour = 170.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8584,7 +8587,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Cannondale Trail 5",
                             PricePerHour = 120.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8596,7 +8599,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Giant Escape 3",
                             PricePerHour = 130.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         },
                         new
@@ -8608,7 +8611,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             IsAvailable = true,
                             Name = "Rad Power Bikes RadCity 5 Plus",
                             PricePerHour = 150.0,
-                            Quantity = 11,
+                            Quantity = 10,
                             TransportTypeId = 4
                         });
                 });
