@@ -346,14 +346,14 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
             {
                 Id=47,
                 Description="",
-                ImageUrl="AreaImages/Statue of Meritamun (The White Queen)2.avif",
+                ImageUrl="AreaImages/AA1.avif",
             AreaId=10
             },
             new AreaImage
             {
                 Id=48,
                 Description="",
-                ImageUrl="AreaImages/Statue of Meritamun (The White Queen)3.jpeg",
+                ImageUrl="AreaImages/AA2.jpg",
             AreaId=10
             },
             new AreaImage
@@ -432,7 +432,7 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
             {
                 Id=59,
                 Description="",
-                ImageUrl="AreaImages/Suleiman Agha Al-Selhadar Mosque4.jpeg",
+                ImageUrl="AreaImages/AA3.jpeg",
             AreaId=12
             },
             new AreaImage
@@ -756,7 +756,7 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
             {
                 Id=104,
                 Description="",
-                ImageUrl="AreaImages/The Way and the Writers of Nafisa Al-Bayda4.jpeg",
+                ImageUrl="AreaImages/AA4.jpeg",
             AreaId=21
             },
             new AreaImage
@@ -3540,7 +3540,7 @@ public class AreaImagesConfiguration : IEntityTypeConfiguration<AreaImage>
             {
                 Id=491,
                 Description="",
-                ImageUrl="AreaImages/view-from-sea-urban-development-alexandria-panoramic-view-egypt_431724-5114.avif",
+                ImageUrl="AreaImages/AA5.jpg",
                 AreaId=76
             },
             new AreaImage

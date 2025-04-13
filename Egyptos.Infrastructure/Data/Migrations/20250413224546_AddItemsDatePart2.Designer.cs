@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413224546_AddItemsDatePart2")]
+    partial class AddItemsDatePart2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -8492,7 +8495,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             AreaId = 101,
                             Date = new DateOnly(1795, 4, 1),
                             Description = "Combs were used in Egypt around five thousand years ago, having been found buried with both men and women. This custom continued into the Byzantine period, when combs were found on the chests of the deceased. Wood was the most commonly used material for combs, while some ivory models were found among the wealthy, some of which had religious uses. 6th century AD. Material: Ivory.",
-                            ImageUrl = "Items/ivorycomb.jpg",
+                            ImageUrl = "Items/ivorycomb",
                             Title = "ivory comb"
                         },
                         new
@@ -8510,7 +8513,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             AreaId = 101,
                             Date = new DateOnly(1795, 4, 1),
                             Description = "A rectangular lintel with a relief carving depicting the entry of Jesus Christ into Jerusalem riding on a beast and being welcomed by the city's inhabitants as king. The anniversary of Christ's entry into Jerusalem is celebrated annually on the seventh Sunday of Lent and is known as Palm Sunday. Date: 4th or 5th century AD Material: Wood Source: The Hanging Church, Ancient Egypt",
-                            ImageUrl = "Items/A reproach illustrating the scene of Jesus Christ's entry into the city of Jerusalem.jpg",
+                            ImageUrl = "Items/",
                             Title = "A reproach illustrating the scene of Jesus Christ's entry into the city of Jerusalem"
                         },
                         new
@@ -8537,7 +8540,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             AreaId = 102,
                             Date = new DateOnly(1795, 4, 1),
                             Description = "The coffin of Najm Ankh made of cartonnage covered with gold foil, retrieved from the Metropolitan Museum and dates back to the Ptolemaic period.Material: Cartonnage covered with gold foil.Date: Ptolemaic period.",
-                            ImageUrl = "Items/Coffin of Nedjem Ankh.jpg",
+                            ImageUrl = "Items/Coffin of Najm Ankh.jpg",
                             Title = "Coffin of Najm Ankh"
                         },
                         new
@@ -8600,7 +8603,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             AreaId = 103,
                             Date = new DateOnly(1795, 4, 1),
                             Description = "A group statue of King Menkaure made of schist. The statue shows the king standing between two women: the goddess Hathor on his right and the lady of the Bat province on his left. The king wears the white crown of Upper Egypt. Hathor wears the sun disk and cow horns, while the lady of Bat province wears the emblem of her region on her head.Source: GizaValley Temple of MenkaureDate: Old Kingdom 4th Dynasty,reign of King Menkaure(2490–2472 B.C.)Material: Grey - green schist stone",
-                            ImageUrl = "Items/11111.jpg",
+                            ImageUrl = "Items/Group Statue of Menkaure.jpg",
                             Title = "Group Statue of King Menkaure"
                         },
                         new
@@ -9041,7 +9044,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             AreaId = 111,
                             Date = new DateOnly(1795, 4, 1),
                             Description = "A mechanical gunpowder measure decorated with plant motifs in silver and gold. The wooden handle features silver-inlaid plant designs and ends with a copper ornament bearing raised decorations.\n\nPeriod: Modern (Muhammad Ali Dynasty)\nMaterial: Metal",
-                            ImageUrl = "Items/6.jpg",
+                            ImageUrl = "Items/GunpowderMeasure.jpg",
                             Title = "Mechanical Gunpowder Measure"
                         });
                 });
