@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250413171900_updateDataInPrivateTransport")]
+    partial class updateDataInPrivateTransport
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -7957,7 +7960,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AreaId")
+                    b.Property<int?>("AreaId")
                         .HasColumnType("int");
 
                     b.Property<DateOnly>("Date")
@@ -9575,13 +9578,9 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Item", b =>
                 {
-                    b.HasOne("Egyptos.Domain.Entities.Area", "Area")
+                    b.HasOne("Egyptos.Domain.Entities.Area", null)
                         .WithMany("Items")
-                        .HasForeignKey("AreaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Area");
+                        .HasForeignKey("AreaId");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.PrivateTransport", b =>
