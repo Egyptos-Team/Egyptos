@@ -8,6 +8,7 @@ public class TourGuideReview
     public string Comment { get; set; } = null!;
     public double Rate { get; set; }
     public DateOnly Date { get; set; } = DateOnly.FromDateTime(DateTime.Now);
+    public string? ImageUrl { get; set; }
 
     public int TourGuideId { get; set; }
     public TourGuide TourGuide { get; set; } = null!;

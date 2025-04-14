@@ -4,6 +4,7 @@ public class TourGuideReviewResponse
 {
     public int Id { get; set; }
     public string Comment { get; set; } = null!;
+    public string? ImageUrl { get; set; }
     public double Rate { get; set; }
     public DateOnly Date { get; set; }
 

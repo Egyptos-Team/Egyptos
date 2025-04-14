@@ -29,16 +29,16 @@ public class TourGuideReviewsController(ITourGuideReviewService _tourGuideReview
     }
 
     [HttpPost]
-    [Authorize(Roles = DefaultRoles.User.Name)]
-    public async Task<IActionResult> Add(TourGuideReviewRequest request)
+    //[Authorize(Roles = DefaultRoles.User.Name)]
+    public async Task<IActionResult> Add([FromForm]TourGuideReviewRequest request)
     {
         var result = await _tourGuideReviewService.AddAsync(User.GetUserId(), request);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
     [HttpPut("{reviewId}")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
-    public async Task<IActionResult> Update(int reviewId, TourGuideReviewRequest request)
+    //[Authorize(Roles = DefaultRoles.User.Name)]
+    public async Task<IActionResult> Update(int reviewId,[FromForm] TourGuideReviewRequest request)
     {
         var result = await _tourGuideReviewService.UpdateAsync(User.GetUserId(), reviewId, request);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();

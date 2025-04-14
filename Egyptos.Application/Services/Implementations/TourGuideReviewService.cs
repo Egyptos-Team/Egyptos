@@ -1,9 +1,12 @@
 using Egyptos.Application.Contracts.TourGuideReviews;
+using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class TourGuideReviewService(ApplicationDbContext _context) : ITourGuideReviewService
+public class TourGuideReviewService(ApplicationDbContext _context, IFileService fileService) : ITourGuideReviewService
 {
+    private readonly IFileService _fileService = fileService;
+
     public async Task<IEnumerable<TourGuideReviewResponse>> GetAllAsync()
     {
         var reviews = await _context.TourGuideReviews
@@ -37,9 +40,10 @@ public class TourGuideReviewService(ApplicationDbContext _context) : ITourGuideR
         var review = request.Adapt<TourGuideReview>();
 
         review.UserId = userId;
+        if((request.Image is not null))
+        review.ImageUrl = await _fileService.UploadAsync(request.Image!, "ReviewImages");
         await _context.TourGuideReviews.AddAsync(review);
         await _context.SaveChangesAsync();
-
 
         await _context.Entry(review).Reference(r => r.User).LoadAsync();
         await _context.Entry(review).Reference(r => r.TourGuide).LoadAsync();
@@ -63,6 +67,10 @@ public class TourGuideReviewService(ApplicationDbContext _context) : ITourGuideR
 
         request.Adapt(review);
         review.UserId = userId;
+        if ((request.Image is not null))
+            review.ImageUrl = await _fileService.UploadAsync(request.Image!, "ReviewImages");
+        else review.ImageUrl = null;
+
         await _context.SaveChangesAsync();
         return Result.Success(review.Adapt<TourGuideReviewResponse>());
     }
