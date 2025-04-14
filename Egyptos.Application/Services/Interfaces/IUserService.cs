@@ -5,6 +5,7 @@ namespace Egyptos.Application.Services.Interfaces;
 public interface IUserService
 {
     Task<Result<UserProfileResponse>> GetProfileAsync(string userId);
+    Task<Result<UserAllBookingsResponse>> GetAllBookingsAsync(string userId);
     Task<Result> UpdateProfileAsync(string userId, UpdateProfileRequest request);
     Task<Result<string>> ChangeImageAsync(string userId ,ChangeProfileImageRequest image);
     Task<Result> ChangePasswordAsync(string userId, ChangePasswordRequest request);

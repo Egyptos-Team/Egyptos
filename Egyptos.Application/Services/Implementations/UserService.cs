@@ -1,4 +1,9 @@
+using Egyptos.Application.Contracts.BookingEventDate;
+using Egyptos.Application.Contracts.BookingTourGuide;
+using Egyptos.Application.Contracts.EventDateContracts;
+using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.Users;
+using Egyptos.Domain.Entities;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -107,5 +112,45 @@ public class UserService(UserManager<ApplicationUser> _userManager,ApplicationDb
         return !result.Succeeded
             ? Result.Failure<string>(new Error("BadRequest", result.Errors.First().Description , StatusCodes.Status400BadRequest))
             : Result.Success("User deleted successfully");
+    }
+
+    public async Task<Result<UserAllBookingsResponse>> GetAllBookingsAsync(string userId)
+    {
+        var allBookingForUser = await _context.ApplicationUsers
+            .Where(x => x.Id == userId)
+            .Include(x => x.BookingPrivateTransports)
+            .Include(x => x.BookingEventDates)
+            .Include(x => x.BookingTourGuides)
+            .ProjectToType<UserAllBookingsResponse>()
+            .FirstAsync();
+        
+        return Result.Success(allBookingForUser);
+
+        #region MyRegion
+        //var privateTransportsBookings = await _context.BookingPrivateTransports
+        //   .Where(x => x.UserId == userId)
+        //   .ProjectToType<BookingPrivateTransportResponse>()
+        //   .ToListAsync();
+
+        //var tourBookings = await _context.BookingTourGuides
+        //     .Where(x => x.UserId == userId)
+        //   .ProjectToType<BookingTourGuideResponse>()
+        //   .ToListAsync();
+
+        //var eventDatesBookings = await _context.BookingEventDates
+        //    .Where(x => x.UserId == userId)
+        //    .Include(x => x.EventDate)
+        //    .ProjectToType<BookingEventDateRasponse>()
+        //    .ToListAsync();
+
+        //var allBookings = new UserAllBookingsResponse
+        //(
+        //    BookingPrivateTransports :  privateTransportsBookings,
+        //    BookingTourGuides : tourBookings ,
+        //    BookingEventDates : eventDatesBookings
+        //);
+
+        //return Result.Success(allBookings); 
+        #endregion
     }
 }

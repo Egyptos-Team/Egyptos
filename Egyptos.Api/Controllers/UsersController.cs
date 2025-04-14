@@ -35,4 +35,12 @@ public class UsersController(IUserService _userService) : ControllerBase
         var result = await _userService.DeleteAsync(email);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
+
+    [HttpGet("")]
+    public async Task<IActionResult> GetAllBookings()
+    {
+        var result = await _userService.GetAllBookingsAsync(User.GetUserId());
+
+        return Ok(result.Value);
+    }
 }
