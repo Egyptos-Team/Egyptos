@@ -42,6 +42,7 @@ public class AreasController(IAreaService areaService) : ControllerBase
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Create([FromForm] AreaRequest request)
     {
         var result = await _areaService.CreateAsync(request);
@@ -55,6 +56,7 @@ public class AreasController(IAreaService areaService) : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromForm] AreaRequest request)
     {
         var result = await _areaService.UpdateAsync(id, request);
@@ -65,6 +67,7 @@ public class AreasController(IAreaService areaService) : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete( int id)
     {
         var result = await _areaService.DeleteAsync(id);

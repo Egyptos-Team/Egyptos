@@ -2,6 +2,8 @@
 using Egyptos.Application.Contracts.Hotels;
 using Egyptos.Application.Contracts.Transport.TransportTypes;
 using Egyptos.Application.Services.Interfaces;
+using Egyptos.Domain.Consts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
@@ -37,6 +39,7 @@ public class HotelsController(IHotelService hotelService) : ControllerBase
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Create([FromForm] HotelRequest request)
     {
         var result = await _hotelService.CreateAsync(request);
@@ -50,6 +53,7 @@ public class HotelsController(IHotelService hotelService) : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update(int id, [FromBody] HotelRequest request)
     {
         var result = await _hotelService.UpdateAsync(id, request);
@@ -62,6 +66,7 @@ public class HotelsController(IHotelService hotelService) : ControllerBase
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete(int id)
     {
         var result = await _hotelService.DeleteAsync(id);

@@ -4,6 +4,8 @@ using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.Transport.TransportTypes;
 using Egyptos.Application.Services.Implementations;
 using Egyptos.Application.Services.Interfaces;
+using Egyptos.Domain.Consts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -41,6 +43,7 @@ namespace Egyptos.Api.Controllers
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> Create([FromBody] AreaTypeRequest request)
         {
             var result = await _areaTypeService.CreateAsync(request);
@@ -54,6 +57,7 @@ namespace Egyptos.Api.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> Update( int id, [FromBody] AreaTypeRequest request)
         {
             var result = await _areaTypeService.UpdateAsync(id, request);
@@ -66,6 +70,7 @@ namespace Egyptos.Api.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> Delete( int id)
         {
             var result = await _areaTypeService.DeleteAsync(id);

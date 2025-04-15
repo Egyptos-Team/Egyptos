@@ -1,6 +1,8 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.Transport.PrivateTransports;
 using Egyptos.Application.Services.Interfaces;
+using Egyptos.Domain.Consts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
@@ -37,6 +39,7 @@ public class PrivateTransportsController(IPrivateTransportService privateTranspo
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Create([FromForm] PrivateTransportRequest request)
     {
         var result = await _privateTransportService.CreateAsync(request);
@@ -49,6 +52,7 @@ public class PrivateTransportsController(IPrivateTransportService privateTranspo
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Update([FromRoute] int id, [FromForm] PrivateTransportRequest request)
     {
         var result = await _privateTransportService.UpdateAsync(id, request);
@@ -61,6 +65,7 @@ public class PrivateTransportsController(IPrivateTransportService privateTranspo
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _privateTransportService.DeleteAsync(id);
