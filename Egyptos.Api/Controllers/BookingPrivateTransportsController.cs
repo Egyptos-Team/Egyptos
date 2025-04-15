@@ -2,6 +2,7 @@
 using Egyptos.Application.Contracts.Payment;
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Services.Interfaces;
+using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
@@ -21,6 +22,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpGet("")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _booking.GetAllAsync();
@@ -32,6 +34,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpGet("")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> GetAllForUser()
     {
         var result = await _booking.GetAllForUserAsync(User.GetUserId());
@@ -43,6 +46,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpGet("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetById(int bookingId)
     {
         var result = await _booking.GetAsync(bookingId);
@@ -55,6 +59,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Create([FromBody] BookingPrivateTransportRequest request)
     {
         var result = await _booking.CreateAsync(User.GetUserId(), request);
@@ -69,6 +74,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> OnlinePayment(int bookingId, [FromServices] IServiceProvider sp)
     {
 
@@ -112,6 +118,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpPut("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Update(int bookingId, [FromBody] BookingPrivateTransportRequest request)
     {
         var result = await _booking.UpdateAsync(bookingId, request);
@@ -126,6 +133,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> EndBookingManual(int bookingId)
     {
         var result = await _booking.EndBookingManualAsync(bookingId);
@@ -137,6 +145,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> CancelBooking(int bookingId)
     {
         var result = await _booking.CancelBookingAsync(bookingId);
