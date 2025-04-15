@@ -51,7 +51,7 @@ public class TransportTypesController(ITransportTypeService _transportTypeServic
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> Update([FromRoute] int id,[FromBody] TransportTypeRequest request)
+    public async Task<IActionResult> Update([FromRoute] int id,[FromForm] TransportTypeRequest request)
     {
         var result = await _transportTypeService.UpdateAsync(id, request);
 
