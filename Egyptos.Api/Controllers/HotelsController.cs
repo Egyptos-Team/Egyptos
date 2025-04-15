@@ -50,7 +50,7 @@ public class HotelsController(IHotelService hotelService) : ControllerBase
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Update(int id, [FromBody] HotelRequest request)
+    public async Task<IActionResult> Update(int id, [FromForm] HotelRequest request)
     {
         var result = await _hotelService.UpdateAsync(id, request);
 

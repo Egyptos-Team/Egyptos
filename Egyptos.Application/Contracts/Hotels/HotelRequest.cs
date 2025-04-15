@@ -3,10 +3,12 @@
 public record HotelRequest(
      string Name,
      string Location,
+     string LocationName,
      string Address,
      IFormFile ImageUrl,
      string WebSite,
      string Facebook,
      string PhoneNumber,
-     double PricePerHour
+     double PricePerHour,
+     double Rate
 );
