@@ -34,7 +34,7 @@ public class TransportTypesController(ITransportTypeService _transportTypeServic
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]    
     [ProducesResponseType(StatusCodes.Status409Conflict)]
-    public async Task<IActionResult> Create([FromBody] TransportTypeRequest request)
+    public async Task<IActionResult> Create([FromForm] TransportTypeRequest request)
     {
         var result = await _transportTypeService.CreateAsync(request);
 
