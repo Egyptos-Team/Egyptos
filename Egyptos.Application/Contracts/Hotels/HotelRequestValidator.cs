@@ -11,6 +11,14 @@ public class HotelRequestValidator:AbstractValidator<HotelRequest>
         RuleFor(x => x.Location)
             .NotEmpty();
 
+        RuleFor(x => x.LocationName)
+           .NotEmpty();
+
+        RuleFor(x => x.Rate)
+           .NotEmpty()
+           .GreaterThanOrEqualTo(0)
+           .LessThanOrEqualTo(5);
+
         RuleFor(x => x.Address)
            .NotEmpty();
 
