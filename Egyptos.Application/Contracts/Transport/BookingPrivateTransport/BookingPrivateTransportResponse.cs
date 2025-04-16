@@ -9,8 +9,10 @@ public class BookingPrivateTransportResponse
     public DateTime? PaymentDate { get; set; }
 
     public DateTime? PaymentCancel { get; set; }
+    public DateTime? CancelBooking { get; set; }
     public double? TotalPrice { get; set; }
     public double PricePerHour { get; set; }
+
     public PrivateTransports.PrivateTransportResponse PrivateTransport { get; set; } = null!;
     public string UserId { get; set; } = null!;
     public int PrivateTransportId { get; set; }

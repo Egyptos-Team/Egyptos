@@ -209,6 +209,7 @@ public class BookingPrivateTransportService(
     {
         var booking = await _context.BookingPrivateTransports
             .Include(x => x.PrivateTransport)
+            .ThenInclude(x=>x.TransportType)
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (booking is null)
