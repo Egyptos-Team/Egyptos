@@ -8,6 +8,8 @@ public record AreaRequest(
      string Location,
      string Address,
      IFormFile ImageUrl,
+     double? Latitude,
+     double? Longitude,
      int AreaTypeId,
      List<IFormFile> AreaImages
 );

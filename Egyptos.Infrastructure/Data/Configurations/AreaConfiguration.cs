@@ -27,6 +27,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                Address="Giza Plateau",
                ImageUrl="AreaImages/sphinx1.jpeg",
                AreaTypeId=1,
+               Latitude=null,
+               Longitude=null
             },
             new Area{
                    Id=2,
@@ -36,6 +38,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                    Address= "Salloum and Sidi Barrani City, Marsa Matrouh",
                    ImageUrl= "AreaImages/Roman well1.webp",
                    AreaTypeId= 1,
+                    Latitude=null,
+               Longitude=null
               },
             new Area
             {
@@ -46,6 +50,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Giza Plateau",
                 ImageUrl = "AreaImages/Eastern and Western Cemeteries1.webp",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -56,6 +62,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Saqqara",
                 ImageUrl = "AreaImages/Serapeum1.webp",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -66,6 +74,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Saqqara",
                 ImageUrl = "AreaImages/Titi pyramid set1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -76,6 +86,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Giza Plateau",
                 ImageUrl = "AreaImages/Pyramid complex of King Menkaure1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -85,7 +97,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.698997832703!2d32.89801192519799!3d24.076902176164435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x143664aa5c33aa3f%3A0xa1bf171a1b3086c6!2z2KfZhNmF2LPZhNipINin2YTZhtin2YLYtdip!5e0!3m2!1sar!2seg!4v1743217417901!5m2!1sar!2seg",
                 Address = "Aswan",
                 ImageUrl = "AreaImages/The Unfinished Obelisk1.jpg",
-                AreaTypeId = 1,
+                AreaTypeId = 1, 
+                Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -96,6 +110,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Sohail Island, Second Sheikh, First Aswan, Aswan Governorate",
                 ImageUrl = "AreaImages/Rock carvings on Suhail Island1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -106,6 +122,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "At the entrance to the Valley of the Kings in Qurna, which is about 20 km from Luxor",
                 ImageUrl = "AreaImages/Howard Carter's house in Thebes1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -116,6 +134,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Hariri, First Section, Zagazig, Sharkia Governorate",
                 ImageUrl = "AreaImages/Statue of Meritamun (The White Queen)1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -126,6 +146,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Ash Sharqiya, Al Darb Al Ahmar, Cairo Governorate",
                 ImageUrl = "AreaImages/Sultan Al-Muayyad Sheikh Mosque1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -136,6 +158,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Bargwan Alley, Al-Gamaliya, Al-Gamaliya District, Cairo Governorate",
                 ImageUrl = "AreaImages/Suleiman Agha Al-Selhadar Mosque1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -146,6 +170,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Kafour, Jamaa Square, Sidi Hassan Al-Anwar, Old Cairo Department, Cairo Governorate",
                 ImageUrl = "AreaImages/Amr ibn al-Aas Mosque1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -156,6 +182,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Muizz Street",
                 ImageUrl = "AreaImages/Mosque and School of Al-Nasir Muhammad ibn Qalawun1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -166,6 +194,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Giza Plateau",
                 ImageUrl = "AreaImages/Cemetery and city of workers who built the pyramids1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -176,6 +206,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Aswan Dam, next to the Nubian Museum in Aswan",
                 ImageUrl = "AreaImages/Aswan_Cemetery1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -186,6 +218,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Darb Al-Arbaeen, Al-Wahat Al-Kharga District, New Valley Governorate",
                 ImageUrl = "AreaImages/Al-Bajwat_Cemetery1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -196,6 +230,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Azareta and Al-Shatby, Bab Sharqi District, Alexandria Governorate",
                 ImageUrl = "AreaImages/Shatby_Cemetery1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -206,6 +242,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Muizz Street",
                 ImageUrl = "AreaImages/Sultan Inal's Bath1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -216,6 +254,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Deir El-Seryan Road, Wadi El-Natrun Center, Beheira Governorate",
                 ImageUrl = "AreaImages/Syriac Monastery1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -226,6 +266,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Muizz Street",
                 ImageUrl = "AreaImages/The Way and the Writers of Nafisa Al-Bayda1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -236,6 +278,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Hawara, near Fayoum Governorate, Egypt",
                 ImageUrl = "AreaImages/Palace_of_King_Amenemhat1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -246,6 +290,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Nile Corniche, Shubra El-Kheima, Qalyubia Governorate",
                 ImageUrl = "AreaImages/Mohamed_Ali_Palace_in_Shubra1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -256,6 +302,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Saint Catherine’s Monastery, Sinai Peninsula, Egypt",
                 ImageUrl = "AreaImages/Church_of_the_Burning_Bush1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -266,6 +314,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Muizz Street, Cairo, Egypt",
                 ImageUrl = "AreaImages/Sultan_Al-Ghouri_Group1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -276,6 +326,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                    Address = "Cairo",
                    ImageUrl = "AreaImages/Sultan Qaitbay Complex in the Mamluk Desert1.jpg",
                    AreaTypeId = 1,
+                    Latitude=null,
+               Longitude=null
               },
             new Area
             {
@@ -286,6 +338,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                    Address = "Saqqara",
                    ImageUrl = "AreaImages/Step Pyramid of Djoser1.jpeg",
                    AreaTypeId = 1,
+                    Latitude=null,
+               Longitude=null
               },
             new Area
             {
@@ -296,6 +350,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Muizz Street",
                 ImageUrl = "AreaImages/Sultan Al-Ghouri School1.jpg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -306,6 +362,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                    Address = "Al-Muizz Street",
                    ImageUrl = "AreaImages/School, Mausoleum and Hospital of Al-Mansur Qalawun1.jpeg",
                    AreaTypeId = 1,
+                    Latitude=null,
+               Longitude=null
               },
             new Area
             {
@@ -316,6 +374,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Sultan Al-Zahir Barquq Mosque, Al-Muizz li-Din Allah Al-Fatimi, Al-Gamaleya, Al-Gamaleya District, Cairo Governorate",
                 ImageUrl = "AreaImages/School and Khanqah of Sultan al-Zahir Barquq1.jpeg",
                 AreaTypeId = 1,
+                 Latitude=null,
+               Longitude=null
             },
             //Archaeological sites: 20 31:50 
             new Area
@@ -327,6 +387,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/1000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=32,
@@ -336,6 +398,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address= "Luxor",
                 ImageUrl= "AreaImages/14000.jpg",
                 AreaTypeId= 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=33,
@@ -344,7 +408,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d57512.99508324119!2d32.61607041810255!3d25.71891575935775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z2YjYp9iv2Yog2KfZhNmF2YTZiNmD!5e0!3m2!1sen!2seg!4v1743173975357!5m2!1sen!2seg",
                 Address="Cairo",
                 ImageUrl="AreaImages/29000.jpg",
-                AreaTypeId=2, 
+                AreaTypeId=2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -355,6 +421,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/800000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -365,6 +433,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Aswan",
                 ImageUrl = "AreaImages/15000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -375,6 +445,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = " Giza ",
                 ImageUrl = "AreaImages/30000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             }, 
             new Area
             {
@@ -385,6 +457,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Aswan",
                 ImageUrl = "AreaImages/37000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -395,6 +469,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Alexandria",
                 ImageUrl = "AreaImages/50000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -405,6 +481,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Qena",
                 ImageUrl = "AreaImages/61000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -415,6 +493,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Aswan",
                 ImageUrl = "AreaImages/70000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -425,6 +505,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/80000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -435,6 +517,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "South Sinai",
                 ImageUrl = "AreaImages/90000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -445,6 +529,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Alexandria",
                 ImageUrl="AreaImages/900.jpg",
                 AreaTypeId=2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -455,6 +541,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/100000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -465,6 +553,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/200000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -474,7 +564,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.6057783145206!2d31.259175975010617!3d30.048165768395464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145840eb2c0e580f%3A0x1761e0e461027d11!2sKhan%20el-Khalili!5e0!3m2!1sen!2seg!4v1743175427821!5m2!1sen!2seg",
                 Address = "Cairo",
                 ImageUrl = "AreaImages/300000.jpg",
-                AreaTypeId = 2,
+                AreaTypeId = 2, 
+                Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -484,7 +576,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.351641570124!2d31.26078527501087!3d30.055453418050096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583f6290708523%3A0x81fccd2457179839!2sBab%20al-Futuh!5e0!3m2!1sen!2seg!4v1743175524552!5m2!1sen!2seg",
                 Address = "Cairo",
                 ImageUrl = "AreaImages/400000.jpg",
-                AreaTypeId = 2, 
+                AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -495,6 +589,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/500000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -505,6 +601,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/600000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -515,6 +613,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/700000.jpg",
                 AreaTypeId = 2,
+                 Latitude=null,
+               Longitude=null
             },
             // Sea and Nile Cruises: 10 51:60
             new Area{
@@ -525,6 +625,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address=" Corniche El Nil, Near Four Seasons Hotel, Garden City, Cairo, Egypt.",
                 ImageUrl="AreaImages/101.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=52,
@@ -534,6 +636,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Various docking points in Luxor, Esna, Edfu, Kom Ombo, and Aswan, depending on the cruise provider.",
                 ImageUrl="AreaImages/106.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=53,
@@ -543,6 +647,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="El-dabiya, El-Boghdady, Luxor, Luxor Governorate, Egypt",
                 ImageUrl="AreaImages/111.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=54,
@@ -552,6 +658,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Dokki, Giza Governorate, Egypt",
                 ImageUrl="AreaImages/116.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=55,
@@ -561,6 +669,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Luxor Corniche (near Luxor Temple) and Aswan Corniche, Egypt",
                 ImageUrl="AreaImages/121.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=56,
@@ -570,6 +680,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="New Marina, Hurghada 1, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/126.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=57,
@@ -579,6 +691,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="El Gouna, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/131.jpg",
                 AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=58,
@@ -587,7 +701,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.159678668513!2d33.95963030000001!3d27.182717700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145284d89826aff5%3A0x19ffcf335924977d!2sMahmya%20Island!5e0!3m2!1sen!2seg!4v1743092271406!5m2!1sen!2seg",
                 Address="Big Giftun Island, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/136.jpg",
-                AreaTypeId=5, 
+                AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=59,
@@ -596,7 +712,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Location="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3548.343159531645!2d33.9265071!3d27.208373899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145286b2fefa8723%3A0x1bc68880daea217e!2sOrange%20Bay!5e0!3m2!1sen!2seg!4v1743093034885!5m2!1sen!2seg",
                 Address="Giftun island, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/141.jpg",
-                AreaTypeId=5, 
+                AreaTypeId=5,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -607,6 +725,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Ain El Sokhna - Zafarana Rd, Attaka, Suez Governorate, Egypt",
                 ImageUrl = "AreaImages/146.jpg",
                 AreaTypeId = 5,
+                 Latitude=null,
+               Longitude=null
             },
             // Safari: 10 61:70
             new Area
@@ -618,6 +738,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="South Sinai/near Sharm El Sheikh/Egypt",
                 ImageUrl="AreaImages/download.jpeg",
                 AreaTypeId=4,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=62,
@@ -627,6 +749,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Faiyum Governorate/Egypt",
                   ImageUrl="AreaImages/download (7).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=63,
@@ -636,6 +760,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Western Desert/Egypt",
                   ImageUrl="AreaImages/download (12).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=64,
@@ -645,6 +771,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Western Desert/Egypt",
                   ImageUrl="AreaImages/images (2).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=65,
@@ -654,6 +782,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Southern Egypt in the Western Desert/Egypt",
                   ImageUrl="AreaImages/download (18).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=66,
@@ -663,6 +793,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Near the town of Bahariya in the Western Desert/Egypt",
                   ImageUrl="AreaImages/download (24).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=67,
@@ -672,6 +804,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Faiyum Governorate/Egypt",
                   ImageUrl="AreaImages/download (29).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=68,
@@ -681,6 +815,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address=" South Sinai/Egypt",
                   ImageUrl="AreaImages/images (7).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=69,
@@ -690,6 +826,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address=" Sinai Peninsula, near Nuweiba and Taba/Egypt",
                   ImageUrl="AreaImages/download (38).jpeg",
                   AreaTypeId=4,
+                Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=70,
@@ -699,6 +837,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address=" Red Sea near Hurghada/Egypt",
                   ImageUrl="AreaImages/download (3).jpeg",
                   AreaTypeId=4,
+                   Latitude=null,
+               Longitude=null
             },
             //Sunken artifacts: 8 71:78
             new Area{
@@ -709,6 +849,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Red Sea / Egypt",
                   ImageUrl="AreaImages/Wadi Al Jarf.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=72,
@@ -718,6 +860,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Alexandria / Egypt",
                   ImageUrl="AreaImages/Wonderful-pictures-of-Qaitbay-Citadel.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=73,
@@ -727,6 +871,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Alexandria / Egypt",
                   ImageUrl="AreaImages/11A.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },  
             new Area{
                   Id=74,
@@ -736,6 +882,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Alexandria / Egypt",
                   ImageUrl="AreaImages/photo-alexandria-8.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=75,
@@ -745,6 +893,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address=" Red Sea / Egypt",
                   ImageUrl="AreaImages/A15.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=76,
@@ -754,6 +904,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Eastern Port / Alexander / Egypt",
                   ImageUrl="AreaImages/images-_4_.png",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=77,
@@ -763,6 +915,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Abu Qir / Alexandria / Egypt",
                   ImageUrl="AreaImages/csm_01_Hera-CG-035_373aa8da94.jpg",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             new Area{
                   Id=78,
@@ -772,6 +926,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                   Address="Aswan / Egypt",
                   ImageUrl="AreaImages/Gebel_el-Silsila,_Asuan,_Egypt.JPG",
                   AreaTypeId=3,
+                   Latitude=null,
+               Longitude=null
             },
             // Gblya: 10 81:90
             new Area{
@@ -782,6 +938,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="South Sinai, Saint Catherine, Egypt",
                 ImageUrl="AreaImages/1.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=82,
@@ -791,6 +949,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="South Sinai, Saint Catherine, Egypt",
                 ImageUrl="AreaImages/6.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=83,
@@ -800,6 +960,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="South Sinai, Saint Catherine, Egypt",
                 ImageUrl="AreaImages/11.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=84,
@@ -809,6 +971,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="South Sinai, Saint Catherine, Egypt",
                 ImageUrl="AreaImages/16.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=85,
@@ -818,6 +982,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Cairo, Egypt",
                 ImageUrl="AreaImages/21.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=86,
@@ -827,6 +993,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address=" Halayeb, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/26.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=87,
@@ -836,6 +1004,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Hurghada, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/31.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=88,
@@ -845,6 +1015,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address=" Hurghada, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/36.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=89,
@@ -854,6 +1026,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Fayoum Governorate, Egypt",
                 ImageUrl="AreaImages/41.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             new Area{
                 Id=90,
@@ -863,6 +1037,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Ras Gharib and Hurghada, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/46.jpg",
                 AreaTypeId=6,
+                 Latitude=null,
+               Longitude=null
                 },
             // Ryfya & 6by3ya W Astgmam: 10 91:100
             new Area{
@@ -873,6 +1049,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Matrouh Governorate, Egypt",
                 ImageUrl="AreaImages/51.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=92,
@@ -882,6 +1060,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Cairo, Egypt",
                 ImageUrl="AreaImages/56.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=93,
@@ -891,6 +1071,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Faiyum Governorate, Egypt",
                 ImageUrl="AreaImages/61.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=94,
@@ -900,6 +1082,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Aswan, Egypt",
                 ImageUrl="AreaImages/66.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=95,
@@ -909,6 +1093,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Dakhla Oasis, The New Valley Governorate, Egypt",
                 ImageUrl="AreaImages/71.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=96,
@@ -918,6 +1104,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Faiyum Governorate, Egypt",
                 ImageUrl="AreaImages/76.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=97,
@@ -927,6 +1115,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Luxor Governorate, Egypt",
                 ImageUrl="AreaImages/81.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=98,
@@ -936,6 +1126,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Marsa Alam, Red Sea Governorate, Egypt",
                 ImageUrl="AreaImages/86.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=99,
@@ -945,6 +1137,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Dakhla Oasis, The New Valley Governorate, Egypt",
                 ImageUrl="AreaImages/91.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=100,
@@ -954,6 +1148,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Wadi Degla Protectorate, Zahraa Al Maadi, Maadi, Cairo, Egypt.",
                 ImageUrl="AreaImages/96.jpg",
                 AreaTypeId=7,
+                 Latitude=null,
+               Longitude=null
             },
             //Museums: 22 101:122
             new Area{
@@ -964,6 +1160,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Masalla Sharq, Al-Attarin, Alexandria Governorate 5372053",
                 ImageUrl = "AreaImages/01.jpeg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=102,
@@ -973,6 +1171,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="3 Mari Girgis, Kom Ghorab, Old Cairo District, Cairo Governorate 4244001",
                 ImageUrl="AreaImages/02.jpg",
                 AreaTypeId=8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=103,
@@ -982,6 +1182,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Ain Al-Sira, Old Cairo District, Cairo Governorate 4245001",
                 ImageUrl="AreaImages/03.jpeg",
                 AreaTypeId=8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -992,6 +1194,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Tahrir Square, Ismailia, Qasr El Nil District, Cairo Governorate 4272083",
                 ImageUrl = "AreaImages/04.jpeg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1002,6 +1206,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Corniche El Nile Street, Luxor City, Luxor Governorate 1362501",
                 ImageUrl = "AreaImages/05.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1012,6 +1218,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "FW3H+636, Nagaa Al-Shatb, Daraw, Aswan Governorate 1281301",
                 ImageUrl = "AreaImages/06.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1022,6 +1230,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "XH48+2Q7, July-23, Suez, Suez Governorate 8144030",
                 ImageUrl = "AreaImages/07.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1032,6 +1242,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Al-Nasr, First Hurghada District, Red Sea Governorate 84511",
                 ImageUrl = "AreaImages/08.jpeg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1042,6 +1254,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "1 Al-Saraya, Al Manial Al Sharqi, Old Cairo District, Cairo Governorate 4240291",
                 ImageUrl = "AreaImages/09.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1052,6 +1266,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "27 Ahmed Yehia, San Stefano, Second Al-Raml District, Alexandria Governorate 5451010",
                 ImageUrl = "AreaImages/010.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1062,6 +1278,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Suez, Egypt",
                 ImageUrl = "AreaImages/011.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1072,6 +1290,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                     Address = "Cairo",
                     ImageUrl = "AreaImages/National Police Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=113,
@@ -1081,6 +1301,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address= "Cairo",
                 ImageUrl= "AreaImages/Museum of Islamic Art.jpeg",
                 AreaTypeId= 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area{
                 Id=114,
@@ -1090,6 +1312,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address="Cairo",
                 ImageUrl="AreaImages/Cairo International Airport Museum.jpg",
                 AreaTypeId=8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1100,6 +1324,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo-bolak",
                 ImageUrl = "AreaImages/Royal Chariots Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1110,6 +1336,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Assuan",
                 ImageUrl = "AreaImages/Nubian Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1120,6 +1348,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Giza",
                 ImageUrl = "AreaImages/Imhotep Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1130,6 +1360,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/Gayer-Anderson Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1140,6 +1372,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo-Helwan",
                 ImageUrl = "AreaImages/Helwan Corner Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1150,6 +1384,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "South Sinai",
                 ImageUrl = "AreaImages/Sharm El Sheikh Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1160,6 +1396,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Kafr-Elshikh",
                 ImageUrl = "AreaImages/Kafr El Sheikh Museum.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
             new Area
             {
@@ -1170,6 +1408,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                 Address = "Cairo",
                 ImageUrl = "AreaImages/Museum of the Capitals of Egypt.jpg",
                 AreaTypeId = 8,
+                 Latitude=null,
+               Longitude=null
             },
         };
         builder.HasData(areas);
