@@ -24,7 +24,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+202-22659600",
                 PricePerHour = 5812,
                 Rate = 4.2,
-                LocationName = "Cairo"
+                LocationName = "Cairo",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -40,7 +42,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-223651234",
                 PricePerHour = 6400,
                 Rate = 3.8,
-                LocationName = "Cairo"
+                LocationName = "Cairo",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -55,7 +59,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "20227917000",
                 PricePerHour = 14500,
                 Rate = 4.7,
-                LocationName = "Cairo"
+                LocationName = "Cairo",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -70,7 +76,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+20225777444",
                 PricePerHour = 6500,
                 Rate = 4.0,
-                LocationName = "Cairo"
+                LocationName = "Cairo",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -86,7 +94,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-225750777",
                 PricePerHour = 5500,
                 Rate = 3.9,
-                LocationName = "Cairo"
+                LocationName = "Cairo",
+                Longitude = null,
+                Latitude = null
             },
             // Luxor
             new Hotel
@@ -102,7 +112,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "010 00329991",
                 PricePerHour = 2200,
                 Rate = 3.5,
-                LocationName = "Luxor"
+                LocationName = "Luxor",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -117,7 +129,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-952382575",
                 PricePerHour = 7000,
                 Rate = 4.4,
-                LocationName = "Luxor"
+                LocationName = "Luxor",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -132,7 +146,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-952274855",
                 PricePerHour = 6000,
                 Rate = 4.1,
-                LocationName = "Luxor"
+                LocationName = "Luxor",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -148,7 +164,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-952380425",
                 PricePerHour = 7000,
                 Rate = 4.6,
-                LocationName = "Luxor"
+                LocationName = "Luxor",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -163,7 +181,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0-1016649967",
                 PricePerHour = 9000,
                 Rate = 3.7,
-                LocationName = "Luxor"
+                LocationName = "Luxor",
+                Longitude = null,
+                Latitude = null
             },
             // Aswan
             new Hotel
@@ -179,7 +199,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "011 18837500",
                 PricePerHour = 9000,
                 Rate = 4.3,
-                LocationName = "Aswan"
+                LocationName = "Aswan",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -194,7 +216,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "20 97-231-7400",
                 PricePerHour = 8500,
                 Rate = 4.0,
-                LocationName = "Aswan"
+                LocationName = "Aswan",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -209,7 +233,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "097 2328828",
                 PricePerHour = 13000,
                 Rate = 4.8,
-                LocationName = "Aswan"
+                LocationName = "Aswan",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -224,7 +250,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "011 12175285",
                 PricePerHour = 7000,
                 Rate = 3.6,
-                LocationName = "Aswan"
+                LocationName = "Aswan",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -239,7 +267,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "097 2484001",
                 PricePerHour = 7000,
                 Rate = 4.2,
-                LocationName = "Aswan"
+                LocationName = "Aswan",
+                Longitude = null,
+                Latitude = null
             },
             // Fayoum
             new Hotel
@@ -256,7 +286,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "084 2981200",
                 PricePerHour = 10000,
                 Rate = 4.5,
-                LocationName = "Fayoum"
+                LocationName = "Fayoum",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -271,7 +303,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "010 05383653",
                 PricePerHour = 7000,
                 Rate = 3.9,
-                LocationName = "Fayoum"
+                LocationName = "Fayoum",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -286,7 +320,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "010 03535100",
                 PricePerHour = 6000,
                 Rate = 4.1,
-                LocationName = "Fayoum"
+                LocationName = "Fayoum",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -301,7 +337,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01080537444",
                 PricePerHour = 4000,
                 Rate = 3.4,
-                LocationName = "Fayoum"
+                LocationName = "Fayoum",
+                Longitude = null,
+                Latitude = null
             },
             // Port Said
             new Hotel
@@ -317,7 +355,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01278641045",
                 PricePerHour = 2000,
                 Rate = 3.2,
-                LocationName = "Port Said"
+                LocationName = "Port Said",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -332,7 +372,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "066 3200511",
                 PricePerHour = 6000,
                 Rate = 4.3,
-                LocationName = "Port Said"
+                LocationName = "Port Said",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -347,7 +389,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "066 3267550",
                 PricePerHour = 3500,
                 Rate = 3.8,
-                LocationName = "Port Said"
+                LocationName = "Port Said",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -362,7 +406,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "012 22111321",
                 PricePerHour = 3100,
                 Rate = 4.0,
-                LocationName = "Port Said"
+                LocationName = "Port Said",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -378,7 +424,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0663456669",
                 PricePerHour = 2500,
                 Rate = 3.5,
-                LocationName = "Port Said"
+                LocationName = "Port Said",
+                Longitude = null,
+                Latitude = null
             },
             // Ismailia
             new Hotel
@@ -394,7 +442,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "010 94888121",
                 PricePerHour = 5500,
                 Rate = 4.1,
-                LocationName = "Ismailia"
+                LocationName = "Ismailia",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -409,7 +459,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01060779118",
                 PricePerHour = 5600,
                 Rate = 4.4,
-                LocationName = "Ismailia"
+                LocationName = "Ismailia",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -424,7 +476,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "011 52287777",
                 PricePerHour = 3900,
                 Rate = 3.7,
-                LocationName = "Ismailia"
+                LocationName = "Ismailia",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -439,7 +493,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01227011086",
                 PricePerHour = 4700,
                 Rate = 4.2,
-                LocationName = "Ismailia"
+                LocationName = "Ismailia",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -455,7 +511,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0792807762",
                 PricePerHour = 2600,
                 Rate = 3.3,
-                LocationName = "Ismailia"
+                LocationName = "Ismailia",
+                Longitude = null,
+                Latitude = null
             },
             // Marsa Matrouh
             new Hotel
@@ -471,7 +529,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "046 4938696",
                 PricePerHour = 1570,
                 Rate = 3.1,
-                LocationName = "Marsa Matrouh"
+                LocationName = "Marsa Matrouh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -486,7 +546,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "011 00101919",
                 PricePerHour = 30500,
                 Rate = 4.9,
-                LocationName = "Marsa Matrouh"
+                LocationName = "Marsa Matrouh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -501,7 +563,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "012 72409648",
                 PricePerHour = 2300,
                 Rate = 3.8,
-                LocationName = "Marsa Matrouh"
+                LocationName = "Marsa Matrouh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -516,7 +580,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+20 100 981 5908",
                 PricePerHour = 7500,
                 Rate = 4.3,
-                LocationName = "Marsa Matrouh"
+                LocationName = "Marsa Matrouh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -531,7 +597,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "010 66699942",
                 PricePerHour = 3400,
                 Rate = 4.0,
-                LocationName = "Marsa Matrouh"
+                LocationName = "Marsa Matrouh",
+                Longitude = null,
+                Latitude = null
             },
             // Hurghada
             new Hotel
@@ -547,7 +615,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "065 3200021",
                 PricePerHour = 10000,
                 Rate = 4.6,
-                LocationName = "Hurghada"
+                LocationName = "Hurghada",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -563,7 +633,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "012 78575677",
                 PricePerHour = 4400,
                 Rate = 3.9,
-                LocationName = "Hurghada"
+                LocationName = "Hurghada",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -578,7 +650,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "011 11167642",
                 PricePerHour = 3900,
                 Rate = 3.7,
-                LocationName = "Hurghada"
+                LocationName = "Hurghada",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -593,7 +667,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "653557868",
                 PricePerHour = 1800,
                 Rate = 3.4,
-                LocationName = "Hurghada"
+                LocationName = "Hurghada",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -608,7 +684,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "065 3546692",
                 PricePerHour = 2300,
                 Rate = 3.6,
-                LocationName = "Hurghada"
+                LocationName = "Hurghada",
+                Longitude = null,
+                Latitude = null
             },
             // Alexandria
             new Hotel
@@ -624,7 +702,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "035419330",
                 PricePerHour = 5000,
                 Rate = 4.2,
-                LocationName = "Alexandria"
+                LocationName = "Alexandria",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -640,7 +720,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "035442380",
                 PricePerHour = 3400,
                 Rate = 3.9,
-                LocationName = "Alexandria"
+                LocationName = "Alexandria",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -655,7 +737,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "033786100",
                 PricePerHour = 2900,
                 Rate = 3.5,
-                LocationName = "Alexandria"
+                LocationName = "Alexandria",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -671,7 +755,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "034808308",
                 PricePerHour = 1100,
                 Rate = 3.0,
-                LocationName = "Alexandria"
+                LocationName = "Alexandria",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -687,7 +773,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01001710737",
                 PricePerHour = 4000,
                 Rate = 4.4,
-                LocationName = "Alexandria"
+                LocationName = "Alexandria",
+                Longitude = null,
+                Latitude = null
             },
             // Suez
             new Hotel
@@ -703,7 +791,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01201680000",
                 PricePerHour = 3700,
                 Rate = 3.8,
-                LocationName = "Suez"
+                LocationName = "Suez",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -718,7 +808,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+20226775732",
                 PricePerHour = 1800,
                 Rate = 3.5,
-                LocationName = "Suez"
+                LocationName = "Suez",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -733,7 +825,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0623191554",
                 PricePerHour = 1000,
                 Rate = 3.2,
-                LocationName = "Suez"
+                LocationName = "Suez",
+                Longitude = null,
+                Latitude = null
             },
             // Sharm El-Sheikh
             new Hotel
@@ -749,7 +843,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0693601091",
                 PricePerHour = 7300,
                 Rate = 4.3,
-                LocationName = "Sharm El-Sheikh"
+                LocationName = "Sharm El-Sheikh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -763,7 +859,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+20693710121",
                 PricePerHour = 8600,
                 Rate = 4.7,
-                LocationName = "Sharm El-Sheikh"
+                LocationName = "Sharm El-Sheikh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -778,7 +876,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "0693600172",
                 PricePerHour = 4400,
                 Rate = 4.0,
-                LocationName = "Sharm El-Sheikh"
+                LocationName = "Sharm El-Sheikh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -794,7 +894,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "01223932782",
                 PricePerHour = 6400,
                 Rate = 4.1,
-                LocationName = "Sharm El-Sheikh"
+                LocationName = "Sharm El-Sheikh",
+                Longitude = null,
+                Latitude = null
             },
             new Hotel
             {
@@ -809,7 +911,9 @@ class HotelConfiguration : IEntityTypeConfiguration<Hotel>
                 PhoneNumber = "+20693600081",
                 PricePerHour = 5700,
                 Rate = 4.5,
-                LocationName = "Sharm El-Sheikh"
+                LocationName = "Sharm El-Sheikh",
+                Longitude = null,
+                Latitude = null
             }
         };
 

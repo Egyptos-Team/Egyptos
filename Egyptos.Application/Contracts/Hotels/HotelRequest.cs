@@ -10,5 +10,7 @@ public record HotelRequest(
      string Facebook,
      string PhoneNumber,
      double PricePerHour,
-     double Rate
+     double Rate,
+     double? Longitude,
+     double? Latitude
 );
