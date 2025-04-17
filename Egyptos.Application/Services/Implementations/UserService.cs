@@ -16,6 +16,13 @@ public class UserService(UserManager<ApplicationUser> _userManager,ApplicationDb
             .ProjectToType<UserProfileResponse>()
             .SingleAsync();
 
+        var user2 = await _userManager.Users
+            .Where(x => x.Id == userId)
+            .SingleAsync();
+
+        var role = await _userManager.GetRolesAsync(user2);
+        user.Role = role;
+
         return Result.Success(user);
     }
     public async Task<Result> UpdateProfileAsync(string userId, UpdateProfileRequest request)
