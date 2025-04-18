@@ -21,7 +21,7 @@ public class EventDatesController(IEventDateService eventDateService) : Controll
     {
         var result = await _eventDateService.AddAsync(request);
 
-        return CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value);
+        return result.IsSuccess ? CreatedAtAction(nameof(Get), new { id = result.Value?.Id }, result.Value) : result.ToProblem() ;
     }
 
     [HttpGet("")]
