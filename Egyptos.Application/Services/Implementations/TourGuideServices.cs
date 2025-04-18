@@ -4,7 +4,7 @@ using TourGuide = Egyptos.Domain.Entities.TourGuide;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class TourGuideServices(ApplicationDbContext context) : ITourGuideServices
+public class TourGuideServices(ApplicationDbContext context, UserManager<ApplicationUser> _userManager) : ITourGuideServices
 {
     private readonly ApplicationDbContext _context = context;
 
@@ -20,6 +20,9 @@ public class TourGuideServices(ApplicationDbContext context) : ITourGuideService
             return Result.Failure<CreateTourGuideResponse>(TourGuideErrors.DuplicatedUserId);
 
         var tourGuide = request.Adapt<TourGuide>();
+
+        var user = await _userManager.FindByIdAsync(request.UserId);
+        _userManager.AddToRoleAsync(user, "TourGuide").Wait();
 
         await _context.AddAsync(tourGuide);
         await _context.SaveChangesAsync();
@@ -62,6 +65,14 @@ public class TourGuideServices(ApplicationDbContext context) : ITourGuideService
         var isExstingTourGuide = await _context.TourGuides.AnyAsync(x => x.Id == tourGuidId);
         if (!isExstingTourGuide)
             return Result.Failure(TourGuideErrors.TourGuideNotFount);
+
+        var userId = await _context.TourGuides
+            .Where(x => x.Id == tourGuidId)
+            .Select(x => x.UserId)
+            .FirstAsync();
+
+        var user = await _userManager.FindByIdAsync(userId);
+        _userManager.RemoveFromRoleAsync(user, "TourGuide").Wait();
 
         _context.TourGuides.Remove(new TourGuide { Id = tourGuidId });
         await _context.SaveChangesAsync();
