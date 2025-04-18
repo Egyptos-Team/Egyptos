@@ -57,7 +57,10 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
     {
         if (await _context.EventDates.FindAsync(eventDateId) is not { } eventDate)
             return Result.Failure<EventDateResponse>(EventErrors.EventDateNotFount);
-        
+
+        if (request.Images.Count == 0)
+            return Result.Failure<EventDateResponse>(EventErrors.ImageIsRequire);
+
         eventDate = request.Adapt(eventDate);
 
         var currentImages = await _context.EventImages
