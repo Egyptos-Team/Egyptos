@@ -13,6 +13,8 @@ public record AreaResponse
    string Address ,
    string ImageUrl ,
    int  AreaTypeId ,
+   double? Latitude,
+   double? Longitude,
    List<AreaImagesResponse> AreaImages,
    List<WorkingResponse> Working
 

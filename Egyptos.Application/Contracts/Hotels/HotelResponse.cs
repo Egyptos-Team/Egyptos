@@ -11,6 +11,8 @@ public record HotelResponse(
      string PhoneNumber,
      double Rate,
      string LocationName,
-     double PricePerHour
+     double PricePerHour,
+     double? Longitude,
+     double? Latitude
 
 );

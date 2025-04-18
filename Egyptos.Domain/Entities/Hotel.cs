@@ -14,5 +14,7 @@ public class Hotel
     public string PhoneNumber { get; set; } = null!;
     public double PricePerHour { get; set; }
 
+    public double? Longitude { get; set; }
+    public double? Latitude { get; set; }
     public ICollection<BookingHotel> BookingHotels { get; set; } = [];
 }
