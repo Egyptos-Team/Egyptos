@@ -46,7 +46,6 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpGet("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetById(int bookingId)
     {
         var result = await _booking.GetAsync(bookingId);
