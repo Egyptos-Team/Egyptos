@@ -1,5 +1,6 @@
 using Egyptos.Api;
 using Egyptos.Application;
+using Egyptos.Application.Services.Implementations;
 using Egyptos.Infrastructure;
 using Hangfire;
 using HangfireBasicAuthenticationFilter;
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddHttpClient<ChatMessageService>();
 
 StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
 

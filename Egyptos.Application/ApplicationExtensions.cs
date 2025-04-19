@@ -60,6 +60,7 @@ public static class ApplicationExtensions
         services.AddScoped<IWorkingService, WorkingService>();
         services.AddScoped<IAreaWorkingService, AreaWorkingService>();
         services.AddScoped<IItemsService, ItemsService>();
+        services.AddScoped<IChatMessageService, ChatMessageService>();
 
 
         return services;
