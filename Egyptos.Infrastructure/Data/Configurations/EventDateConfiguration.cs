@@ -25,10 +25,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 2,
-                StartDate = new DateTime(2025, 4, 15, 18, 0, 0),
-                EndDate = new DateTime(2025, 4, 20, 23, 0, 0),
-                StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 4, 10, 23, 59, 0),
+                StartDate = new DateTime(2025, 10, 15, 18, 0, 0),
+                EndDate = new DateTime(2025, 10, 20, 23, 0, 0),
+                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0),
                 Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
                 Location = "Alexandria, Egypt",
                 Price = 150,
@@ -46,7 +46,6 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Price = 120,
                 EventId = 3,
             },
-
             new EventDate
             {
                 Id = 4,
@@ -86,10 +85,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 7,
-                StartDate = new DateTime(2025, 3, 25, 18, 0, 0),
-                EndDate = new DateTime(2025, 4, 2, 23, 0, 0),
-                StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 3, 23, 23, 59, 0),
+                StartDate = new DateTime(2025, 10, 25, 18, 0, 0),
+                EndDate = new DateTime(2025, 11, 2, 23, 0, 0),
+                StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 8, 23, 23, 59, 0),
                 Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
                 Location = "Cairo, Egypt",
                 Price = 80,
@@ -100,7 +99,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Id = 8,
                 StartDate = new DateTime(2025, 8, 15, 12, 0, 0),
                 EndDate = new DateTime(2025, 8, 20, 23, 0, 0),
-                StartSubscription = new DateTime(2025, 7, 1, 0, 0, 0),
+                StartSubscription = new DateTime(2025, 7, 25, 0, 0, 0),
                 EndSubscription = new DateTime(2025, 8, 10, 23, 59, 0),
                 Description = "A vibrant summer festival with music, dance, and water activities along the Red Sea coast.",
                 Location = "Hurghada, Egypt",
@@ -131,7 +130,6 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Price = 300,
                 EventId = 10,
             },
-
             new EventDate
             {
                 Id = 11,
@@ -141,7 +139,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 EndSubscription = new DateTime(2025, 9, 20, 23, 59, 59),
                 Description = "Religious festival celebrating Prophet Muhammad’s birth.",
                 Location = "Al Azhar Mosque",
-                Price = 0,
+                Price = 200,
                 EventId = 11,
             },
             new EventDate
@@ -201,7 +199,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 EndSubscription = new DateTime(2025, 1, 30, 7, 50, 00),
                 Description = "​The Aswan International Cultural Festival is an annual event celebrating the rich heritage of Nubian culture through music, dance, and art.",
                 Location = "Aswan, Egypt",
-                Price = 500,
+                Price = 550,
                 EventId = 16,
             },
             new EventDate
@@ -219,10 +217,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 18,
-                StartDate = new DateTime(2025, 7, 15, 10, 00, 00),
-                EndDate = new DateTime(2025, 7, 28, 10, 00, 00),
-                StartSubscription = new DateTime(2025, 7, 1, 9, 55, 00),
-                EndSubscription = new DateTime(2025, 7, 13, 10, 00, 00),
+                StartDate = new DateTime(2025, 11, 15, 10, 00, 00),
+                EndDate = new DateTime(2025, 11, 28, 10, 00, 00),
+                StartSubscription = new DateTime(2025, 10, 1, 9, 55, 00),
+                EndSubscription = new DateTime(2025, 10, 13, 10, 00, 00),
                 Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
                 Location = "Alexandria, Egypt",
                 Price = 100,
@@ -255,10 +253,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 21,
-                StartDate = new DateTime(2025, 1, 6, 12, 00, 00),
-                EndDate = new DateTime(2025, 1, 7, 12, 00, 00),
-                StartSubscription = new DateTime(2025, 1, 1, 8, 00, 00),
-                EndSubscription = new DateTime(2025, 1, 5, 8, 00, 00),
+                StartDate = new DateTime(2026, 1, 6, 12, 00, 00),
+                EndDate = new DateTime(2026, 1, 7, 12, 00, 00),
+                StartSubscription = new DateTime(2026, 1, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2026, 1, 5, 8, 00, 00),
                 Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
                 Location = "Egypt",
                 Price = 100,
@@ -267,10 +265,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 22,
-                StartDate = new DateTime(2025, 4, 16, 11, 00, 00),
-                EndDate = new DateTime(2025, 4, 26, 10, 00, 00),
-                StartSubscription = new DateTime(2025, 4, 1, 8, 00, 00),
-                EndSubscription = new DateTime(2025, 4, 13, 8, 00, 00),
+                StartDate = new DateTime(2026, 4, 16, 11, 00, 00),
+                EndDate = new DateTime(2026, 4, 26, 10, 00, 00),
+                StartSubscription = new DateTime(2026, 4, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2026, 4, 13, 8, 00, 00),
                 Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
                 Location = "Red Sea, Egypt",
                 Price = 500,
@@ -279,10 +277,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 23,
-                StartDate = new DateTime(2025, 7, 16, 9, 45, 00),
-                EndDate = new DateTime(2025, 7, 21, 10, 55, 00),
-                StartSubscription = new DateTime(2025, 7, 3, 8, 00, 00),
-                EndSubscription = new DateTime(2025, 7, 12, 8, 00, 00),
+                StartDate = new DateTime(2026, 7, 16, 9, 45, 00),
+                EndDate = new DateTime(2026, 7, 21, 10, 55, 00),
+                StartSubscription = new DateTime(2026, 7, 3, 8, 00, 00),
+                EndSubscription = new DateTime(2026, 7, 12, 8, 00, 00),
                 Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
                 Location = "Luxor, Egypt",
                 Price = 450,
@@ -291,10 +289,10 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 24,
-                StartDate = new DateTime(2025, 2, 8, 11, 00, 00),
-                EndDate = new DateTime(2025, 2, 11, 12, 00, 00),
-                StartSubscription = new DateTime(2025, 2, 1, 8, 00, 00),
-                EndSubscription = new DateTime(2025, 2, 6, 8, 00, 00),
+                StartDate = new DateTime(2026, 2, 8, 11, 00, 00),
+                EndDate = new DateTime(2026, 2, 11, 12, 00, 00),
+                StartSubscription = new DateTime(2026, 2, 1, 8, 00, 00),
+                EndSubscription = new DateTime(2026, 2, 6, 8, 00, 00),
                 Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
                 Location = "Cairo, Egypt",
                 Price = 150,
@@ -309,7 +307,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 EndSubscription = new DateTime(2025, 11, 25, 12, 00, 00),
                 Description = " This conference aims to explore various aspects of Islam and its cultural manifestations.​",
                 Location = "Alexandria, Egypt",
-                Price = 200,
+                Price = 250,
                 EventId = 25,
             },
         };
