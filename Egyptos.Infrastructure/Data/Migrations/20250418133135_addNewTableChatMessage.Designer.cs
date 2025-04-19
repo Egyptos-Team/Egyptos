@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250418133135_addNewTableChatMessage")]
+    partial class addNewTableChatMessage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -4874,1338 +4877,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasIndex("WorkingId");
 
                     b.ToTable("AreaWorkings");
-
-                    b.HasData(
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 1,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 2,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 3,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 4,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 5,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 6,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 7,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 8,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 9,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 10,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 11,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 12,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 13,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 14,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 15,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 16,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 17,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 18,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 19,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 20,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 21,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 22,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 23,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 24,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 25,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 26,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 27,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 28,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 29,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 30,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 71,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 72,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 73,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 74,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 75,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 76,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 77,
-                            WorkingId = 7
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 1
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 2
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 3
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 4
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 5
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 6
-                        },
-                        new
-                        {
-                            AreaId = 78,
-                            WorkingId = 7
-                        });
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingEventDate", b =>
@@ -6635,14 +5306,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 2,
                             Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
-                            EndDate = new DateTime(2025, 10, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 4, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
                             Price = 150.0,
-                            StartDate = new DateTime(2025, 10, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6700,14 +5371,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 7,
                             Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
-                            EndDate = new DateTime(2025, 11, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 8, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 3, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             IsActiveToSubscribe = false,
                             Location = "Cairo, Egypt",
                             Price = 80.0,
-                            StartDate = new DateTime(2025, 10, 25, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 3, 25, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6720,7 +5391,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Location = "Hurghada, Egypt",
                             Price = 150.0,
                             StartDate = new DateTime(2025, 8, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartSubscription = new DateTime(2025, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6757,7 +5428,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 11,
                             IsActiveToSubscribe = false,
                             Location = "Al Azhar Mosque",
-                            Price = 200.0,
+                            Price = 0.0,
                             StartDate = new DateTime(2025, 9, 26, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -6822,7 +5493,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 16,
                             IsActiveToSubscribe = false,
                             Location = "Aswan, Egypt",
-                            Price = 550.0,
+                            Price = 500.0,
                             StartDate = new DateTime(2025, 2, 2, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 1, 19, 7, 50, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -6843,14 +5514,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 18,
                             Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
-                            EndDate = new DateTime(2025, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 7, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 7, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 18,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
                             Price = 100.0,
-                            StartDate = new DateTime(2025, 11, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 10, 1, 9, 55, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 7, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 7, 1, 9, 55, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6882,53 +5553,53 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 21,
                             Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
-                            EndDate = new DateTime(2026, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 21,
                             IsActiveToSubscribe = false,
                             Location = "Egypt",
                             Price = 100.0,
-                            StartDate = new DateTime(2026, 1, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 1, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 22,
                             Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
-                            EndDate = new DateTime(2026, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 22,
                             IsActiveToSubscribe = false,
                             Location = "Red Sea, Egypt",
                             Price = 500.0,
-                            StartDate = new DateTime(2026, 4, 16, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 4, 16, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 23,
                             Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
-                            EndDate = new DateTime(2026, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 23,
                             IsActiveToSubscribe = false,
                             Location = "Luxor, Egypt",
                             Price = 450.0,
-                            StartDate = new DateTime(2026, 7, 16, 9, 45, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 7, 3, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 7, 16, 9, 45, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 7, 3, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 24,
                             Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
-                            EndDate = new DateTime(2026, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 24,
                             IsActiveToSubscribe = false,
                             Location = "Cairo, Egypt",
                             Price = 150.0,
-                            StartDate = new DateTime(2026, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6939,7 +5610,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 25,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
-                            Price = 250.0,
+                            Price = 200.0,
                             StartDate = new DateTime(2025, 11, 29, 1, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 11, 20, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         });
@@ -11558,57 +10229,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Workings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Day = "Saturday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(12, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Day = "Sunday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Day = "Monday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Day = "Tuesday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Day = "Wednesday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Day = "Thursday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(8, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Day = "Friday",
-                            EndTime = new TimeOnly(20, 0, 0),
-                            StartTime = new TimeOnly(13, 0, 0)
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
