@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250419104213_RemoveSameDataInEventImage")]
+    partial class RemoveSameDataInEventImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6350,27 +6353,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.ToTable("BookingTrips");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.ChatMessage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BotResponse")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserMessage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ChatMessages");
-                });
-
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -7227,18 +7209,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         },
                         new
                         {
-                            Id = 44,
-                            EventId = 16,
-                            ImageUrl = "EventImages/44.jpg"
-                        },
-                        new
-                        {
-                            Id = 45,
-                            EventId = 16,
-                            ImageUrl = "EventImages/45.jpg"
-                        },
-                        new
-                        {
                             Id = 46,
                             EventId = 17,
                             ImageUrl = "EventImages/46.jpg"
@@ -7380,24 +7350,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Id = 69,
                             EventId = 24,
                             ImageUrl = "EventImages/69.jpg"
-                        },
-                        new
-                        {
-                            Id = 70,
-                            EventId = 25,
-                            ImageUrl = "EventImages/70.jpg"
-                        },
-                        new
-                        {
-                            Id = 71,
-                            EventId = 25,
-                            ImageUrl = "EventImages/71.jpg"
-                        },
-                        new
-                        {
-                            Id = 72,
-                            EventId = 25,
-                            ImageUrl = "EventImages/72.jpg"
                         },
                         new
                         {

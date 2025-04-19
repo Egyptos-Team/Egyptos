@@ -30,4 +30,7 @@ public class EventErrors
 
     public static readonly Error BookingNotFount = new("BookingEvent.BookingNotFount",
         "No Booking date was found with the given UserId & EventId", StatusCodes.Status404NotFound);
+
+    public static readonly Error ImageIsRequire = new("EventDate.ImageIsRequire",
+       "Images Is Require", StatusCodes.Status400BadRequest);
 }

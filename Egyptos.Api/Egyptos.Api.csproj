@@ -23,6 +23,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Egyptos.Application\Egyptos.Application.csproj" />
+      <ProjectReference Include="..\Egyptos.Domain\Egyptos.Domain.csproj" />
       <ProjectReference Include="..\Egyptos.Infrastructure\Egyptos.Infrastructure.csproj" />
     </ItemGroup>
 

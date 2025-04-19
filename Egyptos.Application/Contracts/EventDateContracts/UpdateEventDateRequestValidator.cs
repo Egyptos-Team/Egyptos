@@ -28,7 +28,8 @@ public class UpdateEventDateRequestValidator : AbstractValidator<UpdateEventDate
         RuleFor(s => s.Images)
             .NotNull()
             .Must(ValidateFile)
-            .WithMessage("Invalid file. Allowed file types are .jpg, .jpeg, .png, and max size is 5MB.");
+            .WithMessage("Invalid file. Allowed file types are .jpg, .jpeg, .png, and max size is 5MB.")
+            .When(x => x.Images != null);
 
         RuleFor(x => x)
                .Must(HasValidDates)

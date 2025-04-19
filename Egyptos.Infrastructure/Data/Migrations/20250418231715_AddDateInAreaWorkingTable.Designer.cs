@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250418231715_AddDateInAreaWorkingTable")]
+    partial class AddDateInAreaWorkingTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6350,27 +6353,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.ToTable("BookingTrips");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.ChatMessage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BotResponse")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserMessage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ChatMessages");
-                });
-
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -6635,14 +6617,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 2,
                             Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
-                            EndDate = new DateTime(2025, 10, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 4, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
                             Price = 150.0,
-                            StartDate = new DateTime(2025, 10, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 4, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6700,14 +6682,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 7,
                             Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
-                            EndDate = new DateTime(2025, 11, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 8, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 3, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             IsActiveToSubscribe = false,
                             Location = "Cairo, Egypt",
                             Price = 80.0,
-                            StartDate = new DateTime(2025, 10, 25, 18, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 3, 25, 18, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6720,7 +6702,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Location = "Hurghada, Egypt",
                             Price = 150.0,
                             StartDate = new DateTime(2025, 8, 15, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartSubscription = new DateTime(2025, 7, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6757,7 +6739,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 11,
                             IsActiveToSubscribe = false,
                             Location = "Al Azhar Mosque",
-                            Price = 200.0,
+                            Price = 0.0,
                             StartDate = new DateTime(2025, 9, 26, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 8, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -6822,7 +6804,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 16,
                             IsActiveToSubscribe = false,
                             Location = "Aswan, Egypt",
-                            Price = 550.0,
+                            Price = 500.0,
                             StartDate = new DateTime(2025, 2, 2, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 1, 19, 7, 50, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -6843,14 +6825,14 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 18,
                             Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
-                            EndDate = new DateTime(2025, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 10, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 7, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 7, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 18,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
                             Price = 100.0,
-                            StartDate = new DateTime(2025, 11, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 10, 1, 9, 55, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 7, 15, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 7, 1, 9, 55, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6882,53 +6864,53 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             Id = 21,
                             Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
-                            EndDate = new DateTime(2026, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 21,
                             IsActiveToSubscribe = false,
                             Location = "Egypt",
                             Price = 100.0,
-                            StartDate = new DateTime(2026, 1, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 1, 6, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 1, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 22,
                             Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
-                            EndDate = new DateTime(2026, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 22,
                             IsActiveToSubscribe = false,
                             Location = "Red Sea, Egypt",
                             Price = 500.0,
-                            StartDate = new DateTime(2026, 4, 16, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 4, 16, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 4, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 23,
                             Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
-                            EndDate = new DateTime(2026, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 23,
                             IsActiveToSubscribe = false,
                             Location = "Luxor, Egypt",
                             Price = 450.0,
-                            StartDate = new DateTime(2026, 7, 16, 9, 45, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 7, 3, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 7, 16, 9, 45, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 7, 3, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 24,
                             Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
-                            EndDate = new DateTime(2026, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2026, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndDate = new DateTime(2025, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            EndSubscription = new DateTime(2025, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 24,
                             IsActiveToSubscribe = false,
                             Location = "Cairo, Egypt",
                             Price = 150.0,
-                            StartDate = new DateTime(2026, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2026, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
+                            StartDate = new DateTime(2025, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartSubscription = new DateTime(2025, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -6939,7 +6921,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             EventId = 25,
                             IsActiveToSubscribe = false,
                             Location = "Alexandria, Egypt",
-                            Price = 250.0,
+                            Price = 200.0,
                             StartDate = new DateTime(2025, 11, 29, 1, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2025, 11, 20, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         });

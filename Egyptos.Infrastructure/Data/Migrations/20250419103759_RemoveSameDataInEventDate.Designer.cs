@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250419103759_RemoveSameDataInEventDate")]
+    partial class RemoveSameDataInEventDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -6350,27 +6353,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.ToTable("BookingTrips");
                 });
 
-            modelBuilder.Entity("Egyptos.Domain.Entities.ChatMessage", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BotResponse")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserMessage")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ChatMessages");
-                });
-
             modelBuilder.Entity("Egyptos.Domain.Entities.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -6815,19 +6797,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         },
                         new
                         {
-                            Id = 16,
-                            Description = "​The Aswan International Cultural Festival is an annual event celebrating the rich heritage of Nubian culture through music, dance, and art.",
-                            EndDate = new DateTime(2025, 2, 16, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 1, 30, 7, 50, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 16,
-                            IsActiveToSubscribe = false,
-                            Location = "Aswan, Egypt",
-                            Price = 550.0,
-                            StartDate = new DateTime(2025, 2, 2, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 1, 19, 7, 50, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
                             Id = 17,
                             Description = "​The El Gouna International Squash Open is a premier event on the Professional Squash Association (PSA) World Tour, attracting top players from around the globe.",
                             EndDate = new DateTime(2025, 4, 18, 12, 0, 0, 0, DateTimeKind.Unspecified),
@@ -6929,19 +6898,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Price = 150.0,
                             StartDate = new DateTime(2026, 2, 8, 11, 0, 0, 0, DateTimeKind.Unspecified),
                             StartSubscription = new DateTime(2026, 2, 1, 8, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Description = " This conference aims to explore various aspects of Islam and its cultural manifestations.​",
-                            EndDate = new DateTime(2025, 11, 29, 10, 50, 0, 0, DateTimeKind.Unspecified),
-                            EndSubscription = new DateTime(2025, 11, 25, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventId = 25,
-                            IsActiveToSubscribe = false,
-                            Location = "Alexandria, Egypt",
-                            Price = 250.0,
-                            StartDate = new DateTime(2025, 11, 29, 1, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartSubscription = new DateTime(2025, 11, 20, 8, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

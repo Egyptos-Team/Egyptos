@@ -9,7 +9,14 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
 
     public async Task<Result<EventDateResponse>> AddAsync(CreateEventDateRequest request)
     {
+        if (await _context.Events.FindAsync(request.EventId) is not { } @event)
+            return Result.Failure<EventDateResponse>(EventErrors.EventNotFount);
+
+        if (request.Images.Count == 0)
+            return Result.Failure<EventDateResponse>(EventErrors.ImageIsRequire);
+
         var eventDate = request.Adapt<EventDate>();
+
 
         foreach (var image in request.Images)
         {
@@ -50,7 +57,10 @@ public class EventDateService(ApplicationDbContext context, IFileService fileSer
     {
         if (await _context.EventDates.FindAsync(eventDateId) is not { } eventDate)
             return Result.Failure<EventDateResponse>(EventErrors.EventDateNotFount);
-        
+
+        if (request.Images.Count == 0)
+            return Result.Failure<EventDateResponse>(EventErrors.ImageIsRequire);
+
         eventDate = request.Adapt(eventDate);
 
         var currentImages = await _context.EventImages
