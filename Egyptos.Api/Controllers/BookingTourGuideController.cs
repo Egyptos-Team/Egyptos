@@ -14,7 +14,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
 
     [HttpPost("")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+    //[Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookATicket([FromBody] BookingTourGuideRequest request)
     {
         var result = await _bookingTourGuideService.BookATicketAsync(User.GetUserId(), request);
@@ -31,7 +31,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     }
 
     [HttpGet("")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+    //[Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookedByUser()
     {
         var result = await _bookingTourGuideService.BookedByUserAsync(User.GetUserId());

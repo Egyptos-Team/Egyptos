@@ -63,6 +63,11 @@ public class MappingProfile : IRegister
             .Map(des => des.BookingEventDates, src => src.BookingEventDates)
             .Map(des => des.BookingTourGuides, src => src.BookingTourGuides);
 
+        config.NewConfig<BookingTourGuide, BookingTourGuideResponse>()
+            .Map(des => des.TourGuideFirstName, src => src.TourGuide.User.FirstName)
+            .Map(des => des.TourGuideLastName, src => src.TourGuide.User.LastName)
+            .Map(des => des.UserFirstName, src => src.User.FirstName)
+            .Map(des => des.UserLastName, src => src.User.LastName);
         //.ForMember(dest => dest.Working, opt => opt.MapFrom(src => src.AreaWorkings.Select(aw => aw.Working).ToList()));
 
     }
