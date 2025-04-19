@@ -3,6 +3,7 @@ using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.TourGuide;
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Hangfire;
 using static Egyptos.Domain.Consts.DefaultRoles;
@@ -46,6 +47,7 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
     }
     public async Task<IEnumerable<BookingTourGuideResponse>> GetAllAsync() =>
            await _context.BookingTourGuides
+                .Include(x => x.User)
                 .Include(x=> x.TourGuide)
                 .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
@@ -58,7 +60,9 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 
         var bookingTourGuide = await _context.BookingTourGuides
                 .Where(x => x.UserId == userId)
-                .Include(x => x.TourGuide)                                
+                .Include(x => x.User)
+                .Include(x => x.TourGuide)
+                .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
                 .ToListAsync();
 
@@ -72,8 +76,9 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 
         var bookingTourGuide = await _context.BookingTourGuides
                 .Where(x => x.TourGuideId == tourGuideId)
+                .Include(x => x.User)
                 .Include(x => x.TourGuide)
-                .ThenInclude(x => x.User)
+                .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
                 .ToListAsync();
 
@@ -90,10 +95,12 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 
         var bookingTourGuide = await _context.BookingTourGuides
                 .Where(x => x.TourGuideId == tourGuid.Id)
+                .Include(x => x.User)
                 .Include(x => x.TourGuide)
-                .ThenInclude(x => x.User)
+                .ProjectToType<BookingTourGuideResponse>()
                 .AsNoTracking()
                 .ToListAsync();
+
 
         return Result.Success(bookingTourGuide.Adapt<List<BookingTourGuideResponse>>());
     }

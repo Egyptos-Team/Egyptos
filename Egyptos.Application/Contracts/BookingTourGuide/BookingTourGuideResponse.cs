@@ -8,7 +8,9 @@ public class BookingTourGuideResponse
     public int TourGuideId { get; set; }
     public string TourGuideFirstName { get; set; }
     public string TourGuideLastName { get; set; }
-    public string UserId { get; set; } 
+    public string UserId { get; set; }
+    public string UserFirstName { get; set; }
+    public string UserLastName { get; set; }
 
     public double TotalPrice { get; set; }
 
