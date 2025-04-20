@@ -25,6 +25,6 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 PublicTransportId=1,
             },
         };
-        builder.HasData(Trips);
+        builder.HasData();
     }
 }
