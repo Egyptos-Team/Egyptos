@@ -17,6 +17,7 @@ namespace Egyptos.Api.Controllers
 
         [HttpGet("")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> GetAll()
         {
             var result = await _chatMessageService.GetAllAsync();
@@ -27,6 +28,7 @@ namespace Egyptos.Api.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> Get(int id)
         {
             var result = await _chatMessageService.GetAsync(id);
@@ -38,7 +40,8 @@ namespace Egyptos.Api.Controllers
         [HttpPost("")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> Create([FromBody]ChatMessageRequest question)
+        [Authorize]
+        public async Task<IActionResult> Ask([FromBody]ChatMessageRequest question)
         {
             var result = await _chatMessageService.AskAsync(question);
 
@@ -50,7 +53,7 @@ namespace Egyptos.Api.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-       // [Authorize(Roles = DefaultRoles.Admin.Name)]
+        [Authorize(Roles = DefaultRoles.Admin.Name)]
         public async Task<IActionResult> Delete(int id)
         {
             var result = await _chatMessageService.DeleteAsync(id);
