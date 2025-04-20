@@ -40,7 +40,7 @@ namespace Egyptos.Api.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Create([FromBody]ChatMessageRequest question)
         {
-            var result = await _chatMessageService.CreateAsync(question);
+            var result = await _chatMessageService.AskAsync(question);
 
             return result.IsSuccess
                  ? Ok(result.Value)

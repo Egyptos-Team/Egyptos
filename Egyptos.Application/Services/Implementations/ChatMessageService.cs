@@ -1,16 +1,18 @@
-﻿
-using Egyptos.Application.Contracts.ChatMessage;
+﻿using Egyptos.Application.Contracts.ChatMessage;
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Egyptos.Application.Services.Implementations;
-public class ChatMessageService(ApplicationDbContext context) : IChatMessageService
+public class ChatMessageService : IChatMessageService
 {
-    private readonly ApplicationDbContext _context = context;
+    private readonly ApplicationDbContext _context;
+    private readonly IWebHostEnvironment _webHostEnvironment;
 
     private static readonly string ApiKey = "AIzaSyCZ-1D3PVny0WD2Qzz_2rYi-C2a7VWv24Q";
     private static readonly string ApiEndpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent";
-    private static readonly string JsonFilePath = "E:/projects/graduate/Egyptos-Team/Egyptos/Egyptos.Api/bin/Debug/net9.0/q.json";
+    private readonly string _jsonFilePath;
 
     class QAPair
     {
@@ -18,18 +20,28 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         public string answer { get; set; }
     }
 
+    // Inject IWebHostEnvironment to access wwwroot
+    public ChatMessageService(ApplicationDbContext context, IWebHostEnvironment webHostEnvironment)
+    {
+        _context = context;
+        _webHostEnvironment = webHostEnvironment;
 
-    static string Main(string request)
+        // Set the path to the JSON file in wwwroot
+        _jsonFilePath = Path.Combine(_webHostEnvironment.WebRootPath, "data", "q.json");
+    }
+
+    string Main(string request)
     {
         List<QAPair> qaContext;
         try
         {
-            string jsonContent = File.ReadAllText(JsonFilePath);
+            // Read the JSON file from wwwroot
+            string jsonContent = File.ReadAllText(_jsonFilePath);
             qaContext = JsonSerializer.Deserialize<List<QAPair>>(jsonContent);
         }
         catch (Exception ex)
         {
-            return $"Error loading context from {JsonFilePath}: {ex.Message} - Make sure the q.json file is in the same directory as the executable.";
+            return $"Error loading context from {_jsonFilePath}: {ex.Message} - Make sure the q.json file exists in the wwwroot/data directory.";
         }
 
         using var httpClient = new HttpClient();
@@ -142,14 +154,14 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         {
             contents = new[]
             {
-            new
-            {
-                parts = new[]
+                new
                 {
-                    new { text = prompt }
+                    parts = new[]
+                    {
+                        new { text = prompt }
+                    }
                 }
-            }
-        },
+            },
             generationConfig = new
             {
                 maxOutputTokens = 200,
@@ -183,15 +195,12 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
             return textElement.GetString() ?? "No text found in response";
         }
 
-        throw new Exception("Unexpected response format");
+        return ("Unexpected response format");
     }
-
-
 
     public async Task<Result<List<ChatMessageResponse>>> GetAllAsync()
     {
-
-        var chats= await _context.ChatMessages.AsNoTracking()
+        var chats = await _context.ChatMessages.AsNoTracking()
             .ProjectToType<ChatMessageResponse>()
             .ToListAsync();
         return Result.Success(chats);
@@ -205,9 +214,7 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         return Result.Success(chat.Adapt<ChatMessageResponse>());
     }
 
-
-
-    public async Task<Result<ChatMessageResponse>> CreateAsync(ChatMessageRequest request)
+    public async Task<Result<ChatMessageResponse>> AskAsync(ChatMessageRequest request)
     {
         var result = Main(request.Question);
 
@@ -226,9 +233,6 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         return Result.Success(row.Adapt<ChatMessageResponse>());
     }
 
-
-
-
     public async Task<Result> DeleteAsync(int id)
     {
         if (await _context.ChatMessages.FindAsync(id) is not { } chat)
@@ -240,6 +244,4 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
 
         return Result.Success();
     }
-
-   
 }

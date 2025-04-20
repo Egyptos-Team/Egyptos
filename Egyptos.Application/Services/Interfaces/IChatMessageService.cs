@@ -6,6 +6,6 @@ public interface IChatMessageService
 {
     Task<Result<List<ChatMessageResponse>>> GetAllAsync();
     Task<Result<ChatMessageResponse>> GetAsync(int id);
-    Task<Result<ChatMessageResponse>> CreateAsync(ChatMessageRequest request);
+    Task<Result<ChatMessageResponse>> AskAsync(ChatMessageRequest request);
     Task<Result> DeleteAsync(int id);
 }
