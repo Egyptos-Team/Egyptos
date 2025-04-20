@@ -144,7 +144,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> CancelBooking(int bookingId)
     {
         var result = await _booking.CancelBookingAsync(bookingId);
