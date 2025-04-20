@@ -29,6 +29,7 @@
 
     <ItemGroup>
       <Folder Include="wwwroot\AreaImages\" />
+      <Folder Include="wwwroot\PublicTransportmages\" />
       <Folder Include="wwwroot\PrivateTransports\Scoter\" />
     </ItemGroup>
 
