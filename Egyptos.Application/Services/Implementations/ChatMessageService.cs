@@ -41,7 +41,16 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
 
         try
         {
-            string context = PrepareContext(qaContext, question);
+            // First check for direct Q&A matches
+            var (qaResponse, qaScore) = FindQAMatch(qaContext, question);
+
+            if (qaResponse != null && qaScore > 0.7) // Higher threshold for direct matches
+            {
+                return qaResponse;
+            }
+
+            // Otherwise use Gemini API with context
+            string context = PrepareContext(qaContext);
             string answer = AskGeminiWithContext(httpClient, question, context);
             return answer;
         }
@@ -51,18 +60,15 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         }
     }
 
-    static string PrepareContext(List<QAPair> qaContext, string userQuestion)
+    static string PrepareContext(List<QAPair> qaContext)
     {
-        var relevantPairs = qaContext
-            .OrderByDescending(pair =>
-                CountMatchingWords(pair.question.ToLower(), userQuestion.ToLower()))
-            .Take(5)
-            .ToList();
-
+        // Format context similar to Python version
         StringBuilder contextBuilder = new StringBuilder();
-        contextBuilder.AppendLine("Here's some relevant information about Egypt:");
+        contextBuilder.AppendLine("Here are some common questions and answers about Egypt tourism:");
+        contextBuilder.AppendLine();
 
-        foreach (var pair in relevantPairs)
+        // Limit to 15 items to avoid token limits
+        foreach (var pair in qaContext.Take(15))
         {
             contextBuilder.AppendLine($"Q: {pair.question}");
             contextBuilder.AppendLine($"A: {pair.answer}");
@@ -70,6 +76,40 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
         }
 
         return contextBuilder.ToString();
+    }
+
+    static (string, double) FindQAMatch(List<QAPair> qaContext, string query, double threshold = 0.6)
+    {
+        if (string.IsNullOrEmpty(query) || !qaContext.Any())
+            return (null, 0);
+
+        query = query.ToLower().Trim();
+        string bestMatch = null;
+        double bestScore = 0;
+
+        foreach (var pair in qaContext)
+        {
+            string question = pair.question.ToLower();
+
+            // Simple word match scoring
+            var queryWords = new HashSet<string>(query.Split(new[] { ' ', ',', '.', '?', '!' }, StringSplitOptions.RemoveEmptyEntries));
+            var questionWords = new HashSet<string>(question.Split(new[] { ' ', ',', '.', '?', '!' }, StringSplitOptions.RemoveEmptyEntries));
+            var commonWords = queryWords.Intersect(questionWords).ToList();
+
+            if (commonWords.Any())
+            {
+                // Calculate Jaccard similarity: intersection over union
+                double score = (double)commonWords.Count / queryWords.Union(questionWords).Count();
+
+                if (score > bestScore && score >= threshold)
+                {
+                    bestScore = score;
+                    bestMatch = pair.answer;
+                }
+            }
+        }
+
+        return (bestMatch, bestScore);
     }
 
     static int CountMatchingWords(string text1, string text2)
@@ -81,7 +121,22 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
 
     static string AskGeminiWithContext(HttpClient client, string question, string context)
     {
-        string prompt = $"{context}\n\nBased on the information above, please answer this question in 100 words or less: {question}";
+        string prompt = $"""
+            You are a tourism assistant specializing in Egypt travel.
+
+            {context}
+
+            Question: {question}
+
+            Answer the question about Egypt tourism. Consider:
+            - Historical sites and attractions
+            - Cultural information
+            - Practical travel advice
+            - Safety information
+            - Local customs
+
+            Answer concisely but informatively, referencing the provided Q&A context above when applicable.
+            """;
 
         var requestData = new
         {
@@ -149,11 +204,14 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
 
         return Result.Success(chat.Adapt<ChatMessageResponse>());
     }
-    public async  Task<Result<ChatMessageResponse>> CreateAsync(ChatMessageRequest request)
+
+
+
+    public async Task<Result<ChatMessageResponse>> CreateAsync(ChatMessageRequest request)
     {
         var result = Main(request.Question);
 
-        if (result is null )
+        if (result is null)
             return Result.Failure<ChatMessageResponse>(ChatMessageError.NotFound);
 
         var row = new ChatMessage
@@ -167,6 +225,9 @@ public class ChatMessageService(ApplicationDbContext context) : IChatMessageServ
 
         return Result.Success(row.Adapt<ChatMessageResponse>());
     }
+
+
+
 
     public async Task<Result> DeleteAsync(int id)
     {
