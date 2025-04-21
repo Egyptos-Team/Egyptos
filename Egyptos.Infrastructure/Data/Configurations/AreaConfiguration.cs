@@ -38,8 +38,8 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
                    Address= "Salloum and Sidi Barrani City, Marsa Matrouh",
                    ImageUrl= "AreaImages/Roman well1.webp",
                    AreaTypeId= 1,
-                    Latitude=44.8231,
-               Longitude=20.4492
+                    Latitude=30.5703,
+               Longitude=31.5059
               },
             new Area
             {
