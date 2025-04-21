@@ -31,7 +31,8 @@ public class AreaRequestValidator : AbstractValidator<AreaRequest>
         RuleFor(s => s.AreaImages)
            .NotNull()
            .Must(ValidateFile)
-           .WithMessage("Invalid file. Allowed file types are .jpg, .jpeg, .png, and max size is 5MB.");
+           .WithMessage("Invalid file. Allowed file types are .jpg, .jpeg, .png, and max size is 5MB.")
+           .When(x=>x.AreaImages!=null);
 
     }
     private static bool ValidateFile(List<IFormFile> files)

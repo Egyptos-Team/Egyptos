@@ -1,4 +1,5 @@
 ﻿using Egyptos.Application.Contracts.Area;
+using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -59,9 +60,13 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
         //    Description=request.Description
         //}; 
         #endregion
+        if (request.AreaImages.Count == 0)
+            return Result.Failure<AreaResponse>(AreaError.ImageIsRequire);
         var area = request.Adapt<Area>();
 
         area.ImageUrl = mainImage;
+
+        //if()
 
         foreach (var image in request.AreaImages)
         {
@@ -86,6 +91,9 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
 
         if (!await _context.AreaTypes.AnyAsync(x => x.Id == request.AreaTypeId))
             return Result.Failure<AreaResponse>(AreaTypeError.NotFound);
+
+        if (request.AreaImages.Count == 0)
+            return Result.Failure<AreaResponse>(AreaError.ImageIsRequire);
 
         area = request.Adapt(area);
 

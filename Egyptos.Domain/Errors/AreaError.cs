@@ -9,4 +9,6 @@ public   record AreaError
     public static readonly Error DoublicatedTitle
       = new("Area.DoublicatedTitle", "Another Area has the same Name and address ", StatusCodes.Status409Conflict);
 
+    public static readonly Error ImageIsRequire = new("Area.ImageIsRequire",
+       "Images Is Require", StatusCodes.Status400BadRequest);
 }
