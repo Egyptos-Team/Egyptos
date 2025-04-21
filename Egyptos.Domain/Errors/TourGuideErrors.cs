@@ -20,4 +20,8 @@ public class TourGuideErrors
 
     public static readonly Error BookingNotFount = new("TourGuide.BookingNotFount",
         "No Booking TourGuide was found with the given UserId & TourGuideId", StatusCodes.Status404NotFound);
+
+    public static readonly Error NotYourReservation = new("BookingTourGuide.NotYourReservation",
+        "Sorry, you can only cancel your own reservations", StatusCodes.Status409Conflict);
+
 }

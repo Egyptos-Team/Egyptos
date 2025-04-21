@@ -39,9 +39,12 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         await _context.BookingTourGuides.AddAsync(booking);
         await _context.SaveChangesAsync();
         var Booking = booking.Adapt<BookingTourGuideResponse>();
+        var user = await _context.Users.FindAsync(userId);
 
         Booking.TourGuideFirstName = tourGuide.User.FirstName;
         Booking.TourGuideLastName = tourGuide.User.LastName;    
+        Booking.UserFirstName = user.FirstName;    
+        Booking.UserLastName = user.LastName;    
 
         return Result.Success(Booking);
     }
@@ -54,9 +57,9 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
                 .ToListAsync();
     public async Task<Result<List<BookingTourGuideResponse>>> BookedByUserAsync(string userId)
     {
-        var IsExistingUser = await _context.BookingTourGuides.AnyAsync(x => x.UserId == userId);
-        if (!IsExistingUser)
-            return Result.Failure<List<BookingTourGuideResponse>>(TourGuideErrors.UserNotBooked);
+        //var IsExistingUser = await _context.BookingTourGuides.AnyAsync(x => x.UserId == userId);
+        //if (!IsExistingUser)
+        //    return Result.Failure<List<BookingTourGuideResponse>>(TourGuideErrors.UserNotBooked);
 
         var bookingTourGuide = await _context.BookingTourGuides
                 .Where(x => x.UserId == userId)
@@ -89,9 +92,9 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         if (await _context.TourGuides.Include(x => x.User).FirstOrDefaultAsync(x => x.UserId == userId) is not { } tourGuid)
             return Result.Failure<List<BookingTourGuideResponse>>(TourGuideErrors.TourGuideNotFount);
 
-        var IsExistingToureGuide = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuid.Id);
-        if (!IsExistingToureGuide)
-            return Result.Failure<List<BookingTourGuideResponse>>(TourGuideErrors.TourGuideNotBooked);
+        //var IsExistingToureGuide = await _context.BookingTourGuides.AnyAsync(x => x.TourGuideId == tourGuid.Id);
+        //if (!IsExistingToureGuide)
+        //    return Result.Failure<List<BookingTourGuideResponse>>(TourGuideErrors.TourGuideNotBooked);
 
         var bookingTourGuide = await _context.BookingTourGuides
                 .Where(x => x.TourGuideId == tourGuid.Id)
@@ -104,12 +107,14 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
 
         return Result.Success(bookingTourGuide.Adapt<List<BookingTourGuideResponse>>());
     }
-
-    public async Task<Result> DeleteAsync(int bookingId)
+    public async Task<Result> DeleteAsync(string userId, int bookingId)
     {
         var booking = await _context.BookingTourGuides.FindAsync(bookingId);
         if (booking is null)
             return Result.Failure(TourGuideErrors.BookingNotFount);
+
+        if (booking.UserId != userId)
+            return Result.Failure(TourGuideErrors.NotYourReservation);
 
         _context.Remove(booking);
         await _context.SaveChangesAsync();

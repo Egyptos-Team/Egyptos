@@ -61,7 +61,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
     [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete(int bookingId)
     {
-        var result = await _bookingTourGuideService.DeleteAsync(bookingId);
+        var result = await _bookingTourGuideService.DeleteAsync(User.GetUserId(),bookingId);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
     }

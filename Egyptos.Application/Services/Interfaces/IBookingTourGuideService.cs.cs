@@ -10,5 +10,5 @@ public interface IBookingTourGuideService
     Task<Result<List<BookingTourGuideResponse>>> BookedByUserAsync(string userId);
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(int tourGuideId);
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(string userId);
-    Task<Result> DeleteAsync(int bookingId);
+    Task<Result> DeleteAsync(string userId, int bookingId);
 }
