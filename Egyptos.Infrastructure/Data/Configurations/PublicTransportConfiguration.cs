@@ -26,6 +26,6 @@ public class PublicTransportConfiguration : IEntityTypeConfiguration<PublicTrans
                 IsAvailable = 1
             },
         };
-        builder.HasData(PublicTransport);
+        //builder.HasData(PublicTransport);
     }
 }
