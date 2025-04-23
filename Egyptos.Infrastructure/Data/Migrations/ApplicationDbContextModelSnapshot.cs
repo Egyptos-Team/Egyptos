@@ -13098,7 +13098,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 12,
-                            AreaId = 12,
+                            AreaId = 11,
                             ArrivalTime = new DateTime(2025, 7, 21, 13, 30, 0, 0, DateTimeKind.Unspecified),
                             AvailableSeats = 30,
                             BackTime = new DateTime(2025, 7, 21, 18, 0, 0, 0, DateTimeKind.Unspecified),

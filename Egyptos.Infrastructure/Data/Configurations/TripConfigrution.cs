@@ -134,7 +134,7 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 ArrivalTime = new DateTime(2025, 7, 21, 13, 30, 00),
                 BackTime = new DateTime(2025, 7, 21, 18, 00, 00),
                 Price = 2100,
-                AreaId = 12,
+                AreaId = 11,
                 PublicTransportId = 12,
             AvailableSeats = 30 },
             new Trip
