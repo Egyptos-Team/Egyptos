@@ -4,6 +4,8 @@ using Egyptos.Application.Services.Implementations;
 using Egyptos.Infrastructure;
 using Hangfire;
 using HangfireBasicAuthenticationFilter;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Scalar.AspNetCore;
 using Stripe;
 
@@ -19,6 +21,22 @@ builder.Services
     .AddApiExtensions(builder.Configuration)
     .AddApplicationExtensions(builder.Configuration)
     .AddInfrastructureExtensions(builder.Configuration);
+
+////SignIn with Google
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//})
+//.AddCookie()
+//.AddGoogle(options =>
+//{
+//    options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.ClientId = "568505331278-0k4m966hgq4pj8libjttu5ib58r6hhcl.apps.googleusercontent.com";
+//    options.ClientSecret = "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";
+//});
+
+
 
 var app = builder.Build();
 
