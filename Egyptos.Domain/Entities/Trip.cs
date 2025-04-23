@@ -7,8 +7,7 @@ public class Trip
     public DateTime ArrivalTime { get; set; }
     public DateTime BackTime { get; set; }
     public double Price { get; set; }
-    public int AvailableSeats { get => PublicTransport.Capacity; set {} }
-
+    public int AvailableSeats { get; set; }
     public bool IsActive { get => DateTime.UtcNow < DepartureTime && AvailableSeats > 0; set { } }
 
     public int PublicTransportId { get; set; }
