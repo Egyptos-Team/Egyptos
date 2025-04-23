@@ -23,7 +23,7 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 Price = 1000,
                 AreaId = 1,
                 PublicTransportId = 1,
-                AvailableSeats = 3
+                AvailableSeats = 30
             },
             new Trip
             {
@@ -1340,6 +1340,6 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
             }
 
         };
-        builder.HasData();
+        builder.HasData(Trips);
     }
 }
