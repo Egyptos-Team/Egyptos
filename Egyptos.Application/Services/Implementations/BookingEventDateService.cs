@@ -14,6 +14,10 @@ public class BookingEventDateService(ApplicationDbContext context) : IBookingEve
         if (await _context.EventDates.FindAsync(eventDateId) is not { } eventDate)
             return Result.Failure<EventDateResponse>(EventErrors.EventDateNotFount);
 
+        var bookingIsExisting = await _context.BookingEventDates.AnyAsync(x => x.EventDateId == eventDateId && x.UserId == userId);
+        if (bookingIsExisting)
+            return Result.Failure(EventErrors.DuplicatedBooking);
+
         var bookingventDate = new BookingEventDate
         {
             EventDateId = eventDateId,
