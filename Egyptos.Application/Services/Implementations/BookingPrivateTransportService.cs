@@ -104,8 +104,7 @@ public class BookingPrivateTransportService(
         return Result.Success(bookingMapped);
     }
 
-    public async Task<Result<BookingPrivateTransportResponse>> CreateAsync(string userId,
-        BookingPrivateTransportRequest request)
+    public async Task<Result<BookingPrivateTransportResponse>> CreateAsync(string userId, BookingPrivateTransportRequest request)
     {
         var isExsist = await _context.PrivateTransports.AnyAsync(x => x.Id == request.PrivateTransportId);
 
@@ -209,7 +208,7 @@ public class BookingPrivateTransportService(
     {
         var booking = await _context.BookingPrivateTransports
             .Include(x => x.PrivateTransport)
-            .ThenInclude(x=>x.TransportType)
+            .ThenInclude(x => x.TransportType)
             .FirstOrDefaultAsync(x => x.Id == id);
 
         if (booking is null)

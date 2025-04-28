@@ -88,7 +88,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
             ApiUrl = thisApiUrl!,
             ClientUrl = Request.Headers.Referer[0]!,
             SuccessRedirectUrl = thisApiUrl + "/api/BookingPrivateTransports/Success/" + bookingId,
-            CancelRedirectUrl = thisApiUrl + "/api/Payment/Cancel/" + bookingId
+            CancelRedirectUrl = thisApiUrl + "/api/BookingPrivateTransports/Cancel/" + bookingId
         };
 
         var result = await _booking.OnlinePaymentAsync(bookingId, paymentRequest);
@@ -107,6 +107,13 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
         }
 
         return Redirect(clientUrl + "success.html");
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public IActionResult Cancel()
+    {
+        return BadRequest("Booking canceld successfully");
     }
 
     //public IActionResult Cancel(int bookingid)
