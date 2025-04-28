@@ -16,28 +16,30 @@ public class Payment(IConfiguration configuration) : IPayment
 
         var (name, description, imageUrl, totalPrice) = GetBookingDetails(booking);
 
+        var image = $"{paymentRequest.ApiUrl}/{imageUrl.Replace(" ", "%20")}";
+
         var options = new SessionCreateOptions
         {
-            SuccessUrl = $"{paymentRequest.SuccessRedirectUrl}",
-            CancelUrl = $"{paymentRequest.CancelRedirectUrl}",
+            SuccessUrl = paymentRequest.SuccessRedirectUrl,
+            CancelUrl = paymentRequest.CancelRedirectUrl,
             PaymentMethodTypes = ["card"],
             LineItems =
             [
                 new SessionLineItemOptions
+            {
+                PriceData = new SessionLineItemPriceDataOptions
                 {
-                    PriceData = new SessionLineItemPriceDataOptions
+                    UnitAmountDecimal = (decimal)totalPrice!,
+                    Currency = "USD",
+                    ProductData = new SessionLineItemPriceDataProductDataOptions
                     {
-                        UnitAmountDecimal = (decimal)totalPrice!,
-                        Currency = "USD",
-                        ProductData = new SessionLineItemPriceDataProductDataOptions
-                        {
-                            Name = name,
-                            Description = description,
-                            Images = [$"{paymentRequest.ApiUrl}/{imageUrl}"]
-                        },
+                        Name = name,
+                        Description = description,
+                        Images = [image]
                     },
-                    Quantity = 1,
-                }
+                },
+                Quantity = 1,
+            }
             ],
             Mode = "payment"
         };
@@ -46,6 +48,7 @@ public class Payment(IConfiguration configuration) : IPayment
         var session = await service.CreateAsync(options);
         return session.Id;
     }
+
 
     private (string Name, string Description, string ImageUrl, double TotalPrice) GetBookingDetails<T>(T booking)
         where T : class
