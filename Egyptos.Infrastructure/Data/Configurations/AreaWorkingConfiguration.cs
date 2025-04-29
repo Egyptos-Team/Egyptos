@@ -14,29 +14,25 @@ public class AreaWorkingConfiguration : IEntityTypeConfiguration<AreaWorking>
 
         //1 : 30
         //71 : 78
-        for (int areaId = 1; areaId <= 30; areaId++)
+        for (int areaId = 1; areaId <= 122; areaId++)
         {
-            for (int workingId = 1; workingId <= 7; workingId++)
+            if (areaId == 12 || areaId == 79 || areaId == 80)
+                continue;
+            else
             {
-                areaWorkings.Add(new AreaWorking
+
+                for (int workingId = 1; workingId <= 7; workingId++)
                 {
-                    AreaId = areaId,
-                    WorkingId = workingId
-                });
+                    areaWorkings.Add(new AreaWorking
+                    {
+                        AreaId = areaId,
+                        WorkingId = workingId
+                    });
+                }
             }
         }
 
-        for (int areaId = 71; areaId <= 78; areaId++)
-        {
-            for (int workingId = 1; workingId <= 7; workingId++)
-            {
-                areaWorkings.Add(new AreaWorking
-                {
-                    AreaId = areaId,
-                    WorkingId = workingId
-                });
-            }
-        }
+
         builder.HasData(areaWorkings);
     }
 }
