@@ -29,7 +29,7 @@ public class Payment(IConfiguration configuration) : IPayment
             {
                 PriceData = new SessionLineItemPriceDataOptions
                 {
-                    UnitAmountDecimal = (decimal)totalPrice!,
+                    UnitAmountDecimal = (decimal)(totalPrice * 100),
                     Currency = "USD",
                     ProductData = new SessionLineItemPriceDataProductDataOptions
                     {

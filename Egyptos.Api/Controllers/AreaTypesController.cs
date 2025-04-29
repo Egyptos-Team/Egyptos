@@ -1,12 +1,8 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.AreaType;
-using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
-using Egyptos.Application.Contracts.Transport.TransportTypes;
-using Egyptos.Application.Services.Implementations;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers
@@ -26,6 +22,17 @@ namespace Egyptos.Api.Controllers
 
             return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
         }
+
+        [HttpGet("")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetList()
+        {
+            var result = await _areaTypeService.GetListAsync();
+
+            return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+        }
+
 
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -58,7 +65,7 @@ namespace Egyptos.Api.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = DefaultRoles.Admin.Name)]
-        public async Task<IActionResult> Update( int id, [FromBody] AreaTypeRequest request)
+        public async Task<IActionResult> Update(int id, [FromBody] AreaTypeRequest request)
         {
             var result = await _areaTypeService.UpdateAsync(id, request);
 
@@ -71,7 +78,7 @@ namespace Egyptos.Api.Controllers
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [Authorize(Roles = DefaultRoles.Admin.Name)]
-        public async Task<IActionResult> Delete( int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var result = await _areaTypeService.DeleteAsync(id);
             return result.IsSuccess
