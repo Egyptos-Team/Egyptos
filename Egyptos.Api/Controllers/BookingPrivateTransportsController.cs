@@ -4,8 +4,6 @@ using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Hosting.Server;
-using Microsoft.AspNetCore.Hosting.Server.Features;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Egyptos.Api.Controllers;
@@ -77,18 +75,16 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     public async Task<IActionResult> OnlinePayment(int bookingId, [FromServices] IServiceProvider sp)
     {
 
-        clientUrl = Request.Headers.Referer[0];
-
-        var server = sp.GetRequiredService<IServer>();
-        var serverAddressesFeature = server.Features.Get<IServerAddressesFeature>();
-        var thisApiUrl = serverAddressesFeature!.Addresses.First();
+        var request = HttpContext.Request;
+        var thisApiUrl = $"{request.Scheme}://{request.Host}";
+        var clientUrl = Request.Headers.Referer[0];
 
         var paymentRequest = new PaymentRequest
         {
-            ApiUrl = thisApiUrl!,
-            ClientUrl = Request.Headers.Referer[0]!,
-            SuccessRedirectUrl = thisApiUrl + "/api/BookingPrivateTransports/Success/" + bookingId,
-            CancelRedirectUrl = thisApiUrl + "/api/Payment/Cancel/" + bookingId
+            ApiUrl = thisApiUrl,
+            ClientUrl = clientUrl,
+            SuccessRedirectUrl = $"{thisApiUrl}/api/BookingPrivateTransports/Success/{bookingId}",
+            CancelRedirectUrl = $"{thisApiUrl}/api/BookingPrivateTransports/Cancel/{bookingId}"
         };
 
         var result = await _booking.OnlinePaymentAsync(bookingId, paymentRequest);
@@ -107,6 +103,13 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
         }
 
         return Redirect(clientUrl + "success.html");
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public IActionResult Cancel()
+    {
+        return BadRequest("Booking canceld successfully");
     }
 
     //public IActionResult Cancel(int bookingid)
