@@ -7,7 +7,7 @@
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class editConfigrationInAreaWorkingConfigrationAddWorkingDatesInAllArea : Migration
+    public partial class AddDataInTourGuideTripTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -626,6 +626,147 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     { 122, 5 },
                     { 122, 6 },
                     { 122, 7 }
+                });
+
+            migrationBuilder.UpdateData(
+                table: "EventDates",
+                keyColumn: "Id",
+                keyValue: 6,
+                column: "IsActiveToSubscribe",
+                value: false);
+
+            migrationBuilder.UpdateData(
+                table: "EventDates",
+                keyColumn: "Id",
+                keyValue: 12,
+                column: "IsActiveToSubscribe",
+                value: true);
+
+            migrationBuilder.InsertData(
+                table: "TourGuideTrips",
+                columns: new[] { "TourGuideId", "TripId" },
+                values: new object[,]
+                {
+                    { 3, 1 },
+                    { 4, 2 },
+                    { 7, 3 },
+                    { 2, 4 },
+                    { 4, 5 },
+                    { 9, 6 },
+                    { 2, 7 },
+                    { 1, 8 },
+                    { 6, 9 },
+                    { 2, 10 },
+                    { 9, 11 },
+                    { 3, 12 },
+                    { 3, 13 },
+                    { 3, 14 },
+                    { 7, 15 },
+                    { 6, 16 },
+                    { 2, 17 },
+                    { 8, 18 },
+                    { 4, 19 },
+                    { 2, 20 },
+                    { 5, 21 },
+                    { 2, 22 },
+                    { 7, 23 },
+                    { 4, 24 },
+                    { 8, 25 },
+                    { 6, 26 },
+                    { 2, 27 },
+                    { 8, 28 },
+                    { 7, 29 },
+                    { 1, 30 },
+                    { 7, 31 },
+                    { 6, 32 },
+                    { 1, 33 },
+                    { 7, 34 },
+                    { 6, 35 },
+                    { 7, 36 },
+                    { 5, 37 },
+                    { 1, 38 },
+                    { 1, 39 },
+                    { 2, 40 },
+                    { 3, 41 },
+                    { 3, 42 },
+                    { 3, 43 },
+                    { 8, 44 },
+                    { 4, 45 },
+                    { 1, 46 },
+                    { 7, 47 },
+                    { 2, 48 },
+                    { 2, 49 },
+                    { 8, 50 },
+                    { 1, 51 },
+                    { 8, 52 },
+                    { 7, 53 },
+                    { 7, 54 },
+                    { 4, 55 },
+                    { 1, 56 },
+                    { 1, 57 },
+                    { 4, 58 },
+                    { 3, 59 },
+                    { 2, 60 },
+                    { 15, 61 },
+                    { 14, 62 },
+                    { 13, 63 },
+                    { 13, 64 },
+                    { 16, 65 },
+                    { 12, 66 },
+                    { 12, 67 },
+                    { 16, 68 },
+                    { 15, 69 },
+                    { 14, 70 },
+                    { 12, 71 },
+                    { 15, 72 },
+                    { 14, 73 },
+                    { 17, 74 },
+                    { 16, 75 },
+                    { 13, 76 },
+                    { 12, 77 },
+                    { 16, 78 },
+                    { 14, 81 },
+                    { 15, 82 },
+                    { 14, 83 },
+                    { 13, 84 },
+                    { 15, 85 },
+                    { 16, 86 },
+                    { 17, 87 },
+                    { 13, 88 },
+                    { 14, 89 },
+                    { 17, 90 },
+                    { 14, 91 },
+                    { 15, 92 },
+                    { 17, 93 },
+                    { 14, 94 },
+                    { 14, 95 },
+                    { 16, 96 },
+                    { 15, 97 },
+                    { 12, 98 },
+                    { 14, 99 },
+                    { 14, 100 },
+                    { 14, 101 },
+                    { 12, 102 },
+                    { 17, 103 },
+                    { 16, 104 },
+                    { 15, 105 },
+                    { 16, 106 },
+                    { 16, 107 },
+                    { 13, 108 },
+                    { 17, 109 },
+                    { 17, 110 },
+                    { 13, 111 },
+                    { 12, 112 },
+                    { 13, 113 },
+                    { 16, 114 },
+                    { 17, 115 },
+                    { 15, 116 },
+                    { 14, 117 },
+                    { 17, 118 },
+                    { 17, 119 },
+                    { 13, 120 },
+                    { 17, 121 },
+                    { 17, 122 }
                 });
         }
 
@@ -3502,6 +3643,606 @@ namespace Egyptos.Infrastructure.Data.Migrations
                 keyColumns: new[] { "AreaId", "WorkingId" },
                 keyValues: new object[] { 122, 7 });
 
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 1 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 2 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 3 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 4 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 5 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 9, 6 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 7 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 8 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 6, 9 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 10 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 9, 11 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 12 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 13 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 14 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 15 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 6, 16 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 17 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 18 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 19 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 20 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 5, 21 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 22 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 23 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 24 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 25 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 6, 26 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 27 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 28 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 29 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 30 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 31 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 6, 32 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 33 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 34 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 6, 35 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 36 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 5, 37 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 38 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 39 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 40 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 41 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 42 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 43 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 44 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 45 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 46 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 47 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 48 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 49 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 50 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 51 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 8, 52 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 53 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 7, 54 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 55 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 56 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 1, 57 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 4, 58 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 3, 59 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 2, 60 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 61 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 62 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 63 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 64 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 65 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 66 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 67 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 68 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 69 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 70 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 71 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 72 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 73 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 74 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 75 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 76 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 77 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 78 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 81 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 82 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 83 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 84 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 85 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 86 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 87 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 88 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 89 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 90 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 91 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 92 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 93 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 94 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 95 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 96 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 97 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 98 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 99 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 100 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 101 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 102 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 103 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 104 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 105 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 106 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 107 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 108 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 109 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 110 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 111 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 12, 112 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 113 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 16, 114 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 115 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 15, 116 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 14, 117 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 118 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 119 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 13, 120 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 121 });
+
+            migrationBuilder.DeleteData(
+                table: "TourGuideTrips",
+                keyColumns: new[] { "TourGuideId", "TripId" },
+                keyValues: new object[] { 17, 122 });
+
             migrationBuilder.InsertData(
                 table: "AreaWorkings",
                 columns: new[] { "AreaId", "WorkingId" },
@@ -3515,6 +4256,20 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     { 12, 6 },
                     { 12, 7 }
                 });
+
+            migrationBuilder.UpdateData(
+                table: "EventDates",
+                keyColumn: "Id",
+                keyValue: 6,
+                column: "IsActiveToSubscribe",
+                value: true);
+
+            migrationBuilder.UpdateData(
+                table: "EventDates",
+                keyColumn: "Id",
+                keyValue: 12,
+                column: "IsActiveToSubscribe",
+                value: false);
         }
     }
 }
