@@ -29,7 +29,7 @@ public class TourGuideReviewsController(ITourGuideReviewService _tourGuideReview
     }
 
     [HttpPost]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Add([FromForm]TourGuideReviewRequest request)
     {
         var result = await _tourGuideReviewService.AddAsync(User.GetUserId(), request);
@@ -37,7 +37,7 @@ public class TourGuideReviewsController(ITourGuideReviewService _tourGuideReview
     }
 
     [HttpPut("{reviewId}")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Update(int reviewId,[FromForm] TourGuideReviewRequest request)
     {
         var result = await _tourGuideReviewService.UpdateAsync(User.GetUserId(), reviewId, request);
