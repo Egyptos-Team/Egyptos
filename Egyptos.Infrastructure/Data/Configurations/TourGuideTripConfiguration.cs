@@ -10,22 +10,29 @@ public class TourGuideTripConfiguration : IEntityTypeConfiguration<TourGuideTrip
     {
         builder.HasKey(x => new { x.TripId, x.TourGuideId });
 
+        var random = new Random();
         var tourGuideTrips = new List<TourGuideTrip>();
 
-        int totalTrips = 122; 
-        int totalTourGuides = 19;
-
-        for (int tripId = 1; tripId <= totalTrips; tripId++)
+        for (int tripId = 1; tripId <= 60; tripId++)
         {
-            if(tripId == 79 || tripId == 80 || tripId == 12)
-                continue;
-
-            int tourGuideId = ((tripId - 1) % totalTourGuides) + 1;
-
+            int randomGuideId = random.Next(1, 10); 
             tourGuideTrips.Add(new TourGuideTrip
             {
                 TripId = tripId,
-                TourGuideId = tourGuideId
+                TourGuideId = randomGuideId
+            });
+        }
+
+        for (int tripId = 61; tripId <= 122; tripId++)
+        {
+            if (tripId == 79 || tripId == 80)
+                continue;
+
+            int randomGuideId = random.Next(12, 18);
+            tourGuideTrips.Add(new TourGuideTrip
+            {
+                TripId = tripId,
+                TourGuideId = randomGuideId
             });
         }
 
