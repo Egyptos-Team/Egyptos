@@ -38,6 +38,7 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<ChatMessage> ChatMessages { get; set; }
     public DbSet<TourGuideReview> TourGuideReviews { get; set; }
     public DbSet<PrivateTransportReview> PrivateTransportReviews { get; set; }
+    public DbSet<TripReview> TripReviews { get; set; }
 
 
 
