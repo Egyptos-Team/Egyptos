@@ -40,7 +40,7 @@ public class TripReviewsController(ITripReviewService tripReviewService) : Contr
     public async Task<IActionResult> Update(int reviewId, [FromForm] TripReviewRequest request)
     {
         var result = await _TripReviewService.UpdateAsync(User.GetUserId(), reviewId, request);
-        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+        return result.IsSuccess ? NoContent() : result.ToProblem();
     }
 
 
@@ -49,6 +49,6 @@ public class TripReviewsController(ITripReviewService tripReviewService) : Contr
     public async Task<IActionResult> Delete(int reviewId)
     {
         var result = await _TripReviewService.DeleteAsync(reviewId);
-        return result.IsSuccess ? Ok(result) : result.ToProblem();
+        return result.IsSuccess ? NoContent() : result.ToProblem();
     }
 }
