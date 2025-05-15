@@ -1,4 +1,5 @@
 using Egyptos.Domain.Entities;
+using Egyptos.Infrastructure.Data.Migrations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -10,30 +11,32 @@ public class TourGuideTripConfiguration : IEntityTypeConfiguration<TourGuideTrip
     {
         builder.HasKey(x => new { x.TripId, x.TourGuideId });
 
-        var random = new Random();
+        int x = 1;
         var tourGuideTrips = new List<TourGuideTrip>();
 
         for (int tripId = 1; tripId <= 60; tripId++)
         {
-            int randomGuideId = random.Next(1, 10); 
             tourGuideTrips.Add(new TourGuideTrip
             {
                 TripId = tripId,
-                TourGuideId = randomGuideId
+                TourGuideId = x++
             });
+            if (x == 20) x = 1;
         }
+
+        if (x == 20) x = 1;
 
         for (int tripId = 61; tripId <= 122; tripId++)
         {
             if (tripId == 79 || tripId == 80)
                 continue;
 
-            int randomGuideId = random.Next(12, 18);
             tourGuideTrips.Add(new TourGuideTrip
             {
                 TripId = tripId,
-                TourGuideId = randomGuideId
+                TourGuideId = x++
             });
+            if (x == 20) x = 1;
         }
 
         builder.HasData(tourGuideTrips);
