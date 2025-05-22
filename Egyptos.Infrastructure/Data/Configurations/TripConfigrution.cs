@@ -1,11 +1,6 @@
 ﻿using Egyptos.Domain.Entities;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Egyptos.Infrastructure.Data.Configurations;
 internal class TripConfigrution : IEntityTypeConfiguration<Trip>
@@ -34,7 +29,7 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 Price = 1100,
                 AreaId = 2,
                 PublicTransportId = 2,
-                AvailableSeats = 30 
+                AvailableSeats = 30
             },
             new Trip
             {
@@ -45,7 +40,7 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 Price = 1200,
                 AreaId = 3,
                 PublicTransportId = 3,
-                AvailableSeats = 30 
+                AvailableSeats = 30
             },
             new Trip
             {
@@ -606,7 +601,7 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 Price = 6800,
                 AreaId = 59,
                 PublicTransportId = 59,
-                AvailableSeats = 30 
+                AvailableSeats = 30
             },
             new Trip
             {
@@ -1337,7 +1332,288 @@ internal class TripConfigrution : IEntityTypeConfiguration<Trip>
                 AreaId = 122,
                 PublicTransportId = 122,
                 AvailableSeats = 30
+            },
+            new Trip
+            {
+                Id = 123,
+                DepartureTime = new DateTime(2025, 9, 12, 9, 30, 0),
+                ArrivalTime = new DateTime(2025, 9, 12, 11, 45, 0),
+                BackTime = new DateTime(2025, 9, 12, 21, 30, 0),
+                Price = 6850,
+                PublicTransportId = 95,
+                AvailableSeats = 32
+            },
+            new Trip
+            {
+                Id = 124,
+                DepartureTime = new DateTime(2025, 9, 14, 8, 45, 0),
+                ArrivalTime = new DateTime(2025, 9, 14, 10, 55, 0),
+                BackTime = new DateTime(2025, 9, 14, 20, 45, 0),
+                Price = 7125,
+                PublicTransportId = 95,
+                AvailableSeats = 28
+            },
+            new Trip
+            {
+                Id = 125,
+                DepartureTime = new DateTime(2025, 9, 16, 10, 15, 0),
+                ArrivalTime = new DateTime(2025, 9, 16, 12, 20, 0),
+                BackTime = new DateTime(2025, 9, 16, 22, 15, 0),
+                Price = 7450,
+                PublicTransportId = 95,
+                AvailableSeats = 35
+            },
+            new Trip
+            {
+                Id = 126,
+                DepartureTime = new DateTime(2025, 9, 18, 9, 0, 0),
+                ArrivalTime = new DateTime(2025, 9, 18, 11, 10, 0),
+                BackTime = new DateTime(2025, 9, 18, 21, 0, 0),
+                Price = 6975,
+                PublicTransportId = 95,
+                AvailableSeats = 30
+            },
+            new Trip
+            {
+                Id = 127,
+                DepartureTime = new DateTime(2025, 9, 20, 8, 30, 0),
+                ArrivalTime = new DateTime(2025, 9, 20, 10, 35, 0),
+                BackTime = new DateTime(2025, 9, 20, 20, 30, 0),
+                Price = 7200,
+                PublicTransportId = 95,
+                AvailableSeats = 25
+            },
+            new Trip
+            {
+                Id = 128,
+                DepartureTime = new DateTime(2025, 9, 22, 10, 45, 0),
+                ArrivalTime = new DateTime(2025, 9, 22, 12, 50, 0),
+                BackTime = new DateTime(2025, 9, 22, 22, 45, 0),
+                Price = 7580,
+                PublicTransportId = 95,
+                AvailableSeats = 40
+            },
+            new Trip
+            {
+                Id = 129,
+                DepartureTime = new DateTime(2025, 9, 24, 9, 15, 0),
+                ArrivalTime = new DateTime(2025, 9, 24, 11, 25, 0),
+                BackTime = new DateTime(2025, 9, 24, 21, 15, 0),
+                Price = 6800,
+                PublicTransportId = 95,
+                AvailableSeats = 33
+            },
+            new Trip
+            {
+                Id = 130,
+                DepartureTime = new DateTime(2025, 9, 26, 8, 0, 0),
+                ArrivalTime = new DateTime(2025, 9, 26, 10, 15, 0),
+                BackTime = new DateTime(2025, 9, 26, 20, 0, 0),
+                Price = 7350,
+                PublicTransportId = 95,
+                AvailableSeats = 27
+            },
+            new Trip
+            {
+                Id = 131,
+                DepartureTime = new DateTime(2025, 9, 28, 10, 30, 0),
+                ArrivalTime = new DateTime(2025, 9, 28, 12, 40, 0),
+                BackTime = new DateTime(2025, 9, 28, 22, 30, 0),
+                Price = 7680,
+                PublicTransportId = 95,
+                AvailableSeats = 38
+            },
+            new Trip
+            {
+                Id = 132,
+                DepartureTime = new DateTime(2025, 9, 30, 9, 45, 0),
+                ArrivalTime = new DateTime(2025, 9, 30, 11, 50, 0),
+                BackTime = new DateTime(2025, 9, 30, 21, 45, 0),
+                Price = 7025,
+                PublicTransportId = 95,
+                AvailableSeats = 31
+            },
+            new Trip
+            {
+                Id = 133,
+                DepartureTime = new DateTime(2025, 10, 2, 8, 15, 0),
+                ArrivalTime = new DateTime(2025, 10, 2, 10, 30, 0),
+                BackTime = new DateTime(2025, 10, 2, 20, 15, 0),
+                Price = 6900,
+                PublicTransportId = 95,
+                AvailableSeats = 29
+            },
+            new Trip
+            {
+                Id = 134,
+                DepartureTime = new DateTime(2025, 10, 4, 11, 0, 0),
+                ArrivalTime = new DateTime(2025, 10, 4, 13, 5, 0),
+                BackTime = new DateTime(2025, 10, 4, 23, 0, 0),
+                Price = 7750,
+                PublicTransportId = 95,
+                AvailableSeats = 42
+            },
+            new Trip
+            {
+                Id = 135,
+                DepartureTime = new DateTime(2025, 10, 6, 9, 30, 0),
+                ArrivalTime = new DateTime(2025, 10, 6, 11, 40, 0),
+                BackTime = new DateTime(2025, 10, 6, 21, 30, 0),
+                Price = 7150,
+                PublicTransportId = 95,
+                AvailableSeats = 26
+            },
+            new Trip
+            {
+                Id = 136,
+                DepartureTime = new DateTime(2025, 10, 8, 8, 45, 0),
+                ArrivalTime = new DateTime(2025, 10, 8, 10, 50, 0),
+                BackTime = new DateTime(2025, 10, 8, 20, 45, 0),
+                Price = 6750,
+                PublicTransportId = 95,
+                AvailableSeats = 36
+            },
+            new Trip
+            {
+                Id = 137,
+                DepartureTime = new DateTime(2025, 10, 10, 10, 15, 0),
+                ArrivalTime = new DateTime(2025, 10, 10, 12, 25, 0),
+                BackTime = new DateTime(2025, 10, 10, 22, 15, 0),
+                Price = 7425,
+                PublicTransportId = 95,
+                AvailableSeats = 34
+            },
+            new Trip
+            {
+                Id = 138,
+                DepartureTime = new DateTime(2025, 10, 12, 9, 0, 0),
+                ArrivalTime = new DateTime(2025, 10, 12, 11, 15, 0),
+                BackTime = new DateTime(2025, 10, 12, 21, 0, 0),
+                Price = 7080,
+                PublicTransportId = 95,
+                AvailableSeats = 30
+            },
+            new Trip
+            {
+                Id = 139,
+                DepartureTime = new DateTime(2025, 10, 14, 8, 30, 0),
+                ArrivalTime = new DateTime(2025, 10, 14, 10, 40, 0),
+                BackTime = new DateTime(2025, 10, 14, 20, 30, 0),
+                Price = 6850,
+                PublicTransportId = 95,
+                AvailableSeats = 28
+            },
+            new Trip
+            {
+                Id = 140,
+                DepartureTime = new DateTime(2025, 10, 16, 10, 45, 0),
+                ArrivalTime = new DateTime(2025, 10, 16, 12, 55, 0),
+                BackTime = new DateTime(2025, 10, 16, 22, 45, 0),
+                Price = 7600,
+                PublicTransportId = 95,
+                AvailableSeats = 39
+            },
+            new Trip
+            {
+                Id = 141,
+                DepartureTime = new DateTime(2025, 10, 18, 9, 15, 0),
+                ArrivalTime = new DateTime(2025, 10, 18, 11, 30, 0),
+                BackTime = new DateTime(2025, 10, 18, 21, 15, 0),
+                Price = 7250,
+                PublicTransportId = 95,
+                AvailableSeats = 32
+            },
+            new Trip
+            {
+                Id = 142,
+                DepartureTime = new DateTime(2025, 10, 20, 8, 0, 0),
+                ArrivalTime = new DateTime(2025, 10, 20, 10, 10, 0),
+                BackTime = new DateTime(2025, 10, 20, 20, 0, 0),
+                Price = 6925,
+                PublicTransportId = 95,
+                AvailableSeats = 27
+            },
+            new Trip
+            {
+                Id = 143,
+                DepartureTime = new DateTime(2025, 10, 22, 10, 30, 0),
+                ArrivalTime = new DateTime(2025, 10, 22, 12, 35, 0),
+                BackTime = new DateTime(2025, 10, 22, 22, 30, 0),
+                Price = 7475,
+                PublicTransportId = 95,
+                AvailableSeats = 35
+            },
+            new Trip
+            {
+                Id = 144,
+                DepartureTime = new DateTime(2025, 10, 24, 9, 45, 0),
+                ArrivalTime = new DateTime(2025, 10, 24, 11, 55, 0),
+                BackTime = new DateTime(2025, 10, 24, 21, 45, 0),
+                Price = 7125,
+                PublicTransportId = 95,
+                AvailableSeats = 31
+            },
+            new Trip
+            {
+                Id = 145,
+                DepartureTime = new DateTime(2025, 10, 26, 8, 15, 0),
+                ArrivalTime = new DateTime(2025, 10, 26, 10, 25, 0),
+                BackTime = new DateTime(2025, 10, 26, 20, 15, 0),
+                Price = 6800,
+                PublicTransportId = 95,
+                AvailableSeats = 29
+            },
+            new Trip
+            {
+                Id = 146,
+                DepartureTime = new DateTime(2025, 10, 28, 11, 0, 0),
+                ArrivalTime = new DateTime(2025, 10, 28, 13, 10, 0),
+                BackTime = new DateTime(2025, 10, 28, 23, 0, 0),
+                Price = 7700,
+                PublicTransportId = 95,
+                AvailableSeats = 40
+            },
+            new Trip
+            {
+                Id = 147,
+                DepartureTime = new DateTime(2025, 10, 30, 9, 30, 0),
+                ArrivalTime = new DateTime(2025, 10, 30, 11, 45, 0),
+                BackTime = new DateTime(2025, 10, 30, 21, 30, 0),
+                Price = 7375,
+                PublicTransportId = 95,
+                AvailableSeats = 33
+            },
+            new Trip
+            {
+                Id = 148,
+                DepartureTime = new DateTime(2025, 11, 1, 8, 45, 0),
+                ArrivalTime = new DateTime(2025, 11, 1, 10, 50, 0),
+                BackTime = new DateTime(2025, 11, 1, 20, 45, 0),
+                Price = 6950,
+                PublicTransportId = 95,
+                AvailableSeats = 28
+            },
+            new Trip
+            {
+                Id = 149,
+                DepartureTime = new DateTime(2025, 11, 3, 10, 15, 0),
+                ArrivalTime = new DateTime(2025, 11, 3, 12, 20, 0),
+                BackTime = new DateTime(2025, 11, 3, 22, 15, 0),
+                Price = 7525,
+                PublicTransportId = 95,
+                AvailableSeats = 37
+            },
+            new Trip
+            {
+                Id = 150,
+                DepartureTime = new DateTime(2025, 11, 5, 9, 0, 0),
+                ArrivalTime = new DateTime(2025, 11, 5, 11, 5, 0),
+                BackTime = new DateTime(2025, 11, 5, 21, 0, 0),
+                Price = 7200,
+                PublicTransportId = 95,
+                AvailableSeats = 30
             }
+
 
         };
         builder.HasData(Trips);

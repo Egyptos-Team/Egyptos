@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250522233348_AddTripPrograms")]
+    partial class AddTripPrograms
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -18179,7 +18182,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("TripPrograms");
+                    b.ToTable("TripProgram");
 
                     b.HasData(
                         new
@@ -19617,7 +19620,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
             modelBuilder.Entity("Egyptos.Domain.Entities.TripProgram", b =>
                 {
                     b.HasOne("Egyptos.Domain.Entities.Trip", "Trip")
-                        .WithMany("TripPrograms")
+                        .WithMany()
                         .HasForeignKey("TripId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -19781,8 +19784,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Navigation("BookingTrips");
 
                     b.Navigation("TourGuideTrips");
-
-                    b.Navigation("TripPrograms");
                 });
 
             modelBuilder.Entity("Egyptos.Domain.Entities.Working", b =>

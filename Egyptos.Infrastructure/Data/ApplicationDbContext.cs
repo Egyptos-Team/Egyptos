@@ -1,4 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -7,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Egyptos.Infrastructure.Data;
 
-public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
 {
     public DbSet<ApplicationUser> ApplicationUsers { get; set; } = null!;
     public DbSet<Area> Areas { get; set; }
@@ -39,6 +38,7 @@ public class ApplicationDbContext (DbContextOptions<ApplicationDbContext> option
     public DbSet<TourGuideReview> TourGuideReviews { get; set; }
     public DbSet<PrivateTransportReview> PrivateTransportReviews { get; set; }
     public DbSet<TripReview> TripReviews { get; set; }
+    public DbSet<TripProgram> TripPrograms { get; set; }
 
 
 
