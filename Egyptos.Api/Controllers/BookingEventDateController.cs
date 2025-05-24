@@ -17,6 +17,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     private static string? clientUrl;
 
     [HttpPost("{eventDateId}")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromRoute] int eventDateId)
     {
         var result = await _bookingEventDateService.BookATicket(User.GetUserId(), eventDateId);
@@ -25,6 +26,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     }
 
     [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingEventDateService.GetAllAsync();
@@ -93,6 +95,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     }
 
     [HttpDelete("{eventDateId}")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete([FromRoute] int eventDateId)
     {
         var result = await _bookingEventDateService.DeleteAsync(User.GetUserId(), eventDateId);
