@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250524202440_addMoreDescriptionInEventDateCofiguration")]
+    partial class addMoreDescriptionInEventDateCofiguration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -9291,12 +9294,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Property<int>("EventDateId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("CancelDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("PaymentDate")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("UserId", "EventDateId");
 
                     b.HasIndex("EventDateId");
@@ -12102,7 +12099,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Ahmed12@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Ahmed",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/df4fb389-64ed-486e-be7d-722771b6e3bc.jpeg",
                             LastName = "Momamed",
                             LockoutEnabled = false,
                             NationalId = "30305521354688",
@@ -12124,7 +12121,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Ali@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Ali",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Outdoor Portraits — San Francisco Bay Area's Premier Personal Brand and Headshot Photographer _ Alpa.jpeg",
                             LastName = "Salama",
                             LockoutEnabled = false,
                             NationalId = "30308795612367",
@@ -12146,7 +12143,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Hassan44@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Hassan",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Friendly Professional Business Headshot.jpeg",
                             LastName = "Alaa",
                             LockoutEnabled = false,
                             NationalId = "30306729061246",
@@ -12168,7 +12165,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Mohamed@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Mohamed",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/82ebaf90-31fe-40ef-8358-99823ce3881d.jpeg",
                             LastName = "Mady",
                             LockoutEnabled = false,
                             NationalId = "30309871265308",
@@ -12190,7 +12187,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Maher@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Maher",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Rajan Velu.jpeg",
                             LastName = "Mohamed",
                             LockoutEnabled = false,
                             NationalId = "30301937508274",
@@ -12212,7 +12209,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Nader@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Nader",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Mari Juliano.jpeg",
                             LastName = "Ahmed",
                             LockoutEnabled = false,
                             NationalId = "303020837616543",
@@ -12234,7 +12231,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Khaled@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Khaled",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/MEN - Location - Headshot Photography by Brandon Tabiolo.jpeg",
                             LastName = "Mostafa",
                             LockoutEnabled = false,
                             NationalId = "30301920482846",
@@ -12256,7 +12253,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Kareem@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Kareem",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Why I Mainly Photograph in Portrait Orientation for Actors' Headshots.jpeg",
                             LastName = "Maged",
                             LockoutEnabled = false,
                             NationalId = "303092689146845",
@@ -12278,7 +12275,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Halem@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Halem",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Gorgeous smile of Alexis Petit.jpeg",
                             LastName = "Ebrahim",
                             LockoutEnabled = false,
                             NationalId = "30308391092836",
@@ -12300,7 +12297,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Salma@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Salma",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/Women in Business.jpeg",
                             LastName = "Mostafa",
                             LockoutEnabled = false,
                             NationalId = "30302901738376",
@@ -12322,7 +12319,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Jesseyd@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Kosta",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
                             LastName = "Mohamed",
                             LockoutEnabled = false,
                             NationalId = "40415678901625",
@@ -12344,7 +12341,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Marry@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Mary",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/468f9794-778b-429f-bea8-b7440810819d.jpeg",
                             LastName = "John",
                             LockoutEnabled = false,
                             NationalId = "40423109753269",
@@ -12366,7 +12363,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Mark@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Mark",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/44050f40-662d-408b-9dda-9e3271d7c36e.jpeg",
                             LastName = "ALbrto",
                             LockoutEnabled = false,
                             NationalId = "4042098715635491",
@@ -12388,7 +12385,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Jessey@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Jessy",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/9151a7a4-4fc2-4bb0-a427-f97f4127e661.jpeg",
                             LastName = "MArk",
                             LockoutEnabled = false,
                             NationalId = "40415678901625",
@@ -12410,7 +12407,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Rana@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Rana",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/2edc3141-b4cd-411d-9136-33440bbb1c03.jpeg",
                             LastName = "Osama",
                             LockoutEnabled = false,
                             NationalId = "30304597102873",
@@ -12432,7 +12429,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Ramy@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Ramy",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/16 Black Chefs Changing Food in America (Published 2019).jpeg",
                             LastName = "Aziz",
                             LockoutEnabled = false,
                             NationalId = "30303409168364",
@@ -12454,7 +12451,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Rola@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Rola",
-                            ImageUrl = "profiles/22.jpg",
+                            ImageUrl = "profiles/Before and After_ Transforming Your LinkedIn Profile with AI Headshots.jpeg",
                             LastName = "Samy",
                             LockoutEnabled = false,
                             NationalId = "30306183028747",
@@ -12476,7 +12473,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Malek@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Malek",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/9c12d50d-5cbe-4c75-8bca-cbc57d504a7b.jpeg",
                             LastName = "Mohamed",
                             LockoutEnabled = false,
                             NationalId = "30308103829384",
@@ -12498,7 +12495,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                             Email = "Magdy@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Magdy",
-                            ImageUrl = "profiles/11.jpg",
+                            ImageUrl = "profiles/Dallas Headshots Photographer - Willie & Kim Photography.jpeg",
                             LastName = "Abdallah",
                             LockoutEnabled = false,
                             NationalId = "30301789256730",
