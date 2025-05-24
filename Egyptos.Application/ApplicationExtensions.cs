@@ -62,6 +62,7 @@ public static class ApplicationExtensions
         services.AddScoped<IItemsService, ItemsService>();
         services.AddScoped<IChatMessageService, ChatMessageService>();
         services.AddScoped<ITripReviewService,TripReviewService>();
+        services.AddScoped<IBookingTripService, BookingTripService>();
 
 
         return services;

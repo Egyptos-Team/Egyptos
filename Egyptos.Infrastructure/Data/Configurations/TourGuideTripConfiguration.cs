@@ -26,7 +26,7 @@ public class TourGuideTripConfiguration : IEntityTypeConfiguration<TourGuideTrip
 
         if (x == 20) x = 1;
 
-        for (int tripId = 61; tripId <= 122; tripId++)
+        for (int tripId = 61; tripId <= 150; tripId++)
         {
             if (tripId == 79 || tripId == 80)
                 continue;
