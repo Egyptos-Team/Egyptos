@@ -1,11 +1,13 @@
 ﻿using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.EventDateContracts;
-using Microsoft.Extensions.Logging;
-using static Egyptos.Domain.Consts.DefaultRoles;
+using Egyptos.Application.Contracts.Payment;
+using Microsoft.Extensions.Configuration;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class BookingEventDateService(ApplicationDbContext context) : IBookingEventDateService
+public class BookingEventDateService(ApplicationDbContext context,
+    IPayment _payment,
+    IConfiguration _configuration) : IBookingEventDateService
 {
     private readonly ApplicationDbContext _context = context;
 
@@ -32,7 +34,7 @@ public class BookingEventDateService(ApplicationDbContext context) : IBookingEve
     public async Task<IEnumerable<BookingEventDateRasponse>> GetAllAsync() =>
            await _context.BookingEventDates
                 .Include(x => x.EventDate)
-                .ThenInclude(x => x.Event) 
+                .ThenInclude(x => x.Event)
                 .ProjectToType<BookingEventDateRasponse>()
                 .AsNoTracking()
                 .ToListAsync();
@@ -45,8 +47,8 @@ public class BookingEventDateService(ApplicationDbContext context) : IBookingEve
 
         var bookingEventDate = new BookingEventDateByUserRasponse
         (
-            UserId : userId,
-            EventDates : await _context.BookingEventDates
+            UserId: userId,
+            EventDates: await _context.BookingEventDates
                 .Where(x => x.UserId == userId)
                 .Include(x => x.EventDate)
                 .ThenInclude(x => x.Event)
@@ -68,7 +70,7 @@ public class BookingEventDateService(ApplicationDbContext context) : IBookingEve
         var bookingEventDate = new BookingEventDateEventBooked
         (
             EventDateId: eventDateId,
-            Users : await _context.BookingEventDates
+            Users: await _context.BookingEventDates
                 .Where(x => x.EventDateId == eventDateId)
                 .Include(x => x.User)
                 .Select(x => x.User)
@@ -86,9 +88,45 @@ public class BookingEventDateService(ApplicationDbContext context) : IBookingEve
         if (!isExstingBookinEventDate)
             return Result.Failure(EventErrors.BookingNotFount);
 
-        _context.BookingEventDates.Remove(new BookingEventDate { UserId = userId , EventDateId = eventDateId});
+        _context.BookingEventDates.Remove(new BookingEventDate { UserId = userId, EventDateId = eventDateId });
         await _context.SaveChangesAsync();
 
         return Result.Success();
+    }
+
+    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int eventDateId, string userId, PaymentRequest paymentRequest)
+    {
+        var booking = await _context.BookingEventDates
+            .Include(x => x.EventDate)
+            .ThenInclude(x => x.EventImages)
+            .FirstOrDefaultAsync(x => x.EventDateId == eventDateId && x.UserId == userId);
+
+        if (booking is null)
+            return Result.Failure<CheckOutOrderResponse>(EventErrors.BookingNotFount);
+
+        if (booking.PaymentDate.HasValue)
+            return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+
+
+        var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
+
+        var result = new CheckOutOrderResponse
+        {
+            SessionId = sessionId,
+            PubKey = _configuration["Stripe:PubKey"]!
+        };
+
+        return Result.Success(result);
+    }
+
+    public async Task<Result> MarkAsPaidAsync(int bookingId, string userId)
+    {
+        if (await _context.BookingEventDates.FirstOrDefaultAsync(x => x.EventDateId == bookingId && x.UserId == userId) is not { } booking)
+            return Result.Failure(EventErrors.BookingNotFount);
+
+        booking.PaymentDate = DateTime.UtcNow;
+        await _context.SaveChangesAsync();
+
+        return Result.Success(booking);
     }
 }

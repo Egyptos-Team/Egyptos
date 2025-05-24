@@ -77,7 +77,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
 
         var request = HttpContext.Request;
         var thisApiUrl = $"{request.Scheme}://{request.Host}";
-        var clientUrl = Request.Headers.Referer[0];
+        clientUrl = Request.Headers.Referer[0];
 
         var paymentRequest = new PaymentRequest
         {
