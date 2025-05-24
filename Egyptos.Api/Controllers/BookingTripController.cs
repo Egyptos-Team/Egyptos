@@ -14,6 +14,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     private readonly IBookingTripService _bookingTripService = bookingTripService;
 
     [HttpPost("")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromBody] BookingTripRequest request)
     {
         var result = await _bookingTripService.BookATicket(User.GetUserId(), request);
@@ -22,6 +23,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _bookingTripService.GetAllAsync();
@@ -30,6 +32,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookedByUser()
     {
         var result = await _bookingTripService.BookedByUserAsync(User.GetUserId());
@@ -38,6 +41,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpGet("{id}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> TripBookd([FromRoute] int id)
     {
         var result = await _bookingTripService.TripBookedAsync(id);
@@ -46,6 +50,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _bookingTripService.DeleteAsync(id);

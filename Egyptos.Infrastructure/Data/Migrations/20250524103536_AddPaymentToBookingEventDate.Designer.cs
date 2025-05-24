@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250524103536_AddPaymentToBookingEventDate")]
+    partial class AddPaymentToBookingEventDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -9418,30 +9421,15 @@ namespace Egyptos.Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Egyptos.Domain.Entities.BookingTrip", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("NumberOfTickets")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("TripId")
                         .HasColumnType("int");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
+                    b.HasKey("UserId", "TripId");
 
                     b.HasIndex("TripId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("BookingTrips");
                 });
@@ -9496,175 +9484,175 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
+                            Description = "A festival celebrating Ismailia's famous mangoes with exhibitions and entertainment.",
                             EventTypeId = 4,
                             Name = "Ismailia Mango Festival"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
+                            Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
                             EventTypeId = 5,
                             Name = "Alexandria Short Film Festival"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
+                            Description = "A festival dedicated to women in theatre, featuring performances and discussions.",
                             EventTypeId = 5,
                             Name = "International Women Theatre Festival"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
+                            Description = "An astronomical event where the sun aligns with the temple’s axis, showcasing ancient Egyptian ingenuity.",
                             EventTypeId = 2,
                             Name = "The Solar Alignment on the Karnak Temple"
                         },
                         new
                         {
                             Id = 5,
-                            Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
+                            Description = "One of the Arab world's most prestigious film festivals, drawing filmmakers and critics.",
                             EventTypeId = 1,
                             Name = "Cairo International Film Festival"
                         },
                         new
                         {
                             Id = 6,
-                            Description = "A spectacular multimedia experience that brings ancient Egyptian history to life through state-of-the-art sound systems and dramatic light projections onto the Great Pyramids and Sphinx. This nightly show narrates the epic story of ancient Egypt, from the reign of the pharaohs to the construction of these eternal monuments. The production features multiple language options, with the pyramids serving as a colossal backdrop while colored lights dance across their surfaces, synchronized with a powerful musical score and compelling narration. The show covers 5,000 years of history in 45 minutes, creating an unforgettable journey through time that showcases the achievements, mysteries, and legends of ancient Egyptian civilization.",
+                            Description = "A spectacular show narrating Egypt’s history using sound and light projections on the pyramids.",
                             EventTypeId = 2,
                             Name = "Giza Pyramids Sound and Light Show"
                         },
                         new
                         {
                             Id = 7,
-                            Description = "A magical celebration that illuminates Egyptian cities during the holy month of Ramadan with thousands of traditional fanous (lanterns) creating an enchanting atmosphere throughout historic neighborhoods. This beloved festival features elaborate lantern displays crafted by skilled artisans, showcasing both traditional designs and contemporary artistic interpretations. The event includes live performances of traditional Islamic music, Quranic recitations, storytelling sessions featuring tales from Islamic heritage, and family-oriented activities. Local markets sell handcrafted lanterns, traditional sweets, and Ramadan decorations. Cultural workshops teach visitors about the significance of Ramadan traditions, while nightly iftars (breaking of fast) bring communities together in celebration of unity and spiritual reflection.",
+                            Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
                             EventTypeId = 3,
                             Name = "Ramadan Lantern Festival"
                         },
                         new
                         {
                             Id = 8,
-                            Description = "An exhilarating beachside celebration that transforms Hurghada into a vibrant festival destination with international music performances, dance competitions, water sports demonstrations, and beach parties that continue from sunset to sunrise. The festival features world-class DJs, live bands performing various genres from electronic dance music to traditional Arabic music, and cultural fusion performances. Water activities include jet ski exhibitions, windsurfing competitions, scuba diving experiences, and beach volleyball tournaments. The event also showcases Red Sea marine life through underwater photography exhibitions, environmental awareness programs, and coral reef conservation workshops. Local and international food vendors offer diverse culinary experiences, while beach clubs host exclusive parties and networking events.",
+                            Description = "A vibrant summer festival with music, dance, and water activities along the Red Sea coast.",
                             EventTypeId = 4,
                             Name = "Hurghada Summer Festival"
                         },
                         new
                         {
                             Id = 9,
-                            Description = "A prestigious theatrical event that transforms the resort city of Sharm El Sheikh into a cultural hub, featuring outstanding international theatre productions performed against the backdrop of the Red Sea. The festival presents diverse theatrical works ranging from classical dramas to contemporary experimental performances, bringing together acclaimed theatre companies from across the globe. Professional workshops led by renowned directors and actors offer intensive training in various theatrical techniques, while panel discussions explore the evolution of modern theatre. The unique setting allows for both indoor venue performances and outdoor amphitheater shows under the stars, creating an intimate connection between performers and audiences in one of Egypt's most beautiful locations.",
+                            Description = "A theatre festival featuring international performances, workshops, and panel discussions.",
                             EventTypeId = 1,
                             Name = "Sharm El Sheikh International Theatre Festival"
                         },
                         new
                         {
                             Id = 10,
-                            Description = "An extraordinary journey into the life and treasures of Egypt's most famous pharaoh, featuring an extensive collection of artifacts from Tutankhamun's tomb including golden sarcophagi, intricate jewelry, ceremonial weapons, and personal belongings that remained hidden for over 3,000 years. This comprehensive exhibition utilizes cutting-edge display technology, interactive multimedia presentations, and virtual reality experiences that transport visitors back to the Valley of the Kings. Expert Egyptologists provide guided tours revealing the latest archaeological discoveries and theories about the young pharaoh's mysterious death. The exhibition also includes replicas that visitors can touch, educational programs for students, and workshops on ancient Egyptian burial practices and the significance of the afterlife in pharaonic culture.",
+                            Description = "An exhibition displaying King Tutankhamun’s treasures, offering insights into his life and reign.",
                             EventTypeId = 2,
                             Name = "Tutankhamun Exhibition"
                         },
                         new
                         {
                             Id = 11,
-                            Description = "A deeply spiritual and joyous celebration commemorating the birth of Prophet Muhammad, transforming mosques and neighborhoods across Egypt into centers of devotion and cultural expression. The festivities include special prayer services, recitations of the Quran and prophetic traditions, religious lectures exploring the Prophet's teachings, and community gatherings that strengthen bonds between families and neighbors. Colorful processions wind through historic streets featuring traditional Islamic banners, while nasheed (Islamic songs) performances create an atmosphere of reverence and celebration. Local communities organize charity drives, distribute food to the needy, and host educational programs about Islamic history and values. The celebrations also include traditional crafts workshops, calligraphy exhibitions, and storytelling sessions sharing tales from Islamic heritage.",
+                            Description = "A religious festival celebrating Prophet Muhammad’s birth with prayers and parades.",
                             EventTypeId = 3,
                             Name = "Mawlid Al-Nabi Celebrations"
                         },
                         new
                         {
                             Id = 12,
-                            Description = "A magnificent cultural celebration that honors Egypt's rich pharaonic heritage with traditional music performances, ancient storytelling traditions, folk dance exhibitions, and artisan craft demonstrations set against the iconic backdrop of the Great Sphinx of Giza. The festival features authentic recreations of ancient Egyptian ceremonies, with performers dressed in historically accurate costumes presenting dramatic interpretations of mythological tales and historical events. Master craftsmen demonstrate traditional techniques for creating papyrus, pottery, jewelry, and textiles using methods passed down through generations. Interactive workshops allow visitors to learn hieroglyphic writing, ancient Egyptian games, and traditional cooking methods. The event culminates in a grand procession recreating pharaonic pageantry, complete with horse-drawn chariots and ceremonial performances.",
+                            Description = "A cultural festival celebrating Egyptian heritage with traditional music and storytelling.",
                             EventTypeId = 4,
                             Name = "Sphinx Festival"
                         },
                         new
                         {
                             Id = 13,
-                            Description = "An exclusive international film festival held in the luxurious Red Sea resort town of El Gouna, combining high-quality cinema with stunning natural beauty and world-class hospitality. This boutique festival focuses on supporting emerging filmmakers from the Middle East and North Africa while attracting established international talent. The event features competitive screenings in state-of-the-art venues, exclusive premieres of highly anticipated films, and intimate industry gatherings that foster meaningful connections between filmmakers, distributors, and investors. Masterclasses with acclaimed directors, producers, and actors provide invaluable learning opportunities, while the festival's industry hub facilitates co-production deals and international collaborations. The unique resort setting allows for beachside screenings, yacht parties, and networking events that create an unforgettable festival experience.",
+                            Description = "An international film festival held in El Gouna, featuring high-quality films and industry panels.",
                             EventTypeId = 1,
                             Name = "El Gouna Film Festival"
                         },
                         new
                         {
                             Id = 14,
-                            Description = "A once-in-a-lifetime spectacle that captivated the world as 22 royal mummies were transferred from the Egyptian Museum to their new home at the National Museum of Egyptian Civilization in a grand procession through the streets of Cairo. This historic event featured specially designed climate-controlled vehicles decorated with pharaonic motifs, accompanied by a stunning cultural program including orchestra performances, traditional Egyptian music, and theatrical presentations depicting ancient Egyptian funeral rites. The parade route was adorned with elaborate decorations inspired by ancient Egyptian art, while millions of viewers worldwide witnessed this unprecedented celebration of Egypt's archaeological treasures. The event included educational programs about each royal mummy, their historical significance, and the advanced preservation techniques used to protect these 3,000-year-old remains.",
+                            Description = "A grand parade transferring royal mummies to their new museum with spectacular performances.",
                             EventTypeId = 2,
                             Name = "Pharaohs' Golden Parade"
                         },
                         new
                         {
                             Id = 15,
-                            Description = "A nationwide celebration marking the joyous conclusion of Ramadan's month-long fasting period, transforming Egypt into a country-wide festival of gratitude, family reunions, and community solidarity. The festivities begin with special dawn prayers in mosques and public squares, followed by traditional family gatherings featuring elaborate feasts with special Eid delicacies, sweets, and traditional dishes. Children receive new clothes and gifts while families visit relatives and friends, strengthening social bonds. Public spaces host cultural performances, traditional music concerts, folk dance exhibitions, and carnival-style entertainment for children. Charity organizations coordinate food distribution to underprivileged families, ensuring everyone can participate in the celebration. Markets and bazaars stay open late, offering special Eid merchandise, handicrafts, and traditional sweets that are integral to the holiday traditions.",
+                            Description = "Nationwide celebrations marking the end of Ramadan with special prayers and cultural events.",
                             EventTypeId = 3,
                             Name = "Eid Al-Fitr Festivities"
                         },
                         new
                         {
                             Id = 16,
-                            Description = "A vibrant celebration of Nubian culture that showcases the rich traditions, music, art, and heritage of Egypt's Nubian community in the beautiful setting of Aswan and its surrounding villages. The festival features authentic Nubian music performances with traditional instruments like the oud and tabla, colorful folk dances that tell stories of Nubian history, and exhibitions of traditional crafts including intricate beadwork, pottery, and textiles with distinctive geometric patterns. Visitors can experience traditional Nubian hospitality in decorated houses painted in bright colors, participate in cooking workshops featuring Nubian cuisine, and learn about the community's unique customs and oral traditions. The festival also addresses contemporary Nubian issues, celebrates their contributions to Egyptian culture, and promotes cultural preservation efforts through educational programs and documentary screenings.",
+                            Description = "A festival celebrating Nubian traditions with music, dance, and traditional crafts.",
                             EventTypeId = 4,
                             Name = "Aswan Nubian Festival"
                         },
                         new
                         {
                             Id = 17,
-                            Description = "A prestigious international squash tournament that attracts the world's top-ranked players to compete in the stunning resort town of El Gouna, featuring state-of-the-art glass courts with spectacular Red Sea views as the backdrop. This PSA World Tour event brings together elite athletes competing for significant prize money and world ranking points, while spectators enjoy world-class squash in an unparalleled setting. The tournament includes professional coaching clinics, junior development programs, and community outreach initiatives promoting squash among Egyptian youth. VIP hospitality packages offer exclusive access to player meet-and-greets, coaching sessions with professionals, and luxury accommodations. The event also features a festival atmosphere with beachside entertainment, water sports activities, and cultural performances celebrating both international sport and local Egyptian hospitality.",
+                            Description = "An international squash tournament held in El Gouna, featuring top-ranked players.",
                             EventTypeId = 1,
                             Name = "Gouna Squash Open"
                         },
                         new
                         {
                             Id = 18,
-                            Description = "The Mediterranean's most significant literary gathering, transforming Alexandria into a bibliophile's paradise with hundreds of publishers, authors, and literary enthusiasts converging in the historic city that once housed the ancient world's greatest library. The fair features extensive book displays in multiple languages, author signings with renowned writers, poetry readings, literary discussions, and panel debates on contemporary issues in publishing and literature. Educational workshops cover creative writing, translation techniques, and digital publishing, while cultural programs include theatrical adaptations of classic literature and musical performances inspired by literary works. The event also celebrates Alexandria's rich literary heritage with special exhibitions about famous writers who lived in the city, guided tours of literary landmarks, and discussions about the city's role in shaping Arab intellectual culture.",
+                            Description = "A major book fair attracting authors and publishers for literary discussions and signings.",
                             EventTypeId = 5,
                             Name = "Alexandria Book Fair"
                         },
                         new
                         {
                             Id = 19,
-                            Description = "An enchanting celebration in the remote Siwa Oasis that honors the legendary sweetness and quality of Siwan dates while showcasing the unique culture and traditions of this isolated desert community. The festival features extensive displays of different date varieties, traditional harvesting demonstrations using ancient techniques, and tastings of date-based products including wines, jams, and confections. Visitors experience authentic Siwan hospitality in traditional mud-brick houses, witness the crafting of palm frond baskets and other traditional handicrafts, and participate in desert excursions to natural springs and ancient ruins. Cultural performances include traditional Siwan music played on indigenous instruments, folk dances celebrating the harvest, and storytelling sessions sharing local legends and oral history. The festival also promotes environmental awareness about oasis conservation and sustainable agriculture practices.",
+                            Description = "A festival celebrating Siwa Oasis’ famous dates, featuring local crafts and traditions.",
                             EventTypeId = 4,
                             Name = "Siwa Date Festival"
                         },
                         new
                         {
                             Id = 20,
-                            Description = "A spectacular commemorative exhibition celebrating the Egyptian Museum's pivotal role in preserving and presenting Egypt's archaeological treasures, featuring rare artifacts rarely displayed to the public, newly discovered pieces, and interactive presentations about the museum's history and mission. The exhibition includes behind-the-scenes tours showing conservation laboratories, storage facilities, and restoration work in progress, providing visitors with insights into the complex process of maintaining ancient artifacts. Special presentations by leading Egyptologists reveal new research findings, recent archaeological discoveries, and ongoing excavation projects across Egypt. The event also features digital reconstructions of ancient sites, virtual reality experiences allowing visitors to explore tombs and temples, and educational programs designed for students and researchers interested in Egyptology and museum studies.",
+                            Description = "A special exhibition marking the anniversary of the Egyptian Museum with rare artifacts on display.",
                             EventTypeId = 2,
                             Name = "Egyptian Museum Anniversary Exhibition"
                         },
                         new
                         {
                             Id = 21,
-                            Description = "A deeply meaningful religious celebration observed by Egypt's Coptic Christian community on January 7th, featuring special midnight masses in historic churches adorned with traditional decorations, community feasts that bring families together, and cultural events that highlight the rich heritage of Egyptian Christianity. The celebrations include beautiful choral performances of traditional Coptic hymns sung in ancient languages, processions through historic Coptic quarters of Cairo and other cities, and exhibitions showcasing Coptic art, manuscripts, and religious artifacts. Churches open their doors for cultural tours explaining Coptic history, architecture, and religious practices, while community centers host educational programs about the role of Coptic Christianity in Egyptian society. The festivities also include charity drives, community service projects, and interfaith dialogue events promoting understanding and coexistence among Egypt's diverse religious communities.",
+                            Description = "A religious celebration of Coptic Christmas, featuring prayers, feasts, and community gatherings.",
                             EventTypeId = 3,
                             Name = "Coptic Christmas Celebrations"
                         },
                         new
                         {
                             Id = 22,
-                            Description = "An adrenaline-pumping international competition that brings world-class kite surfers to Egypt's pristine Red Sea coast, featuring high-speed races, freestyle competitions, and big air contests in the consistently windy conditions that make this region a global kite surfing destination. The championship attracts professional athletes from around the world competing for substantial prize money and world ranking points, while the event atmosphere includes beach parties, live music performances, and water sports exhibitions. Beginners can participate in kite surfing lessons with certified instructors, while advanced riders can join coaching clinics with professional athletes. The event also features environmental awareness programs highlighting Red Sea conservation, local cultural performances, and food festivals showcasing coastal Egyptian cuisine. Spectators enjoy beachside viewing areas, water taxi services to optimal viewing positions, and VIP hospitality options.",
+                            Description = "An international kite surfing competition held on Egypt’s Red Sea coast, attracting top athletes.",
                             EventTypeId = 1,
                             Name = "Red Sea Kite Surfing Championship"
                         },
                         new
                         {
                             Id = 23,
-                            Description = "An inspiring annual showcase of contemporary Egyptian art set in the historically rich city of Luxor, where ancient temples and tombs provide a dramatic backdrop for modern artistic expression. The exhibition features works by established and emerging Egyptian artists across various media including painting, sculpture, photography, digital art, and mixed media installations that often incorporate themes from ancient Egyptian culture reimagined through contemporary perspectives. Gallery spaces in historic buildings and outdoor installations in archaeological sites create unique viewing experiences that bridge ancient and modern artistic traditions. The event includes artist talks, workshops on traditional and modern art techniques, guided tours that explore the connection between ancient Egyptian art and contemporary creativity, and cultural exchanges with international artists and curators.",
+                            Description = "An annual exhibition displaying works from Egypt's top artists in the historic city of Luxor.",
                             EventTypeId = 5,
                             Name = "Luxor Art Exhibition"
                         },
                         new
                         {
                             Id = 24,
-                            Description = "A dynamic celebration of urban artistic expression that transforms Cairo's walls, buildings, and public spaces into an open-air gallery showcasing the creativity and social commentary of local and international street artists. The festival features live mural painting sessions where visitors can watch artists create large-scale works, graffiti workshops teaching various techniques and styles, and guided tours through neighborhoods known for their street art culture. Interactive performances combine visual art with music, dance, and spoken word poetry, while panel discussions explore street art's role in social movements and cultural change. The event also includes community engagement projects where residents collaborate with artists to beautify their neighborhoods, youth programs teaching artistic skills as alternatives to destructive graffiti, and exhibitions documenting the evolution of Cairo's street art scene.",
+                            Description = "A festival celebrating contemporary street art with murals, performances, and workshops.",
                             EventTypeId = 5,
                             Name = "Cairo Street Art Festival"
                         },
                         new
                         {
                             Id = 25,
-                            Description = "A comprehensive academic and cultural gathering that explores the profound influence of Islamic civilization on Egyptian culture, architecture, art, literature, and social traditions through scholarly presentations, archaeological discoveries, and cultural exhibitions. The conference brings together leading historians, archaeologists, theologians, and cultural experts from around the world to present research on Islamic monuments, manuscript preservation, traditional crafts, and the evolution of Islamic thought in Egypt. Interactive workshops demonstrate traditional Islamic arts such as calligraphy, geometric pattern design, and manuscript illumination, while cultural performances feature traditional Islamic music, poetry recitations, and theatrical presentations. The event also includes guided tours of historic Islamic sites in Cairo, Alexandria, and other cities, educational programs for students and teachers, and interfaith dialogue sessions promoting understanding of Islamic contributions to world civilization.",
+                            Description = "A conference focusing on the historical and cultural significance of Islamic heritage in Egypt.",
                             EventTypeId = 3,
                             Name = "Islamic Heritage Conference"
                         });
@@ -9717,7 +9705,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
+                            Description = "A festival celebrating Ismailia's famous mangoes with exhibitions and entertainment.",
                             EndDate = new DateTime(2025, 7, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 10, 9, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
@@ -9730,7 +9718,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 2,
-                            Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
+                            Description = "A festival showcasing short films from Egypt and beyond, attracting filmmakers and critics.",
                             EndDate = new DateTime(2025, 10, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
@@ -9743,7 +9731,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 3,
-                            Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
+                            Description = "A festival dedicated to women in theatre, featuring performances and discussions.",
                             EndDate = new DateTime(2025, 3, 15, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 3, 5, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 3,
@@ -9756,7 +9744,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 4,
-                            Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
+                            Description = "An astronomical event where the sun aligns with the temple’s axis, showcasing ancient Egyptian ingenuity.",
                             EndDate = new DateTime(2025, 2, 21, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 2, 18, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
@@ -9769,7 +9757,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 5,
-                            Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
+                            Description = "One of the Arab world's most prestigious film festivals, drawing filmmakers and critics.",
                             EndDate = new DateTime(2025, 11, 20, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 11, 5, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
@@ -9782,7 +9770,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 6,
-                            Description = "A spectacular multimedia experience that brings ancient Egyptian history to life through state-of-the-art sound systems and dramatic light projections onto the Great Pyramids and Sphinx. This nightly show narrates the epic story of ancient Egypt, from the reign of the pharaohs to the construction of these eternal monuments. The production features multiple language options, with the pyramids serving as a colossal backdrop while colored lights dance across their surfaces, synchronized with a powerful musical score and compelling narration. The show covers 5,000 years of history in 45 minutes, creating an unforgettable journey through time that showcases the achievements, mysteries, and legends of ancient Egyptian civilization.",
+                            Description = "A spectacular show narrating Egypt’s history using sound and light projections on the pyramids.",
                             EndDate = new DateTime(2025, 5, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 4, 30, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
@@ -9795,7 +9783,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 7,
-                            Description = "A magical celebration that illuminates Egyptian cities during the holy month of Ramadan with thousands of traditional fanous (lanterns) creating an enchanting atmosphere throughout historic neighborhoods. This beloved festival features elaborate lantern displays crafted by skilled artisans, showcasing both traditional designs and contemporary artistic interpretations. The event includes live performances of traditional Islamic music, Quranic recitations, storytelling sessions featuring tales from Islamic heritage, and family-oriented activities. Local markets sell handcrafted lanterns, traditional sweets, and Ramadan decorations. Cultural workshops teach visitors about the significance of Ramadan traditions, while nightly iftars (breaking of fast) bring communities together in celebration of unity and spiritual reflection.",
+                            Description = "A festival celebrating Ramadan with beautiful lantern displays and cultural performances.",
                             EndDate = new DateTime(2025, 11, 2, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 8, 23, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
@@ -9808,7 +9796,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 8,
-                            Description = "An exhilarating beachside celebration that transforms Hurghada into a vibrant festival destination with international music performances, dance competitions, water sports demonstrations, and beach parties that continue from sunset to sunrise. The festival features world-class DJs, live bands performing various genres from electronic dance music to traditional Arabic music, and cultural fusion performances. Water activities include jet ski exhibitions, windsurfing competitions, scuba diving experiences, and beach volleyball tournaments. The event also showcases Red Sea marine life through underwater photography exhibitions, environmental awareness programs, and coral reef conservation workshops. Local and international food vendors offer diverse culinary experiences, while beach clubs host exclusive parties and networking events.",
+                            Description = "A vibrant summer festival with music, dance, and water activities along the Red Sea coast.",
                             EndDate = new DateTime(2025, 8, 20, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 8, 10, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
@@ -9821,7 +9809,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 9,
-                            Description = "A prestigious theatrical event that transforms the resort city of Sharm El Sheikh into a cultural hub, featuring outstanding international theatre productions performed against the backdrop of the Red Sea. The festival presents diverse theatrical works ranging from classical dramas to contemporary experimental performances, bringing together acclaimed theatre companies from across the globe. Professional workshops led by renowned directors and actors offer intensive training in various theatrical techniques, while panel discussions explore the evolution of modern theatre. The unique setting allows for both indoor venue performances and outdoor amphitheater shows under the stars, creating an intimate connection between performers and audiences in one of Egypt's most beautiful locations.",
+                            Description = "A theatre festival featuring international performances, workshops, and panel discussions.",
                             EndDate = new DateTime(2025, 12, 10, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 12, 1, 23, 59, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
@@ -9834,7 +9822,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 10,
-                            Description = "An extraordinary journey into the life and treasures of Egypt's most famous pharaoh, featuring an extensive collection of artifacts from Tutankhamun's tomb including golden sarcophagi, intricate jewelry, ceremonial weapons, and personal belongings that remained hidden for over 3,000 years. This comprehensive exhibition utilizes cutting-edge display technology, interactive multimedia presentations, and virtual reality experiences that transport visitors back to the Valley of the Kings. Expert Egyptologists provide guided tours revealing the latest archaeological discoveries and theories about the young pharaoh's mysterious death. The exhibition also includes replicas that visitors can touch, educational programs for students, and workshops on ancient Egyptian burial practices and the significance of the afterlife in pharaonic culture.",
+                            Description = "An exhibition showcasing the treasures of King Tutankhamun.",
                             EndDate = new DateTime(2025, 3, 15, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 3, 10, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 10,
@@ -9847,7 +9835,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 11,
-                            Description = "A deeply spiritual and joyous celebration commemorating the birth of Prophet Muhammad, transforming mosques and neighborhoods across Egypt into centers of devotion and cultural expression. The festivities include special prayer services, recitations of the Quran and prophetic traditions, religious lectures exploring the Prophet's teachings, and community gatherings that strengthen bonds between families and neighbors. Colorful processions wind through historic streets featuring traditional Islamic banners, while nasheed (Islamic songs) performances create an atmosphere of reverence and celebration. Local communities organize charity drives, distribute food to the needy, and host educational programs about Islamic history and values. The celebrations also include traditional crafts workshops, calligraphy exhibitions, and storytelling sessions sharing tales from Islamic heritage.",
+                            Description = "Religious festival celebrating Prophet Muhammad’s birth.",
                             EndDate = new DateTime(2025, 9, 26, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 9, 20, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 11,
@@ -9860,7 +9848,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 12,
-                            Description = "A magnificent cultural celebration that honors Egypt's rich pharaonic heritage with traditional music performances, ancient storytelling traditions, folk dance exhibitions, and artisan craft demonstrations set against the iconic backdrop of the Great Sphinx of Giza. The festival features authentic recreations of ancient Egyptian ceremonies, with performers dressed in historically accurate costumes presenting dramatic interpretations of mythological tales and historical events. Master craftsmen demonstrate traditional techniques for creating papyrus, pottery, jewelry, and textiles using methods passed down through generations. Interactive workshops allow visitors to learn hieroglyphic writing, ancient Egyptian games, and traditional cooking methods. The event culminates in a grand procession recreating pharaonic pageantry, complete with horse-drawn chariots and ceremonial performances.",
+                            Description = "A cultural festival celebrating Egyptian heritage.",
                             EndDate = new DateTime(2025, 6, 10, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 6, 5, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 12,
@@ -9873,7 +9861,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 13,
-                            Description = "An exclusive international film festival held in the luxurious Red Sea resort town of El Gouna, combining high-quality cinema with stunning natural beauty and world-class hospitality. This boutique festival focuses on supporting emerging filmmakers from the Middle East and North Africa while attracting established international talent. The event features competitive screenings in state-of-the-art venues, exclusive premieres of highly anticipated films, and intimate industry gatherings that foster meaningful connections between filmmakers, distributors, and investors. Masterclasses with acclaimed directors, producers, and actors provide invaluable learning opportunities, while the festival's industry hub facilitates co-production deals and international collaborations. The unique resort setting allows for beachside screenings, yacht parties, and networking events that create an unforgettable festival experience.",
+                            Description = "A prestigious international film festival held in El Gouna.",
                             EndDate = new DateTime(2025, 10, 28, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 10, 15, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 13,
@@ -9886,7 +9874,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 14,
-                            Description = "A once-in-a-lifetime spectacle that captivated the world as 22 royal mummies were transferred from the Egyptian Museum to their new home at the National Museum of Egyptian Civilization in a grand procession through the streets of Cairo. This historic event featured specially designed climate-controlled vehicles decorated with pharaonic motifs, accompanied by a stunning cultural program including orchestra performances, traditional Egyptian music, and theatrical presentations depicting ancient Egyptian funeral rites. The parade route was adorned with elaborate decorations inspired by ancient Egyptian art, while millions of viewers worldwide witnessed this unprecedented celebration of Egypt's archaeological treasures. The event included educational programs about each royal mummy, their historical significance, and the advanced preservation techniques used to protect these 3,000-year-old remains.",
+                            Description = "A grand parade transferring royal mummies to their new museum with spectacular performances.",
                             EndDate = new DateTime(2025, 9, 24, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 9, 19, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 14,
@@ -9899,7 +9887,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 15,
-                            Description = "A nationwide celebration marking the joyous conclusion of Ramadan's month-long fasting period, transforming Egypt into a country-wide festival of gratitude, family reunions, and community solidarity. The festivities begin with special dawn prayers in mosques and public squares, followed by traditional family gatherings featuring elaborate feasts with special Eid delicacies, sweets, and traditional dishes. Children receive new clothes and gifts while families visit relatives and friends, strengthening social bonds. Public spaces host cultural performances, traditional music concerts, folk dance exhibitions, and carnival-style entertainment for children. Charity organizations coordinate food distribution to underprivileged families, ensuring everyone can participate in the celebration. Markets and bazaars stay open late, offering special Eid merchandise, handicrafts, and traditional sweets that are integral to the holiday traditions.",
+                            Description = "Eid al-Fitr in Egypt is a major religious and cultural event that celebrates the end of Ramadan, the Islamic holy month of fasting.",
                             EndDate = new DateTime(2025, 4, 2, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 3, 30, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 15,
@@ -9912,7 +9900,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 16,
-                            Description = "A vibrant celebration of Nubian culture that showcases the rich traditions, music, art, and heritage of Egypt's Nubian community in the beautiful setting of Aswan and its surrounding villages. The festival features authentic Nubian music performances with traditional instruments like the oud and tabla, colorful folk dances that tell stories of Nubian history, and exhibitions of traditional crafts including intricate beadwork, pottery, and textiles with distinctive geometric patterns. Visitors can experience traditional Nubian hospitality in decorated houses painted in bright colors, participate in cooking workshops featuring Nubian cuisine, and learn about the community's unique customs and oral traditions. The festival also addresses contemporary Nubian issues, celebrates their contributions to Egyptian culture, and promotes cultural preservation efforts through educational programs and documentary screenings.",
+                            Description = "​The Aswan International Cultural Festival is an annual event celebrating the rich heritage of Nubian culture through music, dance, and art.",
                             EndDate = new DateTime(2025, 2, 16, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 1, 30, 7, 50, 0, 0, DateTimeKind.Unspecified),
                             EventId = 16,
@@ -9925,7 +9913,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 17,
-                            Description = "A prestigious international squash tournament that attracts the world's top-ranked players to compete in the stunning resort town of El Gouna, featuring state-of-the-art glass courts with spectacular Red Sea views as the backdrop. This PSA World Tour event brings together elite athletes competing for significant prize money and world ranking points, while spectators enjoy world-class squash in an unparalleled setting. The tournament includes professional coaching clinics, junior development programs, and community outreach initiatives promoting squash among Egyptian youth. VIP hospitality packages offer exclusive access to player meet-and-greets, coaching sessions with professionals, and luxury accommodations. The event also features a festival atmosphere with beachside entertainment, water sports activities, and cultural performances celebrating both international sport and local Egyptian hospitality.",
+                            Description = "​The El Gouna International Squash Open is a premier event on the Professional Squash Association (PSA) World Tour, attracting top players from around the globe.",
                             EndDate = new DateTime(2025, 4, 18, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 4, 10, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 17,
@@ -9938,7 +9926,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 18,
-                            Description = "The Mediterranean's most significant literary gathering, transforming Alexandria into a bibliophile's paradise with hundreds of publishers, authors, and literary enthusiasts converging in the historic city that once housed the ancient world's greatest library. The fair features extensive book displays in multiple languages, author signings with renowned writers, poetry readings, literary discussions, and panel debates on contemporary issues in publishing and literature. Educational workshops cover creative writing, translation techniques, and digital publishing, while cultural programs include theatrical adaptations of classic literature and musical performances inspired by literary works. The event also celebrates Alexandria's rich literary heritage with special exhibitions about famous writers who lived in the city, guided tours of literary landmarks, and discussions about the city's role in shaping Arab intellectual culture.",
+                            Description = "The Bibliotheca Alexandrina International Book Fair is an annual cultural event celebrating literature, arts, and intellectual exchange.",
                             EndDate = new DateTime(2025, 11, 28, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 10, 13, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 18,
@@ -9951,7 +9939,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 19,
-                            Description = "An enchanting celebration in the remote Siwa Oasis that honors the legendary sweetness and quality of Siwan dates while showcasing the unique culture and traditions of this isolated desert community. The festival features extensive displays of different date varieties, traditional harvesting demonstrations using ancient techniques, and tastings of date-based products including wines, jams, and confections. Visitors experience authentic Siwan hospitality in traditional mud-brick houses, witness the crafting of palm frond baskets and other traditional handicrafts, and participate in desert excursions to natural springs and ancient ruins. Cultural performances include traditional Siwan music played on indigenous instruments, folk dances celebrating the harvest, and storytelling sessions sharing local legends and oral history. The festival also promotes environmental awareness about oasis conservation and sustainable agriculture practices.",
+                            Description = "​The Siwa Date Festival is an annual celebration held in Siwa Oasis, Egypt, honoring the region's rich tradition of date cultivation. This event showcases the oasis's cultural heritage and agricultural significance.",
                             EndDate = new DateTime(2025, 10, 17, 9, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 10, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 19,
@@ -9964,7 +9952,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 20,
-                            Description = "A spectacular commemorative exhibition celebrating the Egyptian Museum's pivotal role in preserving and presenting Egypt's archaeological treasures, featuring rare artifacts rarely displayed to the public, newly discovered pieces, and interactive presentations about the museum's history and mission. The exhibition includes behind-the-scenes tours showing conservation laboratories, storage facilities, and restoration work in progress, providing visitors with insights into the complex process of maintaining ancient artifacts. Special presentations by leading Egyptologists reveal new research findings, recent archaeological discoveries, and ongoing excavation projects across Egypt. The event also features digital reconstructions of ancient sites, virtual reality experiences allowing visitors to explore tombs and temples, and educational programs designed for students and researchers interested in Egyptology and museum studies.",
+                            Description = "​The Egyptian Museum in Cairo, established in 1902, is renowned for its extensive collection of ancient Egyptian artifacts.",
                             EndDate = new DateTime(2025, 7, 3, 10, 55, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 6, 30, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 20,
@@ -9977,7 +9965,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 21,
-                            Description = "A deeply meaningful religious celebration observed by Egypt's Coptic Christian community on January 7th, featuring special midnight masses in historic churches adorned with traditional decorations, community feasts that bring families together, and cultural events that highlight the rich heritage of Egyptian Christianity. The celebrations include beautiful choral performances of traditional Coptic hymns sung in ancient languages, processions through historic Coptic quarters of Cairo and other cities, and exhibitions showcasing Coptic art, manuscripts, and religious artifacts. Churches open their doors for cultural tours explaining Coptic history, architecture, and religious practices, while community centers host educational programs about the role of Coptic Christianity in Egyptian society. The festivities also include charity drives, community service projects, and interfaith dialogue events promoting understanding and coexistence among Egypt's diverse religious communities.",
+                            Description = "Coptic Christmas is a time of profound spiritual reflection and communal celebration, deeply rooted in Egypt's rich Christian heritage, it's celebrated by the Coptic Orthodox Church in Egypt",
                             EndDate = new DateTime(2026, 1, 7, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2026, 1, 5, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 21,
@@ -9990,7 +9978,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 22,
-                            Description = "An adrenaline-pumping international competition that brings world-class kite surfers to Egypt's pristine Red Sea coast, featuring high-speed races, freestyle competitions, and big air contests in the consistently windy conditions that make this region a global kite surfing destination. The championship attracts professional athletes from around the world competing for substantial prize money and world ranking points, while the event atmosphere includes beach parties, live music performances, and water sports exhibitions. Beginners can participate in kite surfing lessons with certified instructors, while advanced riders can join coaching clinics with professional athletes. The event also features environmental awareness programs highlighting Red Sea conservation, local cultural performances, and food festivals showcasing coastal Egyptian cuisine. Spectators enjoy beachside viewing areas, water taxi services to optimal viewing positions, and VIP hospitality options.",
+                            Description = "​The Red Sea region in Egypt is renowned for its vibrant kitesurfing scene, hosting various events and safaris throughout the year.",
                             EndDate = new DateTime(2026, 4, 26, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2026, 4, 13, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 22,
@@ -10003,7 +9991,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 23,
-                            Description = "An inspiring annual showcase of contemporary Egyptian art set in the historically rich city of Luxor, where ancient temples and tombs provide a dramatic backdrop for modern artistic expression. The exhibition features works by established and emerging Egyptian artists across various media including painting, sculpture, photography, digital art, and mixed media installations that often incorporate themes from ancient Egyptian culture reimagined through contemporary perspectives. Gallery spaces in historic buildings and outdoor installations in archaeological sites create unique viewing experiences that bridge ancient and modern artistic traditions. The event includes artist talks, workshops on traditional and modern art techniques, guided tours that explore the connection between ancient Egyptian art and contemporary creativity, and cultural exchanges with international artists and curators.",
+                            Description = "The Luxor Spring Arts Festival aims to celebrate both contemporary and traditional Egyptian art, providing a platform for local and international artists to showcase their work.​",
                             EndDate = new DateTime(2026, 7, 21, 10, 55, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2026, 7, 12, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 23,
@@ -10016,7 +10004,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 24,
-                            Description = "A dynamic celebration of urban artistic expression that transforms Cairo's walls, buildings, and public spaces into an open-air gallery showcasing the creativity and social commentary of local and international street artists. The festival features live mural painting sessions where visitors can watch artists create large-scale works, graffiti workshops teaching various techniques and styles, and guided tours through neighborhoods known for their street art culture. Interactive performances combine visual art with music, dance, and spoken word poetry, while panel discussions explore street art's role in social movements and cultural change. The event also includes community engagement projects where residents collaborate with artists to beautify their neighborhoods, youth programs teaching artistic skills as alternatives to destructive graffiti, and exhibitions documenting the evolution of Cairo's street art scene.",
+                            Description = "Art Cairo is an annual art fair that showcases contemporary and modern Arab art, providing a platform for artists from Egypt and the broader region to present their work.",
                             EndDate = new DateTime(2026, 2, 11, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2026, 2, 6, 8, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 24,
@@ -10029,7 +10017,7 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         new
                         {
                             Id = 25,
-                            Description = "A comprehensive academic and cultural gathering that explores the profound influence of Islamic civilization on Egyptian culture, architecture, art, literature, and social traditions through scholarly presentations, archaeological discoveries, and cultural exhibitions. The conference brings together leading historians, archaeologists, theologians, and cultural experts from around the world to present research on Islamic monuments, manuscript preservation, traditional crafts, and the evolution of Islamic thought in Egypt. Interactive workshops demonstrate traditional Islamic arts such as calligraphy, geometric pattern design, and manuscript illumination, while cultural performances feature traditional Islamic music, poetry recitations, and theatrical presentations. The event also includes guided tours of historic Islamic sites in Cairo, Alexandria, and other cities, educational programs for students and teachers, and interfaith dialogue sessions promoting understanding of Islamic contributions to world civilization.",
+                            Description = " This conference aims to explore various aspects of Islam and its cultural manifestations.​",
                             EndDate = new DateTime(2025, 11, 29, 10, 50, 0, 0, DateTimeKind.Unspecified),
                             EndSubscription = new DateTime(2025, 11, 25, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 25,
@@ -16331,146 +16319,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             TripId = 122,
                             TourGuideId = 6
-                        },
-                        new
-                        {
-                            TripId = 123,
-                            TourGuideId = 7
-                        },
-                        new
-                        {
-                            TripId = 124,
-                            TourGuideId = 8
-                        },
-                        new
-                        {
-                            TripId = 125,
-                            TourGuideId = 9
-                        },
-                        new
-                        {
-                            TripId = 126,
-                            TourGuideId = 10
-                        },
-                        new
-                        {
-                            TripId = 127,
-                            TourGuideId = 11
-                        },
-                        new
-                        {
-                            TripId = 128,
-                            TourGuideId = 12
-                        },
-                        new
-                        {
-                            TripId = 129,
-                            TourGuideId = 13
-                        },
-                        new
-                        {
-                            TripId = 130,
-                            TourGuideId = 14
-                        },
-                        new
-                        {
-                            TripId = 131,
-                            TourGuideId = 15
-                        },
-                        new
-                        {
-                            TripId = 132,
-                            TourGuideId = 16
-                        },
-                        new
-                        {
-                            TripId = 133,
-                            TourGuideId = 17
-                        },
-                        new
-                        {
-                            TripId = 134,
-                            TourGuideId = 18
-                        },
-                        new
-                        {
-                            TripId = 135,
-                            TourGuideId = 19
-                        },
-                        new
-                        {
-                            TripId = 136,
-                            TourGuideId = 1
-                        },
-                        new
-                        {
-                            TripId = 137,
-                            TourGuideId = 2
-                        },
-                        new
-                        {
-                            TripId = 138,
-                            TourGuideId = 3
-                        },
-                        new
-                        {
-                            TripId = 139,
-                            TourGuideId = 4
-                        },
-                        new
-                        {
-                            TripId = 140,
-                            TourGuideId = 5
-                        },
-                        new
-                        {
-                            TripId = 141,
-                            TourGuideId = 6
-                        },
-                        new
-                        {
-                            TripId = 142,
-                            TourGuideId = 7
-                        },
-                        new
-                        {
-                            TripId = 143,
-                            TourGuideId = 8
-                        },
-                        new
-                        {
-                            TripId = 144,
-                            TourGuideId = 9
-                        },
-                        new
-                        {
-                            TripId = 145,
-                            TourGuideId = 10
-                        },
-                        new
-                        {
-                            TripId = 146,
-                            TourGuideId = 11
-                        },
-                        new
-                        {
-                            TripId = 147,
-                            TourGuideId = 12
-                        },
-                        new
-                        {
-                            TripId = 148,
-                            TourGuideId = 13
-                        },
-                        new
-                        {
-                            TripId = 149,
-                            TourGuideId = 14
-                        },
-                        new
-                        {
-                            TripId = 150,
-                            TourGuideId = 15
                         });
                 });
 

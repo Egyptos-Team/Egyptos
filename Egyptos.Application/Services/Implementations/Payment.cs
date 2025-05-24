@@ -26,20 +26,20 @@ public class Payment(IConfiguration configuration) : IPayment
             LineItems =
             [
                 new SessionLineItemOptions
-            {
-                PriceData = new SessionLineItemPriceDataOptions
                 {
-                    UnitAmountDecimal = (decimal)(totalPrice * 100),
-                    Currency = "USD",
-                    ProductData = new SessionLineItemPriceDataProductDataOptions
+                    PriceData = new SessionLineItemPriceDataOptions
                     {
-                        Name = name,
-                        Description = description,
-                        Images = [image]
+                        UnitAmountDecimal = (decimal)(totalPrice * 100),
+                        Currency = "USD",
+                        ProductData = new SessionLineItemPriceDataProductDataOptions
+                        {
+                            Name = name,
+                            Description = description,
+                            Images = [image]
+                        },
                     },
-                },
-                Quantity = 1,
-            }
+                    Quantity = 1,
+                }
             ],
             Mode = "payment"
         };
@@ -51,15 +51,37 @@ public class Payment(IConfiguration configuration) : IPayment
 
 
     private (string Name, string Description, string ImageUrl, double TotalPrice) GetBookingDetails<T>(T booking)
-        where T : class
+    where T : class
     {
         return booking switch
         {
-            BookingPrivateTransport b => (b.PrivateTransport.Name, b.PrivateTransport.Description, b.PrivateTransport.ImageUrl, b.TotalPrice.Value),
-            BookingHotel b => (b.Hotel.Name, b.Hotel.Name, b.Hotel.ImageUrl, b.TotalPrice),
-            BookingEventDate b => (b.EventDate.Event.Name, b.EventDate.Event.Description, b.EventDate.EventImages.First(),
-                b.EventDate.Price),
-            _ => throw new InvalidOperationException("Unsupported booking type")
+            BookingPrivateTransport b => (
+                Name: b.PrivateTransport?.Name ?? "Private Transport Service",
+                Description: b.PrivateTransport?.Description ?? "Private transport booking",
+                ImageUrl: b.PrivateTransport?.ImageUrl ?? string.Empty,
+                TotalPrice: b.TotalPrice ?? 0.0
+            ),
+
+            BookingHotel b => (
+                Name: b.Hotel?.Name ?? "Hotel Accommodation",
+                Description: b.Hotel?.Name ?? b.Hotel?.Name ?? "Hotel booking",
+                ImageUrl: b.Hotel?.ImageUrl ?? string.Empty,
+                TotalPrice: b.TotalPrice
+            ),
+
+            BookingEventDate b => (
+                Name: b.EventDate?.Event?.Name ?? "Event Booking",
+                Description: b.EventDate?.Event?.Description ?? "Event participation",
+                ImageUrl: GetSafeEventImageUrl(b.EventDate?.EventImages.Select(x => x.ImageUrl)),
+                TotalPrice: b.EventDate?.Price ?? 0.0
+            ),
+
+            _ => throw new NotSupportedException($"Booking type '{typeof(T).Name}' is not currently supported for payment processing")
         };
+    }
+
+    private static string GetSafeEventImageUrl(IEnumerable<string>? eventImages)
+    {
+        return eventImages?.FirstOrDefault(img => !string.IsNullOrWhiteSpace(img)) ?? string.Empty;
     }
 }
