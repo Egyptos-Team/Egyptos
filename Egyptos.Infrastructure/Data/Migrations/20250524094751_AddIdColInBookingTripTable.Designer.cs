@@ -4,6 +4,7 @@ using Egyptos.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Egyptos.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250524094751_AddIdColInBookingTripTable")]
+    partial class AddIdColInBookingTripTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -9421,9 +9424,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                     b.Property<int>("NumberOfTickets")
                         .HasColumnType("int");
 
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
                     b.Property<int>("TripId")
                         .HasColumnType("int");
 
@@ -16325,146 +16325,6 @@ namespace Egyptos.Infrastructure.Data.Migrations
                         {
                             TripId = 122,
                             TourGuideId = 6
-                        },
-                        new
-                        {
-                            TripId = 123,
-                            TourGuideId = 7
-                        },
-                        new
-                        {
-                            TripId = 124,
-                            TourGuideId = 8
-                        },
-                        new
-                        {
-                            TripId = 125,
-                            TourGuideId = 9
-                        },
-                        new
-                        {
-                            TripId = 126,
-                            TourGuideId = 10
-                        },
-                        new
-                        {
-                            TripId = 127,
-                            TourGuideId = 11
-                        },
-                        new
-                        {
-                            TripId = 128,
-                            TourGuideId = 12
-                        },
-                        new
-                        {
-                            TripId = 129,
-                            TourGuideId = 13
-                        },
-                        new
-                        {
-                            TripId = 130,
-                            TourGuideId = 14
-                        },
-                        new
-                        {
-                            TripId = 131,
-                            TourGuideId = 15
-                        },
-                        new
-                        {
-                            TripId = 132,
-                            TourGuideId = 16
-                        },
-                        new
-                        {
-                            TripId = 133,
-                            TourGuideId = 17
-                        },
-                        new
-                        {
-                            TripId = 134,
-                            TourGuideId = 18
-                        },
-                        new
-                        {
-                            TripId = 135,
-                            TourGuideId = 19
-                        },
-                        new
-                        {
-                            TripId = 136,
-                            TourGuideId = 1
-                        },
-                        new
-                        {
-                            TripId = 137,
-                            TourGuideId = 2
-                        },
-                        new
-                        {
-                            TripId = 138,
-                            TourGuideId = 3
-                        },
-                        new
-                        {
-                            TripId = 139,
-                            TourGuideId = 4
-                        },
-                        new
-                        {
-                            TripId = 140,
-                            TourGuideId = 5
-                        },
-                        new
-                        {
-                            TripId = 141,
-                            TourGuideId = 6
-                        },
-                        new
-                        {
-                            TripId = 142,
-                            TourGuideId = 7
-                        },
-                        new
-                        {
-                            TripId = 143,
-                            TourGuideId = 8
-                        },
-                        new
-                        {
-                            TripId = 144,
-                            TourGuideId = 9
-                        },
-                        new
-                        {
-                            TripId = 145,
-                            TourGuideId = 10
-                        },
-                        new
-                        {
-                            TripId = 146,
-                            TourGuideId = 11
-                        },
-                        new
-                        {
-                            TripId = 147,
-                            TourGuideId = 12
-                        },
-                        new
-                        {
-                            TripId = 148,
-                            TourGuideId = 13
-                        },
-                        new
-                        {
-                            TripId = 149,
-                            TourGuideId = 14
-                        },
-                        new
-                        {
-                            TripId = 150,
-                            TourGuideId = 15
                         });
                 });
 

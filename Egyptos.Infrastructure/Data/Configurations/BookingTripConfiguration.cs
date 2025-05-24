@@ -8,6 +8,6 @@ public class BookingTripConfiguration : IEntityTypeConfiguration<BookingTrip>
 {
     public void Configure(EntityTypeBuilder<BookingTrip> builder)
     {
-        builder.HasKey(x => new { x.UserId, x.TripId });
+        builder.HasKey(x => x.Id);
     }
 }
