@@ -1,87 +1,89 @@
-﻿
-using Egyptos.Domain.Entities;
+﻿using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class NewTripsProgramConfiguration : IEntityTypeConfiguration<TripProgram>
+public class TripsProgramConfiguration : IEntityTypeConfiguration<TripProgram>
 {
     public void Configure(EntityTypeBuilder<TripProgram> builder)
     {
         var programs = new List<TripProgram>();
 
-        // Enhanced Egypt Destinations for Fall/Winter Season
+        // Classic Egypt Destinations for Spring/Summer Season
         var destinations = new[]
         {
-            "Temple of Hatshepsut", "Valley of the Queens", "Tombs of the Nobles", "Deir el-Bahari", "Malkata Palace",
-            "Seti I Temple", "Ramses III Temple", "Amenhotep III Temple", "Luxor Museum", "Mummification Museum",
-            "Aswan Botanical Garden", "Tomb of the Aga Khan", "Fatimid Cemetery", "Monastery of St. Simeon", "Kalabsha Temple",
-            "Wadi El Natrun Monasteries", "Monastery of Saint Macarius", "Monastery of Saint Bishoy", "Desert of the Fathers", "Scetis Desert",
-            "Ras El Bar", "Damietta", "Rosetta Stone Site", "Lake Burullus", "Baltim Beach",
-            "Taba Heights", "Nuweiba", "Saint Catherine's Protectorate", "Colored Canyon", "Blue Desert",
-            "Gilf Kebir Plateau", "Cave of Swimmers", "Crystal Mountain", "Black Desert", "English Mountain",
-            "Wadi Degla Protectorate", "Petrified Forest", "Valley of the Whales", "Magic Lake", "Salt Lakes",
-            "Berenice", "Gebel Elba", "Red Sea Mountains", "Emerald Mines", "Temple of Seti I at Kanais",
-            "Dendera Archaeological Site", "Qena", "Coptos", "Nag Hammadi", "Dishna"
+            "Great Pyramid of Giza", "Sphinx", "Egyptian Museum", "Khan El Khalili", "Citadel of Saladin",
+            "Karnak Temple", "Luxor Temple", "Valley of the Kings", "Philae Temple", "Abu Simbel",
+            "Alexandria Library", "Pompey's Pillar", "Catacombs of Kom el Shoqafa", "Montaza Palace", "Qaitbay Citadel",
+            "White Desert", "Siwa Oasis", "Temple of the Oracle", "Cleopatra's Bath", "Mountain of the Dead",
+            "Hurghada Marina", "Giftun Island", "El Gouna", "Makadi Bay", "Sahl Hasheesh",
+            "Sharm El Sheikh", "Ras Mohammed", "Naama Bay", "Dahab", "Mount Sinai",
+            "Faiyum Oasis", "Wadi El Rayan", "Lake Qarun", "Pyramid of Meidum", "Lahun Pyramid",
+            "Memphis", "Saqqara", "Dahshur", "Bent Pyramid", "Red Pyramid",
+            "Edfu Temple", "Kom Ombo Temple", "Esna Temple", "Elephantine Island", "Nubian Village"
         };
 
         var activities = new[]
         {
-            "Royal tomb exploration", "Ancient art workshop", "Hieratic script learning", "Royal mummy viewing", "Pharaonic jewelry crafting",
-            "Monastery spiritual retreat", "Coptic art appreciation", "Desert hermitage visit", "Religious manuscript study", "Icon painting workshop",
-            "Red Sea coral diving", "Deep sea fishing", "Underwater cave exploration", "Marine sanctuary visit", "Dolphin watching cruise",
-            "Sahara expedition", "Fossil hunting", "Geological survey", "Meteorite site visit", "Ancient lake exploration",
-            "Nile wildlife safari", "Bird watching expedition", "Wetland ecosystem study", "Endemic species observation", "Conservation project visit",
-            "Traditional weaving", "Pottery making", "Metalwork crafting", "Carpet weaving", "Glass blowing workshop"
+            "Pyramid exploration", "Ancient hieroglyphs decoding", "Pharaonic history tour", "Egyptian archaeology workshop", "Mummy wrapping demonstration",
+            "Nile felucca sailing", "Traditional fishing", "Sunset river cruise", "Nile island hopping", "Ancient boat building",
+            "Snorkeling adventure", "Scuba diving expedition", "Coral reef photography", "Marine life observation", "Beach volleyball tournament",
+            "Desert camel trekking", "Bedouin camp experience", "Star gazing session", "Sand dune surfing", "Oasis exploration",
+            "Coptic Cairo walking tour", "Islamic architecture study", "Traditional craft workshop", "Local cuisine cooking class", "Bazaar shopping experience",
+            "Temple sound and light show", "Ancient rituals reenactment", "Egyptian mythology storytelling", "Sacred geometry workshop", "Meditation at temples"
         };
 
         var descriptions = new[]
         {
-            "Journey into the heart of pharaonic royalty", "Discover hidden treasures of ancient Egypt",
-            "Experience the solitude of desert monasticism", "Explore pristine coral reefs and marine life",
-            "Uncover geological wonders of the Western Desert", "Navigate the sacred waters of the Nile Delta",
-            "Adventure through Egypt's untouched wilderness", "Immerse in traditional Egyptian craftsmanship",
-            "Archaeological expedition with cutting-edge discoveries", "Spiritual pilgrimage through Christian Egypt",
-            "Marine biology adventure in protected waters", "Desert survival and navigation experience",
-            "Photography safari capturing Egypt's biodiversity", "Cultural exchange with Nubian communities",
-            "Historical research expedition", "Eco-tourism and conservation awareness journey"
+            "Explore the mysteries of ancient Egyptian civilization", "Discover the wonders of the pharaohs",
+            "Experience the magic of the eternal Nile River", "Adventure through Egypt's golden deserts",
+            "Dive into the crystal clear waters of the Red Sea", "Uncover the secrets of Alexandria's ancient glory",
+            "Journey through time in Egypt's sacred temples", "Immerse yourself in authentic Egyptian culture",
+            "Archaeological adventure with expert guides", "Spiritual journey through Egypt's holy sites",
+            "Photography expedition capturing Egypt's beauty", "Family-friendly exploration of Egyptian heritage",
+            "Luxury experience of Egypt's timeless treasures", "Educational tour of Egypt's greatest monuments",
+            "Cultural immersion in traditional Egyptian life", "Historical expedition through millennia of civilization"
         };
 
-        var baseDate = new DateTime(2025, 9, 12); // Starting from first new trip date
-        var random = new Random(123); // Different seed for new trips
+        var baseDate = new DateTime(2025, 1, 1); // Starting from beginning of year
+        var random = new Random(42); // Fixed seed for consistency
 
-        for (int tripId = 123; tripId <= 150; tripId++)
+        for (int tripId = 1; tripId <= 122; tripId++)
         {
-            var tripIndex = tripId - 123;
-            var tripStartDate = baseDate.AddDays(tripIndex * 2); // Every 2 days like the trips
 
-            // Program 1: Morning Royal/Archaeological Experience
+            if (tripId == 79 || tripId == 80)
+                continue;
+
+            var tripIndex = tripId - 1;
+            var tripStartDate = baseDate.AddDays(tripIndex * 2); // Every 2 days
+
+            // Program 1: Morning Historical/Archaeological Experience
             programs.Add(new TripProgram
             {
-                Id = (tripId - 123) * 3 + 1, // Starting from ID 1
+                Id = tripIndex * 3 + 1, // Starting from ID 1
                 Description = $"{descriptions[random.Next(descriptions.Length)]} - {activities[random.Next(0, 5)]}",
-                Destination = destinations[random.Next(0, 15)], // Royal and archaeological sites
+                Destination = destinations[random.Next(0, 15)], // Historical and archaeological sites
                 StartDate = tripStartDate,
                 EndDate = tripStartDate.AddDays(random.Next(2, 4)),
                 TripId = tripId
             });
 
-            // Program 2: Afternoon Adventure/Nature Experience  
+            // Program 2: Afternoon Adventure/Water Experience  
             programs.Add(new TripProgram
             {
-                Id = (tripId - 123) * 3 + 2,
+                Id = tripIndex * 3 + 2,
                 Description = $"{descriptions[random.Next(descriptions.Length)]} - {activities[random.Next(5, 20)]}",
-                Destination = destinations[random.Next(15, 35)], // Adventure and nature sites
+                Destination = destinations[random.Next(15, 35)], // Adventure and water sites
                 StartDate = tripStartDate.AddDays(1),
                 EndDate = tripStartDate.AddDays(random.Next(3, 5)),
                 TripId = tripId
             });
 
-            // Program 3: Evening Cultural/Spiritual Experience
+            // Program 3: Evening Cultural/Desert Experience
             programs.Add(new TripProgram
             {
-                Id = (tripId - 123) * 3 + 3,
+                Id = tripIndex * 3 + 3,
                 Description = $"{descriptions[random.Next(descriptions.Length)]} - {activities[random.Next(20, activities.Length)]}",
-                Destination = destinations[random.Next(35, destinations.Length)], // Cultural and craft sites
+                Destination = destinations[random.Next(35, destinations.Length)], // Cultural and desert sites
                 StartDate = tripStartDate.AddDays(2),
                 EndDate = tripStartDate.AddDays(random.Next(4, 6)),
                 TripId = tripId
@@ -91,4 +93,3 @@ public class NewTripsProgramConfiguration : IEntityTypeConfiguration<TripProgram
         builder.HasData(programs);
     }
 }
-

@@ -13,7 +13,7 @@ public class Trip
     public int PublicTransportId { get; set; }
     public PublicTransport PublicTransport { get; set; } = null!;
 
-    public int? AreaId { get; set; }
+    public int AreaId { get; set; }
     public Area Area { get; set; } = null!;
 
     public ICollection<BookingTrip> BookingTrips { get; set; } = [];
