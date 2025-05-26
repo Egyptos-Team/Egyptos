@@ -7,6 +7,7 @@ public class Area
     public string Description { get; set; } = null!;
     public string Location { get; set; } = null!;
     public string Address { get; set; } = null!;
+    public string? AppAddress { get; set; }
     public string ImageUrl { get; set; } = null!;
     public double? Longitude { get; set; }
     public double? Latitude { get; set; }
