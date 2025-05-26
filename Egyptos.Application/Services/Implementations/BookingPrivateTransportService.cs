@@ -52,10 +52,14 @@ public class BookingPrivateTransportService(
 
     public async Task<Result> MarkAsPaidAsync(int bookingId)
     {
-        if (await _context.BookingPrivateTransports.FindAsync(bookingId) is not { } booking)
+        if (await _context.BookingPrivateTransports.Include(x=>x.PrivateTransport).FirstOrDefaultAsync(x=>x.Id == bookingId) is not { } booking)
             return Result.Failure(BookingPrivateTransportError.NotFound);
 
         booking.PaymentDate = DateTime.UtcNow;
+        
+        booking.PrivateTransport.Quantity -= 1;
+        BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.End!.Value);
+
         await _context.SaveChangesAsync();
 
         return Result.Success(booking);
@@ -168,6 +172,12 @@ public class BookingPrivateTransportService(
         if (pricePerHour == default)
             return Result.Failure<PrivateTransportResponse>(PrivateTransportError.NotFound);
 
+        if(!booking.End.HasValue&&booking.Start!=request.Start)
+        {
+            BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.Start);
+            BackgroundJob.Schedule(() => MinusTransportQuantity(booking.PrivateTransportId), booking.Start);
+        }
+
         booking = request.Adapt(booking);
         if (request.End.HasValue)
         {
@@ -197,6 +207,7 @@ public class BookingPrivateTransportService(
         if (booking.PaymentCancel.HasValue || booking.CancelBooking.HasValue)
             return Result.Failure(PaymentError.AlreadyCancel);
 
+        BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.Start);
 
         booking.CancelBooking = DateTime.UtcNow;
         await _context.SaveChangesAsync();
