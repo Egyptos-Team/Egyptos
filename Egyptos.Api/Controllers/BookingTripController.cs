@@ -1,6 +1,5 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.BookingTrip;
-using Egyptos.Application.Services.Implementations;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -14,7 +13,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     private readonly IBookingTripService _bookingTripService = bookingTripService;
 
     [HttpPost("")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+    //[Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromBody] BookingTripRequest request)
     {
         var result = await _bookingTripService.BookATicket(User.GetUserId(), request);
@@ -50,7 +49,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpDelete("{id}")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+    //[Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _bookingTripService.DeleteAsync(id);

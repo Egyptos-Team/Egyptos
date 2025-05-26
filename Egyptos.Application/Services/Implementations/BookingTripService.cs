@@ -12,6 +12,9 @@ internal class BookingTripService(ApplicationDbContext context) : IBookingTripSe
         if (await _context.Trips.FindAsync(request.TripId) is not { } trip)
             return Result.Failure<BookingTripResponse>(BookingTripErrors.TripNotFount);
 
+        if (trip.AvailableSeats < request.NumberOfTickets)
+            return Result.Failure<BookingTripResponse>(BookingTripErrors.NotEnoughSeatsAvailable);
+
         var bookingTrip = new BookingTrip
         {
             TripId = request.TripId,
@@ -19,6 +22,9 @@ internal class BookingTripService(ApplicationDbContext context) : IBookingTripSe
             NumberOfTickets = request.NumberOfTickets,
             TotalPrice = trip.Price * request.NumberOfTickets
         };
+
+        trip.AvailableSeats -= request.NumberOfTickets;
+        _context.Trips.Update(trip);
 
         await _context.BookingTrips.AddAsync(bookingTrip);
         await _context.SaveChangesAsync();
@@ -71,13 +77,20 @@ internal class BookingTripService(ApplicationDbContext context) : IBookingTripSe
     }
     public async Task<Result> DeleteAsync(int id)
     {
-        var isExstingBookinTrip = await _context.BookingTrips.AnyAsync(x => x.Id == id);
-        if (!isExstingBookinTrip)
+        if (await _context.BookingTrips.FindAsync(id) is not { } bookingTrip)
             return Result.Failure(BookingTripErrors.BookingNotFount);
 
-        _context.BookingTrips.Remove(new BookingTrip { Id = id });
+        var trip = await _context.Trips.FindAsync(bookingTrip.TripId);
+
+        trip!.AvailableSeats += bookingTrip.NumberOfTickets;
+        _context.Trips.Update(trip);
+
+        await _context.SaveChangesAsync();
+
+        _context.BookingTrips.Remove(bookingTrip);
         await _context.SaveChangesAsync();
 
         return Result.Success();
     }
+
 }

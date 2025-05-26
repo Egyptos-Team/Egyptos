@@ -11,6 +11,7 @@ public record AreaResponse
    string Description ,
    string Location ,
    string Address ,
+   string? AppAddress ,
    string ImageUrl ,
    int  AreaTypeId ,
    double? Latitude,
