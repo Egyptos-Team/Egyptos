@@ -14,4 +14,7 @@ public record PrivateTransportError
 
     public static readonly Error PrivateTransportReviewNotFount = new("PrivateTransportReview.PrivateTransportReviewNotFount",
         "No PrivateTransportReview was found with the given ID", StatusCodes.Status404NotFound);
+
+    public static readonly Error AlreadyHaveBooked = new("PrivateTransport.AlreadyHasBooked",
+        "You cannot add a new booking because you have an unpaid booking ", StatusCodes.Status404NotFound);
 }

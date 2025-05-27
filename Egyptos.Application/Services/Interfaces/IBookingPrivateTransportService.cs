@@ -15,6 +15,5 @@ public interface IBookingPrivateTransportService
     Task<Result> MarkAsPaidAsync(int bookingId);
 
     Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId,PaymentRequest request);
-    Task<Result> CancelBookingAsync(int id);
-    Task<Result<BookingPrivateTransportResponse>> EndBookingManualAsync(int id);
+    Task<Result> CancelBookingAsync(int id);    
 }

@@ -131,17 +131,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     }
 
 
-    [HttpPut("{bookingId}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [Authorize(Roles = DefaultRoles.Admin.Name)]
-    public async Task<IActionResult> EndBookingManual(int bookingId)
-    {
-        var result = await _booking.EndBookingManualAsync(bookingId);
-
-        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
-    }
+    
 
     [HttpPut("{bookingId}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]

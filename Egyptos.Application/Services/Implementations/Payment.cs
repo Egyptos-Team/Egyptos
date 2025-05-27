@@ -59,14 +59,14 @@ public class Payment(IConfiguration configuration) : IPayment
                 Name: b.PrivateTransport?.Name ?? "Private Transport Service",
                 Description: b.PrivateTransport?.Description ?? "Private transport booking",
                 ImageUrl: b.PrivateTransport?.ImageUrl ?? string.Empty,
-                TotalPrice: b.TotalPrice ?? 0.0
+                b.TotalPrice 
             ),
 
             BookingHotel b => (
                 Name: b.Hotel?.Name ?? "Hotel Accommodation",
                 Description: b.Hotel?.Name ?? b.Hotel?.Name ?? "Hotel booking",
                 ImageUrl: b.Hotel?.ImageUrl ?? string.Empty,
-                TotalPrice: b.TotalPrice
+                b.TotalPrice
             ),
 
             BookingEventDate b => (

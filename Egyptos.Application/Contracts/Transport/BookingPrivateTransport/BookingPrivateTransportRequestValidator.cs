@@ -29,11 +29,10 @@ public class BookingPrivateTransportRequestValidator:AbstractValidator<BookingPr
     }
 
     private bool HasValidDates(BookingPrivateTransportRequest request)
-    {
-        if (request.End == null)
-            return true;
-        return  request.Start <= request.End;
+    {        
+        return  request.Start < request.End;
     }
+
     private bool HasValidDates1(BookingPrivateTransportRequest request) =>
        request.Start >= DateTime.UtcNow;
 

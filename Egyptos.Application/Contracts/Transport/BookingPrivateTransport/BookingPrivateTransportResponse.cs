@@ -5,7 +5,7 @@ public class BookingPrivateTransportResponse
     public int Id { get; set; }
     public string Location { get; set; }
     public DateTime Start { get; set; }
-    public DateTime? End { get; set; }
+    public DateTime End { get; set; }
     public DateTime? PaymentDate { get; set; }
 
     public DateTime? PaymentCancel { get; set; }
