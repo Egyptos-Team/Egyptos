@@ -158,7 +158,7 @@ public class AuthService(
                 { "{{name}}", user.FirstName },
                 { "{{action_url}}", $"{origin}/auth/verify-email-address?userId={user.Id}&code={code}" },
             }
-            , _templateReader
+            
         );
 
         BackgroundJob.Enqueue(() =>
@@ -177,8 +177,8 @@ public class AuthService(
             {
                 {"{{name}}" , user.FirstName },
                 {"{{action_url}}" , $"{origin}/reset-password?email={user.Email}&code={code}" },
-            },
-            _templateReader
+            }
+           
         );
 
 

@@ -22,6 +22,8 @@ builder.Services
     .AddApplicationExtensions(builder.Configuration)
     .AddInfrastructureExtensions(builder.Configuration);
 
+//builder.Services.AddHttpContextAccessor();
+
 ////SignIn with Google
 //builder.Services.AddAuthentication(options =>
 //{

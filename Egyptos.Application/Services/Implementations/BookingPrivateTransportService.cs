@@ -1,20 +1,28 @@
 ﻿using Egyptos.Application.Abstractions;
+using Egyptos.Application.Contracts;
 using Egyptos.Application.Contracts.Payment;
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Contracts.Transport.PrivateTransports;
 using Egyptos.Domain.Errors.PrivateTransport;
+using Egyptos.Domain.Helpers;
+using Egyptos.Domain.Interfaces;
 using Hangfire;
 using Microsoft.Extensions.Configuration;
 using NETCore.MailKit.Core;
+using static Egyptos.Domain.Consts.DefaultRoles;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace Egyptos.Application.Services.Implementations;
 
 public class BookingPrivateTransportService(
     ApplicationDbContext _context,
     IPayment _payment,
-    IConfiguration _configuration) : IBookingPrivateTransportService
+    IConfiguration _configuration,
+    IEmailSender emailSender,
+    IHttpContextAccessor httpContextAccessor) : IBookingPrivateTransportService
 {
-   
+    private readonly IEmailSender _emailSender = emailSender;
+    private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
     public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
     {
@@ -42,7 +50,7 @@ public class BookingPrivateTransportService(
 
     public async Task<Result> MarkAsPaidAsync(int bookingId)
     {
-        if (await _context.BookingPrivateTransports.Include(x => x.PrivateTransport).FirstOrDefaultAsync(x => x.Id == bookingId) is not { } booking)
+        if (await _context.BookingPrivateTransports.Include(x => x.PrivateTransport).Include(x=>x.User).FirstOrDefaultAsync(x => x.Id == bookingId) is not { } booking)
             return Result.Failure(BookingPrivateTransportError.NotFound);
 
         booking.PaymentDate = DateTime.UtcNow;
@@ -50,7 +58,8 @@ public class BookingPrivateTransportService(
         booking.PrivateTransport.Quantity -= 1;
         BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.End);
 
-        
+        var notificationPaymentResponse=booking.Adapt<NotificationPaymentResponse>();
+        await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
 
         await _context.SaveChangesAsync();
 
@@ -204,6 +213,31 @@ public class BookingPrivateTransportService(
                 .SetProperty(p => p.Quantity, p => p.Quantity + 1)
                 .SetProperty(p => p.IsAvailable, p => (p.Quantity + 1) > 0)
             );
+    }
+
+    private async Task SendNotificationPaymentIsSuccesToUserByEmail(NotificationPaymentResponse response, string code)
+    {
+        var origin = _httpContextAccessor.HttpContext?.Request.Headers.Origin;
+       
+        var emailBody = EmailBodyBuilder.GenerateEmailBody("PaymenNotification.html",
+            templateModel: new Dictionary<string, string>
+            {
+               { "{{BookingPrivateTransportId}}", response.BookingId.ToString() },
+            { "{{UserName}}", response.UserName },
+            { "{{Start}}", response.Start.ToString() },
+            { "{{End}}", response.End.ToString() },
+            { "{{TotalPrice}}", response.TotalPrice.ToString() },
+            { "{{PaymentDate}}", response.PaymentDate.ToString()! },
+            { "{{PrivateTransportName}}", response.PrivateTransportName ?? "Private Transport" }
+            }
+        );
+
+        BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
+       response.UserEmail, // Assuming you have user email in the response, or get it from user service
+       "✅ Payment Successful - Transport Booking Confirmed",
+       emailBody));
+
+        await Task.CompletedTask;
     }
 }
 

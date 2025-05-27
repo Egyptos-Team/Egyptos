@@ -4,9 +4,8 @@ namespace Egyptos.Domain.Helpers;
 
 public static class EmailBodyBuilder
 {
-    public static string GenerateEmailBody(string template, Dictionary<string, string> templateModel, ITemplateReader templateReader)
+    public static string GenerateEmailBody(string template, Dictionary<string, string> templateModel)
     {
-        //var body = templateReader.ReadTemplate(template);
         var templatePath = $"{Directory.GetCurrentDirectory()}/wwwroot/Templates/{template}";
         var streamReader = new StreamReader(templatePath);
         var body = streamReader.ReadToEnd();

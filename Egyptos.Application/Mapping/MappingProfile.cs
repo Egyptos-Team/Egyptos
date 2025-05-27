@@ -10,6 +10,7 @@ using static Org.BouncyCastle.Math.EC.ECCurve;
 using Egyptos.Domain.Entities;
 using static Egyptos.Domain.Consts.DefaultRoles;
 using Egyptos.Application.Contracts.TripReview;
+using Egyptos.Application.Contracts;
 
 namespace Egyptos.Application.Mapping;
 
@@ -75,6 +76,10 @@ public class MappingProfile : IRegister
            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
            .Map(des => des.TripName, src => src.Trip.Area.Name)
            .Map(des => des.ImageUrl, src => src.ImageUrl);
+
+        config.NewConfig<BookingPrivateTransport, NotificationPaymentResponse>()
+            .Map(des => des.UserName, src => src.User.FirstName + " " + src.User.LastName)
+            .Map(des => des.BookingId, src => src.Id);
 
     }
 }

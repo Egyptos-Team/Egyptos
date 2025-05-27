@@ -65,6 +65,8 @@ public static class ApplicationExtensions
         services.AddScoped<IBookingTripService, BookingTripService>();
 
 
+        services.AddHttpContextAccessor();
+
         return services;
     }
     private static IServiceCollection AddAuthConfig(this IServiceCollection services, IConfiguration configuration)

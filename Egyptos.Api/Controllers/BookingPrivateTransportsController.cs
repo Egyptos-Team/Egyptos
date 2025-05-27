@@ -56,7 +56,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [HttpPost("")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-  //  [Authorize(Roles = DefaultRoles.User.Name)]
+   [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Create([FromBody] BookingPrivateTransportRequest request)
     {
         var result = await _booking.CreateAsync(User.GetUserId(), request);
@@ -82,7 +82,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
         var paymentRequest = new PaymentRequest
         {
             ApiUrl = thisApiUrl,
-            ClientUrl = clientUrl,
+            ClientUrl = clientUrl!,
             SuccessRedirectUrl = $"{thisApiUrl}/api/BookingPrivateTransports/Success/{bookingId}",
             CancelRedirectUrl = $"{thisApiUrl}/api/BookingPrivateTransports/Cancel/{bookingId}"
         };
@@ -137,7 +137,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
-  //  [Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> CancelBooking(int bookingId)
     {
         var result = await _booking.CancelBookingAsync(bookingId);
