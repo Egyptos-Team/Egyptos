@@ -12,10 +12,9 @@ namespace Egyptos.Application.Services.Implementations;
 public class BookingPrivateTransportService(
     ApplicationDbContext _context,
     IPayment _payment,
-    IConfiguration _configuration,
-    EmailService emailService ) : IBookingPrivateTransportService
+    IConfiguration _configuration) : IBookingPrivateTransportService
 {
-    private readonly EmailService _emailService = emailService;
+   
 
     public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
     {
