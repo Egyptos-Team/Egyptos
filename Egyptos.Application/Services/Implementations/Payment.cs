@@ -59,7 +59,7 @@ public class Payment(IConfiguration configuration) : IPayment
                 Name: b.PrivateTransport?.Name ?? "Private Transport Service",
                 Description: b.PrivateTransport?.Description ?? "Private transport booking",
                 ImageUrl: b.PrivateTransport?.ImageUrl ?? string.Empty,
-                b.TotalPrice 
+                b.TotalPrice
             ),
 
             BookingHotel b => (
@@ -75,7 +75,13 @@ public class Payment(IConfiguration configuration) : IPayment
                 ImageUrl: GetSafeEventImageUrl(b.EventDate?.EventImages.Select(x => x.ImageUrl)),
                 TotalPrice: b.EventDate?.Price ?? 0.0
             ),
+            BookingTrip b => (
+                Name: b.Trip.Area.Name ?? "Area Trip",
+                Description: b.Trip.Area.Description ?? "Area trip description",
+                ImageUrl: GetSafeAreaImageUrl(b.Trip.Area.AreaImages.Select(x => x.ImageUrl)),
+                TotalPrice: b.Trip.Price 
 
+            ),
             _ => throw new NotSupportedException($"Booking type '{typeof(T).Name}' is not currently supported for payment processing")
         };
     }
@@ -83,5 +89,10 @@ public class Payment(IConfiguration configuration) : IPayment
     private static string GetSafeEventImageUrl(IEnumerable<string>? eventImages)
     {
         return eventImages?.FirstOrDefault(img => !string.IsNullOrWhiteSpace(img)) ?? string.Empty;
+    }
+
+    private static string GetSafeAreaImageUrl(IEnumerable<string>? areaImages)
+    {
+        return areaImages?.FirstOrDefault(img => !string.IsNullOrWhiteSpace(img)) ?? string.Empty;
     }
 }

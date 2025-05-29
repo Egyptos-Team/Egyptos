@@ -1,5 +1,7 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.BookingTrip;
+using Egyptos.Application.Contracts.Payment;
+using Egyptos.Application.Services.Implementations;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -11,6 +13,7 @@ namespace Egyptos.Api.Controllers;
 public class BookingTripController(IBookingTripService bookingTripService) : ControllerBase
 {
     private readonly IBookingTripService _bookingTripService = bookingTripService;
+    private static string? clientUrl;
 
     [HttpPost("")]
     //[Authorize(Roles = DefaultRoles.User.Name)]
@@ -49,12 +52,68 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     }
 
     [HttpDelete("{id}")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Delete([FromRoute] int id)
     {
         var result = await _bookingTripService.DeleteAsync(id);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
+    }
+
+    [HttpPost("{bookingId}")]
+    [Authorize]
+    public async Task<IActionResult> OnlinePayment(int bookingId, [FromServices] IServiceProvider sp)
+    {
+
+        string? token = null;
+        if (Request.Headers.TryGetValue("Authorization", out var authHeader))
+        {
+            var bearerToken = authHeader.ToString();
+            if (bearerToken.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+            {
+                token = bearerToken["Bearer ".Length..].Trim();
+            }
+        }
+
+        var request = HttpContext.Request;
+        var thisApiUrl = $"{request.Scheme}://{request.Host}";
+        clientUrl = Request.Headers.Referer[0];
+
+        var paymentRequest = new PaymentRequest
+        {
+            ApiUrl = thisApiUrl,
+            ClientUrl = clientUrl!,
+            SuccessRedirectUrl = $"{thisApiUrl}/api/BookingTrip/Success?bookingId={bookingId}&token={token}",
+            CancelRedirectUrl = $"{thisApiUrl}/api/BookingTrip/Cancel/{bookingId}"
+        };
+
+        var result = await _bookingTripService.OnlinePaymentAsync(bookingId, User.GetUserId(), paymentRequest);
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public async Task<IActionResult> Success([FromQuery] int bookingId,string token ,[FromServices] IServiceProvider sp)
+    {
+
+        var userId = token.GetUserIdFromToken();
+
+        if (string.IsNullOrEmpty(userId))
+            return BadRequest("invalid userId");
+        
+        var paymentStatus = await _bookingTripService.MarkAsPaidAsync(bookingId, userId);
+
+        if (!paymentStatus.IsSuccess)        
+          return RedirectToAction("Cancel", new { bookingId });        
+
+        return Redirect(clientUrl + "success.html");
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public IActionResult Cancel()
+    {
+        return BadRequest("Booking canceld successfully");
     }
 
 }
