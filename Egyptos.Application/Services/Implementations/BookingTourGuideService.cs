@@ -1,18 +1,23 @@
 ﻿using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.EventDateContracts;
+using Egyptos.Application.Contracts.Payment;
 using Egyptos.Application.Contracts.TourGuide;
 using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
+using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
 using Hangfire;
+using Microsoft.Extensions.Configuration;
 using static Egyptos.Domain.Consts.DefaultRoles;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class BookingTourGuideService(ApplicationDbContext context) : IBookingTourGuideService
+public class BookingTourGuideService(ApplicationDbContext context, IPayment payment, IConfiguration configuration) : IBookingTourGuideService
 {
     private readonly ApplicationDbContext _context = context;
+    private readonly IPayment _payment = payment;
+    private readonly IConfiguration _configuration = configuration;
 
     public async Task<Result<BookingTourGuideResponse>> BookATicketAsync(string userId, BookingTourGuideRequest request)
     {
@@ -120,5 +125,43 @@ public class BookingTourGuideService(ApplicationDbContext context) : IBookingTou
         await _context.SaveChangesAsync();
 
         return Result.Success();
+    }
+
+    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, string userId, PaymentRequest paymentRequest)
+    {
+        var booking = await _context.BookingTourGuides
+            .Include(t => t.TourGuide)
+            .ThenInclude(tu =>tu.User )
+            .Include(u=>u.User)
+            .FirstOrDefaultAsync(x => x.Id == bookingId && x.UserId == userId);
+
+        if (booking is null)
+            return Result.Failure<CheckOutOrderResponse>(TourGuideErrors.BookingNotFount);
+
+        if (booking.PaymentDate.HasValue)
+            return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+
+        
+
+        var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
+
+        var result = new CheckOutOrderResponse
+        {
+            SessionId = sessionId,
+            PubKey = _configuration["Stripe:PubKey"]!
+        };
+
+        return Result.Success(result);
+    }
+
+    public async Task<Result> MarkAsPaidAsync(int bookingId, string userId)
+    {
+        if (await _context.BookingTourGuides.FirstOrDefaultAsync(x => x.Id == bookingId && x.UserId == userId) is not { } booking)
+            return Result.Failure(EventErrors.BookingNotFount);
+
+        booking.PaymentDate = DateTime.UtcNow;
+        await _context.SaveChangesAsync();
+
+        return Result.Success(booking);
     }
 }

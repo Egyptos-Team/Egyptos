@@ -1,5 +1,6 @@
 ﻿using Egyptos.Api.Extensions;
 using Egyptos.Application.Contracts.BookingTourGuide;
+using Egyptos.Application.Contracts.Payment;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
@@ -12,9 +13,10 @@ namespace Egyptos.Api.Controllers;
 public class BookingTourGuideController(IBookingTourGuideService bookingTourGuideService) : ControllerBase
 {
     private readonly IBookingTourGuideService _bookingTourGuideService = bookingTourGuideService;
+    private static string? clientUrl;
 
     [HttpPost("")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+   // [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> BookATicket([FromBody] BookingTourGuideRequest request)
     {
         var result = await _bookingTourGuideService.BookATicketAsync(User.GetUserId(), request);
@@ -64,6 +66,62 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
         var result = await _bookingTourGuideService.DeleteAsync(User.GetUserId(),bookingId);
 
         return result.IsSuccess ? Ok() : result.ToProblem();
+    }
+
+    [HttpPost("{bookingId}")]
+    [Authorize]
+    public async Task<IActionResult> OnlinePayment(int bookingId, [FromServices] IServiceProvider sp)
+    {
+
+        string? token = null;
+        if (Request.Headers.TryGetValue("Authorization", out var authHeader))
+        {
+            var bearerToken = authHeader.ToString();
+            if (bearerToken.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+            {
+                token = bearerToken["Bearer ".Length..].Trim();
+            }
+        }
+
+        var request = HttpContext.Request;
+        var thisApiUrl = $"{request.Scheme}://{request.Host}";
+        clientUrl = Request.Headers.Referer[0];
+
+        var paymentRequest = new PaymentRequest
+        {
+            ApiUrl = thisApiUrl,
+            ClientUrl = clientUrl!,
+            SuccessRedirectUrl = $"{thisApiUrl}/api/BookingTourGuide/Success?bookingId={bookingId}&token={token}",
+            CancelRedirectUrl = $"{thisApiUrl}/api/BookingTourGuide/Cancel/{bookingId}"
+        };
+
+        var result = await _bookingTourGuideService.OnlinePaymentAsync(bookingId, User.GetUserId(), paymentRequest);
+        return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public async Task<IActionResult> Success([FromQuery] int bookingId, string token, [FromServices] IServiceProvider sp)
+    {
+
+        var userId = token.GetUserIdFromToken();
+
+        if (string.IsNullOrEmpty(userId))
+            return BadRequest("invalid userId");
+
+        var paymentStatus = await _bookingTourGuideService.MarkAsPaidAsync(bookingId, userId);
+
+        if (!paymentStatus.IsSuccess)
+            return RedirectToAction("Cancel", new { bookingId });
+
+        return Redirect(clientUrl + "success.html");
+    }
+
+    [AllowAnonymous]
+    [HttpGet("")]
+    public IActionResult Cancel()
+    {
+        return BadRequest("Booking canceld successfully");
     }
 
 }

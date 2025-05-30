@@ -1,5 +1,6 @@
 ﻿using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.BookingTourGuide;
+using Egyptos.Application.Contracts.Payment;
 
 namespace Egyptos.Application.Services.Interfaces;
 
@@ -11,4 +12,6 @@ public interface IBookingTourGuideService
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(int tourGuideId);
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(string userId);
     Task<Result> DeleteAsync(string userId, int bookingId);
+    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, string userId, PaymentRequest paymentRequest);
+    Task<Result> MarkAsPaidAsync(int bookingId, string userId);
 }
