@@ -2,6 +2,7 @@
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Egyptos.Application.Services.Implementations;
 
@@ -114,7 +115,10 @@ public class AreaService(ApplicationDbContext context, IFileService fileService)
             area.AreaImages.Add(new AreaImage { ImageUrl = imageUrl });
         }
 
-        
+        var imageUrll = await _fileService.UploadAsync(request.ImageUrl, "AreaImages");
+        area.ImageUrl = imageUrll;
+
+
         await _context.SaveChangesAsync();
 
         return Result.Success();
