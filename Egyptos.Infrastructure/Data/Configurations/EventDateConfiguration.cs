@@ -13,61 +13,61 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
             new EventDate
             {
                 Id = 1,
-                StartDate = new DateTime(2025, 7, 10, 10, 00, 00),
-                EndDate = new DateTime(2025, 7, 10, 23, 59, 00),
+                StartDate = new DateTime(2025, 11, 10, 10, 00, 00),
+                EndDate = new DateTime(2025, 11, 12, 23, 59, 00),
                 StartSubscription = new DateTime(2025, 10, 1, 00, 00, 00),
                 EndSubscription = new DateTime(2025, 10, 9, 23, 59, 00),
-                Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
-                Location = "Ismailia, Egypt",
-                Price = 100,
-                EventId = 1,
+                Description = "The Grand Opening Ceremony of the Grand Egyptian Museum in Giza, Egypt. This monumental event will showcase the museum’s most anticipated exhibits, including the full collection of King Tutankhamun’s treasures. The event will feature official speeches, cultural performances, a tour of the museum’s galleries, and a stunning multimedia light show celebrating Egypt's ancient heritage. Attendees will include international leaders, scholars, and celebrities, marking a historic moment in Egypt’s cultural and touristic landscape.",
+                Location = "Giza, Egypt",
+                Price = 500,
+                EventId = 1
             },
             new EventDate
             {
                 Id = 2,
-                StartDate = new DateTime(2025, 10, 15, 18, 0, 0),
-                EndDate = new DateTime(2025, 10, 20, 23, 0, 0),
-                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0),
-                Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
-                Location = "Alexandria, Egypt",
-                Price = 150,
+                StartDate = new DateTime(2024, 4, 3, 20, 00, 00),
+                EndDate = new DateTime(2024, 4, 3, 23, 59, 00),
+                StartSubscription = new DateTime(2024, 3, 1, 00, 00, 00),
+                EndSubscription = new DateTime(2024, 4, 2, 23, 59, 00),
+                Description = "The Royal Mummies Parade is a majestic night event in Cairo, showcasing the transfer of 22 ancient Egyptian royal mummies in beautifully decorated carriages, accompanied by traditional music and celebrations. This unique event highlights Egypt’s ancient civilization and cultural pride.",
+                Location = "From Tahrir Square to the National Museum of Egyptian Civilization, Cairo",
+                Price = 300,
                 EventId = 2,
             },
             new EventDate
             {
                 Id = 3,
-                StartDate = new DateTime(2025, 3, 8, 17, 0, 0),
-                EndDate = new DateTime(2025, 3, 15, 22, 0, 0),
-                StartSubscription = new DateTime(2025, 2, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 3, 5, 23, 59, 0),
-                Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
-                Location = "Cairo, Egypt",
-                Price = 120,
+                StartDate = new DateTime(2030, 6, 10, 18, 00, 00),
+                EndDate = new DateTime(2030, 7, 15, 23, 59, 00),
+                StartSubscription = new DateTime(2029, 12, 1, 00, 00, 00),
+                EndSubscription = new DateTime(2030, 6, 9, 23, 59, 00),
+                Description = "The FIFA World Cup 2030 hosted by Egypt will feature matches in state-of-the-art stadiums in Cairo, Alexandria, and other cities. Fans will enjoy a blend of thrilling football action and rich Egyptian culture and hospitality throughout the month-long tournament.",
+                Location = "Various cities across Egypt",
+                Price = 1500,
                 EventId = 3,
             },
             new EventDate
             {
                 Id = 4,
-                StartDate = new DateTime(2025, 2, 21, 6, 0, 0),
-                EndDate = new DateTime(2025, 2, 21, 8, 0, 0),
-                StartSubscription = new DateTime(2025, 1, 10, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 2, 18, 23, 59, 0),
-                Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
-                Location = "Karnak Temple, Luxor, Egypt",
-                Price = 250,
+                StartDate = new DateTime(2025, 10, 2, 8, 00, 00),
+                EndDate = new DateTime(2025, 10, 11, 18, 00, 00),
+                StartSubscription = new DateTime(2025, 7, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 9, 25, 23, 59, 59),
+                Description = "The Cross Egypt Challenge is a demanding motorcycle rally through Sinai’s diverse terrain, covering 2,900 km over 8 stages. Riders will encounter desert landscapes, mountains, and coastal roads, experiencing the best of Egypt’s natural beauty and cultural richness.",
+                Location = "Sinai Peninsula, Egypt",
+                Price = 2500,
                 EventId = 4,
             },
             new EventDate
             {
                 Id = 5,
-                StartDate = new DateTime(2025, 11, 10, 19, 0, 0),
-                EndDate = new DateTime(2025, 11, 20, 23, 59, 0),
-                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
-                EndSubscription = new DateTime(2025, 11, 5, 23, 59, 0),
-                Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
-                Location = "Cairo, Egypt",
-                Price = 200,
+                StartDate = new DateTime(2025, 12, 25, 16, 00, 00),
+                EndDate = new DateTime(2025, 12, 26, 2, 00, 00),
+                StartSubscription = new DateTime(2025, 12, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 12, 24, 23, 59, 59),
+                Description = "The Zamna Festival is a landmark electronic music event bringing artists like Adriatique, Collé, and Mayssa to Egypt for the first time. Held near the iconic Giza Pyramids, it blends world-class music with Egypt’s ancient heritage.",
+                Location = "Foot of the Giza Pyramids, Cairo, Egypt",
+                Price = 700,
                 EventId = 5,
             },
             new EventDate
@@ -310,6 +310,66 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
                 Price = 250,
                 EventId = 25,
             },
+            new EventDate
+            {
+                Id = 31,
+                StartDate = new DateTime(2025, 7, 10, 10, 00, 00),
+                EndDate = new DateTime(2025, 7, 10, 23, 59, 00),
+                StartSubscription = new DateTime(2025, 10, 1, 00, 00, 00),
+                EndSubscription = new DateTime(2025, 10, 9, 23, 59, 00),
+                Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
+                Location = "Ismailia, Egypt",
+                Price = 100,
+                EventId = 31,
+            },
+            new EventDate
+            {
+                Id = 32,
+                StartDate = new DateTime(2025, 10, 15, 18, 0, 0),
+                EndDate = new DateTime(2025, 10, 20, 23, 0, 0),
+                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 10, 10, 23, 59, 0),
+                Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
+                Location = "Alexandria, Egypt",
+                Price = 150,
+                EventId = 32,
+            },
+            new EventDate
+            {
+                Id = 33,
+                StartDate = new DateTime(2025, 3, 8, 17, 0, 0),
+                EndDate = new DateTime(2025, 3, 15, 22, 0, 0),
+                StartSubscription = new DateTime(2025, 2, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 3, 5, 23, 59, 0),
+                Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
+                Location = "Cairo, Egypt",
+                Price = 120,
+                EventId = 33,
+            },
+            new EventDate
+            {
+                Id = 34,
+                StartDate = new DateTime(2025, 2, 21, 6, 0, 0),
+                EndDate = new DateTime(2025, 2, 21, 8, 0, 0),
+                StartSubscription = new DateTime(2025, 1, 10, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 2, 18, 23, 59, 0),
+                Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
+                Location = "Karnak Temple, Luxor, Egypt",
+                Price = 250,
+                EventId = 34,
+            },
+            new EventDate
+            {
+                Id = 35,
+                StartDate = new DateTime(2025, 11, 10, 19, 0, 0),
+                EndDate = new DateTime(2025, 11, 20, 23, 59, 0),
+                StartSubscription = new DateTime(2025, 9, 1, 0, 0, 0),
+                EndSubscription = new DateTime(2025, 11, 5, 23, 59, 0),
+                Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
+                Location = "Cairo, Egypt",
+                Price = 200,
+                EventId = 35,
+            },
         };
 
         builder.HasData(eventDate);
@@ -318,7 +378,7 @@ public class EventDateConfiguration : IEntityTypeConfiguration<EventDate>
 
 
 public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
-{    
+{
     public void Configure(EntityTypeBuilder<EventImage> builder)
     {
         var eventImages = new List<EventImage>
@@ -327,94 +387,95 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
             {
                 Id = 1,
                 ImageUrl="EventImages/Ismailia/1.webp",
-                EventId = 1
+                EventId = 31
             },
             new EventImage
             {
                 Id = 2,
                 ImageUrl="EventImages/Ismailia/2.webp",
-                EventId = 1
+                EventId = 31
             },
             new EventImage
             {
                 Id = 3,
                 ImageUrl="EventImages/Ismailia/3.webp",
-                EventId = 1
+                EventId = 31
             },
 
             new EventImage
             {
                 Id = 4,
                 ImageUrl="EventImages/Alexandria/1.webp",
-                EventId = 2
+                EventId = 32
             },
             new EventImage
             {
                 Id = 5,
                 ImageUrl="EventImages/Alexandria/2.webp",
-                EventId = 2
+                EventId = 32
             },
             new EventImage
             {
                 Id = 6,
                 ImageUrl="EventImages/Alexandria/3.webp",
-                EventId = 2
+                EventId = 32
             },
 
             new EventImage
             {
                 Id = 7,
                 ImageUrl="EventImages/Cairo/1.webp",
-                EventId = 3
+                EventId = 33
             },
             new EventImage
             {
                 Id = 8,
                 ImageUrl="EventImages/Cairo/2.webp",
-                EventId = 3
+                EventId = 33
             },
             new EventImage
             {
                 Id = 9,
                 ImageUrl="EventImages/Cairo/3.webp",
-                EventId = 3
+                EventId = 33
             },
+
             new EventImage
             {
                 Id = 10,
                 ImageUrl="EventImages/Karnak Temple, Luxor, Egypt/1.webp",
-                EventId = 4
+                EventId = 34
             },
             new EventImage
             {
                 Id = 11,
                 ImageUrl="EventImages/Karnak Temple, Luxor, Egypt/2.webp",
-                EventId = 4
+                EventId = 34
             },
             new EventImage
             {
                 Id = 12,
                 ImageUrl="EventImages/Karnak Temple, Luxor, Egypt/3.webp",
-                EventId = 4
+                EventId = 34
             },
 
             new EventImage
             {
                 Id = 13,
                 ImageUrl="EventImages/Cairo,Egypt/1.webp",
-                EventId = 5
+                EventId = 35
             },
             new EventImage
             {
                 Id = 14,
                 ImageUrl="EventImages/Cairo,Egypt/2.webp",
-                EventId = 5
+                EventId = 35
             },
             new EventImage
             {
                 Id = 15,
                 ImageUrl="EventImages/Cairo,Egypt/3.webp",
-                EventId = 5
+                EventId = 35
             },
 
             new EventImage
@@ -782,7 +843,102 @@ public class EventDateImageConfiguration : IEntityTypeConfiguration<EventImage>
                 Id = 75,
                 ImageUrl="EventImages/75.jpg",
                 EventId = 14
-            }
+            },
+
+            new EventImage
+            {
+                Id = 100,
+                ImageUrl="EventImages/WhatsApp Image 2025-06-01 at 04.33.41_8bcceded.jpg",
+                EventId = 1
+            },
+            new EventImage
+            {
+                Id = 101,
+                ImageUrl="EventImages/WhatsApp Image 2025-06-01 at 04.33.42_88f42345.jpg",
+                EventId = 1
+            },
+            new EventImage
+            {
+                Id = 102,
+                ImageUrl="EventImages/WhatsApp Image 2025-06-01 at 04.33.42_61530aab.jpg",
+                EventId = 1
+            },
+
+            new EventImage
+            {
+                Id = 114,
+                ImageUrl="EventImages/A.jpg",
+                EventId = 2
+            },
+            new EventImage
+            {
+                Id = 103,
+                ImageUrl="EventImages/AA.jpg",
+                EventId = 2
+            },
+            new EventImage
+            {
+                Id = 104,
+                ImageUrl="EventImages/AAA.jpg",
+                EventId = 2
+            },
+
+            new EventImage
+            {
+                Id = 105,
+                ImageUrl="EventImages/B.jpg",
+                EventId = 3
+            },
+            new EventImage
+            {
+                Id = 106,
+                ImageUrl="EventImages/BB.jpg",
+                EventId = 3
+            },
+            new EventImage
+            {
+                Id = 107,
+                ImageUrl="EventImages/BBB.jpg",
+                EventId = 3
+            },
+
+            new EventImage
+            {
+                Id = 108,
+                ImageUrl="EventImages/C.jpg",
+                EventId = 4
+            },
+            new EventImage
+            {
+                Id = 109,
+                ImageUrl="EventImages/CC.jpg",
+                EventId = 4
+            },
+            new EventImage
+            {
+                Id = 110,
+                ImageUrl="EventImages/CCC.jpg",
+                EventId = 4
+            },
+
+            new EventImage
+            {
+                Id = 111,
+                ImageUrl="EventImages/D.jpg",
+                EventId = 5
+            },
+            new EventImage
+            {
+                Id = 112,
+                ImageUrl="EventImages/DD.jpg",
+                EventId = 5
+            },
+            new EventImage
+            {
+                Id = 113,
+                ImageUrl="EventImages/DDD.jpg",
+                EventId = 5
+            },
         };
 
         builder.HasData(eventImages);

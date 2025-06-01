@@ -13,37 +13,37 @@ public class EventConfiguration : IEntityTypeConfiguration<Event>
             new Event
             {
                 Id = 1,
-                Name = "Ismailia Mango Festival",
-                Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
-                EventTypeId = 4
-            },
-            new Event
-            {
-                Id = 2,
-                Name = "Alexandria Short Film Festival",
-                Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
-                EventTypeId = 5
-            },
-            new Event
-            {
-                Id = 3,
-                Name = "International Women Theatre Festival",
-                Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
-                EventTypeId = 5
-            },
-            new Event
-            {
-                Id = 4,
-                Name = "The Solar Alignment on the Karnak Temple",
-                Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
+                Name = "Grand Egyptian Museum Official Opening",
+                Description = "The Grand Egyptian Museum will officially open on July 3, 2025, in a prestigious ceremony attended by world leaders, dignitaries, and cultural figures. This major cultural event marks the unveiling of the museum’s vast collection, including the complete treasures of King Tutankhamun displayed together for the first time. The museum represents a new era in showcasing Egypt’s ancient heritage on a global stage.",
                 EventTypeId = 2
             },
             new Event
             {
-                Id = 5,
-                Name = "Cairo International Film Festival",
-                Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
+                Id = 2,
+                Name = "Royal Mummies Parade",
+                Description = "A spectacular cultural event where 22 royal mummies are transferred from the Egyptian Museum in Tahrir to the National Museum of Egyptian Civilization in Fustat. The parade features elaborate carriages, traditional music, light shows, and a grand procession through Cairo’s main streets, celebrating Egypt’s glorious ancient heritage and attracting global attention.",
+                EventTypeId = 2
+            },
+            new Event
+            {
+                Id = 3,
+                Name = "FIFA World Cup 2030 – Egypt Host",
+                Description = "Egypt will proudly co-host the FIFA World Cup 2030, welcoming football fans from around the globe to experience the world’s biggest sporting event. The tournament promises thrilling matches across multiple cities, showcasing Egypt’s rich culture, modern stadiums, and warm hospitality. This marks a historic milestone as Africa hosts the World Cup for the first time in decades.",
                 EventTypeId = 1
+            },
+            new Event
+            {
+                Id = 4,
+                Name = "Cross Egypt Challenge",
+                Description = "An exhilarating motorcycle rally spanning 8 stages over 2,900 km across Sinai, showcasing Egypt’s stunning natural landscapes and rich cultural heritage. Participants will experience challenging terrains and breathtaking views in this iconic endurance event.",
+                EventTypeId = 1 
+            },
+            new Event
+            {
+                Id = 5,
+                Name = "Zamna Festival",
+                Description = "A globally renowned electronic music festival held for the first time in Egypt, set at the foot of the Giza Pyramids. The festival features top international and local artists performing immersive sets in a unique historic atmosphere.",
+                EventTypeId = 4
             },
             new Event
             {
@@ -184,7 +184,42 @@ public class EventConfiguration : IEntityTypeConfiguration<Event>
                 Name = "Islamic Heritage Conference",
                 Description = "A comprehensive academic and cultural gathering that explores the profound influence of Islamic civilization on Egyptian culture, architecture, art, literature, and social traditions through scholarly presentations, archaeological discoveries, and cultural exhibitions. The conference brings together leading historians, archaeologists, theologians, and cultural experts from around the world to present research on Islamic monuments, manuscript preservation, traditional crafts, and the evolution of Islamic thought in Egypt. Interactive workshops demonstrate traditional Islamic arts such as calligraphy, geometric pattern design, and manuscript illumination, while cultural performances feature traditional Islamic music, poetry recitations, and theatrical presentations. The event also includes guided tours of historic Islamic sites in Cairo, Alexandria, and other cities, educational programs for students and teachers, and interfaith dialogue sessions promoting understanding of Islamic contributions to world civilization.",
                 EventTypeId = 3
-            }
+            },
+            new Event
+            {
+                Id = 31,
+                Name = "Ismailia Mango Festival",
+                Description = "A delightful celebration of Ismailia's world-renowned mangoes, featuring extensive agricultural exhibitions showcasing different mango varieties, traditional harvesting demonstrations, cooking competitions with mango-based dishes, live folk music performances, and family-friendly entertainment. Local farmers display their finest produce while visitors can sample fresh mango juices, dried mango products, and traditional Egyptian sweets infused with mango flavors. The festival also includes cultural workshops on mango cultivation techniques and the fruit's significance in Egyptian agriculture.",
+                EventTypeId = 4
+            },
+            new Event
+            {
+                Id = 32,
+                Name = "Alexandria Short Film Festival",
+                Description = "An internationally acclaimed film festival that transforms Alexandria into a cinematic hub, showcasing innovative short films from Egyptian and international filmmakers. The event features competitive screenings across multiple venues, masterclasses with renowned directors, industry networking sessions, and panel discussions on contemporary filmmaking techniques. Emerging filmmakers get the opportunity to present their work to industry professionals, critics, and cinema enthusiasts. The festival also includes workshops on digital filmmaking, script writing, and post-production techniques, making it a comprehensive learning experience for aspiring filmmakers.",
+                EventTypeId = 5
+            },
+            new Event
+            {
+                Id = 33,
+                Name = "International Women Theatre Festival",
+                Description = "A groundbreaking festival dedicated to celebrating women's contributions to theatre arts, featuring powerful performances by female playwrights, directors, and actresses from around the world. The festival presents thought-provoking plays addressing women's experiences, social issues, and contemporary challenges. Interactive workshops cover topics such as feminist theatre, directing techniques, and creative writing. Panel discussions bring together theatre professionals to explore gender representation in performing arts, while networking events connect women in theatre from different cultural backgrounds. The festival also includes community outreach programs promoting theatre education among young women.",
+                EventTypeId = 5
+            },
+            new Event
+            {
+                Id = 34,
+                Name = "The Solar Alignment on the Karnak Temple",
+                Description = "A breathtaking astronomical phenomenon that occurs twice yearly when the rising sun perfectly aligns with the main axis of Karnak Temple, illuminating the sacred sanctuary in golden light. This ancient engineering marvel demonstrates the sophisticated astronomical knowledge of pharaonic architects who designed the temple to capture this celestial event. Visitors gather before dawn to witness this mystical moment, accompanied by expert Egyptologists who explain the religious and astronomical significance of the alignment. The event includes guided tours of the temple complex, lectures on ancient Egyptian astronomy, photography workshops, and cultural performances recreating ancient rituals that would have accompanied this sacred occurrence.",
+                EventTypeId = 2
+            },
+            new Event
+            {
+                Id = 35,
+                Name = "Cairo International Film Festival",
+                Description = "The Arab world's most prestigious and longest-running film festival, transforming Cairo into the region's cinematic capital for two weeks each year. This internationally recognized event attracts A-list celebrities, renowned directors, producers, and film critics from around the globe. The festival screens hundreds of films across various categories including feature films, documentaries, and short films, with competitions for both regional and international productions. Red carpet galas, exclusive premieres, industry forums, and film market sessions provide networking opportunities for industry professionals. Educational programs include film workshops, master classes with acclaimed directors, and seminars on the future of Arab cinema.",
+                EventTypeId = 1
+            },
         };
 
         builder.HasData(events);
