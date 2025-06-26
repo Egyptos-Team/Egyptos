@@ -4,6 +4,7 @@ namespace Egyptos.Domain.Entities;
 
 public class BookingEventDate
 {
+    public int Id { get; set; }
     public int EventDateId { get; set; }
     public EventDate EventDate { get; set; } = null!;
 
