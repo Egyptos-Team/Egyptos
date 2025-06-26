@@ -225,7 +225,7 @@ public class BookingPrivateTransportService(
             {
                 { "{{BookingId}}", response.BookingId.ToString() },
                 { "{{BookingType}}", response.NameOfBooking },
-                { "{{BookingName}}", response.PrivateTransportName },
+                { "{{BookingName}}", response.ItemName },
                 { "{{UserName}}", response.UserName },
                 { "{{Start}}", response.Start.ToString() },
                 { "{{End}}", response.End.ToString() },
@@ -236,7 +236,7 @@ public class BookingPrivateTransportService(
 
         BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
        response.UserEmail, // Assuming you have user email in the response, or get it from user service
-       $"✅ Payment Successful - {response.PrivateTransportName} Booking Confirmed",
+       $"✅ Payment Successful - {response.ItemName} Booking Confirmed",
        emailBody));
 
         await Task.CompletedTask;

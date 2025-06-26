@@ -1,15 +1,22 @@
-﻿using Egyptos.Application.Contracts.BookingEventDate;
+﻿using Egyptos.Application.Contracts;
+using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.Payment;
+using Egyptos.Domain.Helpers;
+using Hangfire;
 using Microsoft.Extensions.Configuration;
 
 namespace Egyptos.Application.Services.Implementations;
 
 public class BookingEventDateService(ApplicationDbContext context,
     IPayment _payment,
-    IConfiguration _configuration) : IBookingEventDateService
+    IConfiguration _configuration,
+     IEmailSender emailSender,
+    IHttpContextAccessor httpContextAccessor) : IBookingEventDateService
 {
     private readonly ApplicationDbContext _context = context;
+    private readonly IEmailSender _emailSender = emailSender;
+    private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
     public async Task<Result> BookATicket(string userId, int eventDateId)
     {
@@ -94,39 +101,95 @@ public class BookingEventDateService(ApplicationDbContext context,
         return Result.Success();
     }
 
-    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int eventDateId, string userId, PaymentRequest paymentRequest)
+    //public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
+    //{
+    //    //var booking = await _context.BookingEventDates
+    //    //    .Include(x => x.EventDate)
+    //    //    .ThenInclude(x => x.EventImages)
+    //    //    .FirstOrDefaultAsync(x => x.Id == bookingId);
+
+    //    //if (booking is null)
+    //    //    return Result.Failure<CheckOutOrderResponse>(EventErrors.BookingNotFount);
+
+    //    //if (booking.PaymentDate.HasValue)
+    //    //    return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+
+
+    //    //var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
+
+    //    //var result = new CheckOutOrderResponse
+    //    //{
+    //    //    SessionId = sessionId,
+    //    //    PubKey = _configuration["Stripe:PubKey"]!
+    //    //};
+
+    //    //return Result.Success(result);
+    //}
+
+    //public async Task<Result> MarkAsPaidAsync(int bookingId)
+    //{
+    //    if (await _context.BookingEventDates
+    //        .Include(e=> e.EventDate)
+    //        .ThenInclude(x => x.Event)
+    //        .Include(u=>u.User)
+    //        .FirstOrDefaultAsync(x => x.Id == bookingId ) is not { } booking)
+    //        return Result.Failure(EventErrors.BookingNotFount);
+
+    //    booking.PaymentDate = DateTime.UtcNow;
+
+    //    var notificationPaymentResponse = new NotificationPaymentResponse
+    //    {
+    //        NameOfBooking = nameof(booking.EventDate.Event.Name),
+    //        BookingId = bookingId,
+    //        UserName=booking.User.FirstName + " " + booking.User.LastName,
+    //        UserEmail=booking.User.Email!,
+    //        Start=booking.EventDate.StartDate,
+    //        End=booking.EventDate.EndDate,
+    //        TotalPrice=booking.EventDate.Price,
+    //        PaymentDate=DateTime.UtcNow,
+    //        ItemName=booking.EventDate.Event.Name
+
+    //    };
+    //    await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
+
+    //    await _context.SaveChangesAsync();
+
+    //    return Result.Success(booking);
+    //}
+
+    private async Task SendNotificationPaymentIsSuccesToUserByEmail(NotificationPaymentResponse response, string code)
     {
-        var booking = await _context.BookingEventDates
-            .Include(x => x.EventDate)
-            .ThenInclude(x => x.EventImages)
-            .FirstOrDefaultAsync(x => x.EventDateId == eventDateId && x.UserId == userId);
+        var origin = _httpContextAccessor.HttpContext?.Request.Headers.Origin;
 
-        if (booking is null)
-            return Result.Failure<CheckOutOrderResponse>(EventErrors.BookingNotFount);
+        var emailBody = EmailBodyBuilder.GenerateEmailBody("PaymenNotification.html",
+            templateModel: new Dictionary<string, string>
+            {
+                { "{{BookingId}}", response.BookingId.ToString() },
+                { "{{BookingType}}", response.NameOfBooking },
+                { "{{BookingName}}", response.ItemName },
+                { "{{UserName}}", response.UserName },
+                { "{{Start}}", response.Start.ToString() },
+                { "{{End}}", response.End.ToString() },
+                { "{{TotalPrice}}", response.TotalPrice.ToString() },
+                { "{{PaymentDate}}", response.PaymentDate.ToString()! },
+            }
+        );
 
-        if (booking.PaymentDate.HasValue)
-            return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+        BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
+       response.UserEmail, // Assuming you have user email in the response, or get it from user service
+       $"✅ Payment Successful - {response.ItemName} Booking Confirmed",
+       emailBody));
 
-
-        var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
-
-        var result = new CheckOutOrderResponse
-        {
-            SessionId = sessionId,
-            PubKey = _configuration["Stripe:PubKey"]!
-        };
-
-        return Result.Success(result);
+        await Task.CompletedTask;
     }
 
-    public async Task<Result> MarkAsPaidAsync(int bookingId, string userId)
+    public Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
     {
-        if (await _context.BookingEventDates.FirstOrDefaultAsync(x => x.EventDateId == bookingId && x.UserId == userId) is not { } booking)
-            return Result.Failure(EventErrors.BookingNotFount);
+        throw new NotImplementedException();
+    }
 
-        booking.PaymentDate = DateTime.UtcNow;
-        await _context.SaveChangesAsync();
-
-        return Result.Success(booking);
+    public Task<Result> MarkAsPaidAsync(int bookingId)
+    {
+        throw new NotImplementedException();
     }
 }

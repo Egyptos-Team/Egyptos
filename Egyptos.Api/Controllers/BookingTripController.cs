@@ -87,7 +87,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
             CancelRedirectUrl = $"{thisApiUrl}/api/BookingTrip/Cancel/{bookingId}"
         };
 
-        var result = await _bookingTripService.OnlinePaymentAsync(bookingId, User.GetUserId(), paymentRequest);
+        var result = await _bookingTripService.OnlinePaymentAsync(bookingId, paymentRequest);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
@@ -101,7 +101,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
         if (string.IsNullOrEmpty(userId))
             return BadRequest("invalid userId");
         
-        var paymentStatus = await _bookingTripService.MarkAsPaidAsync(bookingId, userId);
+        var paymentStatus = await _bookingTripService.MarkAsPaidAsync(bookingId);
 
         if (!paymentStatus.IsSuccess)        
           return RedirectToAction("Cancel", new { bookingId });        

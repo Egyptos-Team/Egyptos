@@ -17,7 +17,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     private static string? clientUrl;
 
     [HttpPost("{eventDateId}")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+   // [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromRoute] int eventDateId)
     {
         var result = await _bookingEventDateService.BookATicket(User.GetUserId(), eventDateId);
@@ -51,7 +51,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
             CancelRedirectUrl = $"{thisApiUrl}/api/BookingEventDate/Cancel/{bookingId}"
         };
 
-        var result = await _bookingEventDateService.OnlinePaymentAsync(bookingId, User.GetUserId(), paymentRequest);
+        var result = await _bookingEventDateService.OnlinePaymentAsync(bookingId, paymentRequest);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
@@ -59,7 +59,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     [HttpGet("")]
     public async Task<IActionResult> Success([FromQuery] int bookingId, [FromQuery] string userId, [FromServices] IServiceProvider sp)
     {
-        var paymentStatus = await _bookingEventDateService.MarkAsPaidAsync(bookingId, userId);
+        var paymentStatus = await _bookingEventDateService.MarkAsPaidAsync(bookingId);
 
         if (!paymentStatus.IsSuccess)
         {

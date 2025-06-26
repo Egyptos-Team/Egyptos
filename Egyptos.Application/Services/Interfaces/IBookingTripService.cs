@@ -9,6 +9,6 @@ public interface IBookingTripService
     Task<Result<IEnumerable<BookingTripResponse>>> BookedByUserAsync(string userId);
     Task<Result<IEnumerable<BookingTripResponse>>> TripBookedAsync(int tripId);
     Task<Result> DeleteAsync(int id);
-    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, string userId, PaymentRequest paymentRequest);
-    Task<Result> MarkAsPaidAsync(int bookingId, string userId);
+    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest);
+    Task<Result> MarkAsPaidAsync(int bookingId);
 }

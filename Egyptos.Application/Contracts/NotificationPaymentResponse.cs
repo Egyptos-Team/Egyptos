@@ -9,5 +9,5 @@ public class NotificationPaymentResponse
     public DateTime End { get; set; }
     public double TotalPrice { get; set; }
     public DateTime? PaymentDate { get; set; }
-    public string PrivateTransportName { get; set; } = string.Empty;
+    public string ItemName { get; set; } = string.Empty;
 }

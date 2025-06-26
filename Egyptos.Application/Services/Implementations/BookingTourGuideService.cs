@@ -1,4 +1,5 @@
-﻿using Egyptos.Application.Contracts.BookingEventDate;
+﻿using Egyptos.Application.Contracts;
+using Egyptos.Application.Contracts.BookingEventDate;
 using Egyptos.Application.Contracts.BookingTourGuide;
 using Egyptos.Application.Contracts.EventDateContracts;
 using Egyptos.Application.Contracts.Payment;
@@ -7,17 +8,24 @@ using Egyptos.Application.Contracts.Transport.BookingPrivateTransport;
 using Egyptos.Application.Services.Interfaces;
 using Egyptos.Domain.Entities;
 using Egyptos.Domain.Errors.PrivateTransport;
+using Egyptos.Domain.Helpers;
 using Hangfire;
 using Microsoft.Extensions.Configuration;
 using static Egyptos.Domain.Consts.DefaultRoles;
 
 namespace Egyptos.Application.Services.Implementations;
 
-public class BookingTourGuideService(ApplicationDbContext context, IPayment payment, IConfiguration configuration) : IBookingTourGuideService
+public class BookingTourGuideService(ApplicationDbContext context,
+    IPayment payment,
+    IConfiguration configuration,
+    IEmailSender emailSender,
+    IHttpContextAccessor httpContextAccessor) : IBookingTourGuideService
 {
     private readonly ApplicationDbContext _context = context;
     private readonly IPayment _payment = payment;
     private readonly IConfiguration _configuration = configuration;
+    private readonly IEmailSender _emailSender = emailSender;
+    private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
 
     public async Task<Result<BookingTourGuideResponse>> BookATicketAsync(string userId, BookingTourGuideRequest request)
     {
@@ -127,13 +135,13 @@ public class BookingTourGuideService(ApplicationDbContext context, IPayment paym
         return Result.Success();
     }
 
-    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, string userId, PaymentRequest paymentRequest)
+    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
     {
         var booking = await _context.BookingTourGuides
             .Include(t => t.TourGuide)
             .ThenInclude(tu =>tu.User )
             .Include(u=>u.User)
-            .FirstOrDefaultAsync(x => x.Id == bookingId && x.UserId == userId);
+            .FirstOrDefaultAsync(x => x.Id == bookingId );
 
         if (booking is null)
             return Result.Failure<CheckOutOrderResponse>(TourGuideErrors.BookingNotFount);
@@ -154,14 +162,59 @@ public class BookingTourGuideService(ApplicationDbContext context, IPayment paym
         return Result.Success(result);
     }
 
-    public async Task<Result> MarkAsPaidAsync(int bookingId, string userId)
+    public async Task<Result> MarkAsPaidAsync(int bookingId)
     {
-        if (await _context.BookingTourGuides.FirstOrDefaultAsync(x => x.Id == bookingId && x.UserId == userId) is not { } booking)
+        if (await _context.BookingTourGuides.Include(x=>x.User)
+            .Include(t=>t.TourGuide)
+            .ThenInclude(u=>u.User)
+            .FirstOrDefaultAsync(x => x.Id == bookingId ) is not { } booking)
             return Result.Failure(EventErrors.BookingNotFount);
 
         booking.PaymentDate = DateTime.UtcNow;
+
+        var notificationPaymentResponse = new NotificationPaymentResponse
+        {
+            NameOfBooking = nameof(booking.TourGuide),
+            BookingId = bookingId,
+            UserName = booking.User.FirstName + " " + booking.User.LastName,
+            UserEmail = booking.User.Email!,
+            Start = booking.StartBooking,
+            End = booking.EndBooking,
+            TotalPrice = booking.TotalPrice,
+            PaymentDate = DateTime.UtcNow,
+            ItemName = booking.TourGuide.User.FirstName +" "+booking.TourGuide.User.LastName, 
+
+        };
+        await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
         await _context.SaveChangesAsync();
 
         return Result.Success(booking);
     }
+
+    private async Task SendNotificationPaymentIsSuccesToUserByEmail(NotificationPaymentResponse response, string code)
+    {
+        var origin = _httpContextAccessor.HttpContext?.Request.Headers.Origin;
+
+        var emailBody = EmailBodyBuilder.GenerateEmailBody("PaymenNotification.html",
+            templateModel: new Dictionary<string, string>
+            {
+                { "{{BookingId}}", response.BookingId.ToString() },
+                { "{{BookingType}}", response.NameOfBooking },
+                { "{{BookingName}}", response.ItemName },
+                { "{{UserName}}", response.UserName },
+                { "{{Start}}", response.Start.ToString() },
+                { "{{End}}", response.End.ToString() },
+                { "{{TotalPrice}}", response.TotalPrice.ToString() },
+                { "{{PaymentDate}}", response.PaymentDate.ToString()! },
+            }
+        );
+
+        BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
+       response.UserEmail, // Assuming you have user email in the response, or get it from user service
+       $"✅ Payment Successful - {response.ItemName} Booking Confirmed",
+       emailBody));
+
+        await Task.CompletedTask;
+    }
+
 }

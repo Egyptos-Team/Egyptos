@@ -10,6 +10,6 @@ public interface IBookingEventDateService
     Task<Result<BookingEventDateByUserRasponse>> BookedByUserAsync(string userId);
     Task<Result<BookingEventDateEventBooked>> EventBookedAsync(int eventDateId);
     Task<Result> DeleteAsync(string userId, int eventDateId);
-    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int eventDateId, string userId, PaymentRequest paymentRequest);
-    Task<Result> MarkAsPaidAsync(int bookingId, string userId);
+    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest);
+    Task<Result> MarkAsPaidAsync(int bookingId);
 }

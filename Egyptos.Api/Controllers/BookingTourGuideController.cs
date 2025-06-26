@@ -95,21 +95,18 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
             CancelRedirectUrl = $"{thisApiUrl}/api/BookingTourGuide/Cancel/{bookingId}"
         };
 
-        var result = await _bookingTourGuideService.OnlinePaymentAsync(bookingId, User.GetUserId(), paymentRequest);
+        var result = await _bookingTourGuideService.OnlinePaymentAsync(bookingId,paymentRequest);
         return result.IsSuccess ? Ok(result.Value) : result.ToProblem();
     }
 
     [AllowAnonymous]
     [HttpGet("")]
-    public async Task<IActionResult> Success([FromQuery] int bookingId, string token, [FromServices] IServiceProvider sp)
+    public async Task<IActionResult> Success([FromQuery] int bookingId,  [FromServices] IServiceProvider sp)
     {
 
-        var userId = token.GetUserIdFromToken();
+       
 
-        if (string.IsNullOrEmpty(userId))
-            return BadRequest("invalid userId");
-
-        var paymentStatus = await _bookingTourGuideService.MarkAsPaidAsync(bookingId, userId);
+        var paymentStatus = await _bookingTourGuideService.MarkAsPaidAsync(bookingId);
 
         if (!paymentStatus.IsSuccess)
             return RedirectToAction("Cancel", new { bookingId });

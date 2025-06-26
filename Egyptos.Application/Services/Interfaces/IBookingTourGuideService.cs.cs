@@ -12,6 +12,6 @@ public interface IBookingTourGuideService
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(int tourGuideId);
     Task<Result<List<BookingTourGuideResponse>>> TourGuideBookedAsync(string userId);
     Task<Result> DeleteAsync(string userId, int bookingId);
-    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, string userId, PaymentRequest paymentRequest);
-    Task<Result> MarkAsPaidAsync(int bookingId, string userId);
+    Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest);
+    Task<Result> MarkAsPaidAsync(int bookingId);
 }
