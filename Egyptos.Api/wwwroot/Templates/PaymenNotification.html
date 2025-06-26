@@ -458,7 +458,7 @@
 </head>
 <body>
     <span class="preheader">
-        Your payment has been successfully processed for your transport booking.
+        Your payment has been successfully processed for your {{NameOfBooking}} booking.
     </span>
     <table class="email-wrapper"
            width="100%"
@@ -476,7 +476,7 @@
                         <td class="email-masthead">
                             <a href="https://example.com"
                                class="f-fallback email-masthead_name">
-                                Transport Booking
+                                {{BookingType}} Booking
                             </a>
                         </td>
                     </tr>
@@ -502,7 +502,7 @@
 
                                             <h1>Hi {{UserName}},</h1>
                                             <p>
-                                                Great news! Your payment has been successfully processed for your transport booking. Here are your booking details:
+                                                Great news! Your payment has been successfully processed for your {{BookingType}} booking. Here are your booking details:
                                             </p>
 
                                             <!-- Booking Details -->
@@ -512,12 +512,17 @@
                                                         <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                                                             <tr>
                                                                 <td class="attributes_item">
-                                                                    <span><strong>Booking ID:</strong> {{BookingPrivateTransportId}}</span>
+                                                                    <span><strong>Booking ID:</strong> {{BookingId}}</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <td class="attributes_item">
-                                                                    <span><strong>Transport:</strong> {{PrivateTransportName}}</span>
+                                                                    <span><strong>Booking Type:</strong> {{BookingType}}</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="attributes_item">
+                                                                    <span><strong>Booking Name:</strong> {{BookingName}}</span>
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -545,12 +550,12 @@
                                                 <tr>
                                                     <td>
                                                         <h3>Payment Summary</h3>
-                                                        <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
+                                                        <!-- <table class="purchase_content" width="100%" cellpadding="0" cellspacing="0">
                                                             <tr>
                                                                 <td class="purchase_item" style="width: 80%;">{{PrivateTransportName}} Booking</td>
                                                                 <td class="purchase_item" style="text-align: right;">${{TotalPrice}}</td>
                                                             </tr>
-                                                        </table>
+                                                        </table> -->
                                                         <table class="purchase_footer" width="100%" cellpadding="0" cellspacing="0">
                                                             <tr>
                                                                 <td width="75%" class="purchase_total purchase_total--label">Total Paid:</td>
@@ -587,11 +592,11 @@
                                                 </tr>
                                             </table>-->
 
-                                            <p>
-                                                Your booking is confirmed and you should receive further instructions about your transport service soon. If you have any questions, please don't hesitate to contact our support team.
-                                            </p>
+                                        <p>
+                                            Your booking is confirmed and you should receive further instructions about your {{BookingType}} service soon. If you have any questions, please don't hesitate to contact our support team.
+                                        </p>
 
-                                            <p>Thanks for choosing us! <br />Transport Booking Team</p>
+                                            <p>Thanks for choosing us! <br />Egyptous Team</p>
 
                                             <!-- Sub copy -->
 
@@ -612,7 +617,7 @@
                                 <tr>
                                     <td class="content-cell" align="center">
                                         <p class="f-fallback sub align-center">
-                                            Transport Booking Service
+                                            {{NameOfBooking}} Booking Service
                                             <br />1234 Street Rd. <br />Cairo, Egypt
                                         </p>
                                     </td>

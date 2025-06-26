@@ -59,6 +59,7 @@ public class BookingPrivateTransportService(
         BackgroundJob.Schedule(() => PlusTransportQuantity(booking.PrivateTransportId), booking.End);
 
         var notificationPaymentResponse=booking.Adapt<NotificationPaymentResponse>();
+        notificationPaymentResponse.NameOfBooking=nameof(booking.PrivateTransport);
         await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
 
         await _context.SaveChangesAsync();
@@ -222,19 +223,20 @@ public class BookingPrivateTransportService(
         var emailBody = EmailBodyBuilder.GenerateEmailBody("PaymenNotification.html",
             templateModel: new Dictionary<string, string>
             {
-               { "{{BookingPrivateTransportId}}", response.BookingId.ToString() },
-            { "{{UserName}}", response.UserName },
-            { "{{Start}}", response.Start.ToString() },
-            { "{{End}}", response.End.ToString() },
-            { "{{TotalPrice}}", response.TotalPrice.ToString() },
-            { "{{PaymentDate}}", response.PaymentDate.ToString()! },
-            { "{{PrivateTransportName}}", response.PrivateTransportName ?? "Private Transport" }
+                { "{{BookingId}}", response.BookingId.ToString() },
+                { "{{BookingType}}", response.NameOfBooking },
+                { "{{BookingName}}", response.PrivateTransportName },
+                { "{{UserName}}", response.UserName },
+                { "{{Start}}", response.Start.ToString() },
+                { "{{End}}", response.End.ToString() },
+                { "{{TotalPrice}}", response.TotalPrice.ToString() },
+                { "{{PaymentDate}}", response.PaymentDate.ToString()! },
             }
         );
 
         BackgroundJob.Enqueue(() => _emailSender.SendEmailAsync(
        response.UserEmail, // Assuming you have user email in the response, or get it from user service
-       "✅ Payment Successful - Transport Booking Confirmed",
+       $"✅ Payment Successful - {response.PrivateTransportName} Booking Confirmed",
        emailBody));
 
         await Task.CompletedTask;

@@ -71,7 +71,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status409Conflict)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+   // [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> OnlinePayment(int bookingId, [FromServices] IServiceProvider sp)
     {
 
