@@ -16,7 +16,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
     private static string? clientUrl;
 
     [HttpPost("")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromBody] BookingTripRequest request)
     {
         var result = await _bookingTripService.BookATicket(User.GetUserId(), request);

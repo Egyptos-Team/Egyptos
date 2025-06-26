@@ -16,7 +16,7 @@ public class ItemsController(IItemsService itemsService) : ControllerBase
     private readonly IItemsService _itemsService = itemsService;
 
     [HttpPost("{AreaId}")]
-    //[Authorize(Roles = DefaultRoles.Admin.Name)]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Add([FromRoute] int AreaId, [FromForm] ItemsRequest request)
     {
         var result = await _itemsService.AddAsync(AreaId, request);
@@ -49,6 +49,7 @@ public class ItemsController(IItemsService itemsService) : ControllerBase
     }
 
     [HttpDelete("{itemId}")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> Delete([FromRoute] int itemId)
     {
         var result = await _itemsService.DeleteAsync(itemId);

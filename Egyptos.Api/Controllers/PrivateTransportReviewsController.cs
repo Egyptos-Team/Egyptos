@@ -22,6 +22,7 @@ public class PrivateTransportReviewsController(IPrivateTransportReviewService pr
     }
 
     [HttpGet("")]
+    [Authorize(Roles = DefaultRoles.Admin.Name)]
     public async Task<IActionResult> GetAll()
     {
         var result = await _privateTransportReviewService.GetAllAsync();

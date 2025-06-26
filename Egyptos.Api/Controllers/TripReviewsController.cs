@@ -28,7 +28,7 @@ public class TripReviewsController(ITripReviewService tripReviewService) : Contr
         return Ok(result);
     }
     [HttpPost]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Add([FromForm] TripReviewRequest request)
     {
         var result = await _TripReviewService.AddAsync(User.GetUserId(), request);
@@ -36,7 +36,7 @@ public class TripReviewsController(ITripReviewService tripReviewService) : Contr
     }
 
     [HttpPut("{reviewId}")]
-    //[Authorize(Roles = DefaultRoles.User.Name)]
+    [Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Update(int reviewId, [FromForm] TripReviewRequest request)
     {
         var result = await _TripReviewService.UpdateAsync(User.GetUserId(), reviewId, request);
