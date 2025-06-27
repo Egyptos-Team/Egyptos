@@ -101,61 +101,61 @@ public class BookingEventDateService(ApplicationDbContext context,
         return Result.Success();
     }
 
-    //public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
-    //{
-    //    //var booking = await _context.BookingEventDates
-    //    //    .Include(x => x.EventDate)
-    //    //    .ThenInclude(x => x.EventImages)
-    //    //    .FirstOrDefaultAsync(x => x.Id == bookingId);
+    public async Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
+    {
+        var booking = await _context.BookingEventDates
+            .Include(x => x.EventDate)
+            .ThenInclude(x => x.EventImages)
+            .FirstOrDefaultAsync(x => x.Id == bookingId);
 
-    //    //if (booking is null)
-    //    //    return Result.Failure<CheckOutOrderResponse>(EventErrors.BookingNotFount);
+        if (booking is null)
+            return Result.Failure<CheckOutOrderResponse>(EventErrors.BookingNotFount);
 
-    //    //if (booking.PaymentDate.HasValue)
-    //    //    return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
+        if (booking.PaymentDate.HasValue)
+            return Result.Failure<CheckOutOrderResponse>(PaymentError.AlreadyPeyment);
 
 
-    //    //var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
+        var sessionId = await _payment.ProcessPayment(booking, paymentRequest);
 
-    //    //var result = new CheckOutOrderResponse
-    //    //{
-    //    //    SessionId = sessionId,
-    //    //    PubKey = _configuration["Stripe:PubKey"]!
-    //    //};
+        var result = new CheckOutOrderResponse
+        {
+            SessionId = sessionId,
+            PubKey = _configuration["Stripe:PubKey"]!
+        };
 
-    //    //return Result.Success(result);
-    //}
+        return Result.Success(result);
+    }
 
-    //public async Task<Result> MarkAsPaidAsync(int bookingId)
-    //{
-    //    if (await _context.BookingEventDates
-    //        .Include(e=> e.EventDate)
-    //        .ThenInclude(x => x.Event)
-    //        .Include(u=>u.User)
-    //        .FirstOrDefaultAsync(x => x.Id == bookingId ) is not { } booking)
-    //        return Result.Failure(EventErrors.BookingNotFount);
+    public async Task<Result> MarkAsPaidAsync(int bookingId)
+    {
+        if (await _context.BookingEventDates
+            .Include(e => e.EventDate)
+            .ThenInclude(x => x.Event)
+            .Include(u => u.User)
+            .FirstOrDefaultAsync(x => x.Id == bookingId) is not { } booking)
+            return Result.Failure(EventErrors.BookingNotFount);
 
-    //    booking.PaymentDate = DateTime.UtcNow;
+        booking.PaymentDate = DateTime.UtcNow;
 
-    //    var notificationPaymentResponse = new NotificationPaymentResponse
-    //    {
-    //        NameOfBooking = nameof(booking.EventDate.Event.Name),
-    //        BookingId = bookingId,
-    //        UserName=booking.User.FirstName + " " + booking.User.LastName,
-    //        UserEmail=booking.User.Email!,
-    //        Start=booking.EventDate.StartDate,
-    //        End=booking.EventDate.EndDate,
-    //        TotalPrice=booking.EventDate.Price,
-    //        PaymentDate=DateTime.UtcNow,
-    //        ItemName=booking.EventDate.Event.Name
+        var notificationPaymentResponse = new NotificationPaymentResponse
+        {
+            NameOfBooking = nameof(booking.EventDate.Event.Name),
+            BookingId = bookingId,
+            UserName = booking.User.FirstName + " " + booking.User.LastName,
+            UserEmail = booking.User.Email!,
+            Start = booking.EventDate.StartDate,
+            End = booking.EventDate.EndDate,
+            TotalPrice = booking.EventDate.Price,
+            PaymentDate = DateTime.UtcNow,
+            ItemName = booking.EventDate.Event.Name
 
-    //    };
-    //    await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
+        };
+        await SendNotificationPaymentIsSuccesToUserByEmail(notificationPaymentResponse, "");
 
-    //    await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync();
 
-    //    return Result.Success(booking);
-    //}
+        return Result.Success(booking);
+    }
 
     private async Task SendNotificationPaymentIsSuccesToUserByEmail(NotificationPaymentResponse response, string code)
     {
@@ -183,13 +183,5 @@ public class BookingEventDateService(ApplicationDbContext context,
         await Task.CompletedTask;
     }
 
-    public Task<Result<CheckOutOrderResponse>> OnlinePaymentAsync(int bookingId, PaymentRequest paymentRequest)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Task<Result> MarkAsPaidAsync(int bookingId)
-    {
-        throw new NotImplementedException();
-    }
+  
 }

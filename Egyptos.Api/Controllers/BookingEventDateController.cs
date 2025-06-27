@@ -17,7 +17,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
     private static string? clientUrl;
 
     [HttpPost("{eventDateId}")]
-    [Authorize(Roles = DefaultRoles.User.Name)]
+    //[Authorize(Roles = DefaultRoles.User.Name)]
     public async Task<IActionResult> Booking([FromRoute] int eventDateId)
     {
         var result = await _bookingEventDateService.BookATicket(User.GetUserId(), eventDateId);
