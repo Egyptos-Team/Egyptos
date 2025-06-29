@@ -182,7 +182,7 @@ public class HistoricalImagesConfiguration : IEntityTypeConfiguration<Historical
             new HistoricalImage
             {
                 Id = 7,
-                ImageUrl = "HistoricalImages/9.jpeg",
+                ImageUrl = "HistoricalImages/8.jpeg",
                 HistoricalId = 2
             },
             new HistoricalImage

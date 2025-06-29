@@ -258,8 +258,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             new ApplicationUser
             {
                 Id = "f89bca4a-8fc9-4259-a46d-22562907c27f",
-                FirstName = "Mark",
-                LastName = "ALbrto",
+                FirstName = "Ahmed",
+                LastName = "Mohamed",
                 NationalId = "4042098715635491",
                 PhoneNumber = "070901468297",
                 Sex = "Male",
@@ -276,8 +276,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
             new ApplicationUser
             {
                 Id = "cb3cb7ca-1921-49fd-a11e-600b351b3df4",
-                FirstName = "Jessy",
-                LastName = "MArk",
+                FirstName = "Jody",
+                LastName = "Hesham",
                 NationalId = "40415678901625",
                 PhoneNumber = "07022670816",
                 Sex = "Female",

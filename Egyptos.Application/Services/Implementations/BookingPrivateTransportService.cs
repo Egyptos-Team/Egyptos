@@ -118,8 +118,8 @@ public class BookingPrivateTransportService(
         if (!privateTransport.IsAvailable)
             return Result.Failure<BookingPrivateTransportResponse>(PrivateTransportError.NotAvilable);
 
-        if (await _context.BookingPrivateTransports.AnyAsync(x => x.UserId == userId && !x.PaymentDate.HasValue))//***
-            return Result.Failure<BookingPrivateTransportResponse>(PrivateTransportError.AlreadyHaveBooked);
+        //if (await _context.BookingPrivateTransports.AnyAsync(x => x.UserId == userId && !x.PaymentDate.HasValue))//***
+        //    return Result.Failure<BookingPrivateTransportResponse>(PrivateTransportError.AlreadyHaveBooked);
 
         var booking = request.Adapt<BookingPrivateTransport>();
 
