@@ -112,7 +112,7 @@ public class BookingTourGuideController(IBookingTourGuideService bookingTourGuid
         if (!paymentStatus.IsSuccess)
             return RedirectToAction("Cancel", new { bookingId });
 
-        return Redirect(clientUrl + "success.html");
+        return Redirect(clientUrl + "success");
     }
 
     [AllowAnonymous]

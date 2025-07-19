@@ -66,7 +66,7 @@ public class BookingEventDateController(IBookingEventDateService bookingEventDat
             return RedirectToAction("Cancel", new { bookingId });
         }
 
-        return Redirect(clientUrl + "success.html");
+        return Redirect(clientUrl + "success");
     }
 
     [AllowAnonymous]

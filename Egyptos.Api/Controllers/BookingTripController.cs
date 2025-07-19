@@ -106,7 +106,7 @@ public class BookingTripController(IBookingTripService bookingTripService) : Con
         if (!paymentStatus.IsSuccess)        
           return RedirectToAction("Cancel", new { bookingId });        
 
-        return Redirect(clientUrl + "success.html");
+        return Redirect(clientUrl + "success");
     }
 
     [AllowAnonymous]

@@ -102,7 +102,7 @@ public class BookingPrivateTransportsController(IBookingPrivateTransportService 
             return RedirectToAction("Cancel", new { bookingId });
         }
 
-        return Redirect(clientUrl + "success.html");
+        return Redirect(clientUrl + "success");
     }
 
     [AllowAnonymous]
